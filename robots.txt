@@ -1,0 +1,9 @@
+robots.txt file for https://rankmeter.netlify.app/
+This file tells search engine crawlers which pages to access on your site.
+'User-agent: *' means the rules apply to all web crawlers.
+'Allow: /' means all content on the site is allowed to be crawled.
+The 'Sitemap' line points crawlers to the location of your sitemap.xml file.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.google.com/search?q=https://rankmeter.netlify.app/sitemap.xml
