@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Top 30 Anime of All Time</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1a202c;
+        }
+        /* Custom styles for the rating and genre display */
+        .anime-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .imdb-rating, .genre-info {
+            display: flex;
+            align-items: center;
+            background-color: #f7f9fb;
+            border-radius: 9999px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="bg-white rounded-xl shadow-lg p-6 mb-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-indigo-700 mb-2">My Top 30 Anime of All Time</h1>
+            <p class="text-lg text-gray-600 italic">"Before you yell at me, let's agree to disagree."</p>
+        </header>
+
+        <div id="anime-list" class="space-y-8">
+            <!-- Content will be injected here by JavaScript -->
+        </div>
+
+    </div>
+
+    <script>
+        const animeData = [
+            {
+                number: 1,
+                title: "Attack on Titan",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/bb36008c8025/sub-buzz-9098-1717259938-1.jpg?resize=990:557",
+                attribution: "©Hajime Isayama, KODANSHA/“ATTACK ON TITAN” The Final Season Production Committee.",
+                description: "Unfolds in a dystopian world where humanity shelters within enormous walled cities to safeguard themselves from Titans, colossal humanoid beings that consume humans. The story centers on Eren Yeager, his adoptive sister Mikasa Ackerman, and their friend Armin Arlert. The series presents a novel and gripping concept: humanity's final stand against monstrous Titans within a secluded society. The narrative's high stakes kept me riveted. The show addresses profound themes like freedom versus security, the essence of evil, the repercussions of war, and the cycle of hatred.",
+                genre: "Action, Dark Fantasy, Post-apocalyptic",
+                rating: "9.0"
+            },
+            {
+                number: 2,
+                title: "Fullmetal Alchemist: Brotherhood",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/23/asset/bb36008c8025/sub-buzz-5200-1717196931-1.jpg?resize=990:546",
+                attribution: "Bones / Via youtube.com",
+                description: "The story revolves around brothers Edward and Alphonse Elric, who use the powerful science of alchemy to cope with their loss. Following a catastrophic attempt to bring back their deceased mother through alchemy, Edward loses an arm and a leg, while Alphonse's body is lost, though his soul becomes tethered to a suit of armor by Edward. The siblings set out on a quest to retrieve the Philosopher's Stone, an alchemical relic said to override the basic principles of alchemy. Their journey exposes them to entrenched government conspiracies, formidable enemies, and the stark reality of the Philosopher's Stone and the price of human transmutation.",
+                genre: "Adventure, Shonen",
+                rating: "9.1"
+            },
+            {
+                number: 3,
+                title: "Demon Slayer: Kimetsu no Yaiba",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/e570e05a44ef/sub-buzz-1074-1717259809-1.jpg?resize=990:557",
+                attribution: "©Koyoharu Gotoge / SHUEISHA, Aniplex, ufotable",
+                description: "Set in Taisho-era Japan, this series follows Tanjiro Kamado, a kindhearted young boy who becomes a demon slayer after his family is slaughtered by demons, with his sister Nezuko being the sole survivor but transformed into a demon. Determined to avenge his family and find a cure for Nezuko, Tanjiro joins the Demon Slayer Corps, an organization dedicated to eradicating demons. Demon Slayer is renowned for its exceptional animation quality, courtesy of Ufotable. The series features fluid motion, breathtakingly detailed backgrounds, and vibrant color palettes that bring its world to life.",
+                genre: "Action & Adventure, Fantasy",
+                rating: "8.6"
+            },
+            {
+                number: 4,
+                title: "Naruto: Shippuden",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/e570e05a44ef/sub-buzz-1078-1717259758-1.jpg?resize=990:557",
+                attribution: "©2002 MASASHI KISHIMOTO / 2007 SHIPPUDEN All Rights Reserved.",
+                description: "The continuation of the original Naruto anime series, is set two and a half years after Naruto Uzumaki leaves his village. The story follows a more mature Naruto as he returns to the Hidden Leaf Village. Now a determined teenager, Naruto seeks to reunite with his friend Sasuke Uchiha, who has defected to pursue power for his own revenge. At the same time, Naruto is determined to protect his village from the looming threat posed by the mysterious organization known as Akatsuki. The series offers a profound exploration of Naruto's character, transforming him from a brash, mischievous boy into a mature and responsible leader.",
+                genre: "Action, Adventure, Fantasy",
+                rating: "8.7"
+            },
+            {
+                number: 5,
+                title: "Vinland Saga",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/90531c9a70b5/sub-buzz-813-1717259684-1.jpg?resize=990:557",
+                attribution: "©Makoto Yukimura,KODANSHA/VINLAND SAGA Project",
+                description: "Set against the Viking Age's historical backdrop, Vinland Saga chronicles the life of Thorfinn, a young Icelandic boy whose world is upended when his father, Thors, a renowned Viking warrior, is murdered by a Viking group led by the shrewd Askeladd. Driven by vengeance, Thorfinn joins Askeladd's band, vowing to retaliate for his father's murder. Embarking on a journey rife with violence, deceit, and self-discovery, Thorfinn finds himself embroiled in the era's intricate political and military turmoil, including the Danish conquest of England and the fabled voyage to Vinland, a legendary haven of peace and prosperity. Over two seasons, we witness Thorfinn's profound transformation from a vengeance-driven youth in the first season to a man pursuing absolution in the second. The series' poignant handling of trauma, its shift from a vengeance-fueled action narrative to a tale of a man atoning for his past wrongs, has deeply resonated with fans.",
+                genre: "Action, Adventure, Drama",
+                rating: "8.8"
+            },
+            {
+                number: 6,
+                title: "Cowboy Bebop",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/23/asset/ac7313c6f320/sub-buzz-7445-1717196489-1.jpg?resize=963:710",
+                attribution: "Sunrise / Via youtube.com",
+                description: "Created by beloved Shinichirō Watanabe, is celebrated for its unique mix of science fiction, noir, and Western elements, which have allowed it to remain timeless since its debut. Set in 2071, it chronicles the adventures of the spaceship Bebop's crew as they traverse the galaxy as bounty hunters, or 'cowboys,' to apprehend criminals and claim bounties. The series is also acclaimed for its iconic soundtrack by Yoko Kanno, which fuses jazz, blues, rock, and electronic music, crafting an ambiance that is both atmospheric and poignant. Continuously esteemed by both fans and critics, Cowboy Bebop remains an enduring masterpiece that spans generations and continues to enchant audiences around the globe.",
+                genre: "Action, Adventure, Sci-Fi",
+                rating: "8.9"
+            },
+            {
+                number: 7,
+                title: "Jujutsu Kaisen",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/e570e05a44ef/sub-buzz-1055-1717259472-1.jpg?resize=990:557",
+                attribution: "© Gege Akutami/Shueisha, JUJUTSU KAISEN Project",
+                description: "The story is set in a world where cursed spirits roam the earth, posing a threat to humanity. To combat these malevolent entities, individuals known as Jujutsu Sorcerers are trained to exorcise curses using special techniques and abilities. The protagonist, Yuji Itadori, a high school student with exceptional physical abilities, becomes involved in the world of Jujutsu Sorcery after ingesting a cursed finger from a powerful curse named Sukuna. With its gripping storytelling, memorable characters, and thrilling supernatural battles, Jujutsu Kaisen continues to leave a lasting impression on audiences and cement its legacy as an all-time great.",
+                genre: "Adventure, Dark Fantasy, Supernatural",
+                rating: "8.7"
+            },
+            {
+                number: 8,
+                title: "My Hero Academia",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/22/asset/b29a4dbf2f3a/sub-buzz-11420-1717196216-1.jpg?resize=606:696",
+                attribution: "Bones / Via youtube.com",
+                description: "In a world where superpowers, or 'Quirks,' are commonplace, MHA centers on Izuku Midoriya, a boy without a Quirk who aspires to become a hero like his idol, All Might. Overcoming numerous obstacles, Midoriya's resolve draws All Might's attention, who grants him his own Quirk, 'One For All.' This enables Izuku to attend U.A. High School, an elite institution for hero hopefuls. The series showcases a varied cast of characters, each with unique traits, histories, and drives. My Hero Academia has become a global phenomenon, attracting a dedicated fanbase around the world and spawning a wide range of merchandise, spin-off films, and adaptations in other media. Its widespread popularity and cultural impact solidify its status as a modern classic in the anime world.",
+                genre: "Adventure, Science fantasy, Superhero",
+                rating: "8.3"
+            },
+            {
+                number: 9,
+                title: "Samurai Champloo",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/22/asset/4fb3bae049d9/sub-buzz-1129-1717195737-1.jpg?resize=953:700",
+                attribution: "Manglobe / Via youtube.com",
+                description: "Shinichirō Watanabe, celebrated for his work on Cowboy Bebop, succeeded it with Samurai Champloo, a series many consider equal or superior to its predecessor. Set in an alternate Edo-period Japan, it follows three disparate companions: Mugen, an untamed swordsman; Jin, a composed and disciplined rōnin; and Fuu, a vivacious young woman searching for the 'samurai who smells of sunflowers.' Samurai Champloo fuses historical fiction, action-adventure, comedy, and hip-hop, forging a unique and striking style. Its hip-hop soundtrack, crafted by Nujabes and other notable artists, accentuates the series' ambiance, distinguishing it from conventional samurai anime.",
+                genre: "Action, Adventure, Comedy",
+                rating: "8.6"
+            },
+            {
+                number: 10,
+                title: "The Rising of the Shield Hero",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/4830357af363/sub-buzz-3032-1717259355-1.jpg?resize=700:393",
+                attribution: "©2019 Aneko Yusagi/KADOKAWA/Shield Hero production committee",
+                description: "Adapted from Aneko Yusagi's light novel series, the story follows Naofumi Iwatani, a college student summoned to a fantasy world to become one of four legendary heroes, each armed with their own mythical weapon: sword, spear, bow, and shield. Naofumi, designated as the 'Shield Hero,' is deemed the weakest and faces societal ostracism due to unfounded accusations. Striving to clear his name and survive, Naofumi forms an uneasy alliance with Raphtalia, a demi-human slave, and Filo, a girl with the power to transform into a formidable bird-like creature, her Filolial form. The series is renowned for its dynamic and well-crafted action scenes, especially during the monstrous waves that besiege the world. Naofumi's tactical shield maneuvers and his allies' distinct powers lend some complexity and thrill to the combat.",
+                genre: "Action, Adventure, Dark Fantasy",
+                rating: "8.0"
+            },
+            {
+                number: 11,
+                title: "Yu Yu Hakusho",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/90531c9a70b5/sub-buzz-770-1717259038-8.jpg?resize=990:557",
+                attribution: "© Yoshihiro Togashi 1990-1994 'Yu Yu Hakusho'/comics originally serialized in the WEEKLY SHONEN JUMP published by Shueisha Inc. TV animation series 'Yu Yu Hakusho' is produced by © Pierrot/Shueisha",
+                description: "Chronicles the story of Yusuke Urameshi, a teenage delinquent who is killed in a car accident while attempting to save a child. Posthumously, Yusuke is granted a second chance at life, taking on the role of a 'Spirit Detective' to probe into paranormal activities in the human and demon realms. Joined by his comrades Kuwabara, Hiei, and Kurama, Yusuke undertakes various quests, combats formidable adversaries, and faces existential dangers threatening both realms. The series features an eclectic ensemble of characters, each with distinct traits, histories, and drives. From Kuwabara's fiery temper to Hiei's mystery and Kurama's shrewdness, they all enrich the story's tapestry. As an exhilarating martial arts saga and a thought-provoking exploration of humanity, Yu Yu Hakusho continues to captivate audiences worldwide.",
+                genre: "Action, Adventure, Comedy",
+                rating: "8.4"
+            },
+            {
+                number: 12,
+                title: "Blue Eye Samurai",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/22/asset/bb36008c8025/sub-buzz-5060-1717194918-8.jpg?resize=733:687",
+                attribution: "Netflix Animation / Via youtube.com",
+                description: "Blending historical elements with rich storytelling and dynamic action sequences, Blue Eye Samurai is perfect for anybody who recently loved FX's Shogun. The story revolves around a blue-eyed samurai named Akemi, who stands out in a society where blue eyes are rare and often met with suspicion or disdain. Akemi embarks on a quest for vengeance against those who wronged her family, wielding her sword with unmatched skill and a deep-seated determination. Blue Eye Samurai stands out as a potential classic due to its rich and engaging storyline, deep character development, historical and cultural richness, stunning animation, and exploration of profound themes. By addressing Akemi's adventure for vengeance through the lens of a unique historical setting, Blue Eyed Samurai earns its place among the greatest anime of all time.",
+                genre: "Animation, Action, Adventure",
+                rating: "8.7"
+            },
+            {
+                number: 13,
+                title: "Trigun",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/62c543ec256e/sub-buzz-555-1717258994-1.jpg?resize=990:557",
+                attribution: "©Yasuhiro Nightow/Shonengahosha, FlyingDog. Licensed by FlyingDog, Inc.",
+                description: "Set in a post-apocalyptic world reminiscent of the Wild West, the story follows Vash the Stampede, a legendary gunslinger with a mysterious past and a $$60 billion (double dollar) bounty on his head. Despite his reputation as a ruthless outlaw, Vash is actually a pacifist with a strong moral code, seeking to avoid violence and protect innocent lives. As he journeys across the desolate planet, Vash is pursued by bounty hunters and law enforcement, while also confronting his own tragic past and the dangerous foes that emerge from it. Vash is a deeply layered character. His goofy, carefree exterior masks a profound inner turmoil and commitment to nonviolence. His struggle to uphold his ideals in a violent world adds significant depth to his character. For me, Trigun is considered one of the greatest anime of all time due to its complex protagonist, strong supporting cast, thematic depth, unique setting, and engaging plot.",
+                genre: "Action, Adventure, Sci-Fi",
+                rating: "8.2"
+            },
+            {
+                number: 14,
+                title: "One Piece",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/62c543ec256e/sub-buzz-540-1717258945-1.jpg?resize=990:557",
+                attribution: "©Eiichiro Oda/Shueisha, Toei Animation",
+                description: "Follows the journey of Monkey D. Luffy, a young pirate with the ability to stretch his body like rubber after eating the long-treasured Devil Fruit. Luffy dreams of finding the legendary treasure known as 'One Piece' and becoming the Pirate King. Along the way, he assembles a diverse crew known as the Straw Hat Pirates, each with unique abilities and dreams of their own. Together, they navigate the treacherous Grand Line, facing formidable foes and uncovering deep-seated mysteries of their world. The world of One Piece is incredibly vast and intricately designed, with diverse islands, cultures, species, and political structures. Each new location brings fresh adventures and deeper lore.",
+                genre: "Action, Adventure, Fantasy",
+                rating: "8.9"
+            },
+            {
+                number: 15,
+                title: "Tokyo Revengers",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/22/asset/bb36008c8025/sub-buzz-4963-1717193522-2.jpg?resize=687:618",
+                attribution: "Liden Films / Via youtube.com",
+                description: "The story centers on Takemichi Hanagaki, a disenchanted adult who finds he can time-travel back to his middle school days. He aims to change the dire fate of his childhood sweetheart, Hinata Tachibana, who fell victim to the Tokyo Manji Gang. Takemichi decides to infiltrate the gang to rewrite history. While navigating the perilous realm of delinquents and gangs, he confronts his own doubts and past regrets, all the while fighting to safeguard those dear to him. The creator, Ken Wakui, draws from his experience in the 'Black Emperor Gang,' lending authenticity to this time-traveling saga filled with relentless plot twists that captivate viewers.",
+                genre: "Action, Drama, Sci-Fi",
+                rating: "8.0"
+            },
+            {
+                number: 16,
+                title: "Hunter x Hunter",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/bb36008c8025/sub-buzz-9051-1717259217-1.jpg?resize=990:557",
+                attribution: "©P98-24 © V ∙ N ∙ M",
+                description: "Gon Freecss, a young boy who discovers that his long-lost father, Ging, is a legendary Hunter — an elite member of humanity, capable of tracking down secret treasures, rare beasts, or even other individuals. Determined to find his father, Gon embarks on a journey to become a Hunter himself, making friends and facing various challenges along the way. I think what's made Hunter x Hunter such a longtime classic is that each arc in Hunter x Hunter offers a unique and compelling narrative, ranging from adventure and mystery to dark psychological drama and intense action. Seeing Gon and Killua go through adventures together all the while becoming some of the strongest hunters out there, is reminiscent of Naruto and Sasuke or Goku and Vegeta but way more friendlier.",
+                genre: "Adventure, Action, Fantasy",
+                rating: "9.0"
+            },
+            {
+                number: 17,
+                title: "Hajime no Ippo",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/22/asset/ac7313c6f320/sub-buzz-7192-1717193036-1.jpg?resize=983:697",
+                attribution: "Madhouse",
+                description: "Numerous anime series effectively portray sports realistically, yet in my view, none excel quite like Hajime no Ippo. The protagonist, Ippo Makunouchi, is an underdog — a timid, bullied high schooler who uncovers a talent for boxing. The show follows Ippo's journey from an inexperienced beginner to a skilled fighter, accentuating his personal and athletic evolution. Ippo's modesty, perseverance, and benevolence make him a character to cheer for. His progression is portrayed realistically and with emotional depth, akin to DBZ, rendering the series both captivating and motivational. The combination of heart, excitement, and humor solidifies its status as one of the premier sports anime ever created.",
+                genre: "Sports, Action, Drama",
+                rating: "8.8"
+            },
+            {
+                number: 18,
+                title: "Dragon Ball Z",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/4fc5bcdf9d97/sub-buzz-4176-1717258646-1.jpg?resize=990:783",
+                attribution: "©BIRD STUDIO/SHUEISHA, TOEI ANIMATION",
+                description: "The passing of Akira Toriyama, the creator of Dragon Ball, underscores the show's profound impact on multiple generations. The outpouring of love and support reflects the number of people who not only grew up with this remarkable series but also encountered anime for the first time through Dragon Ball Z. This iconic series, which follows Goku's adventures as an adult after the events of Dragon Ball, has captivated audiences with its epic battles, rigorous training sequences, and a host of unforgettable characters. Whether it's the classic Dragon Ball Z or the newest Dragon Ball Super, its inspirational themes have created a lasting legacy, shaping the imaginations of fans and creators for years to come.",
+                genre: "Action, Adventure, Fantasy",
+                rating: "8.7"
+            },
+            {
+                number: 19,
+                title: "Rurouni Kenshin",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/90531c9a70b5/sub-buzz-742-1717258590-1.jpg?resize=640:480",
+                attribution: "© 1997 N. Watsuki / Shueisha, Fuji-TV, Aniplex Inc.",
+                description: "Also known as 'Samurai X,' unfolds during the early Meiji era in Japan. It chronicles the life of Kenshin Himura, a former assassin once feared as 'Battousai the Manslayer.' Following his involvement in the Bakumatsu war, Kenshin commits to making amends for his sins by safeguarding the innocent and eschewing killing, wielding a reverse-edged sword (sakabato) to embody his newfound pacifist principles. The show's excellence lies not only in its thrilling action but also in its exploration of Kenshin's nonviolence against the contrasting beliefs of other characters, offering a layered conversation about the use of violence and its consequences. This theme, coupled with a protagonist striving to correct his past misdeeds while confronting the errors of his former life, cements the series as a timeless masterpiece.",
+                genre: "Action, Adventure, Drama",
+                rating: "8.4"
+            },
+            {
+                number: 20,
+                title: "Death Note",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/4830357af363/sub-buzz-2981-1717258546-1.jpg?resize=990:557",
+                attribution: "©DNDP, VAP, Shueisha, Madhouse",
+                description: "Stands out as one of the greatest anime of all time due to its innovative premise, deep psychological and moral questions, complex characters, and high production quality. The story revolves around Light Yagami, a brilliant high school student who stumbles upon a mysterious notebook called the Death Note. This notebook grants its user the ability to kill anyone whose name and face they know, simply by writing the person's name in the notebook. Its blend of suspense, intellect, and dark themes creates a lasting impression, making it a benchmark for storytelling in anime. The series not only entertains but also challenges viewers to think critically about justice, power, and the human condition, solidifying its place in the pantheon of anime greatness. Before Dexter, there was Light, a vigilante whose arc stands as one of the best in anime.",
+                genre: "Mystery, Thriller, Fantasy",
+                rating: "9.0"
+            },
+            {
+                number: 21,
+                title: "Chainsaw Man",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/4fc5bcdf9d97/sub-buzz-4157-1717258488-1.jpg?resize=793:444",
+                attribution: "©Tatsuki Fujimoto/SHUEISHA, MAPPA",
+                description: "One of 2022's standout shows, Chainsaw Man gave us riveting horror, action, and dark humor with a unique and unpredictable narrative. Denji is a young man burdened with a massive debt left by his deceased father. To repay it, he works as a devil hunter for the yakuza, using his pet devil, Pochita, who can transform into chainsaw weapons. After being betrayed and killed by the yakuza, Denji merges with Pochita, coming back to life as the titular Chainsaw Man, a powerful hybrid with chainsaws sprouting from his arms and head. After being recruited by the Public Safety Devil Hunters, an organization dedicated to protecting humanity from dangerous devils, we see Denji navigate his new life, fight various devils, and form rather complex relationships with other devil hunters such as Power and Aki.",
+                genre: "Action, Comedy Horror, Dark Fantasy",
+                rating: "8.5"
+            },
+            {
+                number: 22,
+                title: "Cyberpunk: Edgerunners",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/16/asset/358f802600a4/sub-buzz-531-1717174004-2.jpg?resize=990:563",
+                attribution: "Studio Trigger / Via youtube.com",
+                description: "Set in the dystopian future of Night City, adapted from the popular video game Cyberpunk 2077 by CD Projekt Red, the story centers on David Martinez, a street-smart teenager struggling to survive in a society heavily influenced by advanced technology and corporate greed. David's journey from a struggling student to a powerful yet conflicted mercenary is compelling and well-developed. But his character isn't the only shining light in this incredible series as his supporting characters are equally captivating, setting up a feeling of loss when one tragically meets their end. There's a reason this show won several anime awards including Crunchyroll's annual award for 'Best Anime' which is game recognizing game as Cyberpunk: Edgerunners is exclusively on Netflix.",
+                genre: "Action, Sci-Fi",
+                rating: "8.3"
+            },
+            {
+                number: 23,
+                title: "Summer Time Rendering",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/0/asset/3b8938b0f44a/sub-buzz-2870-1717115957-2.jpg?resize=990:638",
+                attribution: "OLM Team Kojima / Via youtube.com",
+                description: "Adapted from Yasuki Tanaka's manga, Summer Time Rendering revolves around Shinpei Ajiro, who returns to his hometown on the remote island of Hitogashima for the funeral of his childhood friend Ushio Kofune, who died under mysterious circumstances. As Shinpei delves deeper into the events surrounding Ushio's death, he discovers a series of strange occurrences and unravels a supernatural mystery involving shadowy doppelgängers and time loops. The blend of mystery, horror, and supernatural elements, combined with the intricate plot, and high production quality make it a must-watch anime that leaves a lasting impression after the credits roll.",
+                genre: "Mystery, Thriller, Supernatural",
+                rating: "8.3"
+            },
+            {
+                number: 24,
+                title: "Akame ga Kill!",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/21/asset/22cf9f17aecd/sub-buzz-2614-1717191279-3.jpg?resize=990:624",
+                attribution: "White Fox / Via youtube.com",
+                description: "If you were a fan of Game of Thrones and the way George R.R. Martin emotionally scarred you with character deaths, then you'll love Akame ga Kill! The show follows Tatsumi, a young and naive warrior who leaves his impoverished village with dreams of earning money to help his home. However, upon arriving in the capital, he quickly discovers the extent of the city's corruption and cruelty. Akame ga Kill! is a standout anime series due to its compelling storyline, complex characters, intense action, and emotional depth. Its willingness to explore dark themes and present a realistic portrayal of the consequences of war and rebellion make it a memorable and impactful series.",
+                genre: "Action, Dark Fantasy",
+                rating: "7.8"
+            },
+            {
+                number: 25,
+                title: "Berserk",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-05/31/21/asset/f09679b82610/sub-buzz-1088-1717191025-1.jpg?resize=951:721",
+                attribution: "OLM Team Iguchi / Via youtube.com",
+                description: "An epic dark fantasy that delves into the gritty and complex journey of its protagonist, Guts. Set in a medieval-inspired world filled with political intrigue, supernatural elements, and intense battles, the series follows Guts, a skilled and hardened mercenary with a troubled past. His path intertwines with that of Griffith, the enigmatic leader of the Band of the Hawk, and their fateful encounter sets off a chain of events that will shape the destiny of nations. The compelling blend of action, drama, and philosophical exploration, paired with morally complex characters and thought-provoking narratives helped captivate audiences from the late '90s to now.",
+                genre: "Action, Adventure, Fantasy",
+                rating: "8.7"
+            },
+            {
+                number: 26,
+                title: "Spy x Family",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/4fc5bcdf9d97/sub-buzz-4126-1717258081-1.jpg?resize=990:557",
+                attribution: "© Tatsuya Endo/Shueisha, SPY x FAMILY Project",
+                description: "This comedic and action-packed anime follows the story of Twilight, a master spy tasked with a mission to steal information from a high-ranking government official by infiltrating the prestigious school his target's son attends. To accomplish his mission, he needs to create the perfect cover: a family. Twilight adopts a young girl named Anya, who has telepathic abilities, and decides to pose as a doting father. However, he soon discovers that Anya is an orphan with no known background. As the unlikely family tries to blend in and navigate their new roles, they find themselves caught up in hilarious situations, dangerous missions, and heartwarming moments as they form genuine bonds with each other while balancing their individual secrets and missions. There's a reason this show has become such a hit, so if you haven't seen it, please do.",
+                genre: "Action, Adventure, Comedy",
+                rating: "8.4"
+            },
+            {
+                number: 27,
+                title: "Fire Force",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/1d295feffaa1/sub-buzz-467-1717257882-1.jpg?resize=742:418",
+                attribution: "©Atsushi Ohkubo, KODANSHA/ “FIRE FORCE” Production Committee",
+                description: "Fire Force is set in a world where spontaneous human combustion turns people into living infernos called 'Infernals.' To combat this threat, special firefighters known as the 'Fire Force' are tasked with extinguishing Infernals and investigating the cause behind the phenomenon. The story follows Shinra Kusakabe, a young man with the unique ability to ignite his feet at will, granting him powerful propulsion abilities. As Shinra and his comrades battle Infernals and uncover dark secrets surrounding the phenomenon, they also face off against other Fire Force companies, religious organizations, and mysterious figures with their own agendas. Alongside intense firefighting action, the series delves into themes of redemption, teamwork, and the nature of heroism in the face of adversity.",
+                genre: "Action, Adventure, Fantasy",
+                rating: "7.6"
+            },
+            {
+                number: 28,
+                title: "Mashle: Magic and Muscles",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/fa9af6a4a52d/sub-buzz-9329-1717257748-1.jpg?resize=990:557",
+                attribution: "©Hajime Komoto/SHUEISHA, MASHLE Committee",
+                description: "With one of the catchiest opening intros ever, Mashle: Magic and Muscles is perfect for any Harry Potter fans who also love anime. In a society where magic is everything, Mash's lack of magical ability makes him an outcast and at risk of execution. To survive in this world of magic, Mash relies solely on his extraordinary physical strength and combat skills. As he navigates the challenges of the academy, Mash's unconventional methods and unwavering determination begin to earn him both friends and enemies. The series blends elements of comedy, action, and adventure as Mash strives to prove that strength comes in many forms, not just through magic, but the love of cream puffs.",
+                genre: "Action, Comedy, Fantasy",
+                rating: "8.1"
+            },
+            {
+                number: 29,
+                title: "Hell's Paradise",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/16/asset/e570e05a44ef/sub-buzz-940-1717257686-1.jpg?resize=990:557",
+                attribution: "©YUJI KAKU/SHUEISHA, TWIN ENGINE, MAPPA",
+                description: "MAPPA has done it again with yet another great anime, Hell's Paradise. Hell's Paradise centers on Gabimaru, a skilled ninja sentenced to death but given a chance at redemption by embarking on a dangerous mission. In a world where immortality is possible, Gabimaru, alongside other criminals, is tasked with finding the elixir of life on a mysterious island filled with lethal traps, monstrous creatures, and deadly adversaries. With intense action, complex characters, and exploration of themes such as redemption and the meaning of life, this new shonen has quickly risen through the ranks as an all-time favorite.",
+                genre: "Animation, Action, Adventure",
+                rating: "8.3"
+            },
+            {
+                number: 30,
+                title: "Solo Leveling",
+                image: "https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/15/asset/bb36008c8025/sub-buzz-8947-1717257505-1.jpg?resize=990:557",
+                attribution: "©Solo Leveling Animation Partners",
+                description: "I'll start this list with one of the newest anime shows to hit 2024. Now you might be thinking that this show is too new to be labeled one of the greatest, but I'm placing my bet early. I believe that by the time this show is all wrapped up, we will be saying it's up there. The show follows Sung Jin-woo, an E-rank hunter, in a world where gates to dungeons have opened, unleashing monsters upon humanity. After a near-death experience in a dungeon, Jin-woo discovers he has the ability to level up and grow stronger. As he embarks on his journey as a 'Solo Player,' he aims to become the most powerful hunter and protect humanity from the looming threats of the dungeons. The story is filled with intense battles, mystery, and Jin-woo's quest for strength and identity.",
+                genre: "Action, Adventure, Fantasy",
+                rating: "8.4"
+            }
+        ];
+
+        const animeListContainer = document.getElementById('anime-list');
+
+        animeData.forEach(anime => {
+            const animeCard = document.createElement('div');
+            animeCard.classList.add('bg-white', 'p-6', 'md:p-8', 'rounded-xl', 'shadow-lg', 'flex', 'flex-col', 'md:flex-row', 'items-center', 'md:items-start', 'space-y-6', 'md:space-y-0', 'md:space-x-8', 'transition-transform', 'hover:scale-[1.01]', 'duration-300');
+
+            animeCard.innerHTML = `
+                <div class="w-full md:w-1/3 flex-shrink-0 relative rounded-lg overflow-hidden aspect-video">
+                    <!-- Image URL -->
+                    <img src="${anime.image}" alt="${anime.title}" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="text-white text-4xl font-bold">${anime.number}.</span>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-2 leading-tight">${anime.title}</h2>
+                    <p class="text-sm text-gray-500 italic mb-4">Attribution: ${anime.attribution}</p>
+                    <div class="anime-meta">
+                        <span class="genre-info">
+                            <span class="font-bold mr-1">Genre:</span>
+                            <span>${anime.genre}</span>
+                        </span>
+                        <span class="imdb-rating">
+                            <svg class="w-4 h-4 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.95a1 1 0 00.95.69h4.16c.969 0 1.371 1.24.588 1.81l-3.375 2.45a1 1 0 00-.364 1.118l1.287 3.95a1 1 0 01-1.54 1.118l-3.375-2.45a1 1 0 00-1.176 0l-3.375 2.45a1 1 0 01-1.54-1.118l1.287-3.95a1 1 0 00-.364-1.118l-3.375-2.45a1 1 0 01.588-1.81h4.16a1 1 0 00.95-.69l1.286-3.95z"></path>
+                            </svg>
+                            <span class="font-bold mr-1">IMDb:</span>
+                            <span>${anime.rating}</span>
+                        </span>
+                    </div>
+                    <p class="text-base text-gray-700 mt-4">${anime.description}</p>
+                </div>
+            `;
+
+            animeListContainer.appendChild(animeCard);
+        });
+    </script>
+</body>
+</html>

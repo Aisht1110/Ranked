@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranked Site</title>
+    <!-- Use Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e5e7eb;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9ca3af;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+        /* Hide a-tag underline */
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Main Container -->
+    <div class="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 w-full max-w-4xl border border-gray-200">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2 leading-tight">Top Rankings</h1>
+            <p class="text-lg text-gray-600">A dynamic ranking of top players and products, with links to detailed views.</p>
+        </header>
+
+        <!-- Search Bar Section -->
+        <div class="mb-8 relative">
+            <input type="text" id="searchInput" placeholder="Search for the ranking ..." class="w-full p-4 pl-12 pr-4 text-lg border-2 border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-300 ease-in-out">
+            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+        </div>
+
+        <!-- Ranked List Container -->
+        <div id="rankedList" class="space-y-6">
+            
+            <!-- Ranked Item 1 - Updated to be a full clickable link -->
+            <!-- The entire card is now an a-tag to be clickable -->
+            <a href="football_ranked.html" class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gray-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                    <img src="12/paris-2024-olympics-soccer.jpg" alt="Football Rank" class="w-full h-full object-cover rounded-xl shadow-inner">
+                </div>
+                <div class="flex-grow">
+                    <div class="flex items-center mb-2">
+                        
+                        <h2 class="text-xl font-bold text-gray-800">Top 10 Football Players of All Time</h2>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-base">Click on this card to see a detailed ranking of the greatest football players in history.</p>
+                </div>
+            </a>
+
+            <!-- Ranked Item 2 -->
+            <div class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gray-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                    <img src="12/71.jpg" alt="Rank 2" class="w-full h-full object-cover rounded-xl shadow-inner">
+                </div>
+                <div class="flex-grow">
+                    <div class="flex items-center mb-2">
+                        
+                        <h2 class="text-xl font-bold text-gray-800">Top 30 Best Anime of all time</h2>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-base">Unmatched performance and an incredible OLED display. Perfect for creatives and power users on the go.</p>
+                    <a href="anime_ranked.html" class="inline-flex items-center text-indigo-600 font-semibold text-sm hover:text-indigo-800 transition-colors duration-200">
+                        View Product Details
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.5 8.5l-5 5-5-5"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ranked Item 3 -->
+            <div class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gray-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                    <img src="https://placehold.co/80x80/2f80ed/ffffff?text=3" alt="Rank 3" class="w-full h-full object-cover rounded-xl shadow-inner">
+                </div>
+                <div class="flex-grow">
+                    <div class="flex items-center mb-2">
+                        <span class="text-3xl font-bold text-indigo-600 mr-2">#3</span>
+                        <h2 class="text-xl font-bold text-gray-800">Noise-Cancelling Earbuds Pro 2</h2>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-base">Industry-leading noise cancellation, crystal-clear audio, and a compact charging case. A must-have for commuters.</p>
+                    <a href="#" class="inline-flex items-center text-indigo-600 font-semibold text-sm hover:text-indigo-800 transition-colors duration-200">
+                        View Product Details
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.5 8.5l-5 5-5-5"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- You can add more ranked items here -->
+
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="mt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 Ranked Site. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const rankedList = document.getElementById('rankedList');
+            const rankedItems = rankedList.getElementsByClassName('ranked-item');
+
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase().trim();
+
+                for (let i = 0; i < rankedItems.length; i++) {
+                    const item = rankedItems[i];
+                    const itemText = item.textContent || item.innerText;
+                    
+                    if (itemText.toLowerCase().includes(searchTerm)) {
+                        item.style.display = 'flex'; // Show the item
+                    } else {
+                        item.style.display = 'none'; // Hide the item
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

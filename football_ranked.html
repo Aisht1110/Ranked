@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>The 10 Greatest football Players of All Time</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0d47a1;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0d47a1;
+            padding-bottom: 10px;
+        }
+
+        .player-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .player-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .player-card.odd {
+            background-color: #e3f2fd;
+        }
+        
+        .player-card.even {
+            background-color: #f3e5f5;
+        }
+
+        .player-rank {
+            font-size: 3em;
+            font-weight: 700;
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+
+        .player-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .player-details img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            border: 4px solid #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .player-details h2 {
+            font-size: 1.8em;
+            color: #1a237e;
+            margin: 0 0 10px 0;
+        }
+
+        .player-details h3 {
+            font-size: 1.2em;
+            color: #555;
+            margin: 0 0 15px 0;
+            font-weight: 400;
+        }
+
+        .player-bio {
+            font-size: 1em;
+            color: #555;
+            text-align: justify;
+        }
+
+        .player-info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            background-color: #e1f5fe;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .info-item h4 {
+            margin: 0;
+            color: #0d47a1;
+            font-weight: 600;
+        }
+
+        .info-item p {
+            margin: 5px 0 0;
+            color: #333;
+        }
+        
+        @media (min-width: 768px) {
+            .player-card {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+            .player-details {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+                width: 100%;
+            }
+
+            .player-details img {
+                margin-right: 30px;
+                max-width: 250px;
+                margin-bottom: 0;
+            }
+
+            .player-text-content {
+                flex-grow: 1;
+            }
+
+            .player-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The 10 Greatest Football Players of All Time</h1>
+
+    <div class="player-card odd">
+        <div class="player-rank">No. 1</div>
+        <div class="player-details">
+            <img src="12/gettyimages-2161416653-612x612.jpg" alt="Lionel Messi">
+            <div class="player-text-content">
+                <h2>Lionel Messi</h2>
+                <h3>The magician with the ball at his feet.</h3>
+                <p class="player-bio">Lionel Messi is a magician with the ball at his feet. Known for his incredible dribbling, vision, and goal-scoring prowess, Messi has redefined modern soccer. With seven Ballon d'Or titles and numerous records to his name, he continues to inspire fans worldwide.</p>
+                <div class="player-info-grid">
+                    <div class="info-item">
+                        <h4>Full Name</h4>
+                        <p>Lionel Andrés Messi</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Nationality</h4>
+                        <p>Argentine</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Era</h4>
+                        <p>2004–Present</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Notable Achievements</h4>
+                        <p>2022 FIFA World Cup champion, Eight-time Ballon d'Or winner,4 champions League ,6 golden boot</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Famous Clubs</h4>
+                        <p>FC Barcelona, Paris Saint-Germain</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Legacy</h4>
+                        <p>Widely regarded as the most complete player in history</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-card even">
+        <div class="player-rank">No. 2</div>
+        <div class="player-details">
+            <img src="12/6707ab4f-5d11-45c0-9295-730e4107a87a_1280x720.jpg" alt="Pelé">
+            <div class="player-text-content">
+                <h2>Pelé</h2>
+                <h3>The King of the beautiful game.</h3>
+                <p class="player-bio">Widely regarded as one of the greatest soccer players of all time, Pelé’s skill, vision, and scoring ability revolutionized the game. The Brazilian forward won three World Cups, a feat unmatched in soccer history, and scored over 1,200 goals during his illustrious career.</p>
+                <div class="player-info-grid">
+                    <div class="info-item">
+                        <h4>Full Name</h4>
+                        <p>Edson Arantes do Nascimento</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Nationality</h4>
+                        <p>Brazilian</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Era</h4>
+                        <p>1956–1977</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Notable Achievements</h4>
+                        <p>Three-time FIFA World Cup champion (1958, 1962, 1970)</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Famous Clubs</h4>
+                        <p>Santos, New York Cosmos</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Legacy</h4>
+                        <p>Credited with popularizing soccer in the United States during his time with the Cosmos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-card odd">
+        <div class="player-rank">No. 3</div>
+        <div class="player-details">
+            <img src="12/gettyimages-1414040033-612x612.jpg" alt="Diego Maradona">
+            <div class="player-text-content">
+                <h2>Diego Maradona</h2>
+                <h3>A larger-than-life figure.</h3>
+                <p class="player-bio">Diego Maradona was a larger-than-life figure in soccer, celebrated for his genius on the field and his colorful personality off it. His "Hand of God" goal and solo effort against England in the 1986 World Cup quarterfinals remain some of the most iconic moments in the sport's history.</p>
+                <div class="player-info-grid">
+                    <div class="info-item">
+                        <h4>Full Name</h4>
+                        <p>Diego Armando Maradona</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Nationality</h4>
+                        <p>Argentine</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Era</h4>
+                        <p>1976–1997</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Notable Achievements</h4>
+                        <p>1986 FIFA World Cup champion</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Famous Clubs</h4>
+                        <p>Napoli, FC Barcelona</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Legacy</h4>
+                        <p>Known for his dribbling and creativity, as well as controversies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-card even">
+        <div class="player-rank">No. 4</div>
+        <div class="player-details">
+            <img src="12/gettyimages-2156948444-612x612.jpg" alt="Cristiano Ronaldo">
+            <div class="player-text-content">
+                <h2>Cristiano Ronaldo</h2>
+                <h3>A physical and technical marvel.</h3>
+                <p class="player-bio">Cristiano Ronaldo is a physical and technical marvel. Known for his goal-scoring ability, athleticism, and work ethic, Ronaldo has won numerous trophies and shattered records during his career. He is the all-time leading scorer in Champions League history.</p>
+                <div class="player-info-grid">
+                    <div class="info-item">
+                        <h4>Full Name</h4>
+                        <p>Cristiano Ronaldo dos Santos Aveiro</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Nationality</h4>
+                        <p>Portuguese</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Era</h4>
+                        <p>2003–Present</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Notable Achievements</h4>
+                        <p>Five-time Ballon d'Or winner, five-time UEFA Champions League winner</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Famous Clubs</h4>
+                        <p>Manchester United, Real Madrid, Juventus, Al-Nassr</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Legacy</h4>
+                        <p>Known for his professionalism and longevity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="player-card odd">
+        <div class="player-rank">No. 5</div>
+        <div class="player-details">
+            <img src="12/gettyimages-79036592-612x612.jpg" alt="Johan Cruyff">
+            <div class="player-text-content">
+                <h2>Johan Cruyff</h2>
+                <h3>The visionary of "Total Football."</h3>
+                <p class="player-bio">Johan Cruyff was more than a player; he was a visionary who revolutionized soccer. A pioneer of "Total Football," Cruyff’s influence extended beyond his playing career, as he became one of the game’s most innovative managers.</p>
+                <div class="player-info-grid">
+                    <div class="info-item">
+                        <h4>Full Name</h4>
+                        <p>Hendrik Johannes Cruijff</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Nationality</h4>
+                        <p>Dutch</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Era</h4>
+                        <p>1964–1984</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Notable Achievements</h4>
+                        <p>Three-time Ballon d'Or winner, led the Netherlands to the 1974 World Cup final</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Famous Clubs</h4>
+                        <p>Ajax, FC Barcelona</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Legacy</h4>
+                        <p>Creator of the “Cruyff Turn” and proponent of modern soccer tactics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="player-card even">
+        <div class="player-rank">No. 6</div>
+        <div class="player-details">
+            <img src="12/gettyimages-703668669-612x612.jpg" alt="Zinedine Zidane">
+            <div class="player-text-content">
+                <h2>Zinedine Zidane</h2>
+                <h3>Elegance personified on the pitch.</h3>
+                <p class="player-bio">Zinedine Zidane was elegance personified on the pitch. Known for his impeccable control, vision, and ability to perform in clutch moments, Zidane’s career was capped with a stunning volley in the 2002 Champions League final and a World Cup win in 1998.</p>
+                <div class="player-info-grid">
+                    <div class="info-item">
+                        <h4>Full Name</h4>
+                        <p>Zinedine Yazid Zidane</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Nationality</h4>
+                        <p>French</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Era</h4>
+                        <p>1989–2006</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Notable Achievements</h4>
+                        <p>1998 FIFA World Cup champion, UEFA Champions League winner (2002)</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Famous Clubs</h4>
+                        <p>Juventus, Real Madrid</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Legacy</h4>
+                        <p>Transitioned into a successful managerial career</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="player-card odd">
+        <div class="player-rank">No. 7</div>
+        <div class="player-details">
+            <img src="12/gettyimages-542418297-612x612.jpg" alt="Alfredo Di Stéfano">
+            <div class="player-text-content">
+                <h2>Alfredo Di Stéfano</h2>
+                <h3>The heartbeat of Real Madrid's golden era.</h3>
+                <p class="player-bio">Alfredo Di Stéfano was the heartbeat of Real Madrid’s dominance in the 1950s. A complete forward, Di Stéfano could score, create, and dictate the pace of the game, earning him a place among soccer’s all-time greats.</p>
+                <div class="player-info-grid">
+                    <div class="info-item">
+                        <h4>Full Name</h4>
+                        <p>Alfredo Stéfano Di Stéfano Laulhé</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Nationality</h4>
+                        <p>Argentine/Spanish</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Era</h4>
+                        <p>1945–1966</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Notable Achievements</h4>
+                        <p>Five consecutive European Cup titles with Real Madrid</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Famous Clubs</h4>
+                        <p>Real Madrid, River Plate</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Legacy</h4>
+                        <p>One of the most versatile players in history</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="player-card even">
+        <div class="player-rank">No. 8</div>
+        <div class="player-details">
+            <img src="12/gettyimages-79019929-612x612.jpg" alt="George Best">
+            <div class="player-text-content">
+                <h2>George Best</h2>
+                <h3>The first celebrity footballer.</h3>
+                <p class="player-bio">George Best was a dazzling talent with incredible dribbling and goal-scoring abilities. Despite a career marred by off-field struggles, his brilliance on the pitch remains unforgettable.</p>
+                <div class="player-info-grid">
+                    <div class="info-item">
+                        <h4>Full Name</h4>
+                        <p>George Best</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Nationality</h4>
+                        <p>Northern Irish</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Era</h4>
+                        <p>1963–1984</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Notable Achievements</h4>
+                        <p>1968 European Cup winner</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Famous Clubs</h4>
+                        <p>Manchester United</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Legacy</h4>
+                        <p>Often referred to as the first celebrity footballer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="player-card odd">
+        <div class="player-rank">No. 9</div>
+        <div class="player-details">
+            <img src="12/images (6).jpeg" alt="Franz Beckenbauer">
+            <div class="player-text-content">
+                <h2>Franz Beckenbauer</h2>
+                <h3>"The Kaiser," an innovator of defense.</h3>
+                <p class="player-bio">Franz Beckenbauer, known as "The Kaiser," was the architect of modern defensive play. As a sweeper, he brought elegance and control to the backline while leading Germany to World Cup glory.</p>
+                <div class="player-info-grid">
+                    <div class="info-item">
+                        <h4>Full Name</h4>
+                        <p>Franz Anton Beckenbauer</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Nationality</h4>
+                        <p>German</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Era</h4>
+                        <p>1964–1983</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Notable Achievements</h4>
+                        <p>1974 FIFA World Cup champion</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Famous Clubs</h4>
+                        <p>Bayern Munich, New York Cosmos</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Legacy</h4>
+                        <p>Innovated the sweeper position</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="player-card even">
+        <div class="player-rank">No. 10</div>
+        <div class="player-details">
+            <img src="12/GettyImages-1068808518.avif" alt="Gerd Müller">
+            <div class="player-text-content">
+                <h2>Gerd Müller</h2>
+                <h3>"The Bomber," a prolific goal scorer.</h3>
+                <p class="player-bio">Gerd Müller, "The Bomber," was a prolific goal scorer who dominated in front of goal. His uncanny ability to find the net made him one of the most feared forwards of his time.</p>
+                <div class="player-info-grid">
+                    <div class="info-item">
+                        <h4>Full Name</h4>
+                        <p>Gerhard Müller</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Nationality</h4>
+                        <p>German</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Era</h4>
+                        <p>1964–1981</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Notable Achievements</h4>
+                        <p>1974 FIFA World Cup champion, 1972 European Championship winner</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Famous Clubs</h4>
+                        <p>Bayern Munich</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Legacy</h4>
+                        <p>Held the record for most goals in a calendar year until surpassed by Lionel Messi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<button id="feedbackBtn" formsappId="68ac53ecbd643900020270b0">💬 Feedback</button>
+
+<!-- Forms.app Embed Script -->
+<script src="https://forms.app/cdn/embed.js" type="text/javascript" async defer 
+  onload="new formsapp('68ac53ecbd643900020270b0', 'popup', {
+    'overlay':'rgba(45,45,45,0.5)',
+    'button':{
+      'color':'#ff9e24',
+      'text':'💬 Feedback'
+    },
+    'width':'800px',
+    'height':'600px',
+    'openingAnimation':{
+      'entrance':'animate__fadeIn',
+      'exit':'animate__fadeOut'
+    }
+  }, 'https://lf6c8t67.forms.app');">
+</script>
+
+</body>
+</html>
