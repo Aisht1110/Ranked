@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranked! The Best Strikers in the World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #f87171, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-container {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .card-container:hover {
+            box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.2), 0 8px 10px -6px rgba(239, 68, 68, 0.1);
+        }
+        .card-container:hover .player-image {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+        .rank-badge {
+            background: rgba(239, 68, 68, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        /* Custom hover effect for honourable mentions */
+        .mention-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px -5px rgba(239, 68, 68, 0.2), 0 6px 10px -6px rgba(239, 68, 68, 0.1);
+        }
+        .mention-card .mention-image {
+            transition: transform 0.3s ease-in-out;
+        }
+        .mention-card:hover .mention-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-zinc-900 text-neutral-100 min-h-screen p-4 sm:p-8">
+    <header class="container mx-auto py-8 text-center sm:text-left">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+            <span class="text-white">The 10 Best Strikers in the World Right Now </span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto sm:mx-0">
+            The best strikers, from the prolific to the all-rounded, and everything in between. This list was compiled by a panel of football experts.
+        </p>
+    </header>
+
+    <main class="container mx-auto my-8">
+        <!-- Main Content Section -->
+        <section id="full-list" class="space-y-12">
+            <!-- Player List -->
+            <div class="space-y-16">
+                <!-- Player 10 -->
+                <div class="card-container bg-zinc-800 rounded-lg overflow-hidden relative transform transition duration-300">
+                    <div class="absolute top-0 left-0 rank-badge text-white font-extrabold text-4xl p-4 rounded-br-lg z-10">
+                        #10
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/3 overflow-hidden">
+                            <img src="https://cdn.mos.cms.futurecdn.net/bk4fbdNHjSsS7M7t8zLBFT.jpg" alt="Julian Alvarez" class="player-image w-full h-full object-cover transition-transform duration-300 filter grayscale-[50%]">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-2 text-gradient">Julian Alvarez</h2>
+                            <p class="text-gray-400 mb-4">
+                                Julian Alvarez made his name as Erling Haaland’s sidekick, but he was always destined for greater things. He registered immense output for Manchester City in his final season, but onlookers were left agog at the Argentinian’s £82 million purchase by Atletico Madrid.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-4 mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Club</p>
+                                        <p class="text-white">Atlético Madrid</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Country</p>
+                                        <p class="text-white">Argentina</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Age</p>
+                                        <p class="text-white">25</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Value</p>
+                                        <p class="text-white">€100.00m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 9 -->
+                <div class="card-container bg-zinc-800 rounded-lg overflow-hidden relative transform transition duration-300">
+                    <div class="absolute top-0 left-0 rank-badge text-white font-extrabold text-4xl p-4 rounded-br-lg z-10">
+                        #9
+                    </div>
+                    <div class="flex flex-col md:flex-row-reverse">
+                        <div class="md:w-1/3 overflow-hidden">
+                            <img src="https://cdn.mos.cms.futurecdn.net/CN2VMfifz49UTD9nKeWvqQ.jpg" alt="Omar Marmoush" class="player-image w-full h-full object-cover transition-transform duration-300 filter grayscale-[50%]">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-2 text-gradient">Omar Marmoush</h2>
+                            <p class="text-gray-400 mb-4">
+                                The second-in-command role behind Erling Haaland at Manchester City demands a difficult profile. Marmoush has taken to the role seamlessly, scoring crucial goals and providing a different spark to the team.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-4 mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Club</p>
+                                        <p class="text-white">Manchester City</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Country</p>
+                                        <p class="text-white">Egypt</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Age</p>
+                                        <p class="text-white">26</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Value</p>
+                                        <p class="text-white">€75.00m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 8 -->
+                <div class="card-container bg-zinc-800 rounded-lg overflow-hidden relative transform transition duration-300">
+                    <div class="absolute top-0 left-0 rank-badge text-white font-extrabold text-4xl p-4 rounded-br-lg z-10">
+                        #8
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/3 overflow-hidden">
+                            <img src="https://cdn.mos.cms.futurecdn.net/cV8UZBqUyNFUBr5N4jHGwS.jpg" alt="Viktor Gyokeres" class="player-image w-full h-full object-cover transition-transform duration-300 filter grayscale-[50%]">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-2 text-gradient">Viktor Gyökeres</h2>
+                            <p class="text-gray-400 mb-4">
+                                Viktor Gyökeres has been putting up incredible numbers in Portugal. While some critics question the league's strength, his performances against top-tier opponents prove he's one of the best finishers in the world.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-4 mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Club</p>
+                                        <p class="text-white">Sporting</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Country</p>
+                                        <p class="text-white">Sweden</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Age</p>
+                                        <p class="text-white">27</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Value</p>
+                                        <p class="text-white">€75.00m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 7 -->
+                <div class="card-container bg-zinc-800 rounded-lg overflow-hidden relative transform transition duration-300">
+                    <div class="absolute top-0 left-0 rank-badge text-white font-extrabold text-4xl p-4 rounded-br-lg z-10">
+                        #7
+                    </div>
+                    <div class="flex flex-col md:flex-row-reverse">
+                        <div class="md:w-1/3 overflow-hidden">
+                            <img src="https://cdn.mos.cms.futurecdn.net/TJRUsgESSc3C728WNSakNB.jpg" alt="Lautaro Martinez" class="player-image w-full h-full object-cover transition-transform duration-300 filter grayscale-[50%]">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-2 text-gradient">Lautaro Martínez</h2>
+                            <p class="text-gray-400 mb-4">
+                                Lautaro Martinez is probably the best striker in the world to have never quite been considered the best striker in the world. His relentless consistency and ability to deliver in big moments for Inter Milan and Argentina make him a truly elite forward.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-4 mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Club</p>
+                                        <p class="text-white">Inter Milan</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Country</p>
+                                        <p class="text-white">Argentina</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Age</p>
+                                        <p class="text-white">27</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Value</p>
+                                        <p class="text-white">€95.00m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 6 -->
+                <div class="card-container bg-zinc-800 rounded-lg overflow-hidden relative transform transition duration-300">
+                    <div class="absolute top-0 left-0 rank-badge text-white font-extrabold text-4xl p-4 rounded-br-lg z-10">
+                        #6
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/3 overflow-hidden">
+                            <img src="https://cdn.mos.cms.futurecdn.net/N8VM8XhxK58Ua9MhvErm8E.jpg" alt="Robert Lewandowski" class="player-image w-full h-full object-cover transition-transform duration-300 filter grayscale-[50%]">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-2 text-gradient">Robert Lewandowski</h2>
+                            <p class="text-gray-400 mb-4">
+                                A prime example of forward excellence, Robert Lewandowski epitomises what it means to be a top-level striker in every aspect of the word. He continues to prove his world-class ability even at 36.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-4 mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Club</p>
+                                        <p class="text-white">Barcelona</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Country</p>
+                                        <p class="text-white">Poland</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Age</p>
+                                        <p class="text-white">36</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Value</p>
+                                        <p class="text-white">€12.00m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 5 -->
+                <div class="card-container bg-zinc-800 rounded-lg overflow-hidden relative transform transition duration-300">
+                    <div class="absolute top-0 left-0 rank-badge text-white font-extrabold text-4xl p-4 rounded-br-lg z-10">
+                        #5
+                    </div>
+                    <div class="flex flex-col md:flex-row-reverse">
+                        <div class="md:w-1/3 overflow-hidden">
+                            <img src="https://cdn.mos.cms.futurecdn.net/D7XTdg2htnd5NHifNMnhRD.jpg" alt="Alexander Isak" class="player-image w-full h-full object-cover transition-transform duration-300 filter grayscale-[50%]">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-2 text-gradient">Alexander Isak</h2>
+                            <p class="text-gray-400 mb-4">
+                                Isak is a really underappreciated passer, who’s delivered balls this season with a deftness that a man of such power simply shouldn’t possess. He has a swagger to his game, an arrogance that has made him inevitable in the past 18 months: he’s stronger than his lanky frame suggests, too.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-4 mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Club</p>
+                                        <p class="text-white">Newcastle United</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Country</p>
+                                        <p class="text-white">Sweden</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Age</p>
+                                        <p class="text-white">24</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Value</p>
+                                        <p class="text-white">€120.00m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="card-container bg-zinc-800 rounded-lg overflow-hidden relative transform transition duration-300">
+                    <div class="absolute top-0 left-0 rank-badge text-white font-extrabold text-4xl p-4 rounded-br-lg z-10">
+                        #4
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/3 overflow-hidden">
+                            <img src="https://cdn.mos.cms.futurecdn.net/CUzcMWpG2uYBzpKhMhKTve.jpg" alt="Erling Haaland" class="player-image w-full h-full object-cover transition-transform duration-300 filter grayscale-[50%]">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-2 text-gradient">Erling Haaland</h2>
+                            <p class="text-gray-400 mb-4">
+                                A Scandinavian goal machine who simply had to be lab-created, Erling Haaland is already a generational talent. His numbers are otherworldly, and he remains one of the most devastating finishers on the planet.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-4 mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Club</p>
+                                        <p class="text-white">Manchester City</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Country</p>
+                                        <p class="text-white">Norway</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Age</p>
+                                        <p class="text-white">24</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Value</p>
+                                        <p class="text-white">€180.00m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 3 -->
+                <div class="card-container bg-zinc-800 rounded-lg overflow-hidden relative transform transition duration-300">
+                    <div class="absolute top-0 left-0 rank-badge text-white font-extrabold text-4xl p-4 rounded-br-lg z-10">
+                        #3
+                    </div>
+                    <div class="flex flex-col md:flex-row-reverse">
+                        <div class="md:w-1/3 overflow-hidden">
+                            <img src="https://cdn.mos.cms.futurecdn.net/kDsAiBD5d377PET7Lxu5Sm.png" alt="Ousmane Dembele" class="player-image w-full h-full object-cover transition-transform duration-300 filter grayscale-[50%]">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-2 text-gradient">Ousmane Dembélé</h2>
+                            <p class="text-gray-400 mb-4">
+                                Technically speaking, the Frenchman may well be the most unique footballer in the world. As a complete forward capable of starting up front, he has proven to be an uncontainable force for Paris Saint-Germain.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-4 mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Club</p>
+                                        <p class="text-white">Paris Saint-Germain</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Country</p>
+                                        <p class="text-white">France</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Age</p>
+                                        <p class="text-white">28</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Value</p>
+                                        <p class="text-white">€90.00m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="card-container bg-zinc-800 rounded-lg overflow-hidden relative transform transition duration-300">
+                    <div class="absolute top-0 left-0 rank-badge text-white font-extrabold text-4xl p-4 rounded-br-lg z-10">
+                        #2
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/3 overflow-hidden">
+                            <img src="https://cdn.mos.cms.futurecdn.net/kVNPu97t7cyLbsxSt4cs3Q.jpg" alt="Harry Kane" class="player-image w-full h-full object-cover transition-transform duration-300 filter grayscale-[50%]">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-2 text-gradient">Harry Kane</h2>
+                            <p class="text-gray-400 mb-4">
+                                Arguably England’s best-ever centre forward, Harry Kane sums up everything you need from a world-class striker. He has evolved into a complete all-around forward, blending his goalscoring prowess with excellent playmaking ability.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-4 mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Club</p>
+                                        <p class="text-white">Bayern Munich</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Country</p>
+                                        <p class="text-white">England</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Age</p>
+                                        <p class="text-white">31</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Value</p>
+                                        <p class="text-white">€75.00m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 1 -->
+                <div class="card-container bg-zinc-800 rounded-lg overflow-hidden relative transform transition duration-300">
+                    <div class="absolute top-0 left-0 rank-badge text-white font-extrabold text-4xl p-4 rounded-br-lg z-10">
+                        #1
+                    </div>
+                    <div class="flex flex-col md:flex-row-reverse">
+                        <div class="md:w-1/3 overflow-hidden">
+                            <img src="https://cdn.mos.cms.futurecdn.net/zPCXtcieUKqJdBGATZk9Um.png" alt="Kylian Mbappe" class="player-image w-full h-full object-cover transition-transform duration-300 filter grayscale-[50%]">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-2 text-gradient">Kylian Mbappé</h2>
+                            <p class="text-gray-400 mb-4">
+                                Kylian Mbappé is a devastating talent. He is a generational talent, and his performances for Real Madrid have shown that he can deliver on the biggest stages. With a World Cup, Champions League and a host of individual awards, he is the best striker in the world right now.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-4 mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Club</p>
+                                        <p class="text-white">Real Madrid</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Country</p>
+                                        <p class="text-white">France</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Age</p>
+                                        <p class="text-white">26</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="flex-shrink-0"><svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zM9 9h2v4H9V9zm0-3h2v2H9V6z"></path></svg></span>
+                                    <div>
+                                        <p class="font-semibold text-gray-300">Value</p>
+                                        <p class="text-white">€180.00m</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Honourable Mentions -->
+        <section class="mt-16">
+            <h2 class="text-3xl font-bold text-gray-100 mb-8">Honourable Mentions</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Mention 1: Mateo Retegui -->
+                <div class="mention-card group bg-zinc-800 rounded-lg overflow-hidden relative shadow-xl transform transition duration-300">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="https://cdn.mos.cms.futurecdn.net/qrRXKiearzof38XhhXy7XE.jpg" alt="Mateo Retegui" class="mention-image w-full h-full object-cover transition-transform duration-300">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 text-white">Mateo Retegui</h3>
+                        <p class="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">25 goals in his first season at Atalanta is a strong return.</p>
+                    </div>
+                </div>
+                <!-- Mention 2: Serhou Guirassy -->
+                <div class="mention-card group bg-zinc-800 rounded-lg overflow-hidden relative shadow-xl transform transition duration-300">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="https://cdn.mos.cms.futurecdn.net/LR3VkvaGNWDAFqbGZTezWL.jpg" alt="Serhou Guirassy" class="mention-image w-full h-full object-cover transition-transform duration-300">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 text-white">Serhou Guirassy</h3>
+                        <p class="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">A bright spark for Borussia Dortmund with his free-scoring exploits.</p>
+                    </div>
+                </div>
+                <!-- Mention 3: Victor Osimhen -->
+                <div class="mention-card group bg-zinc-800 rounded-lg overflow-hidden relative shadow-xl transform transition duration-300">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="https://cdn.mos.cms.futurecdn.net/ukjvwhMbYzGVGByEdEKeYC.jpg" alt="Victor Osimhen" class="mention-image w-full h-full object-cover transition-transform duration-300">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 text-white">Victor Osimhen</h3>
+                        <p class="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">Risen to the challenge with 26 goals in 30 appearances for Galatasaray.</p>
+                    </div>
+                </div>
+                <!-- Mention 4: Alexander Sorloth -->
+                <div class="mention-card group bg-zinc-800 rounded-lg overflow-hidden relative shadow-xl transform transition duration-300">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="https://cdn.mos.cms.futurecdn.net/hBRHkRF7HqZ9P5nGXrsFDU.jpg" alt="Alexander Sorloth" class="mention-image w-full h-full object-cover transition-transform duration-300">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 text-white">Alexander Sörloth</h3>
+                        <p class="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">Showed brilliant form hitting double-figures in La Liga this season.</p>
+                    </div>
+                </div>
+                <!-- Mention 5: Chris Wood -->
+                <div class="mention-card group bg-zinc-800 rounded-lg overflow-hidden relative shadow-xl transform transition duration-300">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="https://cdn.mos.cms.futurecdn.net/skkKyDAyLsBJNGcaoFqcDa.jpg" alt="Chris Wood" class="mention-image w-full h-full object-cover transition-transform duration-300">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 text-white">Chris Wood</h3>
+                        <p class="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">Nottingham Forest's key player, bringing a throwback style of No. 9 to Europe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container mx-auto mt-16 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Football Rankings. All rights reserved.</p>
+    </footer>
+</body>
+</html>
