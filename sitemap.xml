@@ -1,54 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  This is the sitemap.xml file for your website. It lists all the pages
-  on your site that you want search engines to crawl and index.
-
-  The <loc> tag specifies the URL of the page.
-  The <lastmod> tag indicates the last modification date.
-  The <changefreq> tag suggests how often the page is likely to change.
-  The <priority> tag specifies the importance of the URL relative to other
-  URLs on the site (from 0.0 to 1.0).
--->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <!-- The main homepage, with the highest priority -->
-    <url>
-        <loc>https://rankmeter.netlify.app/</loc>
-        <lastmod>2024-05-20</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <!-- Page for the top football players list -->
-    <url>
-        <loc>https://rankmeter.netlify.app/football-players</loc>
-        <lastmod>2024-05-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Page for the best anime list -->
-    <url>
-        <loc>https://rankmeter.netlify.app/best-anime</loc>
-        <lastmod>2024-05-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Page for the most expensive cars list -->
-    <url>
-        <loc>https://rankmeter.netlify.app/most-expensive-cars</loc>
-        <lastmod>2024-05-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Page for the product review (Noise-Cancelling Earbuds) -->
-    <url>
-        <loc>https://rankmeter.netlify.app/earbuds-pro-2</loc>
-        <lastmod>2024-05-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<url>
+<loc>https://rankmeter.netlify.app/</loc>
+<lastmod>2025-08-30T09:33:19+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://rankmeter.netlify.app/football_ranked</loc>
+<lastmod>2025-08-30T09:33:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rankmeter.netlify.app/anime_ranked</loc>
+<lastmod>2025-08-30T09:33:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rankmeter.netlify.app/expensive-cars</loc>
+<lastmod>2025-08-30T09:33:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rankmeter.netlify.app/50k_laptop</loc>
+<lastmod>2025-08-30T09:33:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rankmeter.netlify.app/striker</loc>
+<lastmod>2025-08-30T09:33:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rankmeter.netlify.app/finance_book</loc>
+<lastmod>2025-08-30T09:33:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rankmeter.netlify.app/places</loc>
+<lastmod>2025-08-30T09:33:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
 </urlset>
