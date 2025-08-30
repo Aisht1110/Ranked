@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Travel Destinations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        .rank-number {
+            font-size: 8rem;
+            font-weight: 700;
+            color: #d1d5db;
+            line-height: 1;
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            z-index: 0;
+            transition: color 0.3s ease;
+        }
+        .card:hover .rank-number {
+            color: #e5e7eb;
+        }
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+        .card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .great-things-to-do-container .tag {
+            background-color: #f1f5f9;
+            color: #1d4ed8;
+            font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+        .great-things-to-do-container .tag:hover {
+            background-color: #e2e8f0;
+        }
+        @media (min-width: 768px) {
+            .card {
+                flex-direction: row;
+            }
+            .card-image-container {
+                width: 50%;
+            }
+            .card-text-container {
+                width: 50%;
+                padding: 2.5rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .card-container {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .card img {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body class="p-8 md:p-12">
+
+<header class="text-center mb-16">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 mb-4">Best of the Best Travel Destinations</h1>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        These destinations are our top spots for good reason—they’ve got everything travellers are looking for and more.
+    </p>
+</header>
+
+<div class="card-container">
+    <div class="card relative">
+        <span class="rank-number">01</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/9a/9b/big-ben.jpg?w=1200&amp;h=500&amp;s=1" alt="London">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">London</h2>
+            <p class="text-gray-500 mb-4">United Kingdom</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="From Shoreditch’s swaggering style to Camden’s punky vibe and chic Portobello Road, London is many worlds in one. The city’s energy means that no two days are the same. Explore royal or historic sites..." data-full-text="From Shoreditch’s swaggering style to Camden’s punky vibe and chic Portobello Road, London is many worlds in one. The city’s energy means that no two days are the same. Explore royal or historic sites, tick off landmarks from your bucket list, eat and drink in exclusive Michelin-starred restaurants, enjoy a pint in a traditional pub, or get lost down winding cobbled streets and see what you stumble across – when it comes to London, the possibilities are endless.">
+                    From Shoreditch’s swaggering style to Camden’s punky vibe and chic Portobello Road, London is many worlds in one. The city’s energy means that no two days are the same. Explore royal or historic sites...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Day Trips</span>
+                    <span class="tag">Walking Tours</span>
+                    <span class="tag">Flea & Street Markets</span>
+                    <span class="tag">Museum Tickets & Passes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card relative">
+        <span class="rank-number">02</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/c7/90/94/caption.jpg?w=1200&h=500&s=1" alt="Bali">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Bali</h2>
+            <p class="text-gray-500 mb-4">Indonesia</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Bali is a living postcard, an Indonesian paradise that feels like a fantasy. Soak up the sun on a stretch of fine white sand, or commune with the tropical creatures as you dive along coral ridges..." data-full-text="Bali is a living postcard, an Indonesian paradise that feels like a fantasy. Soak up the sun on a stretch of fine white sand, or commune with the tropical creatures as you dive along coral ridges or the colorful wreck of a WWII war ship. On shore, the lush jungle shelters stone temples and mischievous monkeys.  The “artistic capital” of Ubud is the perfect place to see a cultural dance performance, take a batik or silver-smithing workshop, or invigorate your mind and body in a yoga class.">
+                    Bali is a living postcard, an Indonesian paradise that feels like a fantasy. Soak up the sun on a stretch of fine white sand, or commune with the tropical creatures as you dive along coral ridges...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Private Sightseeing Tours</span>
+                    <span class="tag">Snorkeling</span>
+                    <span class="tag">Beaches</span>
+                    <span class="tag">Nature and Wildlife Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card relative">
+        <span class="rank-number">03</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/78/84/94/dubai-aquarium-underwater.jpg?w=1200&amp;h=500&amp;s=1" alt="Dubai">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Dubai</h2>
+            <p class="text-gray-500 mb-4">United Arab Emirates</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Dubai is a destination that mixes modern culture with history, adventure with world-class shopping and entertainment. Catch a show at the Dubai Opera, see downtown from atop the Burj Khalifa..." data-full-text="Dubai is a destination that mixes modern culture with history, adventure with world-class shopping and entertainment. Catch a show at the Dubai Opera, see downtown from atop the Burj Khalifa and spend an afternoon along Dubai Creek exploring the gold, textile and spice souks. If you’re looking for thrills, you can float above the desert dunes in a hot air balloon, climb aboard a high-speed ride at IMG Worlds of Adventure or skydive over the Palm Jumeirah.">
+                    Dubai is a destination that mixes modern culture with history, adventure with world-class shopping and entertainment. Catch a show at the Dubai Opera, see downtown from atop the Burj Khalifa...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Safaris</span>
+                    <span class="tag">Nature and Wildlife Tours</span>
+                    <span class="tag">Theme Parks</span>
+                    <span class="tag">Night Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">04</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/f9/07/sicily.jpg?w=1200&h=500&s=1" alt="Sicily">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Sicily</h2>
+            <p class="text-gray-500 mb-4">Italy</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="The Mediterranean's biggest island is separated from the mainland by the Strait of Messina. A mountainous spot, Sicily's coast and its small islands sit at the foot of volcanoes, including Etna, Stromboli and Vulcano. The Greeks, Romans, Normans and Catalans all left their mark on the island..." data-full-text="The Mediterranean 's biggest island is separated from the mainland by the Strait of Messina. A mountainous spot, Sicily 's coast and its small islands sit at the foot of volcanoes, including Etna, Stromboli and Vulcano. The Greeks, Romans, Normans and Catalans all left their mark on the island in the form of Byzantine palaces, Gothic castles and Baroque flourishes in capital Palermo. Most larger towns offer interesting museums, but Etna and the Hellenic temples in Agrigento offer particularly unique sights.">
+                    The Mediterranean 's biggest island is separated from the mainland by the Strait of Messina. A mountainous spot, Sicily 's coast and its small islands sit at the foot of volcanoes, including Etna, Stromboli and Vulcano. The Greeks, Romans, Normans and Catalans all left their mark on the island...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Hiking Tours</span>
+                    <span class="tag">Wine Tastings</span>
+                    <span class="tag">Beaches</span>
+                    <span class="tag">Half-day Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">05</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/15/6d/d6/paris.jpg?w=1200&h=500&s=1" alt="Paris">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Paris</h2>
+            <p class="text-gray-500 mb-4">France</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Everyone who visits Paris for the first time probably has the same punchlist of major attractions to hit: The Louvre, Notre Dame, The Eiffel Tower, etc. Just make sure you leave some time to wander the city’s grand boulevards and eat in as many cafes, bistros and brasseries as possible..." data-full-text="Everyone who visits Paris for the first time probably has the same punchlist of major attractions to hit: The Louvre, Notre Dame, The Eiffel Tower, etc. Just make sure you leave some time to wander the city’s grand boulevards and eat in as many cafes, bistros and brasseries as possible. And don’t forget the shopping—whether your tastes run to Louis Vuitton or Les Puces (the flea market), you can find it here.">
+                    Everyone who visits Paris for the first time probably has the same punchlist of major attractions to hit: The Louvre, Notre Dame, The Eiffel Tower, etc. Just make sure you leave some time to wander the city’s grand boulevards and eat in as many cafes, bistros and brasseries as possible...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Walking Tours</span>
+                    <span class="tag">Day Trips</span>
+                    <span class="tag">Flea & Street Markets</span>
+                    <span class="tag">Culinary Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">06</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/3e/f4/f0/photo2jpg.jpg?w=1200&h=500&s=1" alt="Rome">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Rome</h2>
+            <p class="text-gray-500 mb-4">Italy</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="It’s nicknamed the Eternal City for a reason. In Rome, you can drink from a street fountain fed by an ancient aqueduct. Or see the same profile on a statue in the Capitoline Museum and the guy making your cappuccino." data-full-text="It’s nicknamed the Eternal City for a reason. In Rome, you can drink from a street fountain fed by an ancient aqueduct. Or see the same profile on a statue in the Capitoline Museum and the guy making your cappuccino. (Which, of course, you know never to order after 11 am.) Rome is also a city of contrasts—what other place on earth could be home to both the Vatican and La Dolce Vita?">
+                    It’s nicknamed the Eternal City for a reason. In Rome, you can drink from a street fountain fed by an ancient aqueduct. Or see the same profile on a statue in the Capitoline Museum and the guy making your cappuccino.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Skip the line Tickets</span>
+                    <span class="tag">Day Trips</span>
+                    <span class="tag">Historic Sites</span>
+                    <span class="tag">Dining Experiences</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">07</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/33/f7/12/caption.jpg?w=1200&h=500&s=1" alt="Hanoi">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Hanoi</h2>
+            <p class="text-gray-500 mb-4">Vietnam</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="The charming Vietnamese capital has aged well, preserving the Old Quarter, monuments and colonial architecture, while making room for modern developments alongside. Hanoi may have shrugged off several former names, including Thang Long, or 'ascending dragon ', but it hasn't forgotten its past..." data-full-text="The charming Vietnamese capital has aged well, preserving the Old Quarter, monuments and colonial architecture, while making room for modern developments alongside. Hanoi may have shrugged off several former names, including Thang Long, or 'ascending dragon ', but it hasn 't forgotten its past, as sites such as Ho Chi Minh 's Mausoleum and Hoa Lo Prison attest. Lakes, parks, shady boulevards and more than 600 temples and pagodas add to the appeal of this city, which is easily explored by taxi.">
+                    The charming Vietnamese capital has aged well, preserving the Old Quarter, monuments and colonial architecture, while making room for modern developments alongside. Hanoi may have shrugged off several former names, including Thang Long, or "ascending dragon ", but it hasn 't forgotten its past...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Day Trips</span>
+                    <span class="tag">Multi-day Tours</span>
+                    <span class="tag">Flea & Street Markets</span>
+                    <span class="tag">Street Food Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">08</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/33/dd/8f/caption.jpg?w=1200&h=500&s=1" alt="Marrakech">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Marrakech</h2>
+            <p class="text-gray-500 mb-4">Morocco</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="The “Red City” of Marrakesh is a magical place, brimming with markets, gardens, palaces, and mosques. Exploring the intimate courtyards and snaking alleyways of the historic Medina can easily eat up a day..." data-full-text="The “Red City” of Marrakesh is a  magical place, brimming with markets, gardens, palaces, and mosques. Exploring the intimate courtyards and snaking alleyways of the historic Medina can easily eat up a day. Find inner peace at the serene Jardin Majorelle or take in the beauty of one of the city’s historic mosques (taking note that, unless you are Muslim, you are not allowed to enter).">
+                    The “Red City” of Marrakesh is a magical place, brimming with markets, gardens, palaces, and mosques. Exploring the intimate courtyards and snaking alleyways of the historic Medina can easily eat up a day...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Multi-day Tours</span>
+                    <span class="tag">Half-day Tours</span>
+                    <span class="tag">Historic Sites</span>
+                    <span class="tag">Hot Air Balloon Rides</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">09</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/9d/52/cf/heraklion-son-port-et.jpg?w=1200&h=500&s=1" alt="Crete">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Crete</h2>
+            <p class="text-gray-500 mb-4">Greece</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Crete is the largest of the Greek islands and is a paradise for tourists seeking sunshine, beaches, and culture. Chania lies on the northern coast of Crete. It’s the second largest city on the island and is served by an airport. Upon arrival, hire a car and drive the 30 kilometres up to the White Mountains." data-full-text="<p>Crete is the largest of the Greek islands and is a paradise for tourists seeking sunshine, beaches, and culture. Chania lies on the northern coast of Crete. It’s the second largest city on the island and is served by an airport. Upon arrival, hire a car and drive the 30 kilometres up to the White Mountains. This beautiful setting is perfect for relaxing or doing a spot of walking and is also a good base to explore the region’s attractions. </p><p>Chania is an old harbour town with a medieval heart and is worth checking out. The seafront quarter includes a little mosque which is a remnant from the 17th century when the Turks controlled the area. These days the mosque’s been converted into a very nice art gallery. Make sure you also check out the Archeological Museum which is full of Minoan artifacts, including a glass display packed with pottery bulls. These were found in a grave site and it’s believed the pottery bulls were included in the graves where sacrificing a live bull would have been too expensive! </p><p>Elafonisi features a beach that stretches for miles. The water is very shallow with white sand that gives it its wonderful green/turquoise colour; making it look like a Caribbean lagoon! There’s even an island that you can safely wade out to. Elafonisi is also very popular with the locals and can get very busy at weekends, so it’s best to go during weekdays if possible. </p><p>Crete has changed hands several times over the centuries and the Romans occupied it from the 1st century BC to 4 AD. As well as the ruins of the Roman buildings, there is an abandoned monastery which dates back centuries but was only abandoned in 1964. </p><p>Driving up the mountain road above Maheri, you’ll see signs for the ancient church called Agios Nikolaos. Along the way the chances are that you will encounter herds of goats, some with bells around their necks. They will determinedly clank their way past you and add a real wild charm to the holiday experience! Agios Nikolaos is nestled in a valley with huge trees in front of it and it is an enchanting place. The church is Byzantine and is famous for having very old frescoes, as well as a graveyard surrounded by rows of orange trees.</p>">
+                    Crete is the largest of the Greek islands and is a paradise for tourists seeking sunshine, beaches, and culture. Chania lies on the northern coast of Crete. It’s the second largest city on the island and is served by an airport. Upon arrival, hire a car and drive the 30 kilometres up to the White Mountains.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Day Trips</span>
+                    <span class="tag">Ports of Call Tours</span>
+                    <span class="tag">Beaches</span>
+                    <span class="tag">Snorkeling</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">10</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/78/15/caption.jpg?w=1200&h=500&s=1" alt="Bangkok">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Bangkok</h2>
+            <p class="text-gray-500 mb-4">Thailand</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Bangkok is full of exquisitely decorated Buddhist temples—as you go from one to the next you’ll be continually blown away by the craftsmanship and elabourate details. But if you’d rather seek enlightenment in a gourmet meal, or dance the night away, you’ll also enjoy Bangkok." data-full-text="Bangkok is full of exquisitely decorated Buddhist temples—as you go from one to the next you’ll be continually blown away by the craftsmanship and elabourate details. But if you’d rather seek enlightenment in a gourmet meal, or dance the night away, you’ll also enjoy Bangkok—the restaurant and nightclub scenes here are among the best in the world.">
+                    Bangkok is full of exquisitely decorated Buddhist temples—as you go from one to the next you’ll be continually blown away by the craftsmanship and elabourate details. But if you’d rather seek enlightenment in a gourmet meal, or dance the night away, you’ll also enjoy Bangkok.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Day Trips</span>
+                    <span class="tag">Half-day Tours</span>
+                    <span class="tag">Flea & Street Markets</span>
+                    <span class="tag">Culinary Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">11</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/b4/95/1e/20161110-163943-largejpg.jpg?w=1200&h=500&s=1" alt="Hoi An">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Hoi An</h2>
+            <p class="text-gray-500 mb-4">Vietnam</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="This city on the central Vietnamese coast is a well-preserved example of the important Southeast Asian trading port it was from the 15th-19th centuries. Already a common stop for backpackers, it is becoming better known to tourists. On the 14th day of each lunar month, the town trades its electric lights for traditional coloured lanterns. Sights include the Japanese Covered Bridge..." data-full-text="This city on the central Vietnamese coast is a well-preserved example of the important Southeast Asian trading port it was from the 15th-19th centuries. Already a common stop for backpackers, it is becoming better known to tourists. On the 14th day of each lunar month, the town trades its electric lights for traditional coloured lanterns. Sights include the Japanese Covered Bridge and the Quan Cong Temple. Let the town’s expert tailors make you some bespoke clothing.">
+                    This city on the central Vietnamese coast is a well-preserved example of the important Southeast Asian trading port it was from the 15th-19th centuries. Already a common stop for backpackers, it is becoming better known to tourists. On the 14th day of each lunar month, the town trades its electric lights for traditional coloured lanterns. Sights include the Japanese Covered Bridge...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Half-day Tours</span>
+                    <span class="tag">Cooking Classes</span>
+                    <span class="tag">Points of Interest & Landmarks</span>
+                    <span class="tag">Nature and Wildlife Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">12</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/24/20/3a/barcelona.jpg?w=1200&h=500&s=1" alt="Barcelona">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Barcelona</h2>
+            <p class="text-gray-500 mb-4">Spain</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Stroll Las Ramblas and enjoy Barcelona 's unique blend of Catalan culture, distinctive architecture, lively nightlife and trendy, stylish hotels. You 'll find Europe 's best-preserved Gothic Quarter here, as well as amazing architectural works by Gaudi." data-full-text="Stroll Las Ramblas and enjoy Barcelona 's unique blend of Catalan culture, distinctive architecture, lively nightlife and trendy, stylish hotels. You 'll find Europe 's best-preserved Gothic Quarter here, as well as amazing architectural works by Gaudi. La Sagrada Familia, considered Gaudi 's masterpiece, is still under construction (your entrance fee helps to fund the project). Feel like a picnic? Look no further than the rambunctious La Boqueria market, where you can stock up on local delicacies.">
+                    Stroll Las Ramblas and enjoy Barcelona 's unique blend of Catalan culture, distinctive architecture, lively nightlife and trendy, stylish hotels. You 'll find Europe 's best-preserved Gothic Quarter here, as well as amazing architectural works by Gaudi.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Day Trips</span>
+                    <span class="tag">City Tours</span>
+                    <span class="tag">Points of Interest & Landmarks</span>
+                    <span class="tag">Walking Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">13</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fc/ba/cusco.jpg?w=1200&h=500&s=1" alt="Cusco">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Cusco</h2>
+            <p class="text-gray-500 mb-4">Peru</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Incan majesty and Andean baroque exist side-by-side in Cusco 's stone streets, epitomized by the Qoriacancha palace and the church of Santo Domingo flanking the Plaza de Armas. In this high-altitude melting pot of Amerindian and mestizo culture, you 'll find extraordinary textiles, lively summer festivals and archaeological wonders." data-full-text="Incan majesty and Andean baroque exist side-by-side in Cusco 's stone streets, epitomized by the Qoriacancha palace and the church of Santo Domingo flanking the Plaza de Armas. In this high-altitude melting pot of Amerindian and mestizo culture, you 'll find extraordinary textiles, lively summer festivals and archaeological wonders.">
+                    Incan majesty and Andean baroque exist side-by-side in Cusco 's stone streets, epitomized by the Qoriacancha palace and the church of Santo Domingo flanking the Plaza de Armas. In this high-altitude melting pot of Amerindian and mestizo culture, you 'll find extraordinary textiles, lively summer festivals and archaeological wonders.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Multi-day Tours</span>
+                    <span class="tag">Half-day Tours</span>
+                    <span class="tag">Ancient Ruins</span>
+                    <span class="tag">Hiking Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">14</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/27/28/be/img20170120083759-largejpg.jpg?w=1200&h=500&s=1" alt="Siem Reap">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Siem Reap</h2>
+            <p class="text-gray-500 mb-4">Cambodia</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="When the morning light washes over the overgrown temples and ruins of Angkor Wat, a simple Siem Reap sunrise becomes a profound event. The ancient structures are contained within one of the largest religious complexes in the world." data-full-text="When the morning light washes over the overgrown temples and ruins of Angkor Wat, a simple Siem Reap sunrise becomes a profound event. The ancient structures are contained within one of the largest religious complexes in the world. The complex and the 12th century Angkor Thom royal city are considered the main reasons to visit Siem Reap. Get a lesson in national history at the Cambodian Cultural Village, and a lesson in bargaining at the Angkor Night Market, a bonanza of  shopping stalls, food vendors, and bars.">
+                    When the morning light washes over the overgrown temples and ruins of Angkor Wat, a simple Siem Reap sunrise becomes a profound event. The ancient structures are contained within one of the largest religious complexes in the world.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Full-day Tours</span>
+                    <span class="tag">Private Sightseeing Tours</span>
+                    <span class="tag">Ancient Ruins</span>
+                    <span class="tag">Half-day Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">15</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/f9/46/lisbon.jpg?w=1200&h=500&s=1" alt="Lisbon">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Lisbon</h2>
+            <p class="text-gray-500 mb-4">Portugal</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Lisbon, the capital city of Portugal, has become an increasingly popular place to visit in recent years, with a warm Mediterranean climate in spite of its place facing the Atlantic Ocean. Full of bleached white limestone buildings and intimate alleyways, Lisbon's mix of traditional architecture and contemporary culture makes it the perfect place for a family holiday." data-full-text="Lisbon, the capital city of Portugal, has become an increasingly popular place to visit in recent years, with a warm Mediterranean climate in spite of its place facing the Atlantic Ocean. Full of bleached white limestone buildings and intimate alleyways, Lisbon 's mix of traditional architecture and contemporary culture makes it the perfect place for a family holiday. Things to do in Lisbon: As Portugal's capital, there is a lot to see and do in Lisbon. Even exploring the city centre will take a few days out of a family holiday as there is no real central district, although Praça do Comércio is a good central place to start, in Baxia, or Rossio, the city 's main square which has a sort of Trafalgar Square feel to it. Or you might try climbing up the Cristo Rei, a huge statue of Christ with spectacular views across the whole city. The Castelo de São Jorge also offers great views and isn't quite such a steep climb. A short tram ride to the west of Lisbon will also bring you to Belem, where you can explore attractions like the Belem Tower and the Belem Cultural Centre, which features a fantastic art collection including works by Dali, Picasso, Warhol and Magritte. In downtown Lisbon, you 'll also want to visit the Gulbenkian, which has to be Portugal's answer to the British Museum full of fascinating cultural artifacts and with some superb gardens in the grounds. It 's possible to have a fascinating educational family holiday in Lisbon, and there are also plenty of great beaches to work on your tan.">
+                    Lisbon, the capital city of Portugal, has become an increasingly popular place to visit in recent years, with a warm Mediterranean climate in spite of its place facing the Atlantic Ocean. Full of bleached white limestone buildings and intimate alleyways, Lisbon 's mix of traditional architecture and contemporary culture makes it the perfect place for a family holiday.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Day Trips</span>
+                    <span class="tag">Walking Tours</span>
+                    <span class="tag">Points of Interest & Landmarks</span>
+                    <span class="tag">City Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">16</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fb/5e/phuket.jpg?w=1200&h=500&s=1" alt="Phuket">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Phuket</h2>
+            <p class="text-gray-500 mb-4">Thailand</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Phuket offers a rainbow spectrum of spectacular holiday sights from blue lagoons and pink sunsets to orange-robed monks. Three wheeled-Tuk Tuks, taxis, buses and long tailed boats transport visitors between these marvels. Phuket 's south coast offers its most popular beaches." data-full-text="Phuket offers a rainbow spectrum of spectacular holiday sights from blue lagoons and pink sunsets to orange-robed monks. Three wheeled-Tuk Tuks, taxis, buses and long tailed boats transport visitors between these marvels. Phuket 's south coast offers its most popular beaches. The north is more tranquil. Koh Phi Phi, Phang Nga Bay and Patong Beach are popular spots. Diving, snorkeling, wind surfing and sailing are just a few active options. Inland, forested hills, mountains and cliffs wait to be explored.">
+                    Phuket offers a rainbow spectrum of spectacular holiday sights from blue lagoons and pink sunsets to orange-robed monks. Three wheeled-Tuk Tuks, taxis, buses and long tailed boats transport visitors between these marvels. Phuket 's south coast offers its most popular beaches.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Underground Tours</span>
+                    <span class="tag">Half-day Tours</span>
+                    <span class="tag">Flea & Street Markets</span>
+                    <span class="tag">Nightlife</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">17</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/2f/9f/6f/istanbul.jpg?w=1200&h=500&s=1" alt="Istanbul">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Istanbul</h2>
+            <p class="text-gray-500 mb-4">Türkiye</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Over the centuries, many cultures have added their mark to this prized piece of land. Today, you can experience those influences firsthand by exploring Istanbul’s mahalles (neighbourhoods). From the holy sites of Sultanahmet and the 19th-century European elegance of Beyoğlu to the high fashion of Nişantaşı, the vibrant café society of Kadıköy and the football-loving streets of Beşiktaş, it’s easy to see why travellers say that Istanbul isn’t just one city, but many cities within one." data-full-text="Over the centuries, many cultures have added their mark to this prized piece of land. Today, you can experience those influences firsthand by exploring Istanbul’s mahalles (neighbourhoods). From the holy sites of Sultanahmet and the 19th-century European elegance of Beyoğlu to the high fashion of Nişantaşı, the vibrant café society of Kadıköy and the football-loving streets of Beşiktaş, it’s easy to see why travellers say that Istanbul isn’t just one city, but many cities within one.">
+                    Over the centuries, many cultures have added their mark to this prized piece of land. Today, you can experience those influences firsthand by exploring Istanbul’s mahalles (neighbourhoods). From the holy sites of Sultanahmet and the 19th-century European elegance of Beyoğlu to the high fashion of Nişantaşı...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">City Tours</span>
+                    <span class="tag">Day Cruises</span>
+                    <span class="tag">Historic Sites</span>
+                    <span class="tag">Sunset Cruises</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">18</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c5/7c/68/caption.jpg?w=1200&h=500&s=1" alt="New York City">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">New York City</h2>
+            <p class="text-gray-500 mb-4">United States</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="The first time you go to New York, go ahead and be a sight-seer—everyone should visit the Statue of Liberty, the Met, Times Square, etc. But on a return trip, pick a neighbourhood and go deep." data-full-text="The first time you go to New York, go ahead and be a sight-seer—everyone should visit the Statue of Liberty, the Met, Times Square, etc. But on a return trip, pick a neighbourhood and go deep. You’ll find hole-in-the-wall bars, great delis, quirky shops… exploring the non-touristy side of New York is an incredibly rewarding experience for a traveller.">
+                    The first time you go to New York, go ahead and be a sight-seer—everyone should visit the Statue of Liberty, the Met, Times Square, etc. But on a return trip, pick a neighbourhood and go deep.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">City Tours</span>
+                    <span class="tag">Museum Tickets & Passes</span>
+                    <span class="tag">Points of Interest & Landmarks</span>
+                    <span class="tag">Day Cruises</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">19</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/66/c5/e8/caption.jpg?w=1200&h=500&s=1" alt="Majorca">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Majorca</h2>
+            <p class="text-gray-500 mb-4">Spain</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Attracting visitors from all parts of the world, Majorca is a dreamy island destination in the Mediterranean Sea, just off the southeast coast of Spain. There 's something for every taste—beaches and coves, a spectacular mountain range, romantic fishing villages and a rustic countryside dotted with almond and olive groves." data-full-text="Attracting visitors from all parts of the world, Majorca is a dreamy island destination in the Mediterranean Sea, just off the southeast coast of Spain. There 's something for every taste—beaches and coves, a spectacular mountain range, romantic fishing villages and a rustic countryside dotted with almond and olive groves.">
+                    Attracting visitors from all parts of the world, Majorca is a dreamy island destination in the Mediterranean Sea, just off the southeast coast of Spain. There 's something for every taste—beaches and coves, a spectacular mountain range, romantic fishing villages and a rustic countryside dotted with almond and olive groves.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Half-day Tours</span>
+                    <span class="tag">Dining Experiences</span>
+                    <span class="tag">Beaches</span>
+                    <span class="tag">Snorkeling</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">20</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/53/5a/67/dean-village.jpg?w=1200&h=500&s=1" alt="Edinburgh">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Edinburgh</h2>
+            <p class="text-gray-500 mb-4">United Kingdom</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Edinburgh is Scotland’s capital city, renowned for its heritage, culture and festivals. Take a long walk around the centre to explore the World Heritage Sites of the Old Town and New Town, as well as all the area’s museums and galleries." data-full-text="Edinburgh is Scotland’s capital city, renowned for its heritage, culture and festivals. Take a long walk around the centre to explore the World Heritage Sites of the Old Town and New Town, as well as all the area’s museums and galleries. Then stop for a delicious meal made from fresh Scottish produce before heading out to take in one of Edinburgh’s many events — including the famous summer festivals of culture, or the Winter Festivals of music, light and ceilidhs.">
+                    Edinburgh is Scotland’s capital city, renowned for its heritage, culture and festivals. Take a long walk around the centre to explore the World Heritage Sites of the Old Town and New Town, as well as all the area’s museums and galleries.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Walking Tours</span>
+                    <span class="tag">Day Trips</span>
+                    <span class="tag">Historic Sites</span>
+                    <span class="tag">Ghost Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">21</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/a4/14/d8/pasupathinath-temple.jpg?w=1200&h=500&s=1" alt="Kathmandu">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Kathmandu</h2>
+            <p class="text-gray-500 mb-4">Nepal</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Nepal's capital is situated in a valley full of historic sites, ancient temples and shrines, golden pagodas and fascinating villages. Hotels, bars and restaurants cater to all budgets. Shops offer handicrafts, carpets and Nepali paper prints." data-full-text="Nepal's capital is situated in a valley full of historic sites, ancient temples and shrines, golden pagodas and fascinating villages. Hotels, bars and restaurants cater to all budgets. Shops offer handicrafts, carpets and Nepali paper prints. Bus services, taxis and bicycles open up the city. Trek to see the Monkey Temple, the valley 's oldest and most sacred shrine. Mingle with locals and animals amid Durbar Square 's monuments and temples, or join mountain trekkers in the bustling Thamel District.">
+                    Nepal's capital is situated in a valley full of historic sites, ancient temples and shrines, golden pagodas and fascinating villages. Hotels, bars and restaurants cater to all budgets. Shops offer handicrafts, carpets and Nepali paper prints.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Hiking Tours</span>
+                    <span class="tag">Day Trips</span>
+                    <span class="tag">Sacred & Religious Sites</span>
+                    <span class="tag">Multi-day Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">22</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/03/3f/fd/caption.jpg?w=1200&h=500&s=1" alt="New Delhi">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">New Delhi</h2>
+            <p class="text-gray-500 mb-4">India</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Laid out by British architect Edwin Lutyens, the Indian capital is a striking modern metropolis. A gracious contrast to Old Delhi 's winding streets, the grand avenues and stately buildings of New Delhi are rich with history and culture." data-full-text="Laid out by British architect Edwin Lutyens, the Indian capital is a striking modern metropolis. A gracious contrast to Old Delhi 's winding streets, the grand avenues and stately buildings of New Delhi are rich with history and culture, from Gandhi 's Delhi home (and the site of his assassination) to the tomb of Humayun, a complex of Mughal buildings reminiscent of the Taj Mahal. Chaotic traffic is best left to the locals. Negotiate a good price for taxis or travel on the new Delhi Metro.">
+                    Laid out by British architect Edwin Lutyens, the Indian capital is a striking modern metropolis. A gracious contrast to Old Delhi 's winding streets, the grand avenues and stately buildings of New Delhi are rich with history and culture.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Private Sightseeing Tours</span>
+                    <span class="tag">Multi-day Tours</span>
+                    <span class="tag">Flea & Street Markets</span>
+                    <span class="tag">Street Food Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">23</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/33/dc/98/caption.jpg?w=1200&h=500&s=1" alt="Maldives">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Maldives</h2>
+            <p class="text-gray-500 mb-4">Asia</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Want to make your co-workers insanely jealous? Just casually drop 'I’m holiday making in the Maldives this year 'into conversation, preferably in the dead of winter. Or better yet, go there without mentioning it to anyone..." data-full-text="Want to make your co-workers insanely jealous? Just casually drop 'I’m holiday making in the Maldives this year 'into conversation, preferably in the dead of winter. Or better yet, go there without mentioning it to anyone—then send them a 'Wish you were here!'postcard.">
+                    Want to make your co-workers insanely jealous? Just casually drop "I’m holiday making in the Maldives this year "into conversation, preferably in the dead of winter. Or better yet, go there without mentioning it to anyone...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Snorkeling</span>
+                    <span class="tag">Safaris</span>
+                    <span class="tag">Islands</span>
+                    <span class="tag">Day Trips</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">24</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/f5/7b/cancun.jpg?w=1200&h=500&s=1" alt="Cancun">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Cancun</h2>
+            <p class="text-gray-500 mb-4">Mexico</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="It’s not just for spring-breakers. Cancun, with its golden beaches and perfect climate, is the premiere coastal destination in Mexico. And while there is certainly a 365-day party available for college students..." data-full-text="It’s not just for spring-breakers. Cancun, with its golden beaches and perfect climate, is the premiere coastal destination in Mexico. And while there is certainly a 365-day party available for college students, resorts cater well to families and to those seeking solitude. This Yucatan paradise is also the gateway to the ruins of Tulum and Chichén Itzá.">
+                    It’s not just for spring-breakers. Cancun, with its golden beaches and perfect climate, is the premiere coastal destination in Mexico. And while there is certainly a 365-day party available for college students...
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-yellow-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.074 4.997 5.105.618c1.16.14 1.638 1.577.746 2.37l-3.88 3.171 1.122 4.752c.264 1.123-.82 2.097-1.84 1.57l-4.214-2.316-4.214 2.316c-1.02.527-2.104-.447-1.84-1.57l1.122-4.752-3.88-3.17c-.892-.793-.414-2.23.746-2.37l5.105-.617L10.788 3.21z" clip-rule="evenodd" />
+                    </svg>
+                    Great Things to Do
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-700">
+                    <span class="tag">Snorkeling</span>
+                    <span class="tag">Half-day Tours</span>
+                    <span class="tag">Theme Parks</span>
+                    <span class="tag">Nature and Wildlife Tours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card relative">
+        <span class="rank-number">25</span>
+        <div class="card-image-container">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/4e/39/a1/a-view-from-the-top.jpg?w=1200&h=500&s=1" alt="Mauritius">
+        </div>
+        <div class="card-text-container p-6 md:p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Mauritius</h2>
+            <p class="text-gray-500 mb-4">Africa</p>
+            <div class="description-container mb-4">
+                <p class="text-base text-gray-600" data-short-text="Mauritius is arguably Africa’s wealthiest destination, a tropical paradise with tons to do. Port Louis, the modern capital of this 38-mile by 29-mile island, is a bustling port with a revitalized waterfront and a busy market." data-full-text="Mauritius is arguably Africa’s wealthiest destination, a tropical paradise with tons to do. Port Louis, the modern capital of this 38-mile by 29-mile island, is a bustling port with a revitalized waterfront and a busy market. But most visitors gravitate toward resort areas such as Mont Choisy, quiet Trou-aux-Biches and the more bustling Flic en Flac, popular with scuba divers. Rivière Noire is ideal for those looking for great deep-sea fishing.">
+                    Mauritius is arguably Africa’s wealthiest destination, a tropical paradise with tons to do. Port Louis, the modern capital of this 38-mile by 29-mile island, is a bustling port with a revitalized waterfront and a busy market.
+                </p>
+                <a href="#" class="read-more-toggle mt-2 inline-flex items-center text-green-700 hover:underline">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="great-things-to-do-container mt-4">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Great Things to Do</h3>
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                    <span class="bg-gray-100 px-3 py-1 rounded-full hover:bg-gray-200 transition-colors">Catamaran Cruises</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full hover:bg-gray-200 transition-colors">4WD Tours</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full hover:bg-gray-200 transition-colors">Nature & Wildlife Areas</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full hover:bg-gray-200 transition-colors">Private and Luxury</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="mt-16 text-center text-gray-500 text-sm">
+    <p>&copy; 2025 Top Destinations Inc. All rights reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggles = document.querySelectorAll('.read-more-toggle');
+
+        toggles.forEach(toggle => {
+            const descriptionContainer = toggle.parentElement;
+            const descriptionParagraph = descriptionContainer.querySelector('p');
+            const fullText = descriptionParagraph.dataset.fullText;
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = fullText;
+            const isLongText = tempDiv.textContent.length > descriptionParagraph.dataset.shortText.length;
+            
+            if (isLongText) {
+                toggle.style.display = 'inline-flex';
+                descriptionParagraph.innerHTML = descriptionParagraph.dataset.shortText;
+            } else {
+                toggle.style.display = 'none';
+                descriptionParagraph.innerHTML = fullText;
+            }
+
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const currentText = descriptionParagraph.innerHTML.trim();
+                const shortText = descriptionParagraph.dataset.shortText.trim();
+
+                if (currentText === shortText) {
+                    descriptionParagraph.innerHTML = fullText;
+                    toggle.innerHTML = `Read less <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform rotate-180 transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>`;
+                } else {
+                    descriptionParagraph.innerHTML = shortText;
+                    toggle.innerHTML = `Read more <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1 transform transition-transform duration-300">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>`;
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
