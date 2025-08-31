@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#2563eb"/>
+  <!-- podium bars -->
+  <rect x="120" y="280" width="72" height="112" rx="12" fill="#fff"/>
+  <rect x="220" y="240" width="72" height="152" rx="12" fill="#fff"/>
+  <rect x="320" y="320" width="72" height="72" rx="12" fill="#fff"/>
+  <!-- star on middle bar -->
+  <path d="M256 150l18 38 42 6-30 28 7 41-37-20-37 20 7-41-30-28 42-6 18-38z" fill="#facc15"/>
+</svg>
