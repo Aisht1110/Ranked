@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+     <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -136,7 +136,7 @@
             display: inline-block;
             padding: 0.35rem 0.85rem;
             background-color: #e0f2fe;
-            color: #11cc94;
+            color: #0369a1;
             border-radius: 9999px;
             font-size: 0.75rem;
             font-weight: 500;
@@ -301,6 +301,11 @@
         .book-action:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+        }
+        
+        /* CSS to remove the "Get this book" buttons */
+        .book-action {
+            display: none !important;
         }
     </style>
 </head>
@@ -859,3 +864,4 @@
     </script>
 </body>
 </html>
+
