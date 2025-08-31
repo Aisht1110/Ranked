@@ -3,298 +3,859 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Unlock timeless money wisdom with the Top 15 Finance Books of All Time. Learn investing, wealth-building, and personal finance strategies from the experts.">
     <title>Top 15 Best Finance Books of All Time</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1M3J9KB7TR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1M3J9KB7TR');
-</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #374151;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1e293b;
+            min-height: 100vh;
+        }
+        .header-gradient {
+            background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%);
         }
         .container-shadow {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
         }
         .book-card {
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            padding: 1.5rem;
-            background-color: #fafafa;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: transform 0.2s ease-in-out;
+            padding: 2.5rem;
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
             position: relative;
+            overflow: hidden;
+        }
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #0ea5e9, #0369a1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         .book-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+        }
+        .book-card:hover::before {
+            opacity: 1;
         }
         .book-image {
-            width: 12rem; /* 192px */
-            height: 18rem; /* 288px */
+            width: 15rem;
+            height: 22rem;
             object-fit: cover;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            margin-bottom: 1.5rem;
+            border-radius: 0.875rem;
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.25), 0 5px 10px -3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .book-card:hover .book-image {
+            transform: rotate(2deg) scale(1.03);
+            box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.3), 0 8px 15px -5px rgba(0, 0, 0, 0.15);
         }
         .ranking-badge {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background-color: #1a202c;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
+            top: 1.25rem;
+            left: 1.25rem;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
             font-weight: bold;
             font-size: 1.25rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            text-align: left;
+        }
+        .content-section p {
+            line-height: 1.6;
+        }
+        .content-section p strong {
+            color: #0f172a;
+            min-width: 130px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        .tag {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            background-color: #e0f2fe;
+            color: #11cc94;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        @media (min-width: 768px) {
+            .book-card {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+            }
+            .book-card .book-image {
+                flex-shrink: 0;
+                margin-right: 2.5rem;
+                margin-bottom: 0;
+                width: 16rem;
+            }
+        }
+        @media (max-width: 767px) {
+            .book-card {
+                padding: 1.5rem;
+            }
+            .book-image {
+                width: 12rem;
+                height: 18rem;
+            }
+        }
+        .recommendation-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border-radius: 1.25rem;
+            padding: 3rem;
+            margin-top: 4rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            justify-content: center;
+        }
+        .category-tab {
+            padding: 0.875rem 1.75rem;
+            background-color: #f8fafc;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .category-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            color: #0369a1;
+            border-color: #bae6fd;
+        }
+        .category-tab.active {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            color: white;
+            border-color: #0ea5e9;
+            box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3);
+        }
+        .book-recommendation {
+            display: none;
+            animation: fadeIn 0.5s ease;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #0ea5e9;
+        }
+        .book-recommendation.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(10px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        .footer {
+            margin-top: 5rem;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+        }
+        .highlight {
+            background-color: #fef3c7;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+            font-weight: 500;
+        }
+        .stat-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: #f0f9ff;
+            color: #0369a1;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            margin-right: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .stat-badge i {
+            margin-right: 0.5rem;
+        }
+        .book-stats {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        .book-action {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .book-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
         }
     </style>
 </head>
 <body class="p-4 md:p-8">
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </div>
 
-    <div class="max-w-7xl mx-auto bg-white rounded-xl container-shadow p-6 md:p-10 lg:p-12 mt-6">
-        <!-- Header Section -->
-        <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
-                Top 15 Best Finance Books of All Time
+    <div class="max-w-7xl mx-auto bg-white rounded-2xl container-shadow overflow-hidden mt-6">
+        <!-- Header with gradient -->
+        <div class="header-gradient text-white py-12 px-6 md:px-10 lg:px-12 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
+                Top 15 Essential Finance Books
             </h1>
-            <p class="text-xl md:text-2xl text-gray-600 font-semibold mb-4">
-                A Curated List for Every Investor
+            <p class="text-xl md:text-2xl text-blue-100 font-medium max-w-3xl mx-auto mb-6">
+                Discover the most influential books on investing, personal finance, and market psychology.
             </p>
-            <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
-                This ranking is compiled from the provided data, highlighting foundational texts on investing, personal finance, and market psychology for both beginners and advanced readers.
-            </p>
-        </header>
-
-        <!-- Book Card Grid -->
-        <div class="grid grid-cols-1 gap-8">
-
-            <!-- Book 1: The Intelligent Investor -->
-            <div class="book-card">
-                <span class="ranking-badge">1</span>
-                <img src="https://placehold.co/192x288/4F46E5/FFFFFF?text=The+Intelligent+Investor" alt="The Intelligent Investor book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">The Intelligent Investor</h3>
-                <p class="text-sm text-gray-500 mb-4">Benjamin Graham</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Value investing, risk control</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Beginner-Advanced</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">1 million+ (Est.)</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">The "Mr. Market" analogy, the importance of a "margin of safety," and distinguishing between investing and speculation.</span></p>
+            <div class="flex justify-center items-center space-x-4 mt-8">
+                <div class="flex items-center">
+                    <i class="fas fa-book-open text-2xl text-blue-200 mr-2"></i>
+                    <span class="text-blue-100">15 Must-Read Books</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-star text-2xl text-yellow-300 mr-2"></i>
+                    <span class="text-blue-100">Expert Recommendations</span>
                 </div>
             </div>
+        </div>
 
-            <!-- Book 2: The Psychology of Money -->
-            <div class="book-card">
-                <span class="ranking-badge">2</span>
-                <img src="https://placehold.co/192x288/10B981/FFFFFF?text=The+Psychology+of+Money" alt="The Psychology of Money book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">The Psychology of Money</h3>
-                <p class="text-sm text-gray-500 mb-4">Morgan Housel</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Behavioral finance, money mindset</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Beginner-Advanced</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">Data not available</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Financial success is less about intelligence and more about managing your behavior and emotions. The ultimate goal of money is to gain freedom.</span></p>
-                </div>
-            </div>
+        <div class="p-6 md:p-10 lg:p-12">
+            <div class="grid grid-cols-1 gap-10">
 
-            <!-- Book 3: Rich Dad Poor Dad -->
-            <div class="book-card">
-                <span class="ranking-badge">3</span>
-                <img src="https://placehold.co/192x288/EF4444/FFFFFF?text=Rich+Dad+Poor+Dad" alt="Rich Dad Poor Dad book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">Rich Dad Poor Dad</h3>
-                <p class="text-sm text-gray-500 mb-4">Robert Kiyosaki</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Personal finance fundamentals</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Beginner</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">32-40 million+ (Est.)</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Learn the difference between an asset (puts money in your pocket) and a liability (takes money out). Work to learn, not just to earn.</span></p>
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <span class="ranking-badge">1</span>
+                    <img src="https://img.perlego.com/book-covers/596158/9780061745171_300_450.webp" alt="The Intelligent Investor book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Intelligent Investor</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Benjamin Graham</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Beginner to Advanced</span>
+                            <span class="stat-badge"><i class="fas fa-chart-line"></i> Value Investing</span>
+                            <span class="stat-badge"><i class="fas fa-book"></i> 1 million+ copies</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Value investing, risk control</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> The "Mr. Market" analogy, the importance of a "margin of safety," and distinguishing between investing and speculation.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> Warren Buffett describes it as "by far the best book on investing ever written."</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Book 4: One Up On Wall Street -->
-            <div class="book-card">
-                <span class="ranking-badge">4</span>
-                <img src="https://placehold.co/192x288/F59E0B/FFFFFF?text=One+Up+On+Wall+Street" alt="One Up On Wall Street book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">One Up On Wall Street</h3>
-                <p class="text-sm text-gray-500 mb-4">Peter Lynch</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Stock picking, company analysis</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Beginner-Intermediate</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">1 million+</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Your greatest investment advantage is what you already know. Invest in what you understand, and categorize stocks to analyze them better.</span></p>
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <span class="ranking-badge">2</span>
+                    <img src="https://miro.medium.com/v2/resize:fit:2000/1*-RvLCJvo24xPapflSGRBOg.jpeg" alt="The Psychology of Money book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Psychology of Money</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Morgan Housel</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Beginner to Advanced</span>
+                            <span class="stat-badge"><i class="fas fa-brain"></i> Behavioral Finance</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Behavioral finance, money mindset</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Financial success is less about intelligence and more about managing your behavior and emotions. The ultimate goal of money is to gain freedom.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> Explores how our behaviors and psychology impact financial decisions more than technical knowledge.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Book 5: The Disciplined Trader -->
-            <div class="book-card">
-                <span class="ranking-badge">5</span>
-                <img src="https://placehold.co/192x288/8B5CF6/FFFFFF?text=The+Disciplined+Trader" alt="The Disciplined Trader book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">The Disciplined Trader</h3>
-                <p class="text-sm text-gray-500 mb-4">Mark Douglas</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Trading psychology</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Intermediate-Advanced</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">Data not available</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Develop emotional control, manage risk, stick to plan, avoid impulsive actions.</span></p>
+                <!-- Book 3 -->
+                <div class="book-card">
+                    <span class="ranking-badge">3</span>
+                    <img src="https://m.media-amazon.com/images/I/81BE7eeKzAL._AC_UF1000,1000_QL80_.jpg" alt="Rich Dad Poor Dad book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Rich Dad Poor Dad</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Robert Kiyosaki</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Beginner</span>
+                            <span class="stat-badge"><i class="fas fa-piggy-bank"></i> Personal Finance</span>
+                            <span class="stat-badge"><i class="fas fa-book"></i> 40 million+ copies</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Personal finance fundamentals</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Learn the difference between an asset (puts money in your pocket) and a liability (takes money out). Work to learn, not just to earn.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> Changed how millions think about money and wealth building through simple but powerful concepts.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Book 6: Stocks to Riches -->
-            <div class="book-card">
-                <span class="ranking-badge">6</span>
-                <img src="https://placehold.co/192x288/475569/FFFFFF?text=Stocks+to+Riches" alt="Stocks to Riches book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">Stocks to Riches</h3>
-                <p class="text-sm text-gray-500 mb-4">Parag Parikh</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Behavioral finance, Indian markets</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Beginner-Intermediate</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">Data not available</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Success in the market is about having the right temperament and discipline to manage your emotions, not just your money.</span></p>
-                </div>
-            </div>
 
-            <!-- Book 7: The Richest Man in Babylon -->
-            <div class="book-card">
-                <span class="ranking-badge">7</span>
-                <img src="https://placehold.co/192x288/3B82F6/FFFFFF?text=The+Richest+Man+in+Babylon" alt="The Richest Man in Babylon book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">The Richest Man in Babylon</h3>
-                <p class="text-sm text-gray-500 mb-4">George Clason</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Wealth building, saving</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Beginner</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">Data not available</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">The "Seven Cures for a Lean Purse" teaches fundamental principles like "pay yourself first," control your expenditures, and make your money work for you.</span></p>
+                <!-- Book 4 -->
+                <div class="book-card">
+                    <span class="ranking-badge">4</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPwV8ddrW4pk44toHXaBqqv7j6jajnwRRDZg&s" alt="One Up On Wall Street book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">One Up On Wall Street</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Peter Lynch</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Beginner to Intermediate</span>
+                            <span class="stat-badge"><i class="fas fa-chart-line"></i> Stock Picking</span>
+                            <span class="stat-badge"><i class="fas fa-book"></i> 1 million+ copies</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Stock picking, company analysis</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Your greatest investment advantage is what you already know. Invest in what you understand, and categorize stocks to analyze them better.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> Learn how to spot investment opportunities in everyday life from one of the most successful fund managers.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Book 8: The Intelligent Asset Allocator -->
-            <div class="book-card">
-                <span class="ranking-badge">8</span>
-                <img src="https://placehold.co/192x288/D946EF/FFFFFF?text=The+Intelligent+Asset+Allocator" alt="The Intelligent Asset Allocator book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">The Intelligent Asset Allocator</h3>
-                <p class="text-sm text-gray-500 mb-4">William Bernstein</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Asset allocation, portfolio management</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Intermediate-Advanced</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">Data not available</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Asset allocation is the most important factor in long-term returns. Diversifying across uncorrelated assets and rebalancing are key to success.</span></p>
+                <!-- Book 5 -->
+                <div class="book-card">
+                    <span class="ranking-badge">5</span>
+                    <img src="https://m.media-amazon.com/images/I/71eAuSmuMzL._UF1000,1000_QL80_.jpg" alt="The Disciplined Trader book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Disciplined Trader</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Mark Douglas</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Intermediate to Advanced</span>
+                            <span class="stat-badge"><i class="fas fa-brain"></i> Trading Psychology</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Trading psychology</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Develop emotional control, manage risk, stick to plan, avoid impulsive actions.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> Essential reading for traders who want to master the psychological aspects of successful trading.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
+                
+                <!-- Book 6 -->
+                <div class="book-card">
+                    <span class="ranking-badge">6</span>
+                    <img src="https://m.media-amazon.com/images/I/71mF2spThdL._UF1000,1000_QL80_.jpg" alt="Stocks to Riches book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Stocks to Riches</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Parag Parikh</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Beginner to Intermediate</span>
+                            <span class="stat-badge"><i class="fas fa-brain"></i> Behavioral Finance</span>
+                            <span class="stat-badge"><i class="fas fa-globe-asia"></i> Indian Markets</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Behavioral finance, Indian markets</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Success in the market is about having the right temperament and discipline to manage your emotions, not just your money.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> A great introduction to behavioral finance with specific insights into the Indian stock market.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
+                </div>
 
-            <!-- Book 9: The Warren Buffett Way -->
-            <div class="book-card">
-                <span class="ranking-badge">9</span>
-                <img src="https://placehold.co/192x288/6B7280/FFFFFF?text=The+Warren+Buffett+Way" alt="The Warren Buffett Way book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">The Warren Buffett Way</h3>
-                <p class="text-sm text-gray-500 mb-4">Robert Hagstrom</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Value investing principles</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Intermediate</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">1 million+</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Treat stocks as ownership in a business. Invest in companies with a durable competitive advantage, and buy at a significant discount to their intrinsic value.</span></p>
+                <!-- Book 7 -->
+                <div class="book-card">
+                    <span class="ranking-badge">7</span>
+                    <img src="https://rekhtabooks.com/cdn/shop/products/9789388144315.jpg?v=1688454091" alt="The Richest Man in Babylon book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Richest Man in Babylon</h3>
+                        <p class="text-lg text-gray-600 mb-4">By George Clason</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Beginner</span>
+                            <span class="stat-badge"><i class="fas fa-piggy-bank"></i> Wealth Building</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Wealth building, saving</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> The "Seven Cures for a Lean Purse" teaches fundamental principles like "pay yourself first," control your expenditures, and make your money work for you.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> Timeless financial wisdom presented through engaging parables set in ancient Babylon.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Book 10: Technical Analysis -->
-            <div class="book-card">
-                <span class="ranking-badge">10</span>
-                <img src="https://placehold.co/192x288/9CA3AF/FFFFFF?text=Technical+Analysis" alt="Technical Analysis book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">Technical Analysis</h3>
-                <p class="text-sm text-gray-500 mb-4">J.J. Murphy</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Chart and pattern strategies</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Intermediate-Advanced</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">Data not available</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Predicting price movements based on historical price and volume data. Use chart patterns and indicators to identify entry and exit points.</span></p>
+                <!-- Book 8 -->
+                <div class="book-card">
+                    <span class="ranking-badge">8</span>
+                    <img src="https://m.media-amazon.com/images/I/512bmvZMrUL.jpg_BO30,255,255,255_UF900,850_SR1910,1000,0,C_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_ZJPHNwYW4gZm9yZWdyb3VuZD0iIzU2NTk1OSIgZm9udD0iQW1hem9uRW1iZXIgNTAiID40Nzg8L3NwYW4+,500,900,420,420,0,0_QL100_.jpg" alt="The Intelligent Asset Allocator book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Intelligent Asset Allocator</h3>
+                        <p class="text-lg text-gray-600 mb-4">By William Bernstein</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Intermediate to Advanced</span>
+                            <span class="stat-badge"><i class="fas fa-chart-pie"></i> Asset Allocation</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Asset allocation, portfolio management</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Asset allocation is the most important factor in long-term returns. Diversifying across uncorrelated assets and rebalancing are key to success.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> A comprehensive guide to constructing a diversified portfolio that can weather market volatility.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
+                
+                <!-- Book 9 -->
+                <div class="book-card">
+                    <span class="ranking-badge">9</span>
+                    <img src="https://m.media-amazon.com/images/I/71ih7ZRR83L.jpg" alt="The Warren Buffett Way book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Warren Buffett Way</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Robert Hagstrom</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Intermediate</span>
+                            <span class="stat-badge"><i class="fas fa-chart-line"></i> Value Investing</span>
+                            <span class="stat-badge"><i class="fas fa-book"></i> 1 million+ copies</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Value investing principles</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Treat stocks as ownership in a business. Invest in companies with a durable competitive advantage, and buy at a significant discount to their intrinsic value.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> Learn the investment strategies of the world's most famous investor, Warren Buffett.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
+                </div>
 
-            <!-- Book 11: The Little Book That Still Beats the Market -->
-            <div class="book-card">
-                <span class="ranking-badge">11</span>
-                <img src="https://placehold.co/192x288/4B5563/FFFFFF?text=Little+Book+That+Still+Beats+The+Market" alt="The Little Book That Still Beats the Market book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">The Little Book That Still Beats the Market</h3>
-                <p class="text-sm text-gray-500 mb-4">Joel Greenblatt</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Quant/algorithmic investing</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Beginner-Intermediate</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">Data not available</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">The 'Magic Formula' based on earnings yield and ROIC, stick to system, avoid behavioral errors.</span></p>
+                <!-- Book 10 -->
+                <div class="book-card">
+                    <span class="ranking-badge">10</span>
+                    <img src="https://m.media-amazon.com/images/I/81Wfg4mNPtL._UF1000,1000_QL80_.jpg" alt="Technical Analysis book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Technical Analysis</h3>
+                        <p class="text-lg text-gray-600 mb-4">By J.J. Murphy</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Intermediate to Advanced</span>
+                            <span class="stat-badge"><i class="fas fa-chart-simple"></i> Technical Analysis</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Chart and pattern strategies</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Predicting price movements based on historical price and volume data. Use chart patterns and indicators to identify entry and exit points.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> The definitive guide to technical analysis for traders of all experience levels.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Book 12: The Ultimate Day Trader -->
-            <div class="book-card">
-                <span class="ranking-badge">12</span>
-                <img src="https://placehold.co/192x288/F87171/FFFFFF?text=The+Ultimate+Day+Trader" alt="The Ultimate Day Trader book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">The Ultimate Day Trader</h3>
-                <p class="text-sm text-gray-500 mb-4">Stephen D. O. Williams</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Day trading</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Intermediate-Advanced</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">Data not available</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Risk management, technical setups, trade discipline, quick execution.</span></p>
+                <!-- Book 11 -->
+                <div class="book-card">
+                    <span class="ranking-badge">11</span>
+                    <img src="https://m.media-amazon.com/images/I/81nnMgmqbKS.jpg" alt="The Little Book That Still Beats the Market book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Little Book That Still Beats the Market</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Joel Greenblatt</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Beginner to Intermediate</span>
+                            <span class="stat-badge"><i class="fas fa-magic"></i> Quantitative Investing</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Quant/algorithmic investing</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> The 'Magic Formula' based on earnings yield and ROIC, stick to system, avoid behavioral errors.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> A simple yet powerful approach to systematic investing that anyone can implement.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Book 13: Think and Grow Rich -->
-            <div class="book-card">
-                <span class="ranking-badge">13</span>
-                <img src="https://placehold.co/192x288/6EE7B7/FFFFFF?text=Think+and+Grow+Rich" alt="Think and Grow Rich book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">Think and Grow Rich</h3>
-                <p class="text-sm text-gray-500 mb-4">Napoleon Hill</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Wealth mindset, personal success</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Beginner</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">70-100 million+ (Est.)</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Define goals, believe in success, visualize outcomes, positive mental attitude.</span></p>
+                <!-- Book 12 -->
+                <div class="book-card">
+                    <span class="ranking-badge">12</span>
+                    <img src="https://m.media-amazon.com/images/I/71aT4DHgiJL._UF1000,1000_QL80_.jpg" alt="The Ultimate Day Trader book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Ultimate Day Trader</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Stephen D. O. Williams</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Intermediate to Advanced</span>
+                            <span class="stat-badge"><i class="fas fa-bolt"></i> Day Trading</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Day trading</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Risk management, technical setups, trade discipline, quick execution.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> A practical guide to the strategies and mindset needed for successful day trading.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Book 14: The Only Investment Guide You’ll Ever Need -->
-            <div class="book-card">
-                <span class="ranking-badge">14</span>
-                <img src="https://placehold.co/192x288/93C5FD/FFFFFF?text=The+Only+Investment+Guide" alt="The Only Investment Guide You’ll Ever Need book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">The Only Investment Guide You’ll Ever Need</h3>
-                <p class="text-sm text-gray-500 mb-4">Andrew Tobias</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">All-purpose investing and saving</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Beginner</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">Data not available</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Simple savings, index funds, avoid high fees, pragmatic financial planning.</span></p>
+                <!-- Book 13 -->
+                <div class="book-card">
+                    <span class="ranking-badge">13</span>
+                    <img src="https://m.media-amazon.com/images/I/61IxJuRI39L._UF894,1000_QL80_.jpg" alt="Think and Grow Rich book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Think and Grow Rich</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Napoleon Hill</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Beginner</span>
+                            <span class="stat-badge"><i class="fas fa-brain"></i> Success Mindset</span>
+                            <span class="stat-badge"><i class="fas fa-book"></i> 100 million+ copies</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Wealth mindset, personal success</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Define goals, believe in success, visualize outcomes, positive mental attitude.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> One of the most influential personal development books of all time that has inspired millions.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Book 15: Investing Amid Low Expected Returns -->
-            <div class="book-card">
-                <span class="ranking-badge">15</span>
-                <img src="https://placehold.co/192x288/34D399/FFFFFF?text=Investing+Amid+Low+Expected+Returns" alt="Investing Amid Low Expected Returns book cover" class="book-image">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">Investing Amid Low Expected Returns</h3>
-                <p class="text-sm text-gray-500 mb-4">Antti Ilmanen</p>
-                <div class="w-full text-center space-y-2">
-                    <p class="font-semibold text-gray-700">Core Focus: <span class="font-normal text-gray-600">Institutional/advanced investing</span></p>
-                    <p class="font-semibold text-gray-700">Audience: <span class="font-normal text-gray-600">Advanced</span></p>
-                    <p class="font-semibold text-gray-700">Copies Sold: <span class="font-normal text-gray-600">Data not available</span></p>
-                    <p class="font-semibold text-gray-700">Key Lessons: <span class="font-normal text-gray-600">Tactical asset allocation, risk/reward thinking, adapt to market regimes.</span></p>
+                
+                <!-- Book 14 -->
+                <div class="book-card">
+                    <span class="ranking-badge">14</span>
+                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1442868047i/110672.jpg" alt="The Only Investment Guide You'll Ever Need book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Only Investment Guide You'll Ever Need</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Andrew Tobias</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Beginner</span>
+                            <span class="stat-badge"><i class="fas fa-piggy-bank"></i> All-Purpose Investing</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> All-purpose investing and saving</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Simple savings, index funds, avoid high fees, pragmatic financial planning.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> A practical, no-nonsense guide to personal finance that has stood the test of time.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
                 </div>
-            </div>
 
+                <!-- Book 15 -->
+                <div class="book-card">
+                    <span class="ranking-badge">15</span>
+                    <img src="https://m.media-amazon.com/images/I/51Q2eqwudqL._UF1000,1000_QL80_.jpg" alt="Investing Amid Low Expected Returns book cover" class="book-image">
+                    <div class="content-section">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Investing Amid Low Expected Returns</h3>
+                        <p class="text-lg text-gray-600 mb-4">By Antti Ilmanen</p>
+                        
+                        <div class="book-stats">
+                            <span class="stat-badge"><i class="fas fa-user-graduate"></i> Advanced</span>
+                            <span class="stat-badge"><i class="fas fa-building"></i> Institutional Investing</span>
+                        </div>
+                        
+                        <div class="space-y-4 mt-2">
+                            <p><strong class="font-semibold">Core Focus:</strong> Institutional/advanced investing</p>
+                            <p><strong class="font-semibold">Key Lessons:</strong> Tactical asset allocation, risk/reward thinking, adapt to market regimes.</p>
+                            <p class="text-gray-700"><span class="highlight">Why read it:</span> A forward-looking analysis of investment strategies for today's challenging market environment.</p>
+                        </div>
+                        
+                        <a href="#" class="book-action">
+                            <i class="fas fa-shopping-cart mr-2"></i> Get this book
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
         </div>
     </div>
+
+    <!-- Recommendation Section -->
+    <div class="max-w-7xl mx-auto">
+        <div class="recommendation-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Find the Right Book for Your Needs</h2>
+            <p class="text-lg text-gray-600 mb-8 text-center">Different books serve different purposes. Select your interest area to get personalized recommendations:</p>
+            
+            <div class="category-tabs">
+                <div class="category-tab active" data-category="beginner">
+                    <i class="fas fa-user-graduate"></i> Beginner Investors
+                </div>
+                <div class="category-tab" data-category="value">
+                    <i class="fas fa-chart-line"></i> Value Investing
+                </div>
+                <div class="category-tab" data-category="behavioral">
+                    <i class="fas fa-brain"></i> Behavioral Finance
+                </div>
+                <div class="category-tab" data-category="trading">
+                    <i class="fas fa-chart-candlestick"></i> Trading
+                </div>
+                <div class="category-tab" data-category="advanced">
+                    <i class="fas fa-rocket"></i> Advanced Concepts
+                </div>
+            </div>
+            
+            <div class="book-recommendations">
+                <div class="book-recommendation active" id="beginner">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">For Beginner Investors</h3>
+                    <p class="text-gray-700 mb-4">If you're just starting your financial journey, these books provide excellent foundations:</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li><strong>Rich Dad Poor Dad</strong> - Teaches the fundamental difference between assets and liabilities</li>
+                        <li><strong>The Richest Man in Babylon</strong> - Timeless principles of saving and wealth building</li>
+                        <li><strong>Think and Grow Rich</strong> - Develops the mindset needed for financial success</li>
+                        <li><strong>The Only Investment Guide You'll Ever Need</strong> - Practical advice for everyday investors</li>
+                    </ul>
+                </div>
+                
+                <div class="book-recommendation" id="value">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">For Value Investing</h3>
+                    <p class="text-gray-700 mb-4">These classics teach the principles of finding undervalued companies with strong fundamentals:</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li><strong>The Intelligent Investor</strong> - The definitive guide to value investing with margin of safety concept</li>
+                        <li><strong>The Warren Buffett Way</strong> - Explains how Buffett applies value investing principles</li>
+                        <li><strong>One Up On Wall Street</strong> - Peter Lynch's approach to finding winning stocks</li>
+                        <li><strong>The Little Book That Still Beats the Market</strong> - Greenblatt's "Magic Formula" for stock selection</li>
+                    </ul>
+                </div>
+                
+                <div class="book-recommendation" id="behavioral">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">For Behavioral Finance</h3>
+                    <p class="text-gray-700 mb-4">Understand the psychological aspects of investing and how emotions affect decisions:</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li><strong>The Psychology of Money</strong> - Explores how behavior impacts financial outcomes</li>
+                        <li><strong>Stocks to Riches</strong> - Insights into behavioral aspects of Indian markets</li>
+                        <li><strong>The Disciplined Trader</strong> - Develops the psychological discipline needed for success</li>
+                    </ul>
+                </div>
+                
+                <div class="book-recommendation" id="trading">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">For Trading</h3>
+                    <p class="text-gray-700 mb-4">These books focus on shorter-term trading strategies and techniques:</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li><strong>The Disciplined Trader</strong> - Mastering the psychology of trading</li>
+                        <li><strong>Technical Analysis</strong> - The classic guide to reading charts and patterns</li>
+                        <li><strong>The Ultimate Day Trader</strong> - Strategies for short-term trading</li>
+                    </ul>
+                </div>
+                
+                <div class="book-recommendation" id="advanced">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">For Advanced Concepts</h3>
+                    <p class="text-gray-700 mb-4">For experienced investors looking to deepen their knowledge:</p>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li><strong>The Intelligent Asset Allocator</strong> - Advanced portfolio management techniques</li>
+                        <li><strong>Investing Amid Low Expected Returns</strong> - Sophisticated strategies for challenging markets</li>
+                        <li><strong>Technical Analysis</strong> - In-depth examination of market indicators and patterns</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="max-w-7xl mx-auto">
+        <div class="footer">
+            <h3 class="text-2xl font-bold text-white mb-4">Expand Your Financial Knowledge</h3>
+            <p class="text-blue-100 max-w-2xl mx-auto mb-6">Reading is one of the best investments you can make in yourself. These books have stood the test of time and continue to provide value to readers worldwide.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                    <i class="fab fa-facebook text-2xl"></i>
+                </a>
+                <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+            </div>
+            <p class="mt-8 text-sm text-blue-200">© 2023 Finance Book Recommendations</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category tabs functionality
+            const tabs = document.querySelectorAll('.category-tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    document.querySelectorAll('.book-recommendation').forEach(rec => {
+                        rec.classList.remove('active');
+                    });
+                    
+                    const category = tab.getAttribute('data-category');
+                    document.getElementById(category).classList.add('active');
+                });
+            });
+            
+            // Back to top button functionality
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-
