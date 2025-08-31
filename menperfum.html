@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the world's top 10 luxury men's fragrances. Explore detailed profiles of Creed Aventus, Dior Sauvage, Bleu de Chanel and other premium perfumes with key notes, longevity, sillage, and best occasions for each signature scent.">
+    <meta name="keywords" content="luxury men's fragrances, best men's perfumes, top 10 colognes, Creed Aventus, Dior Sauvage, Bleu de Chanel, Terre d'Hermès, Acqua di Giò, Tom Ford Tobacco Vanille, La Nuit de L'Homme, Prada L'Homme, Le Male Le Parfum, Dior Homme Intense, premium fragrances, signature scent">
+    <meta property="og:title" content="Top 10 Luxury Men's Fragrances | Premium Perfume Guide">
+<meta property="og:description" content="Discover the world's most exquisite men's luxury fragrances with our curated list of the top 10 perfumes.">
+    <title>Luxury Men's Fragrances | Top 10 Perfumes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0c0c1d 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding-bottom: 40px;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            background: linear-gradient(rgba(10,10,15,0.9), rgba(10,10,15,0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%231a1a2e" width="100" height="100"/><path fill="%230a0a0f" d="M0 0L100 100M100 0L0 100" stroke-width="0.5"/></svg>');
+            background-size: cover;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #33334d;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8e6c42, transparent);
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            color: #c9a96e;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Cinzel', serif;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            font-weight: 300;
+        }
+
+        .header-decoration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .header-decoration span {
+            height: 2px;
+            width: 60px;
+            background: linear-gradient(90deg, transparent, #8e6c42, transparent);
+            margin: 0 15px;
+        }
+
+        .header-decoration i {
+            color: #8e6c42;
+            font-size: 1.2rem;
+        }
+
+        .perfume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        
+        /* Updated styles for two images per card */
+        .perfume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .perfume-card {
+            background: linear-gradient(145deg, rgba(30, 30, 46, 0.8), rgba(25, 25, 40, 0.8));
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(110, 89, 60, 0.3);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .perfume-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.5), transparent);
+        }
+
+        .perfume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            border-color: rgba(201, 169, 110, 0.5);
+        }
+
+        .perfume-images-container {
+            display: flex;
+            width: 100%;
+            height: 300px;
+            background: #0c0c1d;
+            border-bottom: 1px solid rgba(110, 89, 60, 0.3);
+        }
+
+        .perfume-image {
+            width: 50%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .perfume-image:first-child {
+            border-right: 1px solid rgba(110, 89, 60, 0.3);
+        }
+
+        .perfume-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .perfume-card:hover .perfume-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            flex-grow: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-header {
+            text-align: left;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .rank {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #c9a96e, #8e6c42);
+            color: #0a0a0f;
+            border-radius: 50%;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .perfume-name {
+            font-size: 1.8rem;
+            color: #e0d3b8;
+            margin: 10px 0 5px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+
+        .house {
+            font-size: 1.1rem;
+            color: #c9a96e;
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .notes {
+            margin-bottom: 20px;
+        }
+
+        .notes-title {
+            font-size: 1.2rem;
+            color: #c9a96e;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .notes-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .note {
+            background: rgba(60, 60, 90, 0.5);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(110, 89, 60, 0.2);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .note:hover {
+            background: rgba(201, 169, 110, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .properties {
+            margin-bottom: 25px;
+        }
+
+        .property {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed rgba(68, 68, 102, 0.5);
+        }
+
+        .property-name {
+            color: #aaa;
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .property-value {
+            color: #e0d3b8;
+            font-weight: 500;
+        }
+
+        .best-for {
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.1), rgba(142, 108, 66, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            border-left: 5px solid #c9a96e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .best-for::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.3), transparent);
+        }
+
+        .best-for-title {
+            color: #c9a96e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        .perfume-descriptions {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(68, 68, 102, 0.5);
+        }
+        
+        .perfume-descriptions h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #c9a96e;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+        
+        .description-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            gap: 30px;
+            padding: 30px;
+            background: linear-gradient(145deg, rgba(20, 20, 30, 0.9), rgba(15, 15, 25, 0.9));
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid #8e6c42;
+        }
+        
+        .description-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .description-item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .description-content {
+            flex-grow: 1;
+        }
+        
+        .description-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #e0d3b8;
+            margin-bottom: 10px;
+        }
+        
+        .description-content p {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        .description-notes {
+            font-style: italic;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            padding: 30px;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(68, 68, 102, 0.5);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8e6c42, transparent);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1100px) {
+            .perfume-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .card-content {
+                padding: 20px;
+            }
+            .perfume-name {
+                font-size: 1.6rem;
+            }
+            .description-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .description-item img {
+                width: 100%;
+                height: auto;
+                max-width: 200px;
+            }
+        }
+        
+        .icon {
+            margin-right: 10px;
+            color: #c9a96e;
+        }
+
+        .property-icon {
+            width: 24px;
+            margin-right: 10px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        .rating {
+            display: flex;
+            margin-top: 5px;
+        }
+
+        .rating i {
+            color: #c9a96e;
+            font-size: 0.9rem;
+            margin-right: 2px;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(142, 108, 66, 0.2);
+            color: #c9a96e;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(201, 169, 110, 0.3);
+            z-index: 2;
+        }
+
+        .image-placeholder {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e, #0c0c1d);
+            color: #c9a96e;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Top 10 Men's Luxury Fragrances</h1>
+            <p class="subtitle">Discover the world's most exquisite perfumes for men, celebrated for their exceptional craftsmanship, premium ingredients, and timeless appeal.</p>
+            
+            <div class="header-decoration">
+                <span></span>
+                <i class="fas fa-crown"></i>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="perfume-grid">
+            <div class="perfume-card">
+                <span class="card-badge">Editor's Choice</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS2-wz8UCQnb-O_IvvD1xkfFMtf7-7OOTWGfgQDA4UIHa6Io7CGoiZmi4twuHeQ7sDAwxBMWBpTZc-Fi6DZQ9dyN_-dP7HsCtN5-2zawU1MLoNZ1SjUAmnT" alt="Creed Aventus Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSyYYip1llqrOcKbTEaSOdQKcZ3jfeyDhykFleKqLA_21-h_13Ce9UdSovH7qQXFgeZ2fh4ku5vdOMB56cms8RV6CEk0ELknpm6kb438oP0aJy2YCpId3Y_" alt="Creed Aventus Perfume Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">1</span>
+                        <h2 class="perfume-name">Creed Aventus</h2>
+                        <p class="house">Creed</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Pineapple</span>
+                                <span class="note">Blackcurrant</span>
+                                <span class="note">Birch</span>
+                                <span class="note">Musk</span>
+                                <span class="note">Oakmoss</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">10+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Strong</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Formal, Special Events</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Confidence, success, signature scent, special occasions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <img src="https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw58ce60b6/Y0997146/Y0997146_C099700672_E01_GHC.jpg?sw=800" alt="Dior Sauvage Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <img src="https://www.dior.com/on/demandware.static/-/Library-Sites-DiorSharedLibrary/default/dw11535310/images/beauty/01-FRAGRANCES/2024/RENO_SAUVAGE/PiecesException_E-Merch_3700x2000-2.jpg" alt="Dior Sauvage Perfume Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">2</span>
+                        <h2 class="perfume-name">Dior Sauvage</h2>
+                        <p class="house">Dior</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Bergamot</span>
+                                <span class="note">Ambroxan</span>
+                                <span class="note">Pepper</span>
+                                <span class="note">Lavender</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">10+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Powerful</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Versatile, Night Out</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Daily wear, all seasons, night out, versatility</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <img src="https://images-cdn.ubuy.co.in/6443fc807c84596da200037a-blue-pour-homme-edt-3-4-oz-100-ml-bleu.jpg" alt="Bleu de Chanel Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx1OrBZk85aYC5FlLFaDa2Nw0iFlaEGB7y4w&s" alt="Bleu de Chanel Perfume Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">3</span>
+                        <h2 class="perfume-name">Bleu de Chanel</h2>
+                        <p class="house">Chanel</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Grapefruit</span>
+                                <span class="note">Ginger</span>
+                                <span class="note">Incense</span>
+                                <span class="note">Sandalwood</span>
+                                <span class="note">Vetiver</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">8-10 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate to Strong</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Professional, Formal</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Professional settings, timeless elegance, any age</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfume-card">
+                <span class="card-badge">Sophisticated</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <img src="https://fragstalk.in/wp-content/uploads/2024/02/Terre-Dhermes-Parfum.png" alt="Terre d'Hermès Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <img src="https://m.media-amazon.com/images/I/51PM-bcikeL._UF1000,1000_QL80_.jpg" alt="Terre d'Hermès Perfume Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">4</span>
+                        <h2 class="perfume-name">Terre d'Hermès</h2>
+                        <p class="house">Hermès</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Orange</span>
+                                <span class="note">Grapefruit</span>
+                                <span class="note">Flint</span>
+                                <span class="note">Pepper</span>
+                                <span class="note">Vetiver</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">10+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Autumn/Winter</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Sophisticated Events</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Mature confidence, autumn/winter, signature scent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <img src="https://tidlon.com/wp-content/uploads/2022/07/1c0edb483eb8f37a19dfd0f004a3e5ca-e1657871077664.png" alt="Acqua di Giò Profumo Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <img src="https://images-static.nykaa.com/media/catalog/product/f/d/fdbc2ce3360372058878_1.jpg" alt="Acqua di Giò Profumo Perfume Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">5</span>
+                        <h2 class="perfume-name">Acqua di Giò Profumo</h2>
+                        <p class="house">Giorgio Armani</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Bergamot</span>
+                                <span class="note">Sea Notes</span>
+                                <span class="note">Incense</span>
+                                <span class="note">Patchouli</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">8-10 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Spring/Summer</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Evening Wear</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Evening wear, all seasons, mature freshness</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfume-card">
+                <span class="card-badge">Luxury</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM8RbNFSBDFUGjHj0mqd_0sd2zKAQv3NZdmQ&s" alt="Tom Ford Tobacco Vanille Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <img src="https://m.media-amazon.com/images/I/51+NEGEIw6L.jpg" alt="Tom Ford Tobacco Vanille Perfume Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">6</span>
+                        <h2 class="perfume-name">Tom Ford Tobacco Vanille</h2>
+                        <p class="house">Tom Ford</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Tobacco Leaf</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">Cocoa</span>
+                                <span class="note">Tonka Bean</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">12+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Strong</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Winter</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Formal Events</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Cold weather, formal events, indulgence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfume-card">
+                <span class="card-badge">Romantic</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQELg4TiIESY9g5SxHZKYXrfSzfxKGrrjkhwg&s" alt="La Nuit de L'Homme Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9RWITFlYjUNp7iGp88rUjb7_SIfSDkyoXgA&s" alt="La Nuit de L'Homme Perfume Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">7</span>
+                        <h2 class="perfume-name">La Nuit de L'Homme</h2>
+                        <p class="house">Yves Saint Laurent</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Cardamom</span>
+                                <span class="note">Lavender</span>
+                                <span class="note">Cedar</span>
+                                <span class="note">Vetiver</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">6-8 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Intimate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Evening/Night</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Dating, Nighttime</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Dating, nighttime, intimate settings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <img src="https://www.yohohongkong.com/_next/image?url=https%3A%2F%2Fstore.yohohongkong.com%2Fmkp%2Fgallery%2Fgoods%2Fimages%2F0b0b490c-0c20-4208-9d2c-0f792b322591_mkp_image.webp&w=960&q=100" alt="Prada L'Homme Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJlORhgBuBbRlXaUkssxkOtwcU73WaX4gBSY8s79gX_l83lxabwOr0TUIuN4AlbVCTM2Q&usqp=CAU" alt="Prada L'Homme Perfume Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">8</span>
+                        <h2 class="perfume-name">Prada L'Homme</h2>
+                        <p class="house">Prada</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Neroli</span>
+                                <span class="note">Iris</span>
+                                <span class="note">Amber</span>
+                                <span class="note">Cedar</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">6-8 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Office, Professional</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Office, professional settings, daily wear</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <img src="https://splashfragrance.in/wp-content/uploads/2022/10/le-parfum-min.jpg" alt="Le Male Le Parfum Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <img src="https://images-static.nykaa.com/media/catalog/product/8/6/865e51f8435415032278_6.jpg?tr=w-500" alt="Le Male Le Parfum Perfume Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">9</span>
+                        <h2 class="perfume-name">Le Male Le Parfum</h2>
+                        <p class="house">Jean Paul Gaultier</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Cardamom</span>
+                                <span class="note">Iris</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">Leather</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">8-10 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Strong</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Autumn/Winter</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Night Out</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Night out, cold weather, making a statement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfume-card">
+                <span class="card-badge">Elegant</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <img src="https://m.media-amazon.com/images/I/51ks8879PeL._UF1000,1000_QL80_.jpg" alt="Dior Homme Intense Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <img src="https://i.pinimg.com/736x/6b/8f/62/6b8f629e1081aa68557cabee42044221.jpg" alt="Dior Homme Intense Perfume Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">10</span>
+                        <h2 class="perfume-name">Dior Homme Intense</h2>
+                        <p class="house">Dior</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Iris</span>
+                                <span class="note">Lavender</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">Leather</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">10+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate to Strong</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Autumn/Winter</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Formal Events</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Formal events, evening wear, signature scent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="perfume-descriptions">
+            <h2>Detailed Fragrance Profiles</h2>
+            <div class="description-item">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS2-wz8UCQnb-O_IvvD1xkfFMtf7-7OOTWGfgQDA4UIHa6Io7CGoiZmi4twuHeQ7sDAwxBMWBpTZc-Fi6DZQ9dyN_-dP7HsCtN5-2zawU1MLoNZ1SjUAmnT" alt="Creed Aventus Perfume Bottle">
+                <div class="description-content">
+                    <h3>Creed Aventus (#1)</h3>
+                    <p>**Creed Aventus** is an audacious and iconic fragrance that has redefined the modern masculine scent. It opens with a vibrant, fruity burst of pineapple and blackcurrant, creating a sophisticated and energetic top note. As it settles, a smoky, woody heart of birch and oakmoss emerges, giving it a powerful, confident core. This scent is celebrated for its masterful blend of freshness and depth, making it a symbol of success and a true classic for the discerning gentleman.</p>
+                </div>
+            </div>
+
+            <div class="description-item">
+                <img src="https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw58ce60b6/Y0997146/Y0997146_C099700672_E01_GHC.jpg?sw=800" alt="Dior Sauvage Perfume Bottle">
+                <div class="description-content">
+                    <h3>Dior Sauvage (#2)</h3>
+                    <p>**Dior Sauvage** is a scent that captures the raw and rugged spirit of the wilderness. Its bold and masculine profile is built around a powerful explosion of fresh bergamot and spicy pepper, followed by a warm and intoxicating heart of Ambroxan. This fragrance is incredibly versatile and commands attention, perfect for the man who embodies an untamed and confident allure, from day to night, in any setting.</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <img src="https://images-cdn.ubuy.co.in/6443fc807c84596da200037a-blue-pour-homme-edt-3-4-oz-100-ml-bleu.jpg" alt="Bleu de Chanel Perfume Bottle">
+                <div class="description-content">
+                    <h3>Bleu de Chanel (#3)</h3>
+                    <p>**Bleu de Chanel** is the essence of elegance and freedom. This woody-aromatic fragrance combines a fresh, invigorating opening of grapefruit and ginger with a deep, sensual base of incense and sandalwood. It is a timeless and sophisticated scent that represents a man who defies convention. Its balanced composition makes it a staple for professional settings and formal occasions, radiating a quiet confidence and refined taste.</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <img src="https://fragstalk.in/wp-content/uploads/2024/02/Terre-Dhermes-Parfum.png" alt="Terre d'Hermès Perfume Bottle">
+                <div class="description-content">
+                    <h3>Terre d'Hermès (#4)</h3>
+                    <p>**Terre d'Hermès** is a unique fragrance that connects man to the earth. It is a harmonious blend of woody, spicy, and citrus notes, with a prominent accord of flint that gives it a mineral-like, earthy character. The bright grapefruit and orange notes in the opening are perfectly balanced by a sturdy vetiver and cedar base. This is a mature and sophisticated scent, ideal for autumn and winter, embodying a grounded and powerful masculinity.</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <img src="https://tidlon.com/wp-content/uploads/2022/07/1c0edb483eb8f37a19dfd0f004a3e5ca-e1657871077664.png" alt="Acqua di Giò Profumo Perfume Bottle">
+                <div class="description-content">
+                    <h3>Acqua di Giò Profumo (#5)</h3>
+                    <p>**Acqua di Giò Profumo** elevates the classic aquatic fragrance with a darker, more sophisticated edge. It merges the fresh sea notes and bergamot of the original with a smoky, mysterious layer of incense and patchouli. This scent is an elegant and intense interpretation, perfect for evening wear. It’s a versatile choice that maintains a sense of freshness while exuding a deeper, more mature allure.</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM8RbNFSBDFUGjHj0mqd_0sd2zKAQv3NZdmQ&s" alt="Tom Ford Tobacco Vanille Perfume Bottle">
+                <div class="description-content">
+                    <h3>Tom Ford Tobacco Vanille (#6)</h3>
+                    <p>**Tom Ford Tobacco Vanille** is a scent of pure opulence and indulgence. It's a rich, warm, and spicy fragrance that combines the heady aroma of tobacco leaf with the creamy sweetness of vanilla and tonka bean. Hints of cocoa and dried fruit add a gourmand touch, creating a truly luxurious and iconic scent. It’s a powerful statement fragrance, best reserved for cold weather and special occasions when you want to make a lasting impression.</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQELg4TiIESY9g5SxHZKYXrfSzfxKGrrjkhwg&sv" alt="La Nuit de L'Homme Perfume Bottle">
+                <div class="description-content">
+                    <h3>La Nuit de L'Homme (#7)</h3>
+                    <p>**La Nuit de L'Homme** is a scent of mystery and seduction. Its intimate and alluring profile is dominated by a spicy and warm cardamom note, softened by a touch of lavender and a woody base of cedar and vetiver. This fragrance is designed for nighttime and intimate settings, earning its reputation as a "date-night staple." It’s the perfect choice for a man who wants to exude a quiet, magnetic charm.</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <img src="https://www.yohohongkong.com/_next/image?url=https%3A%2F%2Fstore.yohohongkong.com%2Fmkp%2Fgallery%2Fgoods%2Fimages%2F0b0b490c-0c20-4208-9d2c-0f792b322591_mkp_image.webp&w=960&q=100" alt="Prada L'Homme Perfume Bottle">
+                <div class="description-content">
+                    <h3>Prada L'Homme (#8)</h3>
+                    <p>**Prada L'Homme** is the quintessential "office scent." It’s a clean, sophisticated, and professional fragrance built around the core notes of iris and amber. The result is a smooth, powdery, and slightly floral aroma that is both modern and timeless. It’s a versatile and non-offensive scent that projects a sense of quiet class and a polished demeanor, making it ideal for daily wear in professional environments.</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <img src="https://splashfragrance.in/wp-content/uploads/2022/10/le-parfum-min.jpg" alt="Le Male Le Parfum Perfume Bottle">
+                <div class="description-content">
+                    <h3>Le Male Le Parfum (#9)</h3>
+                    <p>**Le Male Le Parfum** is an intense and commanding fragrance that takes the classic Le Male DNA to a new level. It's a woody oriental scent that features a rich blend of cardamom and vanilla, with a prominent iris and leather accord that gives it a sophisticated and bold character. This is a powerful and assertive fragrance, perfect for a night out or cold weather, designed for a man who wants to make a memorable statement.</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <img src="https://m.media-amazon.com/images/I/51ks8879PeL._UF1000,1000_QL80_.jpg" alt="Dior Homme Intense Perfume Bottle">
+                <div class="description-content">
+                    <h3>Dior Homme Intense (#10)</h3>
+                    <p>**Dior Homme Intense** is a modern masterpiece of elegance. This woody floral musk fragrance is centered around a stunningly smooth and powdery iris note, complemented by a rich blend of lavender, vanilla, and hints of leather. It’s a deeply sophisticated and luxurious scent with a "makeup-bag" iris accord that is both unique and incredibly appealing. Best suited for formal events and evening wear, it exudes a quiet confidence and impeccable taste.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Luxury Fragrance Guide | Discover the World's Finest Perfumes</p>
+            <p>Note: Scent preference is subjective. Always test a fragrance on your skin before purchasing.</p>
+        </div>
+    </footer>
+</body>
+</html>
