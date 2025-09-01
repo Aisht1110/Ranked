@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 15 Women's Luxury Fragrances</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a0a1a 0%, #2e1a2e 50%, #1d0c1d 100%);
+            color: #f0e0f0;
+            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .perfume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .perfume-card {
+            background: linear-gradient(145deg, rgba(46, 30, 46, 0.8), rgba(40, 25, 40, 0.8));
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(110, 89, 105, 0.3);
+            position: relative;
+        }
+
+        .perfume-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(232, 181, 211, 0.5), transparent);
+        }
+
+        .perfume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            border-color: rgba(232, 181, 211, 0.5);
+        }
+
+        .perfume-images-container {
+            display: flex;
+            width: 100%;
+            height: 300px;
+            background: #1d0c1d;
+            border-bottom: 1px solid rgba(110, 89, 105, 0.3);
+        }
+
+        .perfume-image {
+            width: 50%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .perfume-image:first-child {
+            border-right: 1px solid rgba(110, 89, 105, 0.3);
+        }
+
+        .perfume-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .perfume-card:hover .perfume-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            flex-grow: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-header {
+            text-align: left;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .rank {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e8b5d3, #c96ea9);
+            color: #1a0a1a;
+            border-radius: 50%;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .perfume-name {
+            font-size: 1.8rem;
+            color: #f0d3e8;
+            margin: 10px 0 5px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+
+        .house {
+            font-size: 1.1rem;
+            color: #e8b5d3;
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .notes {
+            margin-bottom: 20px;
+        }
+
+        .notes-title {
+            font-size: 1.2rem;
+            color: #e8b5d3;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .notes-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .note {
+            background: rgba(90, 60, 90, 0.5);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(110, 89, 105, 0.2);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .note:hover {
+            background: rgba(232, 181, 211, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .properties {
+            margin-bottom: 25px;
+        }
+
+        .property {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed rgba(102, 68, 102, 0.5);
+        }
+
+        .property-name {
+            color: #d8b0cb;
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .property-value {
+            color: #f0d3e8;
+            font-weight: 500;
+        }
+
+        .best-for {
+            background: linear-gradient(135deg, rgba(232, 181, 211, 0.1), rgba(201, 110, 169, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            border-left: 5px solid #e8b5d3;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .best-for::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(232, 181, 211, 0.3), transparent);
+        }
+
+        .best-for-title {
+            color: #e8b5d3;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        .icon {
+            margin-right: 10px;
+            color: #e8b5d3;
+        }
+
+        .property-icon {
+            width: 24px;
+            margin-right: 10px;
+            text-align: center;
+            color: #d8b0cb;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(201, 110, 169, 0.2);
+            color: #e8b5d3;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(232, 181, 211, 0.3);
+            z-index: 2;
+        }
+
+        .image-placeholder {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2e1a2e, #1d0c1d);
+            color: #e8b5d3;
+            font-size: 1.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1100px) {
+            .perfume-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card-content {
+                padding: 20px;
+            }
+            .perfume-name {
+                font-size: 1.6rem;
+            }
+        }
+        .perfume-descriptions {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(102, 68, 102, 0.5);
+}
+
+.perfume-descriptions h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #e8b5d3;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.description-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    gap: 30px;
+    padding: 30px;
+    background: linear-gradient(145deg, rgba(30, 20, 30, 0.9), rgba(25, 15, 25, 0.9));
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border-left: 5px solid #c96ea9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.description-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.description-item:last-child {
+    margin-bottom: 0;
+}
+
+.description-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(201, 110, 169, 0.3);
+}
+
+.description-content {
+    flex-grow: 1;
+}
+
+.description-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #f0d3e8;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.description-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #e8b5d3, transparent);
+}
+
+.description-content p {
+    color: #e8d0e0;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.description-notes {
+    font-style: italic;
+    color: #d8b0cb;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    background: rgba(90, 60, 90, 0.3);
+    border-radius: 8px;
+    border-left: 3px solid #e8b5d3;
+}
+
+/* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8b5d3, #c96ea9);
+            color: #1a0a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+         .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(90, 60, 90, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(232, 181, 211, 0.2);
+            transform: translateY(-3px);
+        }
+        footer {
+            background: linear-gradient(135deg, rgba(30, 20, 30, 0.9), rgba(25, 15, 25, 0.9));
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(102, 68, 102, 0.5);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            color: #e8b5d3;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #d8b0cb;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #e8b5d3;
+        }
+/* Responsive adjustments for descriptions */
+@media (max-width: 768px) {
+    .description-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .description-item img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+    
+    .description-content h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .perfume-descriptions h2 {
+        font-size: 2rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="perfume-grid">
+            <!-- Chanel No. 5 -->
+            <div class="perfume-card">
+                <span class="card-badge">Iconic</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://www.chanel.com/puls-img/1728641660377-oneplpherobannermobile1920x2048pxjpg_1600x1500.jpg" alt="Chanel No. 5 Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://scentoria.co.in/cdn/shop/files/Chanel_No_5_100_ML_EDP_Tester.jpg?v=1713941378&width=900" alt="Chanel No. 5 Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">1</span>
+                        <h2 class="perfume-name">Chanel No. 5</h2>
+                        <p class="house">Chanel</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Aldehydes</span>
+                                <span class="note">Jasmine</span>
+                                <span class="note">Rose</span>
+                                <span class="note">Sandalwood</span>
+                                <span class="note">Vanilla</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">8-10 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Elegant Evenings</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Timeless elegance, sophistication, special occasions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guerlain Shalimar -->
+            <div class="perfume-card">
+                <span class="card-badge">Classic</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://images-static.nykaa.com/media/catalog/product/d/b/db992ab3346470113558.jpg" alt="Guerlain Shalimar Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://www.perfumenetwork.in/cdn/shop/files/shalimaredt_7b8a338e-9ee7-4287-a444-6665b8db6fd2_1080x.png?v=1695627612" alt="Guerlain Shalimar Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">2</span>
+                        <h2 class="perfume-name">Shalimar</h2>
+                        <p class="house">Guerlain</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Bergamot</span>
+                                <span class="note">Iris</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">Incense</span>
+                                <span class="note">Leather</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">10+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Strong</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Autumn/Winter</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Evening Events</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Evening wear, cold weather, making a statement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dior J'adore -->
+            <div class="perfume-card">
+                <span class="card-badge">Modern Classic</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://cdn.quicksell.co/-N5Qf-qbF6jHaV65k_wk/products/-OCCs8wwbqIn_yDdIRo9.jpg" alt="Dior J'adore Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://m.media-amazon.com/images/I/51glL7mrbuL.jpg" alt="Dior J'adore Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">3</span>
+                        <h2 class="perfume-name">J'adore</h2>
+                        <p class="house">Dior</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Pear</span>
+                                <span class="note">Magnolia</span>
+                                <span class="note">Jasmine</span>
+                                <span class="note">Rose</span>
+                                <span class="note">Vanilla</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">8-10 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Daytime, Special Events</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Daytime elegance, special occasions, signature scent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YSL Black Opium -->
+            <div class="perfume-card">
+                <span class="card-badge">Modern</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiidZ1-0hp8-mtRP5t8juUn4iWPhsR4xo4XA&s" alt="YSL Black Opium Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRWSio1PqtS78rwYW3jhwBIyoV0uou9h0Rng&s" alt="YSL Black Opium Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">4</span>
+                        <h2 class="perfume-name">Black Opium</h2>
+                        <p class="house">Yves Saint Laurent</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Coffee</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">White Flowers</span>
+                                <span class="note">Pear</span>
+                                <span class="note">Pink Pepper</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">8+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Strong</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Autumn/Winter</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Night Out</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Nightlife, evening events, making a statement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marc Jacobs Daisy -->
+            <div class="perfume-card">
+                <span class="card-badge">Youthful</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://media.allure.com/photos/598b6075ba54fd17654202ef/16:9/w_1160%2Cc_limit/BOB-2017-Scent-MarcJacobs-Lede.jpg" alt="Marc Jacobs Daisy Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://images-cdn.ubuy.com.eg/65c3806ba72ec344d85a0bae-marc-jacobs-daisy-perfume-for-women-3-4.jpg" alt="Marc Jacobs Daisy Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">5</span>
+                        <h2 class="perfume-name">Daisy</h2>
+                        <p class="house">Marc Jacobs</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Strawberry</span>
+                                <span class="note">Violet</span>
+                                <span class="note">Jasmine</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">Musk</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">6-8 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Spring/Summer</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Daytime, Casual</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Daytime wear, casual outings, youthful energy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lancôme La Vie Est Belle -->
+            <div class="perfume-card">
+                <span class="card-badge">Popular</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTEL_MwBvdpNXVMz7zE5UUSqPHiwi2TURYWw&s" alt="Lancôme La Vie Est Belle Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://www.lancome.in/dw/image/v2/BJSQ_PRD/on/demandware.static/-/Sites-lancome-in-ng-Library/default/dw3bec8100/images/pdp/00027-LAC/REDISCOVER_AN_ICONIC_SYMBOL_02_DESK_X1.jpg?sw=1080&sh=1080&sm=cut&sfrm=jpg&q=70" alt="Lancôme La Vie Est Belle Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">6</span>
+                        <h2 class="perfume-name">La Vie Est Belle</h2>
+                        <p class="house">Lancôme</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Iris</span>
+                                <span class="note">Patchouli</span>
+                                <span class="note">Praline</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">Orange Blossom</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">10+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Strong</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Versatile</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Daily wear, happiness, confidence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creed Spring Flower -->
+            <div class="perfume-card">
+                <span class="card-badge">Niche</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://m.media-amazon.com/images/I/51siY3e1jOL.jpg" alt="Creed Spring Flower Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://creedboutique.com/cdn/shop/files/sprin-flower-ingredients.jpg?v=1694013354&width=1500" alt="Creed Spring Flower Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">7</span>
+                        <h2 class="perfume-name">Spring Flower</h2>
+                        <p class="house">Creed</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Apple</span>
+                                <span class="note">Peach</span>
+                                <span class="note">Melon</span>
+                                <span class="note">Rose</span>
+                                <span class="note">Ambergris</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">8+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Spring/Summer</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Daytime, Special Events</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Springtime, daytime elegance, sophistication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Byredo Gypsy Water -->
+            <div class="perfume-card">
+                <span class="card-badge">Bohemian</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://www.myperfumeshop.ae/cdn/shop/articles/the-allure-of-byredo-gypsy-water-a-comprehensive-review-471458.jpg?v=1723785142&width=2048" alt="Byredo Gypsy Water Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://m.media-amazon.com/images/I/61AQtlrmwIL.jpg" alt="Byredo Gypsy Water Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">8</span>
+                        <h2 class="perfume-name">Gypsy Water</h2>
+                        <p class="house">Byredo</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Juniper</span>
+                                <span class="note">Lemon</span>
+                                <span class="note">Pine</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">Amber</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">6-8 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Intimate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Casual, Daytime</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Bohemian style, everyday wear, free spirit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tom Ford Black Orchid -->
+            <div class="perfume-card">
+                <span class="card-badge">Luxury</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/tom-ford-beauty/7Z4CILIACXI-1/0/C6xIHwNTF--1.jpg" alt="Tom Ford Black Orchid Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://www.bluesalon.com/cdn/shop/files/TFD121PER00249_2.jpg?v=1698839625" alt="Tom Ford Black Orchid Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">9</span>
+                        <h2 class="perfume-name">Black Orchid</h2>
+                        <p class="house">Tom Ford</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Truffle</span>
+                                <span class="note">Black Orchid</span>
+                                <span class="note">Patchouli</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">Incense</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">12+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Strong</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Autumn/Winter</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Evening, Formal</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Evening glamour, special occasions, making a statement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jo Malone Wood Sage & Sea Salt -->
+            <div class="perfume-card">
+                <span class="card-badge">Fresh</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000000494238481/R6UFO1Wfw7-000000000494238481_1.jpg" alt="Jo Malone Wood Sage & Sea Salt Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://bluemercury.com/cdn/shop/files/enhanced_images-p690251033713-3_b68134d8-a7ce-4fb6-b038-ed90503f8f33.jpg?v=1746828875&width=1500" alt="Jo Malone Wood Sage & Sea Salt Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">10</span>
+                        <h2 class="perfume-name">Wood Sage & Sea Salt</h2>
+                        <p class="house">Jo Malone</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Sea Salt</span>
+                                <span class="note">Sage</span>
+                                <span class="note">Ambrette</span>
+                                <span class="note">Mineral Notes</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">4-6 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Intimate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Spring/Summer</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Daytime, Casual</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Fresh, clean scent, everyday wear, layering</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kilian Love, Don't Be Shy -->
+            <div class="perfume-card">
+                <span class="card-badge">Gourmand</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://www.sephora.com/productimages/sku/s2355451-av-10-zoom.jpg" alt="Kilian Love, Don't Be Shy Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://scentoria.co.in/cdn/shop/files/Love_Don_t_Be_Shy_EDP_50_ML_Retail.webp?v=1716286112" alt="Kilian Love, Don't Be Shy Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">11</span>
+                        <h2 class="perfume-name">Love, Don't Be Shy</h2>
+                        <p class="house">Kilian</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Orange Blossom</span>
+                                <span class="note">Marshmallow</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">Civet</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">8+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Evening, Romantic</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Romantic evenings, sweet scent lovers, special occasions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jean Patou Joy -->
+            <div class="perfume-card">
+                <span class="card-badge">Vintage</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://fimgs.net/mdimg/perfume/social.1436.jpg" alt="Jean Patou Joy Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk1gVgVGSogCuHiFeJAwIBoPgLoeeTGoZ2Gw&s" alt="Jean Patou Joy Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">12</span>
+                        <h2 class="perfume-name">Joy</h2>
+                        <p class="house">Jean Patou</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Jasmine</span>
+                                <span class="note">Rose</span>
+                                <span class="note">Ylang-Ylang</span>
+                                <span class="note">Sandalwood</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">8+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Special Events</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Classic elegance, special occasions, vintage lovers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YSL Opium -->
+            <div class="perfume-card">
+                <span class="card-badge">Bold</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://m.media-amazon.com/images/I/71EOLGbnN+L._UF1000,1000_QL80_.jpg" alt="YSL Opium Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.64500.jpg" alt="YSL Opium Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">13</span>
+                        <h2 class="perfume-name">Opium</h2>
+                        <p class="house">Yves Saint Laurent</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Plum</span>
+                                <span class="note">Clove</span>
+                                <span class="note">Vanilla</span>
+                                <span class="note">Myrrh</span>
+                                <span class="note">Patchouli</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">10+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Strong</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Autumn/Winter</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Evening, Bold Statements</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Making a statement, evening wear, cold weather</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Miss Dior -->
+            <div class="perfume-card">
+                <span class="card-badge">Romantic</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://images-static.nykaa.com/media/catalog/product/d/b/db992ab3348901362832.jpg" alt="Miss Dior Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2024/1/378859946/LS/SU/GW/190836238/marisa-garrido-3aql6y9lkfo-unsplash.jpeg" alt="Miss Dior Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">14</span>
+                        <h2 class="perfume-name">Miss Dior</h2>
+                        <p class="house">Dior</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Bergamot</span>
+                                <span class="note">Rose</span>
+                                <span class="note">Peony</span>
+                                <span class="note">Patchouli</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">6-8 hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">Spring/Summer</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Daytime, Romantic</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Romantic dates, daytime elegance, feminine charm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coco Mademoiselle -->
+            <div class="perfume-card">
+                <span class="card-badge">Modern Classic</span>
+                <div class="perfume-images-container">
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://thecandyperfumeboy.com/wp-content/uploads/2020/09/img_9404.jpeg" alt="Coco Mademoiselle Perfume">
+                    </div>
+                    <div class="perfume-image">
+                        <!-- Replace with your image URL -->
+                        <img src="https://images-cdn.ubuy.co.in/667a7e701b304d5cc869eec2-mademoiselle-for-femme-3-4-oz-edp-eau-de.jpg" alt="Coco Mademoiselle Bottle">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="rank">15</span>
+                        <h2 class="perfume-name">Coco Mademoiselle</h2>
+                        <p class="house">Chanel</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="notes">
+                            <h3 class="notes-title"><i class="fas fa-wind icon"></i>Key Notes</h3>
+                            <div class="notes-list">
+                                <span class="note">Orange</span>
+                                <span class="note">Jasmine</span>
+                                <span class="note">Rose</span>
+                                <span class="note">Patchouli</span>
+                                <span class="note">Vanilla</span>
+                            </div>
+                        </div>
+                        <div class="properties">
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-clock property-icon"></i>Longevity</span>
+                                <span class="property-value">8+ hours</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-expand-alt property-icon"></i>Sillage</span>
+                                <span class="property-value">Moderate</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-calendar property-icon"></i>Season</span>
+                                <span class="property-value">All Seasons</span>
+                            </div>
+                            <div class="property">
+                                <span class="property-name"><i class="fas fa-star property-icon"></i>Occasion</span>
+                                <span class="property-value">Versatile</span>
+                            </div>
+                        </div>
+                        <div class="best-for">
+                            <h3 class="best-for-title"><i class="fas fa-award icon"></i>Best For</h3>
+                            <p>Modern elegance, daytime to evening, signature scent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="perfume-descriptions">
+            <h2>Detailed Fragrance Profiles</h2>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #e8b5d3, #c96ea9);"><i class="fas fa-spa fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Chanel No. 5 (#1)</h3>
+                    <p>**Chanel No. 5** is arguably the most famous perfume in the world, created by Ernest Beaux for Coco Chanel in 1921. This iconic aldehyde floral fragrance opens with bright notes of aldehydes, lemon, and neroli, leading to a floral heart of jasmine, rose, and iris. The base reveals warm notes of vanilla, sandalwood, and vetiver. Timeless and sophisticated, it's the epitome of classic elegance.</p>
+                    <p class="description-notes">Key Notes: Aldehydes, Jasmine, Rose, Sandalwood, Vanilla</p>
+                </div>
+            </div>
+
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #8a4f7d, #5d2f51);"><i class="fas fa-moon fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Guerlain Shalimar (#2)</h3>
+                    <p>**Guerlain Shalimar** is a legendary oriental fragrance created in 1925 and inspired by the love story between Emperor Shah Jahan and his wife Mumtaz Mahal. It opens with fresh citrus notes of bergamot and lemon, which transition into a floral heart of iris and rose. The base is a warm, sensual blend of vanilla, incense, and leather. This timeless classic is the blueprint for all modern oriental fragrances.</p>
+                    <p class="description-notes">Key Notes: Bergamot, Iris, Vanilla, Incense, Leather</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #f9c6d9, #e8b5d3);"><i class="fas fa-sun fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Dior J'adore (#3)</h3>
+                    <p>**Dior J'adore** is a modern classic that redefined floral fragrances for women. Created in 1999, it's a stunning, luminous floral that is both fresh and voluptuous. Its signature accord combines kingly jasmine, voluptuous rose, and exotic ylang-ylang with a fruity touch of pear and melon. The fragrance is both sophisticated and approachable, making it perfect for both daytime and evening wear.</p>
+                    <p class="description-notes">Key Notes: Pear, Magnolia, Jasmine, Rose, Vanilla</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #4a3f5c, #2e1a2e);"><i class="fas fa-coffee fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>YSL Black Opium (#4)</h3>
+                    <p>**YSL Black Opium** is a modern gourmand fragrance that took the perfume world by storm. It combines the energizing note of coffee with the sweetness of vanilla and white flowers. This addictive scent opens with pink pepper and pear, reveals a heart of orange blossom and jasmine, and settles into a base of coffee, vanilla, and patchouli. It's the perfect fragrance for nightlife and making a bold statement.</p>
+                    <p class="description-notes">Key Notes: Coffee, Vanilla, White Flowers, Pear, Pink Pepper</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #ffb7d5, #e8b5d3);"><i class="fas fa-flower fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Marc Jacobs Daisy (#5)</h3>
+                    <p>**Marc Jacobs Daisy** is a hugely popular and accessible fragrance that defines modern, playful, and sunny floral scents. Its iconic bottle with daisy accents and light, cheerful scent have made it a generation's signature scent. The fragrance opens with wild strawberry and violet leaves, reveals a heart of jasmine and gardenia, and settles into a base of white woods and musk. It's the perfect everyday fragrance for those who want to feel youthful and happy.</p>
+                    <p class="description-notes">Key Notes: Strawberry, Violet, Jasmine, Vanilla, Musk</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #e8b5d3, #c96ea9);"><i class="fas fa-smile fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Lancôme La Vie Est Belle (#6)</h3>
+                    <p>**Lancôme La Vie Est Belle** is a global bestseller for a reason. This gourmand-oriental fragrance is sweet, happy, and incredibly addictive. Its combination of iris, patchouli, and praline creates a comforting and long-lasting scent that radiates joy and confidence. The fragrance opens with notes of blackcurrant and pear, reveals a heart of iris, orange blossom, and jasmine, and settles into a base of praline, vanilla, and patchouli.</p>
+                    <p class="description-notes">Key Notes: Iris, Patchouli, Praline, Vanilla, Orange Blossom</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #a4d7c6, #7bbaa8);"><i class="fas fa-leaf fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Creed Spring Flower (#7)</h3>
+                    <p>**Creed Spring Flower** is a beloved niche fragrance that smells like the most perfect, sophisticated fruit basket and bouquet of spring flowers. Created in 1996, it's fresh, creamy, and utterly luxurious. The fragrance opens with apple and melon notes, reveals a heart of peach, rose, and jasmine, and settles into a base of ambergris and musk. It's the perfect scent for springtime and daytime elegance.</p>
+                    <p class="description-notes">Key Notes: Apple, Peach, Melon, Rose, Ambergris</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #a39db8, #7a7194);"><i class="fas fa-music fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Byredo Gypsy Water (#8)</h3>
+                    <p>**Byredo Gypsy Water** is a cult favorite from the niche house Byredo. It's a unique, bohemian-inspired scent that is both earthy and ethereal. The fragrance captures the spirit of freedom and nature with notes of juniper berries, lemon, pine, and vanilla. It opens with fresh bergamot and lemon, reveals a heart of incense and pine needles, and settles into a base of vanilla, amber, and sandalwood. Perfect for those with a free spirit.</p>
+                    <p class="description-notes">Key Notes: Juniper, Lemon, Pine, Vanilla, Amber</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #2e1a2e, #1d0c1d);"><i class="fas fa-gem fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Tom Ford Black Orchid (#9)</h3>
+                    <p>**Tom Ford Black Orchid** is a bold, luxurious, and seductive oriental fragrance. It's deep, complex, and unapologetically glamorous, blending truffle, dark florals, and patchouli. The fragrance opens with notes of black truffle and bergamot, reveals a heart of black orchid, black plum, and lotus wood, and settles into a base of patchouli, vanilla, and incense. This is a fragrance for those who want to make a powerful statement.</p>
+                    <p class="description-notes">Key Notes: Truffle, Black Orchid, Patchouli, Vanilla, Incense</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #a4c8e8, #7aa7d8);"><i class="fas fa-water fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Jo Malone Wood Sage & Sea Salt (#10)</h3>
+                    <p>**Jo Malone Wood Sage & Sea Salt** is the defining modern "neutral" scent. It's not floral or sweet; it's a unique, breezy, and mineralistic fragrance that evokes a windswept coastline. Created by Christine Nagel, it features sea salt, sage, and ambrette seeds. The fragrance is fresh, woody, and slightly salty, perfect for those who prefer understated elegance. It's also famously great for layering with other fragrances.</p>
+                    <p class="description-notes">Key Notes: Sea Salt, Sage, Ambrette, Mineral Notes</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #ffd1dc, #ffb7d5);"><i class="fas fa-candy-cane fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Kilian Love, Don't Be Shy (#11)</h3>
+                    <p>**Kilian Love, Don't Be Shy** is an iconic gourmand fragrance known for its addictive sweetness. With notes of orange blossom, marshmallow, and vanilla, it's a sensual, candy-like scent that has a massive celebrity following. The fragrance opens with neroli and orange blossom, reveals a heart of marshmallow and rose, and settles into a base of vanilla and amber. It's a playful yet sophisticated scent that's perfect for romantic evenings.</p>
+                    <p class="description-notes">Key Notes: Orange Blossom, Marshmallow, Vanilla, Civet</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #e8b5d3, #d48bb8);"><i class="fas fa-crown fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Jean Patou Joy (#12)</h3>
+                    <p>**Jean Patou Joy** is known as "the costliest perfume in the world," created during the Great Depression as an olfactory masterpiece of pure joy. It's a profoundly rich and animalic jasmine and rose bouquet. The fragrance features the most precious ingredients, with over 10,000 jasmine flowers and 28 dozen roses in each ounce. It's a timeless classic that represents luxury and elegance in its purest form.</p>
+                    <p class="description-notes">Key Notes: Jasmine, Rose, Ylang-Ylang, Sandalwood</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #8a4f7d, #6b2f5d);"><i class="fas fa-fire fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>YSL Opium (#13)</h3>
+                    <p>**YSL Opium** is the controversial and groundbreaking spicy-oriental from 1977. It's intense, warm, and intoxicating, with notes of plum, clove, and vanilla. The fragrance opens with mandarin orange, plum, and pepper, reveals a heart of clove, orchid, and jasmine, and settles into a base of vanilla, patchouli, and myrrh. A fragrance for those who want to make a statement and aren't afraid to be noticed.</p>
+                    <p class="description-notes">Key Notes: Plum, Clove, Vanilla, Myrrh, Patchouli</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #ffb7d5, #f9c6d9);"><i class="fas fa-heart fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Miss Dior (#14)</h3>
+                    <p>**Miss Dior** is the epitome of a fresh, romantic, and youthful fragrance. Originally created in 1947, it has been reinterpreted over the years while maintaining its classic charm. The modern versions are beautiful, soft florals perfect for everyday wear. The fragrance typically features notes of bergamot, rose, peony, and patchouli, creating a delicate yet lasting scent that embodies feminine charm and elegance.</p>
+                    <p class="description-notes">Key Notes: Bergamot, Rose, Peony, Patchouli</p>
+                </div>
+            </div>
+            
+            <div class="description-item">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #e8b5d3, #c96ea9);"><i class="fas fa-star fa-3x"></i></div>
+                <div class="description-content">
+                    <h3>Chanel Coco Mademoiselle (#15)</h3>
+                    <p>**Chanel Coco Mademoiselle** is a contemporary classic that has become a signature scent for millions of women worldwide. A vibrant, modern chypre with a sparkling burst of citrus, a heart of jasmine and rose, and a warm, patchouli-infused base. It's incredibly popular for its versatility and elegance, working equally well for daytime professional settings and evening events. The fragrance is both sophisticated and youthful.</p>
+                    <p class="description-notes">Key Notes: Orange, Jasmine, Rose, Patchouli, Vanilla</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About LuxeScents</h3>
+                <p>Your guide to the world's finest fragrances. We're dedicated to helping you discover scents that tell your unique story.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="menperfum.html">Collection</a>
+                
+                <a href="#about">About Us</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <p>Follow us for updates on new fragrances and exclusive content.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <footer>
+        <div class="container">
+            <p>© Ranked Site 2025 | Discover the World's Finest Perfumes</p>
+            <p>Note: Scent preference is subjective. Always test a fragrance on your skin before purchasing.</p>
+        </div>
+        
+
+    <script>
+        // Function to handle image loading errors
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%232e1a2e"/><text x="50" y="50" font-family="Arial" font-size="10" fill="%23e8b5d3" text-anchor="middle" dominant-baseline="middle">Image not found</text></svg>';
+                    this.alt = 'Image not available';
+                };
+            });
+        });
+         // Function to handle image loading errors
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%232e1a2e"/><text x="50" y="50" font-family="Arial" font-size="10" fill="%23e8b5d3" text-anchor="middle" dominant-baseline="middle">Image not found</text></svg>';
+                    this.alt = 'Image not available';
+                };
+            });
+             backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+    </script>
+</body>
+</html>
