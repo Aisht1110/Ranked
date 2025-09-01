@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranked Site</title>
-    <!-- Use Tailwind CSS for modern styling -->
-    <script src="script.js"></script>
+    <title>Ranked Site - Discover Top Rankings Across All Categories</title>
+    <meta name="description" content="Explore expert-curated rankings of the best football players, anime, luxury cars, laptops, perfumes, travel destinations and more. Find the top products and people in every category for 2025.">
+    <meta name="keywords" content="rankings, top 10, best of, football players, anime, luxury cars, laptops, perfumes, travel destinations, finance books, 2025 rankings, top products, expert reviews">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <!-- Google tag (gtag.js) -->
+     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1M3J9KB7TR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -23,9 +24,42 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
+            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+            min-height: 100vh;
         }
-        /* Custom scrollbar for a cleaner look */
+        .header-gradient {
+            background: linear-gradient(120deg, #4f46e5, #7c3aed, #ec4899);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .search-box:focus {
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+        }
+        .category-icon {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            filter: grayscale(100%) opacity(0.7);
+        }
+        .category-icon:hover, .category-icon.active {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.1);
+        }
+        .category-icon.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+        }
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -40,298 +74,368 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #6b7280;
         }
-        /* Hide a-tag underline */
-        a {
-            text-decoration: none;
+        .logo-text {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+<body class="min-h-screen p-4 py-8">
 
     <!-- Main Container -->
-    <div class="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 w-full max-w-4xl border border-gray-200">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
         
-        <!-- Header Section -->
-        <header class="text-center mb-8">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2 leading-tight">Top Rankings</h1>
-            <p class="text-lg text-gray-600">A dynamic ranking of top players and products, with links to detailed views.</p>
+        <!-- Enhanced Header Section -->
+        <header class="header-gradient text-white p-6 sm:p-8">
+            <div class="flex flex-col items-center text-center">
+                <!-- Logo -->
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <h1 class="text-4xl font-bold logo-text">Ranked<span class="text-indigo-200">.</span></h1>
+                </div>
+                
+                <p class="text-indigo-100 max-w-md mx-auto mb-6 text-lg">Discover the best in every category with our expertly curated rankings</p>
+                
+                <!-- Search Bar -->
+                <div class="relative max-w-md w-full mb-8">
+                    <input type="text" id="searchInput" placeholder="Search rankings..." class="w-full py-4 pl-14 pr-5 text-gray-700 bg-white rounded-full shadow-lg focus:outline-none search-box text-lg">
+                    <i class="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
+                </div>
+                
+                <!-- Category Icons -->
+                <div class="flex justify-center space-x-6 sm:space-x-8 mt-2">
+                    <div class="category-icon active flex flex-col items-center" data-category="all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg>
+                        <span class="text-xs mt-1">All</span>
+                    </div>
+                    
+                    <div class="category-icon flex flex-col items-center" data-category="sports">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span class="text-xs mt-1">Sports</span>
+                    </div>
+                    
+                    <div class="category-icon flex flex-col items-center" data-category="entertainment">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+                        </svg>
+                        <span class="text-xs mt-1">Entertainment</span>
+                    </div>
+                    
+                    <div class="category-icon flex flex-col items-center" data-category="lifestyle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                        <span class="text-xs mt-1">Lifestyle</span>
+                    </div>
+                    
+                    <div class="category-icon flex flex-col items-center" data-category="tech">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        </svg>
+                        <span class="text-xs mt-1">Tech</span>
+                    </div>
+                </div>
+            </div>
         </header>
 
-        <!-- Search Bar Section -->
-        <div class="mb-8 relative">
-            <input type="text" id="searchInput" placeholder="Search for the ranking ..." class="w-full p-4 pl-12 pr-4 text-lg border-2 border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-300 ease-in-out">
-            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-        </div>
+        <!-- Main Content -->
+        <main class="p-6 sm:p-8">
+            <!-- Ranked List Container -->
+            <div id="rankedList" class="space-y-6">
+                <!-- Football Card -->
+                <a href="football_ranked.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-blue-100" data-category="sports">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                        <img src="12/paris-2024-olympics-soccer.jpg" alt="Football Rank" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
+                                ⚽ Top 10 Football Players of All Time
+                            </h2>
+                        </div>
+                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
+                            Relive the legacy of the greatest legends who shaped the beautiful game.
+                        </p>
+                        <span class="text-sm text-indigo-600 font-medium">Updated 2025 Rankings</span>
+                    </div>
+                </a>
 
-        <!-- Ranked List Container -->
-        <div id="rankedList" class="space-y-6">
-            
-    <!-- Football Card -->
-<a href="football_ranked.html" 
-   class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer">
-    
-    <!-- Image -->
+                <!-- Anime Card -->
+                <a href="anime_ranked.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-pink-100" data-category="entertainment">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                        <img src="12/71.jpg" alt="Best Anime" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
+                                🎌 Top 30 Best Anime of All Time
+                            </h2>
+                        </div>
+                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
+                            Explore a definitive guide to the most iconic anime ever created and find your next masterpiece.
+                        </p>
+                        <span class="text-sm text-purple-600 font-medium">Curated by Fans • 2025</span>
+                    </div>
+                </a>
+
+                <!-- Cars Card -->
+                <a href="Expensive-cars.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-gray-50 to-yellow-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-gray-100" data-category="lifestyle">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                        <img src="https://static.wixstatic.com/media/67d9bf_8ed45a2763544d439277f0450cf6858c~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/67d9bf_8ed45a2763544d439277f0450cf6858c~mv2.jpg" alt="Expensive Cars" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
+                                🚗 Top 15 Most Expensive Cars in the World (2025)
+                            </h2>
+                        </div>
+                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
+                            From bespoke Rolls-Royce masterpieces to record-breaking hypercars, discover the true icons of luxury and speed.
+                        </p>
+                        <span class="text-sm text-yellow-700 font-medium">Luxury Rankings • 2025 Edition</span>
+                    </div>
+                </a>
+
+                <!-- Laptop Card -->
+                <a href="50k_laptop.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-green-100" data-category="tech">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                        <img src="12/l2.webp" alt="Top Laptops" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
+                                💻 Top Laptops Under 50K (H-Series, 2025)
+                            </h2>
+                        </div>
+                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
+                            Compare performance, design, and value—find the best laptop under ₹50K in 2025.
+                        </p>
+                        <span class="text-sm text-teal-700 font-medium">Budget Picks • Expert Reviewed</span>
+                    </div>
+                </a>
+
+                <!-- Striker Card -->
+                <a href="striker.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-indigo-100" data-category="sports">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                        <img src="https://a.storyblok.com//f/73553/1152x752/ddb925e4ec/the-modern-day-striker-fi.jpg/m/1536x0/filters:quality(75)" alt="Top Strikers" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-xl font-bold text-gray-900 tracking-wide">
+                                Top Strikers of This Generation
+                            </h2>
+                        </div>
+                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
+                            Discover the most lethal forwards who are redefining football with goals, skill, and dominance on the pitch.
+                        </p>
+                        <div class="flex items-center text-sm text-indigo-700 font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z" />
+                            </svg>
+                            Updated for 2025 Rankings
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Finance Book Card -->
+                <a href="finance_book.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-cyan-50 to-emerald-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-cyan-100" data-category="lifestyle">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/055/360/059/small_2x/old-book-showing-dollar-sign-representing-financial-knowledge-photo.jpg" alt="Finance Books" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
+                                📚💰 Top 15 Finance Books of All Time
+                            </h2>
+                        </div>
+                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
+                            Unlock timeless wisdom on money, investing, and wealth-building with the most influential finance books ever written.
+                        </p>
+                        <span class="text-sm text-emerald-700 font-medium">Expert Picks • Updated 2025</span>
+                    </div>
+                </a>
+
+                <!-- Travel Card -->
+                <a href="places.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-blue-100" data-category="lifestyle">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" alt="World Travel Destinations" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
+                                🌍 World's Most Beautiful Places (2025)
+                            </h2>
+                        </div>
+                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
+                            Discover breathtaking destinations, hidden gems, and cultural wonders—plan your next adventure.
+                        </p>
+                        <span class="text-sm text-purple-700 font-medium">Bucket List • Expert Travel Guide</span>
+                    </div>
+                </a>
+
+                <!-- Men's Perfume Card -->
+                <a href="menperfum.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-gray-50 to-amber-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-gray-100" data-category="lifestyle">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                        <img src="https://images3.alphacoders.com/641/641460.jpg" alt="Luxury Men's Perfumes" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
+                                🎩 Top 10 Men's Luxury Perfumes (2025)
+                            </h2>
+                        </div>
+                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
+                            Explore sophisticated scents, timeless classics, and exclusive fragrances for the modern gentleman.
+                        </p>
+                        <span class="text-sm text-amber-700 font-medium">Luxury Collection • Expert Reviews</span>
+                    </div>
+                </a>
+
+                <!-- Women's Perfume Card -->
+                <a href="women-perfume.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-pink-100" data-category="lifestyle">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
+                        <img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/66f2a9c0c08318001d489cfd.webp" alt="Luxury Women's Perfumes" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
+                                👑 Top 10 Women's Luxury Perfumes (2025)
+                            </h2>
+                        </div>
+                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
+                            Discover elegant fragrances, timeless icons, and enchanting scents that define luxury for women worldwide.
+                        </p>
+                        <span class="text-sm text-rose-700 font-medium">Luxury Collection • Expert Picks</span>
+                    </div>
+                </a>
+                <!-- Netflix Card -->
+<a href="netflix.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-red-50 to-gray-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-red-100" data-category="entertainment">
     <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="12/paris-2024-olympics-soccer.jpg" alt="Football Rank" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
+        <img src="https://images.ctfassets.net/y2ske730sjqp/1aONibCke6niZhgPxuiilC/2c401b05a07288746ddf3bd3943fbc76/BrandAssets_Logos_01-Wordmark.jpg?w=940" alt="Top Netflix Shows" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
     </div>
-
-    <!-- Text -->
     <div class="flex-grow">
         <div class="flex items-center mb-2">
             <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                ⚽ Top 10 Football Players of All Time
+                🎬 Top 30 Netflix Shows
             </h2>
         </div>
         <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Relive the legacy of the greatest legends who shaped the beautiful game.
+            A curated list of the most relevant and worthwhile shows streaming right now, as of August 2025.
         </p>
-        <span class="text-sm text-indigo-600 font-medium">Updated 2025 Rankings</span>
+        <span class="text-sm text-red-600 font-medium">Curated by Fans • 2025</span>
     </div>
 </a>
 
-<!-- Anime Card -->
-<a href="anime_ranked.html" 
-   class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer">
-    
-    <!-- Image -->
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="12/71.jpg" alt="Best Anime" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
+            </div>
 
-    <!-- Text -->
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                🎌 Top 30 Best Anime of All Time
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Explore a definitive guide to the most iconic anime ever created and find your next masterpiece.
-        </p>
-        <span class="text-sm text-purple-600 font-medium">Curated by Fans • 2025</span>
-    </div>
-</a>
-
-<!-- Cars Card -->
-<a href="Expensive-cars.html" 
-   class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-gray-50 to-yellow-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer">
-    
-    <!-- Image -->
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="https://static.wixstatic.com/media/67d9bf_8ed45a2763544d439277f0450cf6858c~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/67d9bf_8ed45a2763544d439277f0450cf6858c~mv2.jpg" alt="Expensive Cars" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-
-    <!-- Text -->
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                🚗 Top 15 Most Expensive Cars in the World (2025)
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            From bespoke Rolls-Royce masterpieces to record-breaking hypercars, discover the true icons of luxury and speed.
-        </p>
-        <span class="text-sm text-yellow-700 font-medium">Luxury Rankings • 2025 Edition</span>
-    </div>
-</a>
-
-<!-- Laptop Card -->
-<a href="50k_laptop.html" 
-   class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer">
-    
-    <!-- Image -->
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="12/l2.webp" alt="Top Laptops" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-
-    <!-- Text -->
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                💻 Top Laptops Under 50K (H-Series, 2025)
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Compare performance, design, and value—find the best laptop under ₹50K in 2025.
-        </p>
-        <span class="text-sm text-teal-700 font-medium">Budget Picks • Expert Reviewed</span>
-    </div>
-</a>
-
-    <a href="striker.html" 
-   class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer">
-    
-    <!-- Image -->
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="https://a.storyblok.com//f/73553/1152x752/ddb925e4ec/the-modern-day-striker-fi.jpg/m/1536x0/filters:quality(75)" alt="Top Strikers" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-
-    <!-- Text Content -->
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide">
-                Top Strikers of This Generation
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Discover the most lethal forwards who are redefining football with goals, skill, and dominance on the pitch.
-        </p>
-        
-        <!-- Extra Detail -->
-        <div class="flex items-center text-sm text-indigo-700 font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z" />
-            </svg>
-            Updated for 2025 Rankings
-        </div>
-    </div>
-</a>
-<!-- Finance Book Card -->
-<a href="finance_book.html" 
-   class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-cyan-50 to-emerald-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer">
-    
-    <!-- Image -->
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/055/360/059/small_2x/old-book-showing-dollar-sign-representing-financial-knowledge-photo.jpg" alt="Finance Books" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-
-    <!-- Text -->
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                📚💰 Top 15 Finance Books of All Time
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Unlock timeless wisdom on money, investing, and wealth-building with the most influential finance books ever written.
-        </p>
-        <span class="text-sm text-emerald-700 font-medium">Expert Picks • Updated 2025</span>
-    </div>
-</a>
-            <!-- Best places to visut in the World -->
-<a href="places.html" 
-   class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer">
-    
-    <!-- Image -->
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" 
-             alt="World Travel Destinations" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-
-    <!-- Text -->
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                🌍 World's Most Beautiful Places (2025)
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Discover breathtaking destinations, hidden gems, and cultural wonders—plan your next adventure.
-        </p>
-        <span class="text-sm text-purple-700 font-medium">Bucket List • Expert Travel Guide</span>
-    </div>
-</a>
-<a href="menperfum.html" 
-   class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-gray-50 to-amber-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer">
-    
-    <!-- Image -->
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="https://images3.alphacoders.com/641/641460.jpg" 
-             alt="Luxury Men's Perfumes" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-
-    <!-- Text -->
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                🎩 Top 10 Men's Luxury Perfumes (2025)
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Explore sophisticated scents, timeless classics, and exclusive fragrances for the modern gentleman.
-        </p>
-        <span class="text-sm text-amber-700 font-medium">Luxury Collection • Expert Reviews</span>
-    </div>
-</a>
-
-            
-            <a href="women-perfume.html" 
-   class="ranked-item flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer">
-    
-    <!-- Image -->
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/66f2a9c0c08318001d489cfd.webp" 
-             alt="Luxury Women's Perfumes" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-
-    <!-- Text -->
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                👑 Top 10 Women's Luxury Perfumes (2025)
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Discover elegant fragrances, timeless icons, and enchanting scents that define luxury for women worldwide.
-        </p>
-        <span class="text-sm text-rose-700 font-medium">Luxury Collection • Expert Picks</span>
-    </div>
-</a>
-
-
-
-</div>
-<div id="no-results-message" style="display: none;">
-    <h2>No Results Found</h2>
-    <p>Sorry, your search did not match any items. Please try a different term.</p>
-    <a href="/">Go back to the homepage</a>
-</div>
+            <!-- No Results Message (Hidden by default) -->
+            <div id="no-results-message" class="hidden text-center py-10">
+                <div class="text-5xl text-gray-300 mb-4">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-700 mb-2">No Results Found</h2>
+                <p class="text-gray-500 mb-4">Sorry, we couldn't find any matching rankings.</p>
+                <button id="reset-search" class="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 transition">
+                    Reset Search
+                </button>
+            </div>
+        </main>
 
         <!-- Footer Section -->
-        <footer class="mt-8 text-center text-gray-500 text-sm">
+        <footer class="bg-gray-50 p-6 text-center text-gray-500 text-sm border-t border-gray-100">
             <p>&copy; 2025 Ranked Site. All rights reserved.</p>
         </footer>
     </div>
-<script>
+
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('searchInput');
             const rankedList = document.getElementById('rankedList');
             const rankedItems = rankedList.getElementsByClassName('ranked-item');
+            const noResultsMessage = document.getElementById('no-results-message');
+            const resetSearchBtn = document.getElementById('reset-search');
+            const categoryIcons = document.querySelectorAll('.category-icon');
 
+            // Search functionality
             searchInput.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase().trim();
+                let visibleItems = 0;
 
-                for (let i = 0; i < rankedItems.length; i++) {
-                    const item = rankedItems[i];
-                    const itemText = item.textContent || item.innerText;
+                for (let item of rankedItems) {
+                    const itemText = item.textContent.toLowerCase();
                     
-                    if (itemText.toLowerCase().includes(searchTerm)) {
-                        item.style.display = 'flex'; // Show the item
+                    if (itemText.includes(searchTerm)) {
+                        item.style.display = 'flex';
+                        visibleItems++;
                     } else {
-                        item.style.display = 'none'; // Hide the item
+                        item.style.display = 'none';
                     }
                 }
+
+                // Show no results message if no items are visible
+                if (visibleItems === 0 && searchTerm !== '') {
+                    noResultsMessage.classList.remove('hidden');
+                } else {
+                    noResultsMessage.classList.add('hidden');
+                }
+            });
+
+            // Reset search functionality
+            resetSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                for (let item of rankedItems) {
+                    item.style.display = 'flex';
+                }
+                noResultsMessage.classList.add('hidden');
+                
+                // Reset category icons to "All"
+                categoryIcons.forEach(icon => {
+                    icon.classList.remove('active');
+                });
+                categoryIcons[0].classList.add('active');
+            });
+
+            // Category filter functionality
+            categoryIcons.forEach(icon => {
+                icon.addEventListener('click', () => {
+                    const category = icon.getAttribute('data-category');
+                    
+                    // Remove active class from all icons
+                    categoryIcons.forEach(i => i.classList.remove('active'));
+                    
+                    // Add active class to clicked icon
+                    icon.classList.add('active');
+                    
+                    // Filter cards based on category
+                    let visibleItems = 0;
+                    
+                    for (let item of rankedItems) {
+                        const itemCategory = item.getAttribute('data-category');
+                        
+                        if (category === 'all' || itemCategory === category) {
+                            item.style.display = 'flex';
+                            visibleItems++;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                    
+                    // Show no results message if no items are visible
+                    if (visibleItems === 0) {
+                        noResultsMessage.classList.remove('hidden');
+                    } else {
+                        noResultsMessage.classList.add('hidden');
+                    }
+                });
             });
         });
     </script>
-    
 </body>
 </html>
-
-
-
-
-
-
-
