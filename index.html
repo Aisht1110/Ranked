@@ -77,6 +77,108 @@
         .logo-text {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        .footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 2.5rem 1rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.8rem;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.3rem 0;
+        }
+        
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        
+        .footer-links a.current {
+            color: #3498db;
+        }
+        
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3498db;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1.2rem;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: #34495e;
+            border-radius: 50%;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background: #3498db;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid #34495e;
+            width: 100%;
+        }
+        
+        .footer-bottom p {
+            color: #bdc3c7;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .footer {
+                padding: 2rem 1rem;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen p-4 py-8">
@@ -348,10 +450,28 @@
             </div>
         </main>
 
-        <!-- Footer Section -->
-        <footer class="bg-gray-50 p-6 text-center text-gray-500 text-sm border-t border-gray-100">
-            <p>&copy; 2025 Ranked Site. All rights reserved.</p>
-        </footer>
+         <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html" class="current">About Us</a>
+                <a href="contactus.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ranked Site. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
     </div>
 
     <script>
@@ -439,3 +559,4 @@
     </script>
 </body>
 </html>
+
