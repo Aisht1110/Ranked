@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ranked Site</title>
+    <meta name="description" content="Learn about Ranked Site - your trusted source for expert-curated rankings across all categories including sports, entertainment, tech, and lifestyle.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1M3J9KB7TR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1M3J9KB7TR');
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+            min-height: 100vh;
+        }
+        .header-gradient {
+            background: linear-gradient(120deg, #4f46e5, #7c3aed, #ec4899);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .logo-text {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .team-member {
+            transition: all 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-8px);
+        }
+        .value-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .value-card:hover {
+            border-left-color: #4f46e5;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 py-8">
+
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+        
+        <!-- Enhanced Header Section -->
+        <header class="header-gradient text-white p-6 sm:p-8">
+            <div class="flex flex-col items-center text-center">
+                <!-- Logo -->
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <h1 class="text-4xl font-bold logo-text">Ranked<span class="text-indigo-200">.</span></h1>
+                </div>
+                
+                <p class="text-indigo-100 max-w-md mx-auto mb-6 text-lg">Discover the best in every category with our expertly curated rankings</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="bg-white border-b border-gray-200 px-8 py-4">
+            <div class="flex justify-center space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-indigo-600 font-medium">Home</a>
+                <a href="#" class="text-indigo-600 font-medium border-b-2 border-indigo-600 pb-1">About Us</a>
+                <a href="contact.html" class="text-gray-600 hover:text-indigo-600 font-medium">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="p-6 sm:p-8">
+            <!-- About Section -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">About Ranked Site</h2>
+                
+                <div class="bg-gray-50 rounded-2xl p-6 mb-8">
+                    <p class="text-gray-700 mb-4">
+                        Welcome to Ranked Site, your ultimate destination for expertly curated rankings across a wide range of categories. 
+                        In a world overflowing with options, we help you cut through the noise and discover the very best in every field.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Founded in 2023, our mission is to provide comprehensive, unbiased, and well-researched rankings that help 
+                        our audience make informed decisions, discover new favorites, and stay updated on the top performers in every category.
+                    </p>
+                    <p class="text-gray-700">
+                        Whether you're looking for the best football players, top anime series, luxury cars, or tech gadgets, 
+                        our team of experts works tirelessly to research, analyze, and rank the very best options available.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="value-card bg-indigo-50 rounded-xl p-6 text-center">
+                        <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-star text-indigo-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Expert Curation</h3>
+                        <p class="text-gray-700">Our rankings are created by industry experts with years of experience in their respective fields.</p>
+                    </div>
+
+                    <div class="value-card bg-pink-50 rounded-xl p-6 text-center">
+                        <div class="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-balance-scale text-pink-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Unbiased Reviews</h3>
+                        <p class="text-gray-700">We maintain strict editorial independence and never accept payments for placement in our rankings.</p>
+                    </div>
+
+                    <div class="value-card bg-teal-50 rounded-xl p-6 text-center">
+                        <div class="w-14 h-14 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-sync-alt text-teal-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Regular Updates</h3>
+                        <p class="text-gray-700">We continuously update our rankings to reflect the latest developments and new releases.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Our Team</h2>
+                <p class="text-gray-700 text-center max-w-2xl mx-auto mb-8">
+                    Our diverse team of experts brings together decades of experience across various industries 
+                    to deliver the most accurate and comprehensive rankings possible.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="team-member bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-gray-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Alex Johnson</h3>
+                                <p class="text-indigo-600">Head of Sports Division</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">
+                            Former sports analyst with 10+ years of experience covering football and other major sports. 
+                            Alex brings deep insight into athlete performance and historical context to our sports rankings.
+                        </p>
+                    </div>
+
+                    <div class="team-member bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-gray-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Maya Chen</h3>
+                                <p class="text-purple-600">Entertainment Editor</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">
+                            Film and anime critic with a passion for storytelling. Maya has been reviewing entertainment 
+                            content for over 8 years and brings a keen eye for quality and cultural impact to our entertainment rankings.
+                        </p>
+                    </div>
+
+                    <div class="team-member bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-gray-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">David Kim</h3>
+                                <p class="text-teal-600">Technology Specialist</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">
+                            Tech enthusiast and product reviewer with a background in engineering. David's rigorous testing 
+                            methodology and technical expertise ensure our tech rankings are both accurate and practical.
+                        </p>
+                    </div>
+
+                    <div class="team-member bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-gray-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Sarah Williams</h3>
+                                <p class="text-amber-600">Lifestyle Curator</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">
+                            With a background in design and luxury goods, Sarah brings an eye for quality and aesthetics 
+                            to our lifestyle rankings, from perfumes to travel destinations and beyond.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Methodology Section -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Our Methodology</h2>
+                
+                <div class="bg-gray-50 rounded-2xl p-6">
+                    <p class="text-gray-700 mb-6">
+                        We take our ranking process seriously. Each of our lists goes through a rigorous evaluation process 
+                        to ensure accuracy, relevance, and fairness. Here's how we create our rankings:
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="text-indigo-600 font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Comprehensive Research</h3>
+                                <p class="text-gray-700">We gather data from multiple reliable sources, including expert reviews, user feedback, and performance metrics.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="text-indigo-600 font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Evaluation Criteria</h3>
+                                <p class="text-gray-700">We establish clear, category-specific criteria that allow us to compare options objectively and consistently.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="text-indigo-600 font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Expert Analysis</h3>
+                                <p class="text-gray-700">Our team of specialists analyzes the data, applying their industry knowledge and expertise.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="text-indigo-600 font-bold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Community Feedback</h3>
+                                <p class="text-gray-700">We consider input from our community to ensure our rankings reflect diverse perspectives and experiences.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="text-indigo-600 font-bold">5</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Regular Updates</h3>
+                                <p class="text-gray-700">We regularly review and update our rankings to reflect new releases, changing trends, and updated information.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="text-center py-8 px-4 bg-indigo-50 rounded-2xl">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Have Suggestions or Questions?</h2>
+                <p class="text-gray-700 max-w-xl mx-auto mb-6">
+                    We're always looking to improve our rankings and cover new categories. 
+                    Reach out to us with your feedback or suggestions for future rankings.
+                </p>
+                <a href="contact.html" class="inline-block bg-indigo-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-indigo-700 transition">
+                    Contact Us
+                </a>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="bg-gray-50 p-6 text-center text-gray-500 text-sm border-t border-gray-100">
+            <div class="mb-4">
+                <a href="index.html" class="text-gray-600 hover:text-indigo-600 mx-2">Home</a>
+                <a href="#" class="text-indigo-600 mx-2">About Us</a>
+                <a href="contactus.html" class="text-gray-600 hover:text-indigo-600 mx-2">Contact</a>
+                <a href="privacy.html" class="text-gray-600 hover:text-indigo-600 mx-2">Privacy Policy</a>
+                <a href="terms.html" class="text-gray-600 hover:text-indigo-600 mx-2">Terms of Service</a>
+            </div>
+            <p>&copy; 2025 Ranked Site. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
