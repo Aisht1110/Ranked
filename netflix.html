@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 30 Netflix Shows</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1M3J9KB7TR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1M3J9KB7TR');
+</script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            color: #d1d5db;
+        }
+        .card {
+            background-color: #1a1a1a;
+        }
+        .card-image-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .rank-badge {
+            background-color: #e50914;
+            color: white;
+            top: -12px;
+            left: -12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+        }
+        .read-more-button {
+            color: #e50914;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .hidden-description {
+            display: none;
+        }
+        .rotate-icon {
+            transform: rotate(180deg);
+        }
+        .text-custom-red {
+            color: #e50914;
+        }
+        .text-custom-yellow {
+            color: #FFC107;
+        }
+        @media (min-width: 1280px) {
+            .xl\:grid-cols-1 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 p-8">
+
+    <!-- Header Section -->
+    <header class="text-center mb-12">
+        <h1 class="text-5xl font-bold text-custom-red mb-2">Top 30 Netflix Shows</h1>
+        <p class="text-lg text-gray-400">A curated list of the most relevant and worthwhile shows streaming right now, as of August 2025.</p>
+    </header>
+
+    <!-- Main Grid Section -->
+    <div id="show-list" class="grid grid-cols-1 gap-8 mx-auto max-w-4xl">
+        
+        <!-- Show Card 1: Long Story Short -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">1</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="12/Netflix1.webp" alt="Long Story Short" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Long Story Short</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Raphael Bob-Waksberg</span>
+                    <span class="mr-6"><strong>Genre:</strong> Animated Comedy</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">8.5/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    The new animated comedy from BoJack Horseman creator Raphael Bob-Waksberg follows the three adult siblings of the Schwooper family— Avi, Shira, and Yoshi — as they face the ups and downs of life and look back at their very religious Jewish upbringing. "The point of Long Story Short is to depict, through the prism of one multigenerational family, nothing less than the breadth of human experience: the raising of children, the evolving relationships with siblings, the struggles with spirituality, the decisions to build and unravel marriages, and the trauma we unwittingly inflict on the people we love the most," Jen Chaney writes in her rave review.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 2: Wednesday -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">2</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/1ed04a0bee353accd15246be92e2682bab6ced4d/hub/2025/07/09/549f969a-9545-44e0-a939-7705800c6baf/250709-wednesday.jpg?auto=webp&width=1092" alt="Jenna Ortega, Wednesday" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Wednesday</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Tim Burton</span>
+                    <span class="mr-6"><strong>Genre:</strong> Teen Goth, Mystery</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">8.2/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    From Stranger Things to K-Pop Demon Hunters, most of Netflix's biggest hits are at least somewhat unexpected. When Wednesday premiered in 2022, everyone expected it would be successful, thanks to star Jenna Ortega's charismatic performance as droll teenage goth Wednesday Addams and director Tim Burton's knack for finding his own whimsically macabre take on old material (in this case, The Addams Family). But no one expected that it would become Netflix's biggest English-language show ever. Ortega's dance number had to go viral on TikTok for that to happen.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Show Card 3: WWE: Unreal -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">3</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/dc5756131a73b5742d885508e320a8b64db5c714/hub/2025/08/08/e64a71fd-e7ce-4848-a9ae-b70f09aecffa/wweunreal.jpg?auto=webp&width=1092" alt="Cody Rhodes, WWE: Unreal" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">WWE: Unreal</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Documentary</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.5/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    This pro wrestling documentary series does something unprecedented: it breaks kayfabe, which is the illusion that everything that happens in and around the ring is real. It takes fans behind the scenes and even inside the WWE's writers' room, which would have been unthinkable even a few years ago, when the company was still run by now-disgraced former chairman Vince McMahon. But now Triple H is in charge of content, WrestleMania is on Netflix, and things are different. Because here's the thing: even though wrestling isn't "real," the people putting on the show are.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 4: The Hunting Wives -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">4</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/74407a4bf8f84481f693b17713e86c9b5bddc42b/hub/2025/07/25/2948e009-5c48-4f6a-9254-2ca993175872/the-hunting-wives-season-1-shows-about-01.jpg?auto=webp&width=1092" alt="Malin Åkerman and Brittany Snow, The Hunting Wives" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">The Hunting Wives</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Drama, Soap</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">6.8/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    What if The Real Housewives of Dallas were killers? That's something like the premise for this sexy, scandalous soap. Brittany Snow stars as Sophie, a woman who moves from Cambridge, Mass. to Texas, where she falls in with a friend group of rich and intimidating housewives, led by Margo (famously Swedish actress Malin Akerman). They seem fun at first, but they have dark secrets they'll do anything to keep hidden. The cast also includes Jaime Ray Newman, Chrissy Metz, and Dermot Mulroney.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Show Card 5: Mr. Robot -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">5</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/d998f2b9e9fea8e850343551afc63eb8bdb394ee/hub/2025/07/02/0865304a-1229-4643-827c-0b2097e9c856/250702-mr-robot.jpg?auto=webp&width=1092" alt="Rami Malek, Mr. Robot" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Mr. Robot</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Sam Esmail</span>
+                    <span class="mr-6"><strong>Genre:</strong> Hacker Thriller</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">8.5/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    Mr. Robot, the Emmy-winning cult hit hacker thriller, stands to make its cult a lot bigger now that it's on Netflix. For the past 10 years, Robot fans have been making the claim that creator Sam Esmail's paranoid and prescient thriller is one of the best shows of the 2010s, with a unique cinematic style, great performances (especially from Rami Malek as disaffected computer hacker Elliot Alderson), and topical sociopolitical themes that are still relevant today. It's never too late to join fsociety and bring down sinister corporation Evil Corp.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Show Card 6: Squid Game -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">6</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/11e8c9c4cd7fafc9b9746fb9c92dc2da44ccfb71/hub/2021/09/20/ccfca3c8-52af-47ff-a38f-cee106294351/210920-squidgame.jpg?auto=webp&width=1092" alt="Squid Game" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Squid Game</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Hwang Dong-hyuk</span>
+                    <span class="mr-6"><strong>Genre:</strong> Korean Drama, Survival</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">8.0/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    Who remembers playing childhood games for fun on the playground? Who remembers playing them FOR YOUR LIFE? The unexpected hit Korean drama Squid Game is more the latter, as a group of people in bad need of money are taken in by a secret organization that has them play games — like Red Light, Green Light — for money. The catch? They lose, they die. Violently. What separates this from something like Saw is the humanity given to the characters. You'll care about some of these people... and then they will die. It's Netflix's biggest show; scratch that, it's the world's biggest show. All three seasons are now streaming.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 7: The Waterfront -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">7</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/a14d3c9c90df0e72e6fb92a45d5204bf6b9266d7/hub/2025/05/28/c59dc0f4-c43f-4df0-8825-1e64cee04d51/waterfront.jpg?auto=webp&width=1092" alt="Holt McCallany and Maria Bello, The Waterfront" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">The Waterfront</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Kevin Williamson</span>
+                    <span class="mr-6"><strong>Genre:</strong> Crime, Drama</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.2/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    Ozark meets Yellowstone in this family crime drama about a wealthy family that turns to crime in order to keep their coastal North Caroline business empire afloat. The series hails from Scream and Dawson's Creek creator Kevin Williamson and has elements of both properties (bloody but tongue-in-cheek violence from the former, soapy family drama from the latter). It's also very loosely inspired by Williamson's own life. Holt McCallany, Maria Bello, Jake Weary, and Melissa Benoist star, with an unhinged supporting performance by Topher Grace.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Show Card 8: Blindspot -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">8</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/ef1ab8e6dd5cd6043ecb452865a5f58543b8b843/hub/2020/07/20/b80a9fab-d50f-4b85-b76d-c2ab191fae8d/200721-blindspot.jpg?auto=webp&width=1092" alt="Jaimie Alexander, Blindspot" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Blindspot</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Action, Conspiracy</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.3/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    This action series that premiered on NBC in 2015 and ended in 2020 is the latest old show to enjoy a Netflix bump. Jaimie Alexander stars as a woman who wakes up naked in a duffel bag in Times Square with no memory of who she is or how she got there. Her body is covered in tattoos, each one of which represents a different clue to solving the mystery of who she is and the conspiracy she's part of. She's helped by FBI Agent Kurt Weller (Sullivan Stapleton), who later becomes her husband. It ran for five seasons and exactly 100 episodes, and features some of the most fun action ever seen in primetime.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 9: Dept. Q -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">9</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/cd9fd95e731e7c1738a5ec1d95943ca4712f5929/hub/2025/06/13/14c9b308-bfdf-42fd-946d-d06782024d7b/deptq-episodic-image-77.jpg?auto=webp&width=1092" alt="Matthew Goode, Dept. Q" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Dept. Q</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Scott Frank</span>
+                    <span class="mr-6"><strong>Genre:</strong> Detective Drama, Nordic Noir</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.8/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    This detective drama comes from The Queen's Gambit creator Scott Frank. It transports the psychologically-driven police procedural style of Nordic noir to Edinburgh, Scotland, where prickly detective Carl Morck (Matthew Goode) has been put in charge of a ragtag cold case unit. As they investigate the case of a lawyer (Chloe Pirrie) who vanished without a trace four years earlier, the members of the squad face down their own demons. It's a slick, well-executed mystery that looks great and has a great cast of characters, including motormouthed deputy Rose Dickson (Leah Byrne) and stoic investigator Akram Salim (Alexej Manvelov), who was a policeman in Syria before he fled to Scotland.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 10: Sirens -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">10</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/1311b30c84d55aebe2bf75413b378bf38420a4af/hub/2025/05/23/0aa90d80-74e3-4677-9719-267172c1fbd3/250523-sirens-meghann-fahey-millie-alcock.jpg?auto=webp&width=1092" alt="Meghann Fahy and Millie Alcock, Sirens" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Sirens</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Molly Smith Metzler</span>
+                    <span class="mr-6"><strong>Genre:</strong> Dramedy</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.5/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    Rising stars Meghann Fahy (The White Lotus Season 2, Drop) and Milly Alcock (House of the Dragon, the upcoming Supergirl movie) star in this darkly funny limited series about money, class, and family from Maid creator Molly Smith Metzler. Fahy plays Devon, who stayed in gritty Buffalo taking care of her father (Bill Camp) while her sister Simone (Alcock) went off and started a new life working as the assistant to an eccentric, New Age-y billionaire, Michaela (Julianne Moore), where she keeps her humble roots hidden. When their father's health takes a turn for the worse, Devon travels to Michaela's beachfront estate to try and get Simone to come home and help. But when she gets there, she finds cult-like conditions and realizes that Simone might actually need her help, loathe as she is to give it.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 11: Forever -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">11</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/b4a808585d9582f2e7a66984eb6f7d099d5861cf/hub/2025/03/11/eb3de29a-173b-423d-82ee-abadf49bfb24/forever.jpg?auto=webp&width=1092" alt="Michael Cooper Jr. and Lovie Simone, Forever" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Forever</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Regina King</span>
+                    <span class="mr-6"><strong>Genre:</strong> Young Adult Romance</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.0/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    An adaptation of Judy Blume's book of the same name, Mara Brock Akil's Forever tells the story of two athletes becoming each other's first love. The series is directed by Regina King and stars Lovie Simone and Michael Cooper Jr. as the lead characters Keisha Clark and Justin Edwards, respectively. The young adult romance has excitement, agony, confusion, passion — all the feelings that come with a first love.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 12: The Four Seasons -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">12</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/95311033210ca9bb0be66d1345cc35e120afec22/hub/2025/05/02/213c9e71-56ce-4313-b5db-5717599ee266/fourseasons-103-241213-fr-00172-r.jpg?auto=webp&width=1092" alt="Colman Domingo, Tina Fey, Erika Henningsen Will Forte, and Steve Carell, The Four Seasons" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">The Four Seasons</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Tina Fey</span>
+                    <span class="mr-6"><strong>Genre:</strong> Comedy</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.8/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    Tina Fey is the main draw to this grown-up comedy series — she co-created it and stars in her first regular TV role since 30 Rock — but she's just one member of a stacked ensemble that also includes Academy Award nominees Colman Domingo and Steve Carell. They're all members of a group of college friends who take quarterly vacations together, and the series follows them over the course of a tumultuous year. It's different than Fey's usual joke-packed style, and has more in common with the well-heeled, middle-aged milieu of Nancy Meyers, but it's a smart, funny, and unexpected series overall.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 13: You -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">13</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/342dc890b80efa08898786c0d8deeec2f6aa2975/hub/2025/03/10/6f081531-4761-4252-914e-2466fb833c2c/youu.jpg?auto=webp&width=1092" alt="Penn Badgley, You" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">You</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Psychological Thriller</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.7/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    You is one of Netflix's most successful pickups (the first season aired on Lifetime; 2018 was a different time), and arguably one of the streaming service's signature shows. Over the course of five seasons, the darkly funny and highly creepy psychological thriller follows Joe Goldberg (Penn Badgely), a very sick man who stalks women and will kill to keep his secrets hidden. Joe has gone from New York to L.A. to the Bay Area to London and back to New York, where it all began, for the fifth and final season. It's one of the smartest and darkest dramas on Netflix.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 14: Black Mirror -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">14</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/ac510cb152b9eddcc46a127c200b38f2fd354480/hub/2025/03/13/3349f72f-a6e9-4cef-9800-3997eabca887/bm.jpg?auto=webp&width=1092" alt="Black Mirror" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Black Mirror</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Sci-Fi, Dystopian</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">8.8/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    This dystopian sci-fi anthology is one of Netflix's longest-running shows. Over the course of 14 years and seven seasons (and counting), Black Mirror has been slightly exaggerating real social problems caused by technology to show how badly it's messing up our souls. It dares to ask the question, "What if phones but too much?"
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 15: Love on the Spectrum U.S. -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">15</span>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Love on the Spectrum U.S.</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Reality Documentary</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">8.4/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    This heartwarming series is an American edition of the Australian reality documentary series following the dating lives of people on the autism spectrum. Like the original, the U.S. version is empathetic and deeply moving as it follows these lovable young people on their journeys to find love. Over the course of three seasons, you'll become incredibly invested in their journeys. It won the Emmy for Outstanding Unstructured Reality Program in 2022. It's maybe the least exploitative reality show ever made.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 16: Adolescence -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">16</span>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Adolescence</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Philip Barantini</span>
+                    <span class="mr-6"><strong>Genre:</strong> British Drama</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.6/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    It's still to be determined whether this four-episode British drama will be considered one of the best shows of the year, but it certainly will be one of the most technically impressive. The series about a 13-year-old boy who is accused of the murder of a classmate was filmed in four hour-long, single-take shots — no cutaways, no camera tricks — adding tension and deeply exploring the process of the justice system (as well as how long it takes to get from the suspect's home to the police station). Prolific character actor Stephen Graham, who co-created the series with equally prolific writer Jack Thorne, stars, and Philip Barantini directs.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 17: Running Point -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">17</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/3fb702a17a5924ce1ae082b9588390885016df29/hub/2025/03/14/7aaac4ce-c8e6-4856-96b1-ec1e86b4e45a/ubp-103-240325-km-01530-r2.jpg?auto=webp&width=1092" alt="Kate Hudson, Running Point" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Running Point</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Comedy</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.1/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    Kate Hudson stars in this Mindy Kaling-produced comedy series as the ambitious yet overlooked Isla Gordon, who becomes president of the fictional NBA team the Los Angeles Waves after a scandal forces her brother (Justin Theroux) to resign. It's sort of like if Shiv Roy got dropped into a Ted Lasso situation. The Other Two's Drew Tarver also stars. It's already been renewed for a second season.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 18: Cobra Kai -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">18</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/0df355067f441319eb2cebb45983fafa2c30a5d0/hub/2025/02/14/857f6bdd-7db8-42ef-b673-ce84cb68e655/cobra-kai-n-s6-e15-00-40-15-09r-1.jpg?auto=webp&width=1092" alt="William Zabka, Cobra Kai" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Cobra Kai</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Martial Arts, Drama</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">8.5/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    It's hard to believe that a series following the lives of Johnny (William Zabka) and Daniel (Ralph Macchio) from The Karate Kid would be as good as Cobra Kai is, but there's some sort of indescribable magic going on that makes it work. Following up on Johnny in the present day, Cobra Kai wonders what would happen if his rivalry with Daniel continued into their adult lives, culminating in them creating their own karate dojos where a new generation of martial artists fight for respect, rumble with their parents, and get into love triangles. The show's self-awareness holds everything together, but it's the twisting (albeit predictable) plot that makes it so bingeable. The complete six-season run is now on Netflix.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 19: Surviving Black Hawk Down -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">19</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/5237c2d4536fef09e57d6548fd060f7c41620c16/hub/2025/02/07/1cbac3d9-57fb-4af8-abdc-815792631f5d/blackhawk.jpg?auto=webp&width=1092" alt="Surviving Black Hawk Down" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Surviving Black Hawk Down</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Docuseries, Thriller</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">8.1/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    This three-part docuseries goes deep inside what really happened during the 1993 Battle for Mogadishu, a disastrous military operation that was dramatized in Ridley Scott's 2001 film Black Hawk Down. With candid interviews with surviving Army Rangers, actual footage, and dramatic reenactments, Surviving Black Hawk Down plays out like an action-packed psychological thriller, getting into the minds of those who were there. But what really sets this apart — and makes amends for what the movie missed — are the interviews with Somalis, including fighters and innocent bystanders, who complete the picture of the horrific incident.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 20: Sweet Magnolias -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">20</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/1f8936e12ef3cfbcbbc4341b8d0d884c7329cd97/hub/2023/07/20/189e658f-956e-48dc-a3b8-613ffcc932a2/230720-sweet-magnolias-4.jpg?auto=webp&width=1092" alt="JoAnna Garcia Swisher, Brooke Elliott, and Heather Headley, Sweet Magnolias" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Sweet Magnolias</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Small-town Drama, Romance</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.5/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    This special brand of small-town drama is a fan favorite for its coziness, following the daily goings on of female friends Maddie (JoAnna Garcia Swisher), Helen (Heather Headley), and Dana Sue (Brooke Elliott) in the made-up town of Serenity, South Carolina. Expect some obstacles — but nothing too over the top — as the women navigate big and small issues with romance, careers, and family. It goes down like a cold glass of sweet tea.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 21: Mo -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">21</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/12b4d54aed5df72fb5374da075e34f71c31231c8/hub/2025/01/31/8a5a1a57-15cf-4b2c-9bd7-6a10c8cbc33e/mo-207-unit-03064rc.jpg?auto=webp&width=1092" alt="Mo Amer, Mo" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Mo</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Comedy</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.9/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    Ramy fans don't need an introduction to comedian Mo Amer, and they probably won't need any introduction to Mo, either. But for everyone else (is there anyone else?), here's the scoop: This two-season Netflix comedy, created by Amer and Ramy Youssef and produced by A24, stars Amer as Mo Najjar, a Palestinian refugee living in Houston with his family and hustling to support them. If you like Ramy, you'll like this, and if you don't like Ramy, you haven't watched it.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 22: The Night Agent -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">22</span>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">The Night Agent</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Shawn Ryan</span>
+                    <span class="mr-6"><strong>Genre:</strong> Political Action-Thriller</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.5/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    TV creator Shawn Ryan has produced some great shows — The Shield, Timeless, Terriers — and while his latest, The Night Agent, might not be on the same level of his other hits, it's an easy binge that stays in Ryan's lane. The political action-thriller is based on Matthew Quirk's book, following a low-level FBI agent who mans a secret phone line in the basement of the White House. His job is a bore... until the phone rings! Then it's all about uncovering a conspiracy that goes — say it with me — all the way to the top.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 23: XO, Kitty -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">23</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/708aad220a0003e4866cda6eb2781c2dc603ed20/hub/2025/01/22/0d4a36d3-bc78-4d6c-b473-283031c1104d/250122-xokitty.png?auto=webp&width=1092" alt="Anna Cathcart, Sang Heon Lee, XO, Kitty" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">XO, Kitty</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Jenny Han</span>
+                    <span class="mr-6"><strong>Genre:</strong> Teen Romance Drama</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">6.1/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    Return to the To All the Boys I've Loved Before Cinematic Universe (the TATBILBCU) with this series spun off from the hit Netflix films. XO, Kitty, created by Jenny Han (who also wrote the books that inspired the movies), follows Kitty Covey (Anna Cathcart) as she moves to Seoul to attend the same boarding school her late mom went to. It doesn't hurt that her long-distance boyfriend, Dae (Choi Min-young) goes there, too. But when that relationship hits a snag, Lara Jean's younger sister has to figure out what she really wants.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 24: American Primeval -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">24</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/29793440e4fe9e6bc0046f22dfe44e5c3b4d2a12/hub/2025/01/09/a023725b-1547-4e85-9326-d1aa8b9e5fab/americanprimeval.jpg?auto=webp&width=1092" alt="Preston Mota and Taylor Kitsch, American Primeval" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">American Primeval</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Peter Berg</span>
+                    <span class="mr-6"><strong>Genre:</strong> Western, Limited Series</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.6/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    This brutally violent Western limited series follows various people who represent different groups (Mormons, the U.S. government, Native Americans, etc.) colliding and trying to survive on the Utah frontier in 1857. The cast includes Taylor Kitsch, Betty Gilpin, Dane DeHaan, Shea Whigham, and many other great character actors. It's directed by Peter Berg of Friday Night Lights, who brings his signature kinetic camera work to the proceedings, along with some really extreme color correction.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 25: Virgin River -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">25</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/7ed91816bd8799c72ca752197eb216ba22566cd5/hub/2021/07/02/6bf3ae44-a000-4f6d-a02c-44de963ee2a4/210702-virgin-river-alexandra-breckenridge-martin-henderson.jpg?auto=webp&width=1092" alt="Alexandra Breckenridge and Martin Henderson, Virgin River" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Virgin River</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Romance, Drama</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.4/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    Do you like it your TV to feel like one long Hallmark movie? If that's the case, you should know that few other shows are currently doing that better than Virgin River. In this adaptation of the novels by Robyn Carr, Alexandra Breckenridge stars as Mel, a nurse practitioner from Los Angeles who, after having her heart broken one too many times, starts a new life in a remote Northern California town. As these things go, she quickly meets Jack (Martin Henderson), a bartender who makes her want to love again. This show really has everything: long lost twin brothers, bombshell pregnancies where it's a mystery who the father is, and main characters getting shot by mysterious gunmen.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 26: Black Doves -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">26</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/032213ef28893d32a28743fcabab86c6336a6d44/hub/2024/11/05/b7a928e7-5e26-4307-80dd-498391ba87ce/blackjdoves.jpg?auto=webp&width=1092" alt="Ben Whishaw and Keira Knightley, Black Doves" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Black Doves</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Spy Thriller</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.2/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    Keira Knightley picked a good show for her first TV series. She stars as Helen, a deep cover spy working for a private espionage agency known as the Black Doves. When her lover is murdered, she goes on a mission to find out who did it and why, and if she's next. Helping her and protecting her is Sam (Ben Whishaw), a professional assassin with demons of his own. Black Doves is a slick, darkly funny thriller that makes great use of Knightley and Whishaw's considerable charms.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Show Card 27: A Man on the Inside -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">27</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/cf8c72ac44cb42dde2500ceee7cbd41b1bb62129/hub/2024/08/23/04ec3e28-1401-4aae-a01e-14afee0e9c59/manontheinside.jpg?auto=webp&width=1092" alt="Ted Danson, A Man on the Inside" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">A Man on the Inside</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Comedy</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.3/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    For his first show since The Good Place, star comedy writer-producer Michael Schur linked back up with one of the stars of that beloved series, Ted Danson. Their reunion is only natural, because Schur is fond of saying that Danson is the greatest TV actor of all time, so why wouldn't he want to work with him again? Danson stars as a lonely widower who takes a job working for a private detective (Lilah Richcreek Estrada) on a special assignment. He has to go undercover as a new resident of a retirement community in order to find out what happened to a missing ruby necklace. What he really finds, however, is a community. It's a sweet and poignant comedy inspired by the Oscar-nominated Chilean documentary The Mole Agent, which you can also find on Netflix.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 28: Nobody Wants This -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">28</span>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Nobody Wants This</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Rom-Com</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.5/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    The producers knew what they were doing with this rom-com's ironic title. Two of TV's most likable actors, Kristen Bell and Adam Brody in lead roles supported by scene-stealers like Timothy Simons, Justine Lupe, Sherry Cola, and Tovah Feldshuh? A culturally specific story — in this case, an agnostic woman falling in love with a Hot Rabbi — that feels fresh? Genuinely funny jokes? A pleasant atmosphere where the drama isn't overly dramatic but not so low-stakes that it feels meaningless? A pace that moves so fast you'll say "wait, they're doing this already?" Everybody wants this. That's why it's already been renewed for a second season.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 29: Outer Banks -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">29</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/f279168158a968a9c3fb0ce2584487ae096d4374/hub/2024/10/25/3910baef-244d-4498-8b6e-0124eb40251e/outerbanks-401-unit-03845rc.jpg?auto=webp&width=1092" alt="Madison Bailey and Rudy Pankow, Outer Banks" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Outer Banks</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> N/A</span>
+                    <span class="mr-6"><strong>Genre:</strong> Teen Adventure, Drama</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.6/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    The golden-hued adventure drama Outer Banks is one of Netflix's most popular teen shows, and one of the only ones that isn't supernatural (though there are fantastical elements like buried treasure). They grow up in Season 4, though, as there's a plotline that revolves around paying property taxes. What's the point of finding buried treasure if you have to pay taxes on it?! The complete fourth season is on Netflix now, and it's already been renewed for a fifth and final season.
+                </p>
+            </div>
+        </div>
+
+        <!-- Show Card 30: Escape at Dannemora -->
+        <div class="show-card card rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 relative">
+            <span class="rank-badge absolute z-10 px-4 py-2 rounded-full font-extrabold text-xl shadow-lg">30</span>
+            <div class="card-image-container rounded-t-xl">
+                <img src="https://www.tvguide.com/a/img/resize/f2da552889df529ccdb77fd8aa32ce6cae30c767/hub/2018/11/12/47cdd953-76dc-4038-9406-114d41125064/181112-dannemora.jpg?auto=webp&width=1092" alt="Benicio Del Toro and Patricia Arquette, Escape at Dannemora" class="card-image rounded-t-xl">
+            </div>
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-2">Escape at Dannemora</h2>
+                <div class="flex items-center mb-4 text-md text-gray-400">
+                    <span class="mr-6"><strong>Director:</strong> Ben Stiller</span>
+                    <span class="mr-6"><strong>Genre:</strong> True Crime, Limited Series</span>
+                    <span class="flex items-center text-custom-yellow">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.243.588 1.81L14.712 9.155a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.533 1.118l-3.292-1.812a1 1 0 00-1.118 0l-3.292 1.812c-.778.57-1.838-.197-1.533-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.98 8.72a1 1 0 01.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-bold">7.9/10</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-base">
+                    This based-on-a-true-crime limited series originally premiered on Showtime in 2018. It was nominated for a bunch of Emmys, including Outstanding Limited Series and acting nods for stars Benicio Del Toro, Patricia Arquette, and Paul Dano, but it wasn't a big hit at the time. Hopefully that changes as a result of the Netflix bump. Ben Stiller directs much of the series, which tells the thrilling and psychologically complex story of how convicts Richard Matt and David Sweat escaped from an upstate New York prison in 2015 with a documentary style that prizes you-are-their-authenticity.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Ranked, A FANDOM COMPANY. ALL RIGHTS RESERVED. Ranked</p>
+    </footer>
+</body>
+</html>
