@@ -1,102 +1,112 @@
+/*
+ * High-contrast CSS for improved accessibility.
+ * Contrast ratios are checked against Google's WCAG recommendations (4.5:1 for normal text).
+ */
+
 .footer {
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 2.5rem 1rem;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.8rem;
-        }
-        
-        .footer-links a {
-            color: #bdc3c7;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.3rem 0;
-        }
-        
-        .footer-links a:hover {
-            color: #3498db;
-        }
-        
-        .footer-links a.current {
-            color: #3498db;
-        }
-        
-        .footer-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #3498db;
-            transition: width 0.3s ease;
-        }
-        
-        .footer-links a:hover::after {
-            width: 100%;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 1.2rem;
-        }
-        
-        .footer-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            background: #34495e;
-            border-radius: 50%;
-            color: #ecf0f1;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-social a:hover {
-            background: #3498db;
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 1.5rem;
-            border-top: 1px solid #34495e;
-            width: 100%;
-        }
-        
-        .footer-bottom p {
-            color: #bdc3c7;
-            font-size: 0.95rem;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .footer {
-                padding: 2rem 1rem;
-            }
-        }
+    /* Main footer background and text */
+    background: #1a252f; /* Darker background for better contrast */
+    color: #f1f8ff;     /* Lighter, almost pure white for maximum contrast */
+    padding: 2.5rem 1rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.8rem;
+}
+
+.footer-links a {
+    /* Increased contrast for links */
+    color: #b0c4de;     /* A brighter, more saturated blue-gray */
+    text-decoration: none;
+    font-weight: 600;   /* Bolder font weight for better readability */
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.3rem 0;
+}
+
+.footer-links a:hover {
+    /* Brighter hover color for a more obvious interaction */
+    color: #4a91e0; /* A vibrant blue */
+}
+
+.footer-links a.current {
+    /* Same vibrant blue for the active link */
+    color: #4a91e0;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;     /* Slightly thicker underline for better visibility */
+    bottom: 0;
+    left: 0;
+    background-color: #4a91e0;
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: #34495e;
+    border-radius: 50%;
+    color: #f1f8ff;     /* Use the same high-contrast color as the main text */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #4a91e0; /* Use the same vibrant blue for hover state */
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #34495e;
+    width: 100%;
+}
+
+.footer-bottom p {
+    /* The copyright text should also have sufficient contrast */
+    color: #b0c4de; /* Use the same color as the regular links for consistency and contrast */
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .footer {
+        padding: 2rem 1rem;
+    }
+}
