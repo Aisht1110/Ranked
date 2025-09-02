@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the top 10 free VPNs for PC in 2024. Compare features, pros and cons, data limits, and security of the best free VPN services for Windows.">
+    <meta name="keywords" content="free vpn, vpn for pc, windows vpn, best free vpn, vpn ranking, privacy tools, vpn comparison">
+    <meta name="author" content="Tech Security Experts">
+    <title>Top 10 Free VPNs for PC - 2024 Ranking & Comparison</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a90e2; /* A slightly softer blue */
+            --secondary: #2c5894; /* A deeper blue for accents */
+            --accent: #f89635; /* Orange-yellow for highlights */
+            --light: #f4f7f9; /* A softer light gray */
+            --dark: #2a3340; /* Darker navy for text */
+            --success: #67b049; /* Green for pros */
+            --warning: #f89635; /* Same as accent for alerts */
+            --danger: #e25858; /* Red for cons */
+            --gray: #aab8c2;
+            --card-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--light) 0%, #dbe9f5 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            padding-bottom: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0 3rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, transparent 30%, rgba(255,255,255,0.1) 70%);
+            transform: rotate(30deg);
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            font-weight: 300;
+        }
+        
+        .alert {
+            background-color: #fff8e1;
+            border-left: 5px solid var(--warning);
+            padding: 1.2rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .alert-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: var(--warning);
+        }
+        
+        .ranking {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin: 2.5rem 0;
+        }
+        
+        .vpn-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            position: relative;
+            border: 1px solid #e0e6ed;
+        }
+        
+        .vpn-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .rank-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .rank-number::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            transform-origin: left;
+            animation: stripe-grow 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes stripe-grow {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+        
+        .vpn-content {
+            padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .vpn-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .vpn-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            object-fit: cover;
+            margin-right: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--light);
+            transition: transform 0.3s ease;
+        }
+        
+        .vpn-image:hover {
+            transform: scale(1.05);
+        }
+
+        .vpn-name-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .vpn-name {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0;
+        }
+        
+        .vpn-rating {
+            color: var(--warning);
+            margin-top: 5px;
+        }
+
+        .rating-stars {
+            font-size: 1.1rem;
+        }
+        
+        .vpn-description {
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        .vpn-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.8rem;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            background: var(--light);
+            padding: 1rem 1.2rem;
+            border-radius: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature i {
+            color: var(--primary);
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.8rem;
+        }
+        
+        .pros, .cons {
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        
+        .pros {
+            background-color: rgba(103, 176, 73, 0.1);
+            border-left: 4px solid var(--success);
+        }
+        
+        .cons {
+            background-color: rgba(226, 88, 88, 0.1);
+            border-left: 4px solid var(--danger);
+        }
+        
+        .pros-cons h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .pros h3 {
+            color: var(--success);
+        }
+        
+        .cons h3 {
+            color: var(--danger);
+        }
+        
+        .pros-cons h3 i {
+            margin-right: 0.5rem;
+        }
+        
+        .pros-cons ul {
+            list-style-type: none;
+            padding-left: 0.5rem;
+        }
+        
+        .pros-cons li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 2.5rem 1rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.8rem;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.3rem 0;
+        }
+        
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        
+        .footer-links a.current {
+            color: #3498db;
+        }
+        
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3498db;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1.2rem;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: #34495e;
+            border-radius: 50%;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background: #3498db;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid #34495e;
+            width: 100%;
+        }
+        
+        .footer-bottom p {
+            color: #bdc3c7;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .footer {
+                padding: 2rem 1rem;
+            }
+        }
+        
+        .best-for {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .best-for i {
+            margin-right: 0.8rem;
+        }
+        
+        .vpn-link {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .vpn-link:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .vpn-link i {
+            margin-left: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .vpn-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        .comparison {
+            margin: 4rem 0;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .comparison h2 {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--dark);
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .comparison h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            min-width: 900px;
+        }
+        
+        th, td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e6ed;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .rating {
+            color: var(--warning);
+            text-align: center;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            color: white;
+            padding: 3.5rem 0;
+            margin-top: 4rem;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .disclaimer {
+            background-color: #fbecec;
+            color: var(--danger);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--danger);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .download-btn {
+            display: flex;
+            align-items: center;
+            background: var(--dark);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: var(--primary);
+        }
+        
+        .download-btn i {
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 900px) {
+            .vpn-card {
+                flex-direction: column;
+            }
+            
+            .rank-number {
+                min-width: 100%;
+                min-height: 70px;
+            }
+            
+            .vpn-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .vpn-image {
+                margin-bottom: 1rem;
+            }
+            
+            .vpn-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+            
+            .vpn-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .vpn-name {
+                font-size: 1.6rem;
+            }
+            
+            .comparison {
+                padding: 1.5rem;
+            }
+            
+            th, td {
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Top 10 Free VPNs for PC in 2024</h1>
+            <p>Protect your privacy without spending a dime - Compare the best free VPN services for Windows</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="alert">
+            <div class="alert-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div>
+                <p><strong>Important Notice:</strong> Free VPNs often have limitations compared to paid services. They may include data caps, slower speeds, fewer server options, and sometimes questionable privacy practices. Never use a free VPN for highly sensitive activities.</p>
+            </div>
+        </div>
+
+        <div class="ranking">
+            <!-- VPN 1 -->
+            <div class="vpn-card">
+                <div class="rank-number">1</div>
+                <div class="vpn-content">
+                    <div class="vpn-header">
+                        <img src="https://placehold.co/80x80/4a90e2/ffffff?text=PV" alt="Proton VPN" class="vpn-image">
+                        <div class="vpn-name-wrapper">
+                            <h2 class="vpn-name">Proton VPN</h2>
+                            <div class="vpn-rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </span>
+                                <span>4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="vpn-description">
+                        The gold standard for free VPNs with unlimited data and strong privacy focus from the makers of Proton Mail. Trusted by millions for its transparent policies and reliable service.
+                    </p>
+                    <div class="vpn-features">
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <span>Data Limit: <strong>Unlimited</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-server"></i>
+                            <span>Servers: <strong>3 countries</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed: <strong>Medium</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Logs: <strong>No logs</strong></span>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                            <ul>
+                                <li>Truly unlimited data usage</li>
+                                <li>Strong no-logs policy</li>
+                                <li>No ads or malware</li>
+                                <li>Based in privacy-friendly Switzerland</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Limited server locations</li>
+                                <li>Medium connection speeds</li>
+                                <li>No streaming service support on free plan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vpn-footer">
+                        <div class="best-for">
+                            <i class="fas fa-award"></i>
+                            Best for: Unlimited basic browsing & privacy
+                        </div>
+                        <a href="#" class="vpn-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPN 2 -->
+            <div class="vpn-card">
+                <div class="rank-number">2</div>
+                <div class="vpn-content">
+                    <div class="vpn-header">
+                        <img src="https://placehold.co/80x80/67b049/ffffff?text=WS" alt="Windscribe" class="vpn-image">
+                        <div class="vpn-name-wrapper">
+                            <h2 class="vpn-name">Windscribe</h2>
+                            <div class="vpn-rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>4.2/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="vpn-description">
+                        Generous free plan with good server network and a very usable 10GB/month data cap. Offers strong security features and customizable connection options.
+                    </p>
+                    <div class="vpn-features">
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <span>Data Limit: <strong>10GB/month</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-server"></i>
+                            <span>Servers: <strong>10+ countries</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed: <strong>Fast</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Logs: <strong>No logs</strong></span>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                            <ul>
+                                <li>Generous 10GB monthly data</li>
+                                <li>Wide server selection</li>
+                                <li>Built-in ad blocker</li>
+                                <li>Good connection speeds</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Requires email for full quota</li>
+                                <li>Some advanced features disabled</li>
+                                <li>Limited P2P support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vpn-footer">
+                        <div class="best-for">
+                            <i class="fas fa-award"></i>
+                            Best for: Balance of data and features
+                        </div>
+                        <a href="#" class="vpn-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPN 3 -->
+            <div class="vpn-card">
+                <div class="rank-number">3</div>
+                <div class="vpn-content">
+                    <div class="vpn-header">
+                        <img src="https://placehold.co/80x80/e25858/ffffff?text=HM" alt="Hide.me" class="vpn-image">
+                        <div class="vpn-name-wrapper">
+                            <h2 class="vpn-name">Hide.me</h2>
+                            <div class="vpn-rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>4.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="vpn-description">
+                        Transparent and trustworthy provider with a solid free plan and verified no-logs policy. Known for strong encryption and reliable connections.
+                    </p>
+                    <div class="vpn-features">
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <span>Data Limit: <strong>10GB/month</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-server"></i>
+                            <span>Servers: <strong>5 locations</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed: <strong>Good</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Logs: <strong>No logs</strong></span>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                            <ul>
+                                <li>Verified no-log policy</li>
+                                <li>Strong encryption</li>
+                                <li>Good speeds</li>
+                                <li>Allows P2P on free servers</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Limited server locations</li>
+                                <li>Data reset requires manual action</li>
+                                <li>No Netflix or streaming support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vpn-footer">
+                        <div class="best-for">
+                            <i class="fas fa-award"></i>
+                            Best for: Verified no-log policy & security
+                        </div>
+                        <a href="#" class="vpn-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPN 4 -->
+            <div class="vpn-card">
+                <div class="rank-number">4</div>
+                <div class="vpn-content">
+                    <div class="vpn-header">
+                        <img src="https://placehold.co/80x80/2a3340/ffffff?text=AV" alt="Atlas VPN" class="vpn-image">
+                        <div class="vpn-name-wrapper">
+                            <h2 class="vpn-name">Atlas VPN</h2>
+                            <div class="vpn-rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>3.8/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="vpn-description">
+                        A modern and user-friendly free tier with a decent data allowance and access to a few key locations. It includes a basic malware blocker.
+                    </p>
+                    <div class="vpn-features">
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <span>Data Limit: <strong>5 GB/month</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-server"></i>
+                            <span>Servers: <strong>3 locations</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed: <strong>Good</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Logs: <strong>No logs</strong></span>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                            <ul>
+                                <li>Clean, simple interface</li>
+                                <li>Malware blocker included</li>
+                                <li>Can be used for some streaming</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Lower data cap</li>
+                                <li>Limited server choice</li>
+                                <li>Owned by Nord Security, which may be a concern for some</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vpn-footer">
+                        <div class="best-for">
+                            <i class="fas fa-award"></i>
+                            Best for: Beginners and simple browsing
+                        </div>
+                        <a href="#" class="vpn-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPN 5 -->
+            <div class="vpn-card">
+                <div class="rank-number">5</div>
+                <div class="vpn-content">
+                    <div class="vpn-header">
+                        <img src="https://placehold.co/80x80/f89635/ffffff?text=TB" alt="TunnelBear" class="vpn-image">
+                        <div class="vpn-name-wrapper">
+                            <h2 class="vpn-name">TunnelBear</h2>
+                            <div class="vpn-rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>3.7/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="vpn-description">
+                        Known for its quirky and user-friendly interface. Owned by McAfee and undergoes independent security audits, which adds to its credibility.
+                    </p>
+                    <div class="vpn-features">
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <span>Data Limit: <strong>2 GB/month</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-server"></i>
+                            <span>Servers: <strong>~48 countries</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed: <strong>Medium</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Logs: <strong>No logs</strong></span>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                            <ul>
+                                <li>Fun, intuitive design</li>
+                                <li>Publicly audited no-logs policy</li>
+                                <li>Access to a large network of servers</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Very low data cap</li>
+                                <li>Not suitable for heavy usage</li>
+                                <li>Owned by McAfee</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vpn-footer">
+                        <div class="best-for">
+                            <i class="fas fa-award"></i>
+                            Best for: Casual users and beginners
+                        </div>
+                        <a href="#" class="vpn-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPN 6 -->
+            <div class="vpn-card">
+                <div class="rank-number">6</div>
+                <div class="vpn-content">
+                    <div class="vpn-header">
+                        <img src="https://placehold.co/80x80/9b59b6/ffffff?text=PVPN" alt="PrivadoVPN" class="vpn-image">
+                        <div class="vpn-name-wrapper">
+                            <h2 class="vpn-name">PrivadoVPN</h2>
+                            <div class="vpn-rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>3.6/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="vpn-description">
+                        Offers a free plan that is a trial of its premium service, providing access to high-speed servers in 12 cities. It is based in privacy-friendly Switzerland.
+                    </p>
+                    <div class="vpn-features">
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <span>Data Limit: <strong>10 GB/month</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-server"></i>
+                            <span>Servers: <strong>12 cities</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed: <strong>Good</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Logs: <strong>No logs</strong></span>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                            <ul>
+                                <li>Good data allowance</li>
+                                <li>Unblocks some streaming services</li>
+                                <li>Good speeds and large server selection</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Requires an account to use</li>
+                                <li>Support is limited on the free plan</li>
+                                <li>Some features are locked to premium</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vpn-footer">
+                        <div class="best-for">
+                            <i class="fas fa-award"></i>
+                            Best for: Trying a premium-like experience
+                        </div>
+                        <a href="#" class="vpn-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- VPN 7 -->
+            <div class="vpn-card">
+                <div class="rank-number">7</div>
+                <div class="vpn-content">
+                    <div class="vpn-header">
+                        <img src="https://placehold.co/80x80/e25858/ffffff?text=HS" alt="Hotspot Shield" class="vpn-image">
+                        <div class="vpn-name-wrapper">
+                            <h2 class="vpn-name">Hotspot Shield</h2>
+                            <div class="vpn-rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>3.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="vpn-description">
+                        Famous for its fast proprietary "Hydra" protocol, making it one of the faster free VPNs available. It offers a daily data limit of 500 MB.
+                    </p>
+                    <div class="vpn-features">
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <span>Data Limit: <strong>500 MB/day</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-server"></i>
+                            <span>Servers: <strong>1 location (US)</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed: <strong>Very high</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Logs: <strong>Limited logs</strong></span>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                            <ul>
+                                <li>Excellent connection speeds</li>
+                                <li>Easy to use interface</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Daily data limit can be restrictive</li>
+                                <li>Single server location</li>
+                                <li>Aggressive ad-supported model</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vpn-footer">
+                        <div class="best-for">
+                            <i class="fas fa-award"></i>
+                            Best for: Raw speed for light browsing
+                        </div>
+                        <a href="#" class="vpn-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPN 8 -->
+            <div class="vpn-card">
+                <div class="rank-number">8</div>
+                <div class="vpn-content">
+                    <div class="vpn-header">
+                        <img src="https://placehold.co/80x80/4a90e2/ffffff?text=S" alt="Speedify" class="vpn-image">
+                        <div class="vpn-name-wrapper">
+                            <h2 class="vpn-name">Speedify</h2>
+                            <div class="vpn-rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>3.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="vpn-description">
+                        Uses a unique "channel bonding" technology to combine multiple internet connections (e.g., Wi-Fi + mobile data) for increased speed and stability.
+                    </p>
+                    <div class="vpn-features">
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <span>Data Limit: <strong>2 GB/month</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-server"></i>
+                            <span>Servers: <strong>50+ locations</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed: <strong>Fast</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Logs: <strong>No logs</strong></span>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                            <ul>
+                                <li>Unique channel bonding feature</li>
+                                <li>Good for unstable connections</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Low data limit</li>
+                                <li>Automatically assigned servers for free users</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vpn-footer">
+                        <div class="best-for">
+                            <i class="fas fa-award"></i>
+                            Best for: Users on unstable connections
+                        </div>
+                        <a href="#" class="vpn-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPN 9 -->
+            <div class="vpn-card">
+                <div class="rank-number">9</div>
+                <div class="vpn-content">
+                    <div class="vpn-header">
+                        <img src="https://placehold.co/80x80/f89635/ffffff?text=Z" alt="ZoogVPN" class="vpn-image">
+                        <div class="vpn-name-wrapper">
+                            <h2 class="vpn-name">ZoogVPN</h2>
+                            <div class="vpn-rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>2.8/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="vpn-description">
+                        A lesser-known but decent option that offers a free plan with access to a few servers and support for basic streaming.
+                    </p>
+                    <div class="vpn-features">
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <span>Data Limit: <strong>10 GB/month</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-server"></i>
+                            <span>Servers: <strong>3 locations</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed: <strong>Decent</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Logs: <strong>No logs</strong></span>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                            <ul>
+                                <li>Moderate data allowance</li>
+                                <li>Supports basic streaming</li>
+                                <li>Allows P2P</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Limited server locations</li>
+                                <li>Lesser-known provider</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vpn-footer">
+                        <div class="best-for">
+                            <i class="fas fa-award"></i>
+                            Best for: Moderate data allowance
+                        </div>
+                        <a href="#" class="vpn-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPN 10 -->
+            <div class="vpn-card">
+                <div class="rank-number">10</div>
+                <div class="vpn-content">
+                    <div class="vpn-header">
+                        <img src="https://placehold.co/80x80/2a3340/ffffff?text=OB" alt="Opera Browser" class="vpn-image">
+                        <div class="vpn-name-wrapper">
+                            <h2 class="vpn-name">Opera Browser Built-in VPN</h2>
+                            <div class="vpn-rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>2.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="vpn-description">
+                        The easiest to use as it's built directly into the Opera web browser. It's convenient but limited to protecting only your browser traffic.
+                    </p>
+                    <div class="vpn-features">
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <span>Data Limit: <strong>Unlimited</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-server"></i>
+                            <span>Servers: <strong>3 regions</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Speed: <strong>Varies</strong></span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Logs: <strong>No logs</strong></span>
+                        </div>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                            <ul>
+                                <li>Completely free and unlimited</li>
+                                <li>No setup required</li>
+                                <li>Easy to toggle on/off</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Only protects browser traffic</li>
+                                <li>Limited server regions</li>
+                                <li>Not a true, full-system VPN</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vpn-footer">
+                        <div class="best-for">
+                            <i class="fas fa-award"></i>
+                            Best for: Casual browsers
+                        </div>
+                        <a href="#" class="vpn-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <p><strong>Warning:</strong> Avoid free VPNs with no clear privacy policy, those that have been caught selling user data (e.g., Hola VPN, Betternet), or that promise "unlimited" everything without clear business models.</p>
+        </div>
+
+        <div class="comparison">
+            <h2>Feature Comparison Table</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>VPN Service</th>
+                            <th>Data Limit</th>
+                            <th>Server Locations</th>
+                            <th>Speed</th>
+                            <th>Logging Policy</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Proton VPN</td>
+                            <td>Unlimited</td>
+                            <td>3 countries</td>
+                            <td>Medium</td>
+                            <td>No logs</td>
+                            <td class="rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Windscribe</td>
+                            <td>10GB/month</td>
+                            <td>10+ countries</td>
+                            <td>Fast</td>
+                            <td>No logs</td>
+                            <td class="rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hide.me</td>
+                            <td>10GB/month</td>
+                            <td>5 locations</td>
+                            <td>Good</td>
+                            <td>No logs</td>
+                            <td class="rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Atlas VPN</td>
+                            <td>5 GB/month</td>
+                            <td>3 locations</td>
+                            <td>Good</td>
+                            <td>No logs</td>
+                            <td class="rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>TunnelBear</td>
+                            <td>2 GB/month</td>
+                            <td>~48 countries</td>
+                            <td>Medium</td>
+                            <td>No logs</td>
+                            <td class="rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PrivadoVPN</td>
+                            <td>10 GB/month</td>
+                            <td>12 cities</td>
+                            <td>Good</td>
+                            <td>No logs</td>
+                            <td class="rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hotspot Shield</td>
+                            <td>500 MB/day</td>
+                            <td>1 location (US)</td>
+                            <td>Very high</td>
+                            <td>Limited logs</td>
+                            <td class="rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Speedify</td>
+                            <td>2 GB/month</td>
+                            <td>50+ locations</td>
+                            <td>Fast</td>
+                            <td>No logs</td>
+                            <td class="rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ZoogVPN</td>
+                            <td>10 GB/month</td>
+                            <td>3 locations</td>
+                            <td>Decent</td>
+                            <td>No logs</td>
+                            <td class="rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Opera Browser Built-in VPN</td>
+                            <td>Unlimited</td>
+                            <td>3 regions</td>
+                            <td>Varies</td>
+                            <td>No logs</td>
+                            <td class="rating">
+                                <span class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="#" class="current">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ranked Site. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
