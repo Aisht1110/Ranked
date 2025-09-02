@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
      <!-- Google tag (gtag.js) -->
@@ -77,108 +78,7 @@
         .logo-text {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .footer {
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 2.5rem 1rem;
-        }
         
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.8rem;
-        }
-        
-        .footer-links a {
-            color: #bdc3c7;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.3rem 0;
-        }
-        
-        .footer-links a:hover {
-            color: #3498db;
-        }
-        
-        .footer-links a.current {
-            color: #3498db;
-        }
-        
-        .footer-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #3498db;
-            transition: width 0.3s ease;
-        }
-        
-        .footer-links a:hover::after {
-            width: 100%;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 1.2rem;
-        }
-        
-        .footer-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            background: #34495e;
-            border-radius: 50%;
-            color: #ecf0f1;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-social a:hover {
-            background: #3498db;
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 1.5rem;
-            border-top: 1px solid #34495e;
-            width: 100%;
-        }
-        
-        .footer-bottom p {
-            color: #bdc3c7;
-            font-size: 0.95rem;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .footer {
-                padding: 2rem 1rem;
-            }
-        }
     </style>
 </head>
 <body class="min-h-screen p-4 py-8">
@@ -575,5 +475,6 @@
     </script>
 </body>
 </html>
+
 
 
