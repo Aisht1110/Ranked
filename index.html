@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-     <link rel="stylesheet" href="styles.css">
+     
    
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
    
@@ -79,7 +79,113 @@
         .logo-text {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+        .footer {
+    /* Main footer background and text */
+    background: #1a252f; /* Darker background for better contrast */
+    color: #f1f8ff;     /* Lighter, almost pure white for maximum contrast */
+    padding: 2.5rem 1rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.8rem;
+}
+
+.footer-links a {
+    /* Increased contrast for links */
+    color: #b0c4de;     /* A brighter, more saturated blue-gray */
+    text-decoration: none;
+    font-weight: 600;   /* Bolder font weight for better readability */
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.3rem 0;
+}
+
+.footer-links a:hover {
+    /* Brighter hover color for a more obvious interaction */
+    color: #4a91e0; /* A vibrant blue */
+}
+
+.footer-links a.current {
+    /* Same vibrant blue for the active link */
+    color: #4a91e0;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;     /* Slightly thicker underline for better visibility */
+    bottom: 0;
+    left: 0;
+    background-color: #4a91e0;
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: #34495e;
+    border-radius: 50%;
+    color: #f1f8ff;     /* Use the same high-contrast color as the main text */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #4a91e0; /* Use the same vibrant blue for hover state */
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #34495e;
+    width: 100%;
+}
+
+.footer-bottom p {
+    /* The copyright text should also have sufficient contrast */
+    color: #b0c4de; /* Use the same color as the regular links for consistency and contrast */
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .footer {
+        padding: 2rem 1rem;
+    }
+}
     </style>
 </head>
 <body class="min-h-screen p-4 py-8">
@@ -523,6 +629,7 @@
     </script>
 </body>
 </html>
+
 
 
 
