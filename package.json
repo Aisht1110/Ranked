@@ -1,0 +1,14 @@
+{
+  "name": "my-tailwind-project",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "build:css:prod": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
+  }
+}
