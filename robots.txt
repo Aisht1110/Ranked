@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ranked.icu/sitemap.xml
+Sitemap: https://ranked.icu/sitemap2.xml
