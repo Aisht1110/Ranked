@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://ranked.icu/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ranked.icu/images/logo.png</image:loc>
+      <image:title>Ranked.icu Logo</image:title>
+    </image:image>
+  </url>
+
+  <!-- Football Ranked -->
+  <url>
+    <loc>https://ranked.icu/football_ranked.html</loc>
+    <lastmod>2025-09-06</lastmod>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ranked.icu/images/football.jpg</image:loc>
+      <image:title>Football Ranked</image:title>
+    </image:image>
+  </url>
+
+  <!-- Anime Ranked -->
+  <url>
+    <loc>https://ranked.icu/anime_ranked.html</loc>
+    <lastmod>2025-09-06</lastmod>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ranked.icu/images/anime.jpg</image:loc>
+      <image:title>Anime Ranked</image:title>
+    </image:image>
+  </url>
+
+  <!-- Finance Books -->
+  <url>
+    <loc>https://ranked.icu/finance_book.html</loc>
+    <lastmod>2025-09-06</lastmod>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ranked.icu/images/finance.jpg</image:loc>
+      <image:title>Finance Books</image:title>
+    </image:image>
+  </url>
+
+  <!-- Laptops -->
+  <url>
+    <loc>https://ranked.icu/laptops.html</loc>
+    <lastmod>2025-09-06</lastmod>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ranked.icu/images/laptop.jpg</image:loc>
+      <image:title>Laptops Ranked</image:title>
+    </image:image>
+  </url>
+
+  <!-- Perfumes -->
+  <url>
+    <loc>https://ranked.icu/perfumes.html</loc>
+    <lastmod>2025-09-06</lastmod>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ranked.icu/images/perfume.jpg</image:loc>
+      <image:title>Perfumes Ranked</image:title>
+    </image:image>
+  </url>
+
+  <!-- Cars -->
+  <url>
+    <loc>https://ranked.icu/cars.html</loc>
+    <lastmod>2025-09-06</lastmod>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ranked.icu/images/car.jpg</image:loc>
+      <image:title>Expensive Cars Ranked</image:title>
+    </image:image>
+  </url>
+
+  <!-- Beautiful Places -->
+  <url>
+    <loc>https://ranked.icu/places.html</loc>
+    <lastmod>2025-09-06</lastmod>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ranked.icu/images/place.jpg</image:loc>
+      <image:title>Beautiful Places Ranked</image:title>
+    </image:image>
+  </url>
+
+</urlset>
