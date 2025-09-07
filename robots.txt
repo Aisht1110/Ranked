@@ -4,3 +4,5 @@ Allow: /
 Sitemap: https://ranked.icu/sitemap.xml
 Sitemap: https://ranked.icu/sitemap2.xml
 Sitemap: https://ranked.icu/sitemap3.xml
+
+Sitemap: https://ranked.icu/sitemap.html
