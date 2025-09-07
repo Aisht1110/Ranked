@@ -215,19 +215,19 @@
                 </div>
                 
                 <!-- Category Icons -->
-                <div class="flex flex-col items-center p-4 sm:p-6 bg-transparent text-center">
-                <div class="text-sm font-semibold text-white uppercase mb-3"></div>
-                <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
-                    <button class="filter-tab active bg-white text-gray-800 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200" data-category="all">All</button>
-                    <button class="filter-tab bg-transparent text-white border border-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200" data-category="sports">Sports</button>
-                    <button class="filter-tab bg-transparent text-white border border-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200" data-category="entertainment">Entertainment</button>
-                    <button class="filter-tab bg-transparent text-white border border-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200" data-category="lifestyle">Lifestyle</button>
-                    <button class="filter-tab bg-transparent text-white border border-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200" data-category="tech">Technology</button>
-                    <button class="filter-tab bg-transparent text-white border border-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200" data-category="security-tools">Security Tools</button>
-                    <button class="filter-tab bg-transparent text-white border border-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200" data-category="education">Education</button>
-                    <button class="filter-tab bg-transparent text-white border border-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200" data-category="personal-growth">Personal Growth</button>
-                </div>
-            </div>
+                <div class="flex flex-col items-center p-4 sm:p-6 text-center">
+    <div class="text-sm font-semibold text-white uppercase mb-3">Filter by Category</div>
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
+        <button class="filter-tab active px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-white text-gray-800" data-category="all">All</button>
+        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="sports">Sports</button>
+        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="entertainment">Entertainment</button>
+        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="lifestyle">Lifestyle</button>
+        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="tech">Technology</button>
+        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="security-tools">Security Tools</button>
+        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="education">Education</button>
+        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="personal-growth">Personal Growth</button>
+    </div>
+</div>
             </div>
         </header>
 
@@ -540,90 +540,109 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('searchInput');
-            const rankedList = document.getElementById('rankedList');
-            const rankedItems = rankedList.getElementsByClassName('ranked-item');
-            const noResultsMessage = document.getElementById('no-results-message');
-            const resetSearchBtn = document.getElementById('reset-search');
-            const categoryIcons = document.querySelectorAll('.category-icon');
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('searchInput');
+        const rankedList = document.getElementById('rankedList');
+        const rankedItems = rankedList.getElementsByClassName('ranked-item');
+        const noResultsMessage = document.getElementById('no-results-message');
+        const resetSearchBtn = document.getElementById('reset-search');
+        const filterTabs = document.querySelectorAll('.filter-tab'); // Corrected selector
 
-            // Search functionality
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase().trim();
-                let visibleItems = 0;
+        // Search functionality
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            let visibleItems = 0;
 
-                for (let item of rankedItems) {
-                    const itemText = item.textContent.toLowerCase();
-                    
-                    if (itemText.includes(searchTerm)) {
-                        item.style.display = 'flex';
-                        visibleItems++;
-                    } else {
-                        item.style.display = 'none';
-                    }
-                }
+            for (let item of rankedItems) {
+                const itemText = item.textContent.toLowerCase();
 
-                // Show no results message if no items are visible
-                if (visibleItems === 0 && searchTerm !== '') {
-                    noResultsMessage.classList.remove('hidden');
-                } else {
-                    noResultsMessage.classList.add('hidden');
-                }
-            });
-
-            // Reset search functionality
-            resetSearchBtn.addEventListener('click', () => {
-                searchInput.value = '';
-                for (let item of rankedItems) {
+                if (itemText.includes(searchTerm)) {
                     item.style.display = 'flex';
+                    visibleItems++;
+                } else {
+                    item.style.display = 'none';
                 }
-                noResultsMessage.classList.add('hidden');
-                
-                // Reset category icons to "All"
-                categoryIcons.forEach(icon => {
-                    icon.classList.remove('active');
-                });
-                categoryIcons[0].classList.add('active');
-            });
+            }
 
-            // Category filter functionality
-            categoryIcons.forEach(icon => {
-                icon.addEventListener('click', () => {
-                    const category = icon.getAttribute('data-category');
-                    
-                    // Remove active class from all icons
-                    categoryIcons.forEach(i => i.classList.remove('active'));
-                    
-                    // Add active class to clicked icon
-                    icon.classList.add('active');
-                    
-                    // Filter cards based on category
-                    let visibleItems = 0;
-                    
-                    for (let item of rankedItems) {
-                        const itemCategory = item.getAttribute('data-category');
-                        
-                        if (category === 'all' || itemCategory === category) {
-                            item.style.display = 'flex';
-                            visibleItems++;
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    }
-                    
-                    // Show no results message if no items are visible
-                    if (visibleItems === 0) {
-                        noResultsMessage.classList.remove('hidden');
-                    } else {
-                        noResultsMessage.classList.add('hidden');
-                    }
+            // Show no results message if no items are visible
+            if (visibleItems === 0 && searchTerm !== '') {
+                noResultsMessage.classList.remove('hidden');
+            } else {
+                noResultsMessage.classList.add('hidden');
+            }
+        });
+
+        // Reset search functionality
+        resetSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            for (let item of rankedItems) {
+                item.style.display = 'flex';
+            }
+            noResultsMessage.classList.add('hidden');
+            
+            // Reset category filters to "All"
+            filterTabs.forEach(tab => {
+                tab.classList.remove('active');
+                tab.classList.remove('bg-white', 'text-gray-800');
+                tab.classList.add('bg-transparent', 'text-white', 'border', 'border-white');
+            });
+            const allTab = document.querySelector('.filter-tab[data-category="all"]');
+            allTab.classList.add('active', 'bg-white', 'text-gray-800');
+            allTab.classList.remove('bg-transparent', 'text-white', 'border', 'border-white');
+
+            // Show all items
+            filterCards('all');
+        });
+
+        // Category filter functionality
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.getAttribute('data-category');
+                
+                // Remove active class from all tabs
+                filterTabs.forEach(i => {
+                    i.classList.remove('active', 'bg-white', 'text-gray-800');
+                    i.classList.add('bg-transparent', 'text-white', 'border', 'border-white');
                 });
+                
+                // Add active class to clicked tab
+                tab.classList.add('active', 'bg-white', 'text-gray-800');
+                tab.classList.remove('bg-transparent', 'text-white', 'border', 'border-white');
+                
+                // Filter cards based on category
+                filterCards(category);
+                
+                // Clear search input on category change
+                searchInput.value = '';
             });
         });
-    </script>
+
+        function filterCards(category) {
+            let visibleItems = 0;
+            
+            for (let item of rankedItems) {
+                const itemCategory = item.getAttribute('data-category');
+                
+                if (category === 'all' || itemCategory === category) {
+                    item.style.display = 'flex';
+                    visibleItems++;
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+            
+            // Show no results message if no items are visible
+            if (visibleItems === 0) {
+                noResultsMessage.classList.remove('hidden');
+            } else {
+                noResultsMessage.classList.add('hidden');
+            }
+        }
+    });
+</script>
 </body>
 </html>
+
 
 
 
