@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Request a List — Ranked</title>
+  <meta name="description" content="Request a custom ranking list on any topic. Our experts will curate a professional top list based on your specific needs and interests." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f4ff',
+              100: '#e0e9ff',
+              200: '#c7d7fe',
+              300: '#a5b8fc',
+              400: '#8b92f8',
+              500: '#7c6df0',
+              600: '#6d4ee4',
+              700: '#5d3bc9',
+              800: '#4c32a2',
+              900: '#412d80'
+            },
+            accent: {
+              50: '#fdf4ff',
+              100: '#fae8ff',
+              500: '#d946ef',
+              600: '#c026d3',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-out',
+            'slide-up': 'slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+            'slide-down': 'slideDown 0.6s ease-out',
+            'slide-left': 'slideLeft 0.8s ease-out',
+            'slide-right': 'slideRight 0.8s ease-out',
+            'zoom-in': 'zoomIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+            'bounce-in': 'bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'float': 'float 3s ease-in-out infinite',
+            'shimmer': 'shimmer 2.5s linear infinite',
+            'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+            'gradient-shift': 'gradientShift 4s ease-in-out infinite',
+            'typing': 'typing 3.5s steps(40, end)',
+            'wave': 'wave 1.5s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0px)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(60px)' },
+              '100%': { opacity: '1', transform: 'translateY(0px)' },
+            },
+            slideDown: {
+              '0%': { opacity: '0', transform: 'translateY(-60px)' },
+              '100%': { opacity: '1', transform: 'translateY(0px)' },
+            },
+            slideLeft: {
+              '0%': { opacity: '0', transform: 'translateX(60px)' },
+              '100%': { opacity: '1', transform: 'translateX(0px)' },
+            },
+            slideRight: {
+              '0%': { opacity: '0', transform: 'translateX(-60px)' },
+              '100%': { opacity: '1', transform: 'translateX(0px)' },
+            },
+            zoomIn: {
+              '0%': { opacity: '0', transform: 'scale(0.8)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            },
+            bounceIn: {
+              '0%': { opacity: '0', transform: 'scale(0.3)' },
+              '50%': { opacity: '1', transform: 'scale(1.05)' },
+              '70%': { transform: 'scale(0.95)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 20px rgba(109, 78, 228, 0.3), 0 0 40px rgba(109, 78, 228, 0.1)' },
+              '100%': { boxShadow: '0 0 30px rgba(109, 78, 228, 0.6), 0 0 60px rgba(109, 78, 228, 0.2)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '33%': { transform: 'translateY(-10px) rotate(1deg)' },
+              '66%': { transform: 'translateY(-5px) rotate(-1deg)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 20px rgba(109, 78, 228, 0.4)' },
+              '50%': { boxShadow: '0 0 40px rgba(109, 78, 228, 0.8), 0 0 60px rgba(217, 70, 239, 0.4)' },
+            },
+            gradientShift: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
+            typing: {
+              '0%': { width: '0%' },
+              '100%': { width: '100%' },
+            },
+            wave: {
+              '0%, 100%': { transform: 'rotate(0deg)' },
+              '25%': { transform: 'rotate(5deg)' },
+              '75%': { transform: 'rotate(-5deg)' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #6d4ee4, #d946ef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .animated-gradient-text {
+      background: linear-gradient(45deg, #6d4ee4, #d946ef, #8b92f8, #c026d3);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 4s ease-in-out infinite;
+    }
+    
+    .enhanced-glass {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hover-lift {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .floating-shapes::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      right: 25%;
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #6d4ee4, #d946ef);
+      border-radius: 50%;
+      opacity: 0.12;
+      animation: float 4s ease-in-out infinite;
+      filter: blur(1px);
+    }
+    
+    .floating-shapes::after {
+      content: '';
+      position: absolute;
+      bottom: 25%;
+      left: 15%;
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(45deg, #8b92f8, #c026d3);
+      opacity: 0.1;
+      animation: float 6s ease-in-out infinite reverse;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      filter: blur(2px);
+    }
+    
+    .form-floating {
+      position: relative;
+    }
+    
+    .form-floating input:focus ~ label,
+    .form-floating input:not(:placeholder-shown) ~ label,
+    .form-floating textarea:focus ~ label,
+    .form-floating textarea:not(:placeholder-shown) ~ label,
+    .form-floating select:focus ~ label,
+    .form-floating select:not([value=""]) ~ label {
+      transform: translateY(-1.5rem) scale(0.85);
+      color: #6d4ee4;
+    }
+    
+    .form-floating label {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      color: #6b7280;
+    }
+    
+    .custom-checkbox {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .custom-checkbox input[type="checkbox"] {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+    
+    .checkbox-mark {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #d1d5db;
+      border-radius: 4px;
+      position: relative;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .custom-checkbox input[type="checkbox"]:checked + .checkbox-mark {
+      background: linear-gradient(135deg, #6d4ee4, #d946ef);
+      border-color: #6d4ee4;
+    }
+    
+    .custom-checkbox input[type="checkbox"]:checked + .checkbox-mark::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    .typing-cursor::after {
+      content: '|';
+      animation: typing 1s infinite;
+      color: #6d4ee4;
+    }
+    
+    .progress-bar {
+      background: linear-gradient(90deg, #6d4ee4, #d946ef);
+      height: 4px;
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 text-gray-900 font-inter">
+  <!-- Header -->
+  <header class="relative overflow-hidden floating-shapes">
+    <div class="mx-auto max-w-7xl px-4 py-8">
+      <!-- Navigation -->
+      <nav class="flex items-center justify-between mb-12 animate-slide-down">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 shadow-lg flex items-center justify-center animate-pulse-glow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white animate-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 17l6-6 4 4 8-8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="3" cy="17" r="1" fill="currentColor"/>
+              <circle cx="9" cy="11" r="1" fill="currentColor"/>
+              <circle cx="13" cy="15" r="1" fill="currentColor"/>
+              <circle cx="21" cy="9" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="text-xl font-black tracking-tight group-hover:text-brand-700 transition-colors">
+            Ranked<span class="animated-gradient-text">.</span>
+          </span>
+        </a>
+        
+        <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-700 enhanced-glass rounded-xl hover-lift transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Back to Home
+        </a>
+      </nav>
+
+      <!-- Page Title -->
+      <div class="text-center max-w-3xl mx-auto animate-slide-up">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6">
+          Request a <span class="animated-gradient-text">Custom List</span>
+        </h1>
+        <p class="text-xl text-gray-600 leading-relaxed mb-8">
+          Have a specific topic in mind? Our expert team will create a comprehensive, 
+          well-researched ranking list tailored to your needs.
+        </p>
+        
+        <!-- Progress Bar -->
+        <div class="w-full bg-gray-200 rounded-full h-2 mb-8">
+          <div id="progress-bar" class="progress-bar w-0 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Background Decoration -->
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50"></div>
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+  </header>
+
+  <!-- Main Form -->
+  <main class="mx-auto max-w-4xl px-4 pb-16">
+    <form id="request-form" class="space-y-8">
+      <!-- Step 1: Basic Information -->
+      <section id="step-1" class="step-section enhanced-glass rounded-3xl p-8 shadow-xl animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 text-white font-bold flex items-center justify-center animate-bounce-in">1</div>
+          <h2 class="text-2xl font-bold text-gray-900">Tell us about yourself</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="form-floating">
+            <input type="text" id="full-name" name="full-name" placeholder=" " required
+                   class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+            <label for="full-name">Full Name *</label>
+          </div>
+          
+          <div class="form-floating">
+            <input type="email" id="email" name="email" placeholder=" " required
+                   class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+            <label for="email">Email Address *</label>
+          </div>
+          
+          <div class="form-floating">
+            <input type="text" id="organization" name="organization" placeholder=" "
+                   class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+            <label for="organization">Organization (Optional)</label>
+          </div>
+          
+          <div class="form-floating">
+            <select id="purpose" name="purpose" required
+                    class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+              <option value="">Select purpose</option>
+              <option value="business">Business/Corporate</option>
+              <option value="research">Academic Research</option>
+              <option value="personal">Personal Interest</option>
+              <option value="media">Media/Publishing</option>
+              <option value="other">Other</option>
+            </select>
+            <label for="purpose">Purpose *</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 2: List Details -->
+      <section id="step-2" class="step-section enhanced-glass rounded-3xl p-8 shadow-xl animate-fade-in" style="animation-delay: 0.4s;">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 text-white font-bold flex items-center justify-center animate-bounce-in" style="animation-delay: 0.2s;">2</div>
+          <h2 class="text-2xl font-bold text-gray-900">Describe your list</h2>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="form-floating">
+            <input type="text" id="list-title" name="list-title" placeholder=" " required
+                   class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+            <label for="list-title">List Title/Topic *</label>
+          </div>
+          
+          <div class="form-floating">
+            <select id="category" name="category" required
+                    class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+              <option value="">Select category</option>
+              <option value="sports">Sports</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="technology">Technology</option>
+              <option value="travel">Travel & Destinations</option>
+              <option value="personal-growth">Personal Growth</option>
+              <option value="business">Business & Finance</option>
+              <option value="food">Food & Dining</option>
+              <option value="other">Other</option>
+            </select>
+            <label for="category">Category *</label>
+          </div>
+          
+          <div class="form-floating">
+            <textarea id="description" name="description" rows="4" placeholder=" " required
+                      class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm resize-none"></textarea>
+            <label for="description">Detailed Description *</label>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="form-floating">
+              <select id="list-size" name="list-size" required
+                      class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+                <option value="">Select size</option>
+                <option value="5">Top 5</option>
+                <option value="10">Top 10</option>
+                <option value="15">Top 15</option>
+                <option value="20">Top 20</option>
+                <option value="25">Top 25</option>
+                <option value="30">Top 30</option>
+                <option value="custom">Custom Size</option>
+              </select>
+              <label for="list-size">List Size *</label>
+            </div>
+            
+            <div class="form-floating">
+              <select id="timeline" name="timeline" required
+                      class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+                <option value="">Select timeline</option>
+                <option value="1-week">1 Week</option>
+                <option value="2-weeks">2 Weeks</option>
+                <option value="1-month">1 Month</option>
+                <option value="flexible">Flexible</option>
+              </select>
+              <label for="timeline">Preferred Timeline *</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 3: Additional Requirements -->
+      <section id="step-3" class="step-section enhanced-glass rounded-3xl p-8 shadow-xl animate-fade-in" style="animation-delay: 0.6s;">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 text-white font-bold flex items-center justify-center animate-bounce-in" style="animation-delay: 0.4s;">3</div>
+          <h2 class="text-2xl font-bold text-gray-900">Additional requirements</h2>
+        </div>
+        
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-4">What type of information should each item include?</label>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <label class="custom-checkbox flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="item-info" value="descriptions">
+                <span class="checkbox-mark"></span>
+                <span class="text-sm">Detailed descriptions</span>
+              </label>
+              
+              <label class="custom-checkbox flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="item-info" value="images">
+                <span class="checkbox-mark"></span>
+                <span class="text-sm">Images/Photos</span>
+              </label>
+              
+              <label class="custom-checkbox flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="item-info" value="ratings">
+                <span class="checkbox-mark"></span>
+                <span class="text-sm">Ratings/Scores</span>
+              </label>
+              
+              <label class="custom-checkbox flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="item-info" value="prices">
+                <span class="checkbox-mark"></span>
+                <span class="text-sm">Pricing information</span>
+              </label>
+              
+              <label class="custom-checkbox flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="item-info" value="links">
+                <span class="checkbox-mark"></span>
+                <span class="text-sm">External links</span>
+              </label>
+              
+              <label class="custom-checkbox flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="item-info" value="sources">
+                <span class="checkbox-mark"></span>
+                <span class="text-sm">Sources/References</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-floating">
+            <select id="budget" name="budget"
+                    class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+              <option value="">Select budget range</option>
+              <option value="free">Free (if available)</option>
+              <option value="50-100">$50 - $100</option>
+              <option value="100-250">$100 - $250</option>
+              <option value="250-500">$250 - $500</option>
+              <option value="500+">$500+</option>
+              <option value="discuss">Prefer to discuss</option>
+            </select>
+            <label for="budget">Budget Range (Optional)</label>
+          </div>
+          
+          <div class="form-floating">
+            <textarea id="additional-notes" name="additional-notes" rows="3" placeholder=" "
+                      class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm resize-none"></textarea>
+            <label for="additional-notes">Additional Notes or Specific Requirements</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 4: Contact Preferences -->
+      <section id="step-4" class="step-section enhanced-glass rounded-3xl p-8 shadow-xl animate-fade-in" style="animation-delay: 0.8s;">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 text-white font-bold flex items-center justify-center animate-bounce-in" style="animation-delay: 0.6s;">4</div>
+          <h2 class="text-2xl font-bold text-gray-900">How should we contact you?</h2>
+        </div>
+        
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-4">Preferred contact method:</label>
+            <div class="space-y-3">
+              <label class="custom-checkbox flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="radio" name="contact-method" value="email" class="sr-only">
+                <span class="checkbox-mark rounded-full"></span>
+                <span class="text-sm">Email</span>
+              </label>
+              
+              <label class="custom-checkbox flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="radio" name="contact-method" value="phone" class="sr-only">
+                <span class="checkbox-mark rounded-full"></span>
+                <span class="text-sm">Phone call</span>
+              </label>
+              
+              <label class="custom-checkbox flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="radio" name="contact-method" value="both" class="sr-only">
+                <span class="checkbox-mark rounded-full"></span>
+                <span class="text-sm">Both email and phone</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-floating">
+            <input type="tel" id="phone" name="phone" placeholder=" "
+                   class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+            <label for="phone">Phone Number (Optional)</label>
+          </div>
+          
+          <div class="form-floating">
+            <select id="best-time" name="best-time"
+                    class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-brand-400 focus:outline-none transition-colors bg-white/70 backdrop-blur-sm">
+              <option value="">Select best time</option>
+              <option value="morning">Morning (9AM - 12PM)</option>
+              <option value="afternoon">Afternoon (12PM - 5PM)</option>
+              <option value="evening">Evening (5PM - 8PM)</option>
+              <option value="flexible">Flexible</option>
+            </select>
+            <label for="best-time">Best time to contact</label>
+          </div>
+          
+          <div class="border-t pt-6">
+            <label class="custom-checkbox flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" name="newsletter" value="yes" class="mt-1">
+              <span class="checkbox-mark mt-1"></span>
+              <div class="text-sm">
+                <span class="font-medium text-gray-900">Subscribe to our newsletter</span>
+                <p class="text-gray-600 mt-1">Get notified about new lists and ranking updates (you can unsubscribe anytime)</p>
+              </div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Submit Section -->
+      <section class="enhanced-glass rounded-3xl p-8 shadow-xl text-center animate-fade-in" style="animation-delay: 1s;">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to submit your request?</h3>
+        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+          We'll review your request and get back to you within 24 hours with a detailed proposal, 
+          timeline, and next steps.
+        </p>
+        
+        <button type="submit" id="submit-btn" 
+                class="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-600 to-brand-700 px-12 py-4 text-xl font-bold text-white shadow-2xl hover:shadow-brand-500/25 transform hover:scale-105 transition-all duration-300 hover-lift disabled:opacity-50 disabled:cursor-not-allowed">
+          <span class="relative z-10 flex items-center gap-3">
+            <span id="submit-text">Submit Request</span>
+            <svg id="submit-icon" class="w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+            </svg>
+            <div id="loading-spinner" class="hidden animate-spin">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </div>
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-700 to-brand-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-all duration-700"></div>
+        </button>
+        
+        <p class="text-sm text-gray-500 mt-6">
+          By submitting this request, you agree to our 
+          <a href="#" class="text-brand-600 hover:text-brand-700 underline">Terms of Service</a> and 
+          <a href="#" class="text-brand-600 hover:text-brand-700 underline">Privacy Policy</a>
+        </p>
+      </section>
+    </form>
+
+    <!-- Success Message (Hidden by default) -->
+    <div id="success-message" class="hidden enhanced-glass rounded-3xl p-8 shadow-xl text-center animate-zoom-in">
+      <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-900 mb-4">Request Submitted Successfully!</h3>
+      <p class="text-gray-600 mb-8">
+        Thank you for your request. We'll review it and get back to you within 24 hours with 
+        a detailed proposal and timeline.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="index.html" class="inline-flex items-center gap-2 px-6 py-3 text-brand-600 border border-brand-300 rounded-xl hover:bg-brand-50 transition-colors hover-lift">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Back to Home
+        </a>
+        <button id="submit-another" class="px-6 py-3 bg-gradient-to-r from-brand-600 to-brand-700 text-white rounded-xl hover:from-brand-700 hover:to-brand-800 transition-colors hover-lift">
+          Submit Another Request
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-gradient-to-br from-gray-50 to-white animate-fade-in">
+    <div class="mx-auto max-w-7xl px-4 py-12">
+      <div class="text-center">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 shadow-lg flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 17l6-6 4 4 8-8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="text-lg font-black">Ranked<span class="animated-gradient-text">.</span></span>
+        </div>
+        <p class="text-gray-500 text-sm">&copy; 2025 Ranked. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Form elements
+    const form = document.getElementById('request-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const submitIcon = document.getElementById('submit-icon');
+    const loadingSpinner = document.getElementById('loading-spinner');
+    const successMessage = document.getElementById('success-message');
+    const progressBar = document.getElementById('progress-bar');
+    const submitAnotherBtn = document.getElementById('submit-another');
+
+    // Progress tracking
+    let formProgress = 0;
+    const totalSteps = 4;
+
+    // Update progress bar
+    function updateProgress() {
+      const requiredFields = form.querySelectorAll('[required]');
+      let completed = 0;
+      
+      requiredFields.forEach(field => {
+        if (field.type === 'checkbox' || field.type === 'radio') {
+          const name = field.name;
+          const checkedField = form.querySelector(`[name="${name}"]:checked`);
+          if (checkedField) completed++;
+        } else if (field.value.trim() !== '') {
+          completed++;
+        }
+      });
+      
+      const progress = (completed / requiredFields.length) * 100;
+      progressBar.style.width = progress + '%';
+    }
+
+    // Add event listeners for form validation and progress
+    form.addEventListener('input', updateProgress);
+    form.addEventListener('change', updateProgress);
+
+    // Floating label animations
+    document.querySelectorAll('.form-floating input, .form-floating textarea, .form-floating select').forEach(element => {
+      element.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+      
+      element.addEventListener('blur', function() {
+        this.parentElement.classList.remove('focused');
+      });
+    });
+
+    // Custom checkbox/radio styling for radio buttons
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        // Reset all radio checkmarks in the same group
+        document.querySelectorAll(`input[name="${this.name}"]`).forEach(r => {
+          const checkmark = r.nextElementSibling;
+          checkmark.style.background = 'white';
+          checkmark.style.borderColor = '#d1d5db';
+        });
+        
+        // Style the selected radio
+        const checkmark = this.nextElementSibling;
+        checkmark.style.background = 'linear-gradient(135deg, #6d4ee4, #d946ef)';
+        checkmark.style.borderColor = '#6d4ee4';
+      });
+    });
+
+    // Form submission
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Disable submit button and show loading
+      submitBtn.disabled = true;
+      submitText.textContent = 'Submitting...';
+      submitIcon.classList.add('hidden');
+      loadingSpinner.classList.remove('hidden');
+      
+      // Simulate API call
+      try {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        // Hide form and show success message
+        form.style.display = 'none';
+        successMessage.classList.remove('hidden');
+        
+        // Scroll to top smoothly
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+      } catch (error) {
+        console.error('Submission error:', error);
+        alert('There was an error submitting your request. Please try again.');
+        
+        // Reset button state
+        submitBtn.disabled = false;
+        submitText.textContent = 'Submit Request';
+        submitIcon.classList.remove('hidden');
+        loadingSpinner.classList.add('hidden');
+      }
+    });
+
+    // Submit another request button
+    submitAnotherBtn.addEventListener('click', function() {
+      // Reset form
+      form.reset();
+      updateProgress();
+      
+      // Show form and hide success message
+      form.style.display = 'block';
+      successMessage.classList.add('hidden');
+      
+      // Reset button state
+      submitBtn.disabled = false;
+      submitText.textContent = 'Submit Request';
+      submitIcon.classList.remove('hidden');
+      loadingSpinner.classList.add('hidden');
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Form validation enhancements
+    document.querySelectorAll('input[required], select[required], textarea[required]').forEach(field => {
+      field.addEventListener('blur', function() {
+        if (!this.value.trim()) {
+          this.style.borderColor = '#ef4444';
+          this.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+        } else {
+          this.style.borderColor = '#22c55e';
+          this.style.boxShadow = '0 0 0 3px rgba(34, 197, 94, 0.1)';
+        }
+      });
+      
+      field.addEventListener('input', function() {
+        if (this.value.trim()) {
+          this.style.borderColor = '#22c55e';
+          this.style.boxShadow = '0 0 0 3px rgba(34, 197, 94, 0.1)';
+        } else {
+          this.style.borderColor = '#d1d5db';
+          this.style.boxShadow = 'none';
+        }
+      });
+    });
+
+    // Smooth scrolling for step navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Initialize progress on page load
+    updateProgress();
+    
+    // Add subtle animations on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.step-section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+        const nextInput = findNextInput(e.target);
+        if (nextInput) {
+          nextInput.focus();
+        }
+      }
+    });
+
+    function findNextInput(currentElement) {
+      const inputs = Array.from(form.querySelectorAll('input, select, textarea'));
+      const currentIndex = inputs.indexOf(currentElement);
+      return inputs[currentIndex + 1] || null;
+    }
+
+    // Auto-save to localStorage (optional)
+    let autoSaveTimeout;
+    form.addEventListener('input', function() {
+      clearTimeout(autoSaveTimeout);
+      autoSaveTimeout = setTimeout(() => {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        localStorage.setItem('ranked_request_form', JSON.stringify(data));
+      }, 1000);
+    });
+
+    // Load saved data on page load
+    window.addEventListener('load', function() {
+      const savedData = localStorage.getItem('ranked_request_form');
+      if (savedData) {
+        try {
+          const data = JSON.parse(savedData);
+          Object.keys(data).forEach(key => {
+            const field = form.querySelector(`[name="${key}"]`);
+            if (field) {
+              field.value = data[key];
+            }
+          });
+          updateProgress();
+        } catch (error) {
+          console.log('Could not load saved form data');
+        }
+      }
+    });
+
+    // Clear saved data on successful submission
+    form.addEventListener('submit', function() {
+      localStorage.removeItem('ranked_request_form');
+    });
+  </script>
+</body>
+</html>
