@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ranked — Expert Top Lists Across Categories</title>
+  <meta name="description" content="Expert-curated rankings across sports, tech, lifestyle, travel, entertainment, and more. Updated frequently with credible picks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Tailwind CDN for quick testing -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f4ff',
+              100: '#e0e9ff',
+              200: '#c7d7fe',
+              300: '#a5b8fc',
+              400: '#8b92f8',
+              500: '#7c6df0',
+              600: '#6d4ee4',
+              700: '#5d3bc9',
+              800: '#4c32a2',
+              900: '#412d80'
+            },
+            accent: {
+              50: '#fdf4ff',
+              100: '#fae8ff',
+              500: '#d946ef',
+              600: '#c026d3',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'float': 'float 3s ease-in-out infinite',
+            'shimmer': 'shimmer 2.5s linear infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 20px rgba(109, 78, 228, 0.3)' },
+              '100%': { boxShadow: '0 0 30px rgba(109, 78, 228, 0.6)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            }
+          },
+          backdropBlur: {
+            xs: '2px',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #6d4ee4, #d946ef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .glass-effect {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .shimmer-bg {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      background-size: 200% 100%;
+    }
+    
+    .floating-shapes::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: 20%;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #6d4ee4, #d946ef);
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    .floating-shapes::after {
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      left: 10%;
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(45deg, #8b92f8, #c026d3);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      opacity: 0.08;
+      animation: float 6s ease-in-out infinite reverse;
+    }
+
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="min-h-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 text-gray-900 font-inter">
+  <!-- Header -->
+  <header class="relative overflow-hidden floating-shapes">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:py-20 animate-slide-up">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-500 to-accent-500 shadow-xl flex items-center justify-center animate-glow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 17l6-6 4 4 8-8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="3" cy="17" r="1" fill="currentColor"/>
+            <circle cx="9" cy="11" r="1" fill="currentColor"/>
+            <circle cx="13" cy="15" r="1" fill="currentColor"/>
+            <circle cx="21" cy="9" r="1" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="text-2xl font-black tracking-tight">
+          Ranked<span class="gradient-text">.</span>
+        </span>
+      </div>
+
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="space-y-8">
+          <div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none">
+              Discover the web's most 
+              <span class="gradient-text">trusted rankings</span>
+            </h1>
+            <p class="mt-6 max-w-2xl text-xl text-gray-600 leading-relaxed">
+              Expert-curated top lists across sports, tech, lifestyle, travel, and entertainment. 
+              <span class="font-medium text-gray-800">Always fresh, always credible.</span>
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#lists" class="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-600 to-brand-700 px-8 py-4 text-lg font-bold text-white shadow-2xl hover:shadow-brand-500/25 transform hover:scale-105 transition-all duration-300">
+              <span class="relative z-10">Explore rankings</span>
+              <div class="absolute inset-0 bg-gradient-to-r from-brand-700 to-brand-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
+            <a href="request.html" class="group rounded-2xl border-2 border-gray-300 bg-white/80 backdrop-blur-sm px-8 py-4 text-lg font-bold text-gray-800 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-300">
+              Request a list
+            </a>
+          </div>
+
+          <!-- Enhanced Search -->
+          <div class="max-w-2xl">
+            <label class="sr-only" for="search">Search rankings</label>
+            <div class="relative group">
+              <input id="search" type="text" placeholder="Search rankings..." 
+                     class="w-full rounded-2xl border-2 border-gray-200 bg-white/90 backdrop-blur-sm px-6 py-4 pl-14 text-lg text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-brand-200 focus:border-brand-400 transition-all duration-300 shadow-lg hover:shadow-xl" />
+              <svg class="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-400 group-focus-within:text-brand-500 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="8" stroke-width="2"/>
+                <path d="M21 21l-4.35-4.35" stroke-width="2"/>
+              </svg>
+              <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-500/10 to-accent-500/10 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 -z-10"></div>
+            </div>
+          </div>
+
+          <!-- Enhanced Stats -->
+          <div class="grid grid-cols-3 gap-6 max-w-lg">
+            <div class="text-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20 shadow-lg">
+              <dt class="text-sm font-medium text-gray-500">Categories</dt>
+              <dd class="text-3xl font-black gradient-text">12+</dd>
+            </div>
+            <div class="text-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20 shadow-lg">
+              <dt class="text-sm font-medium text-gray-500">Lists</dt>
+              <dd class="text-3xl font-black gradient-text">180+</dd>
+            </div>
+            <div class="text-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20 shadow-lg">
+              <dt class="text-sm font-medium text-gray-500">Updated</dt>
+              <dd class="text-3xl font-black gradient-text">Weekly</dd>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enhanced Visual -->
+        <div class="relative hidden lg:block animate-float">
+          <div class="rounded-3xl bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-xl p-6 shadow-2xl border border-white/20">
+            <div class="aspect-[16/10] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 shadow-inner">
+              <img src="12/featured-in-stream-thumbnail.webp" alt="Ranked preview" class="h-full w-full object-cover">
+            </div>
+            <div class="mt-6 grid grid-cols-3 gap-4">
+              <div class="group h-24 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                <img src="12/CH.webp" alt="" class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300">
+              </div>
+              <div class="group h-24 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                <img src="12/Netflix.webp" alt="" class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300">
+              </div>
+              <div class="group h-24 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                <img src="12/vpn.webp" alt="" class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced gradient background -->
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50"></div>
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse animation-delay-2000"></div>
+    </div>
+  </header>
+
+  <!-- Enhanced sticky category chips -->
+  <nav class="sticky top-0 z-50 glass-effect shadow-lg">
+    <div class="mx-auto max-w-7xl px-4 py-4">
+      <div id="chips" class="flex gap-3 overflow-x-auto no-scrollbar snap-x">
+        <button data-category="all" class="chip active snap-start shrink-0 rounded-full bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-3 text-sm font-bold shadow-lg transform hover:scale-105 transition-all duration-200">All</button>
+        <button data-category="sports" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Sports</button>
+        <button data-category="entertainment" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Entertainment</button>
+        <button data-category="lifestyle" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Lifestyle</button>
+        <button data-category="tech" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Technology</button>
+        <button data-category="security-tools" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Security Tools</button>
+        <button data-category="travel" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Destinations</button>
+        <button data-category="personal-growth" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Personal Growth</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Enhanced trending scroller -->
+  <section class="mx-auto max-w-7xl px-4 py-8">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-2 h-2 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 animate-pulse"></div>
+      <h2 class="text-lg font-bold text-gray-800">Trending now</h2>
+      <div class="flex-1 h-px bg-gradient-to-r from-gray-200 to-transparent"></div>
+    </div>
+    <div class="flex gap-4 overflow-x-auto no-scrollbar snap-x pb-2">
+      <a href="football_ranked.html" class="snap-start shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">⭐ Football GOATs</a>
+      <a href="menperfum.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🎩 Men's Luxury Perfumes</a>
+      <a href="Expensive-cars.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🚗 Most Expensive Cars</a>
+      <a href="50k_laptop.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">💻 Laptops under 50K</a>
+      <a href="anime_ranked.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🎌 Best Anime</a>
+      <a href="vpn.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🔒 Free VPNs</a>
+    </div>
+  </section>
+
+  <!-- Enhanced Lists grid -->
+  <main id="lists" class="mx-auto max-w-7xl px-4 pb-16">
+    <div id="cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Football Rankings Card -->
+      <a href="football_ranked.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="sports">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/gettyimages-2161416653-612x612.webp" alt="Football legends" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">⭐ The 10 Greatest Football Players of All Time</h3>
+          <p class="text-gray-600 line-clamp-2">The definitive ranking of football's legends.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">Updated 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Men's Perfumes Card -->
+      <a href="menperfum.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="lifestyle">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/MPH.webp" alt="Men's perfumes" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🎩 Top 10 Men's Luxury Perfumes (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Sophisticated scents and timeless picks.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-700">Expert Reviews</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Expensive Cars Card -->
+      <a href="Expensive-cars.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="lifestyle">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/CH.webp" alt="Expensive cars" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🚗 Top 15 Most Expensive Cars in the World (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Bespoke icons of luxury and speed.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">2025 Edition</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Laptops 50K Card -->
+      <a href="50k_laptop.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="tech">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/featured-in-stream-thumbnail.webp" alt="Top laptops" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">💻 Top Laptops Under 50K (H‑Series, 2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Performance, design, and value compared.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-xs font-bold text-green-700">Budget Picks</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Strikers Card -->
+      <a href="striker.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="sports">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/filters_quality(75).webp" alt="Top strikers" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">⚽ Top Strikers of This Generation</h3>
+          <p class="text-gray-600 line-clamp-2">Lethal forwards redefining the game.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">Updated 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Finance Books Card -->
+      <a href="finance_book.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="personal-growth">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/old-book-showing-dollar-sign-representing-financial-knowledge-photo.webp" alt="Finance books" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">📚💰 Top 15 Finance Books of All Time</h3>
+          <p class="text-gray-600 line-clamp-2">Timeless wisdom on money and investing.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-yellow-50 px-3 py-1 text-xs font-bold text-yellow-700">Updated 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Beautiful Places Card -->
+      <a href="places.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="travel">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/Ph.webp" alt="Beautiful places" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🌍 World's Most Beautiful Places (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Breathtaking destinations and hidden gems.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">Bucket List</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Women's Perfumes Card -->
+      <a href="women-perfume.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="lifestyle">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/wph.webp" alt="Women's perfumes" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">👑 Top 10 Women's Luxury Perfumes (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Elegant icons and enchanting scents.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-pink-50 px-3 py-1 text-xs font-bold text-pink-700">Expert Picks</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Netflix Shows Card -->
+      <a href="netflix.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="entertainment">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/Netflix.webp" alt="Top Netflix shows" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🎬 Top 30 Netflix Shows</h3>
+          <p class="text-gray-600 line-clamp-2">Most relevant shows streaming now.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-red-50 px-3 py-1 text-xs font-bold text-red-700">Curated 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Best Anime Card -->
+      <a href="anime_ranked.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="entertainment">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/71.webp" alt="Best anime" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🎌 Top 30 Best Anime of All Time</h3>
+          <p class="text-gray-600 line-clamp-2">Definitive guide to iconic anime.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 text-xs font-bold text-orange-700">Fans • 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Free VPNs Card -->
+      <a href="vpn.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="security-tools">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/vpn.webp" alt="Free VPNs" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🔒 Top 10 Free VPNs for PC</h3>
+          <p class="text-gray-600 line-clamp-2">Security, speed, and data limits ranked.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-bold text-indigo-700">Tech Experts • 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Adventure Places India Card -->
+      <a href="adplaces.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="travel">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/AP15.webp" alt="Adventure India" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🏔️ Top 20 Adventure Places in India (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Thrilling destinations across India.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-700">Travel Guide</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Self-Help Books Card -->
+      <a href="selfhelp.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="personal-growth">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/shb.webp" alt="Self help books" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">📖✨ Top 15 Self-Help Books of All Time</h3>
+          <p class="text-gray-600 line-clamp-2">Life-changing wisdom and strategies.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-purple-50 px-3 py-1 text-xs font-bold text-purple-700">Updated 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Best-Selling Self-Help Card -->
+      <a href="bselfhelp.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="personal-growth">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/shp1.webp" alt="Best-selling self help" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">📖🏆 Top 15 Best-Selling Self-Help Books</h3>
+          <p class="text-gray-600 line-clamp-2">Influential titles that changed lives.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-700">Best-Sellers</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Top Laptops Under 50K Card -->
+      <a href="50kbestall.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="tech">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/50kl.webp" alt="Top laptops 50k" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">💻 Top 15 Laptops Under ₹50,000 (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Perfect for students and pros.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-cyan-50 px-3 py-1 text-xs font-bold text-cyan-700">Budget Friendly</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Adventure Places Europe Card -->
+      <a href="adv_eurpe_places.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="travel">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/EAP11.webp" alt="Adventure Europe" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">⛰️ Top 20 Adventure Places in Europe 2025</h3>
+          <p class="text-gray-600 line-clamp-2">Alpine peaks to Arctic fjords.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">Ultimate Guide</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Enhanced Empty state -->
+    <div id="empty" class="hidden text-center py-20">
+      <div class="mx-auto max-w-md">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+          <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">No results found</h3>
+        <p class="text-gray-600 mb-6">Try adjusting your search or filters to find what you're looking for.</p>
+        <button id="reset" class="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand-600 to-brand-700 px-6 py-3 text-white font-bold hover:from-brand-700 hover:to-brand-800 transform hover:scale-105 transition-all duration-300 shadow-lg">
+          Reset filters
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Enhanced Footer -->
+  <footer class="border-t border-gray-200 bg-gradient-to-br from-gray-50 to-white">
+    <div class="mx-auto max-w-7xl px-4 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 shadow-lg flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 17l6-6 4 4 8-8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="text-xl font-black">Ranked<span class="gradient-text">.</span></span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">About Ranked</h3>
+            <p class="text-gray-600 max-w-md leading-relaxed">Curated, credible rankings across categories. Built for quick discovery and deeper dives into what matters most.</p>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wider">Stay updated</h4>
+          <form class="flex gap-3">
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" type="email" placeholder="Enter your email" 
+                   class="flex-1 rounded-xl border-2 border-gray-200 bg-white px-4 py-3 focus:outline-none focus:ring-4 focus:ring-brand-200 focus:border-brand-400 transition-all duration-300" />
+            <button type="button" class="rounded-xl bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-3 font-bold hover:from-gray-800 hover:to-gray-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div class="flex flex-wrap gap-6 text-sm">
+            <a href="index.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Home</a>
+            <a href="aboutus.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">About</a>
+            <a href="contactus.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Contact</a>
+            <a href="privacy.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Privacy</a>
+            <a href="terms.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Terms</a>
+          </div>
+          <p class="text-sm text-gray-500">&copy; 2025 Ranked. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enhanced Interactions -->
+  <script>
+    const searchInput = document.getElementById('search');
+    const cards = Array.from(document.querySelectorAll('#cards > a'));
+    const emptyState = document.getElementById('empty');
+    const resetBtn = document.getElementById('reset');
+    const chips = Array.from(document.querySelectorAll('.chip'));
+
+    // Add loading states and animations
+    function showLoadingState() {
+      cards.forEach((card, index) => {
+        card.style.opacity = '0.6';
+        card.style.transform = 'scale(0.98)';
+      });
+    }
+
+    function hideLoadingState() {
+      cards.forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1)';
+      });
+    }
+
+    function applyFilters() {
+      showLoadingState();
+      
+      setTimeout(() => {
+        const term = (searchInput.value || '').toLowerCase().trim();
+        const activeChip = chips.find(c => c.classList.contains('active'));
+        const category = activeChip ? activeChip.dataset.category : 'all';
+
+        let visible = 0;
+        cards.forEach((card, index) => {
+          const text = card.textContent.toLowerCase();
+          const itemCat = card.getAttribute('data-category');
+          const matchSearch = term === '' || text.includes(term);
+          const matchCategory = category === 'all' || itemCat === category;
+          const show = matchSearch && matchCategory;
+          
+          // Staggered animation
+          setTimeout(() => {
+            card.classList.toggle('hidden', !show);
+            if (show) {
+              card.style.animation = 'fadeIn 0.5s ease-out forwards';
+              visible++;
+            }
+          }, index * 50);
+        });
+
+        setTimeout(() => {
+          emptyState.classList.toggle('hidden', visible !== 0);
+          hideLoadingState();
+        }, cards.length * 50 + 200);
+      }, 150);
+    }
+
+    // Debounce search input
+    let searchTimeout;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(applyFilters, 300);
+    });
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('active', 'bg-gradient-to-r', 'from-gray-900', 'to-gray-800', 'text-white');
+          c.classList.add('border-2', 'border-gray-200', 'bg-white/80', 'text-gray-700');
+        });
+        
+        chip.classList.add('active', 'bg-gradient-to-r', 'from-gray-900', 'to-gray-800', 'text-white');
+        chip.classList.remove('border-2', 'border-gray-200', 'bg-white/80', 'text-gray-700');
+        
+        applyFilters();
+        if (searchInput.value) {
+          searchInput.value = '';
+        }
+      });
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        chips[0].click();
+      });
+    }
+
+    // Add smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add intersection observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'slideUp 0.6s ease-out forwards';
+        }
+      });
+    }, observerOptions);
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>
