@@ -1,707 +1,713 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranked Site - Discover Top Rankings Across All Categories</title>
-    <meta name="description" content="Discover expert rankings across sports, anime, tech, lifestyle, travel, and more. Explore the best products, people, and trends in 2025.">
-<meta name="keywords" content="rankings, top 10, best of, football players, anime, luxury cars, laptops, perfumes, travel destinations, finance books, 2025 rankings, top products, expert reviews">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ranked — Expert Top Lists Across Categories</title>
+  <meta name="description" content="Expert-curated rankings across sports, tech, lifestyle, travel, entertainment, and more. Updated frequently with credible picks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Tailwind CDN for quick testing -->
+<link href="dist/output.css" rel="stylesheet">
+
+
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     
-   <link href="dist/output.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-     
-   
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-   
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1M3J9KB7TR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1M3J9KB7TR');
-</script>
-    <style>
-        body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
-            min-height: 100vh;
-        }
-        .header-gradient {
-            background: linear-gradient(120deg, #4f46e5, #7c3aed, #ec4899);
-            background-size: 200% 200%;
-            animation: gradientShift 8s ease infinite;
-        }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .search-box:focus {
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
-        }
-        .category-icon {
-            transition: all 0.3s ease;
-            cursor: pointer;
-            filter: grayscale(100%) opacity(0.7);
-        }
-        .category-icon:hover, .category-icon.active {
-            filter: grayscale(0%) opacity(1);
-            transform: scale(1.1);
-        }
-        .category-icon.active {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #e5e7eb;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #9ca3af;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6b7280;
-        }
-        .logo-text {
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .footer {
-    /* Main footer background and text */
-    background: #1a252f; /* Darker background for better contrast */
-    color: #f1f8ff;     /* Lighter, almost pure white for maximum contrast */
-    padding: 2.5rem 1rem;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.8rem;
-}
-
-.footer-links a {
-    /* Increased contrast for links */
-    color: #b0c4de;     /* A brighter, more saturated blue-gray */
-    text-decoration: none;
-    font-weight: 600;   /* Bolder font weight for better readability */
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 0.3rem 0;
-}
-
-.footer-links a:hover {
-    /* Brighter hover color for a more obvious interaction */
-    color: #4a91e0; /* A vibrant blue */
-}
-
-.footer-links a.current {
-    /* Same vibrant blue for the active link */
-    color: #4a91e0;
-}
-
-.footer-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;     /* Slightly thicker underline for better visibility */
-    bottom: 0;
-    left: 0;
-    background-color: #4a91e0;
-    transition: width 0.3s ease;
-}
-
-.footer-links a:hover::after {
-    width: 100%;
-}
-
-.footer-social {
-    display: flex;
-    gap: 1.2rem;
-}
-
-.footer-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    background: #34495e;
-    border-radius: 50%;
-    color: #f1f8ff;     /* Use the same high-contrast color as the main text */
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.footer-social a:hover {
-    background: #4a91e0; /* Use the same vibrant blue for hover state */
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    margin-top: 1.5rem;
-    border-top: 1px solid #34495e;
-    width: 100%;
-}
-
-.footer-bottom p {
-    /* The copyright text should also have sufficient contrast */
-    color: #b0c4de; /* Use the same color as the regular links for consistency and contrast */
-    font-size: 0.95rem;
-}
-
-@media (max-width: 768px) {
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+    .gradient-text {
+      background: linear-gradient(135deg, #6d4ee4, #d946ef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
-    .footer {
-        padding: 2rem 1rem;
+    .glass-effect {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-}
-    </style>
+    
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .shimmer-bg {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      background-size: 200% 100%;
+    }
+    
+    .floating-shapes::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: 20%;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #6d4ee4, #d946ef);
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    .floating-shapes::after {
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      left: 10%;
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(45deg, #8b92f8, #c026d3);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      opacity: 0.08;
+      animation: float 6s ease-in-out infinite reverse;
+    }
+
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
 </head>
-<body class="min-h-screen p-4 py-8">
+<body class="min-h-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 text-gray-900 font-inter">
+  <!-- Header -->
+  <header class="relative overflow-hidden floating-shapes">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:py-20 animate-slide-up">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-500 to-accent-500 shadow-xl flex items-center justify-center animate-glow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 17l6-6 4 4 8-8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="3" cy="17" r="1" fill="currentColor"/>
+            <circle cx="9" cy="11" r="1" fill="currentColor"/>
+            <circle cx="13" cy="15" r="1" fill="currentColor"/>
+            <circle cx="21" cy="9" r="1" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="text-2xl font-black tracking-tight">
+          Ranked<span class="gradient-text">.</span>
+        </span>
+      </div>
 
-    <!-- Main Container -->
-    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="space-y-8">
+          <div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none">
+              Discover the web's most 
+              <span class="gradient-text">trusted rankings</span>
+            </h1>
+            <p class="mt-6 max-w-2xl text-xl text-gray-600 leading-relaxed">
+              Expert-curated top lists across sports, tech, lifestyle, travel, and entertainment. 
+              <span class="font-medium text-gray-800">Always fresh, always credible.</span>
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#lists" class="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-600 to-brand-700 px-8 py-4 text-lg font-bold text-white shadow-2xl hover:shadow-brand-500/25 transform hover:scale-105 transition-all duration-300">
+              <span class="relative z-10">Explore rankings</span>
+              <div class="absolute inset-0 bg-gradient-to-r from-brand-700 to-brand-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
+            <a href="request.html" class="group rounded-2xl border-2 border-gray-300 bg-white/80 backdrop-blur-sm px-8 py-4 text-lg font-bold text-gray-800 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-300">
+              Request a list
+            </a>
+          </div>
+
+          <!-- Enhanced Search -->
+          <div class="max-w-2xl">
+            <label class="sr-only" for="search">Search rankings</label>
+            <div class="relative group">
+              <input id="search" type="text" placeholder="Search rankings..." 
+                     class="w-full rounded-2xl border-2 border-gray-200 bg-white/90 backdrop-blur-sm px-6 py-4 pl-14 text-lg text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-brand-200 focus:border-brand-400 transition-all duration-300 shadow-lg hover:shadow-xl" />
+              <svg class="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-400 group-focus-within:text-brand-500 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="8" stroke-width="2"/>
+                <path d="M21 21l-4.35-4.35" stroke-width="2"/>
+              </svg>
+              <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-500/10 to-accent-500/10 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 -z-10"></div>
+            </div>
+          </div>
+
+          <!-- Enhanced Stats -->
+          <div class="grid grid-cols-3 gap-6 max-w-lg">
+            <div class="text-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20 shadow-lg">
+              <dt class="text-sm font-medium text-gray-500">Categories</dt>
+              <dd class="text-3xl font-black gradient-text">12+</dd>
+            </div>
+            <div class="text-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20 shadow-lg">
+              <dt class="text-sm font-medium text-gray-500">Lists</dt>
+              <dd class="text-3xl font-black gradient-text">180+</dd>
+            </div>
+            <div class="text-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20 shadow-lg">
+              <dt class="text-sm font-medium text-gray-500">Updated</dt>
+              <dd class="text-3xl font-black gradient-text">Weekly</dd>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enhanced Visual -->
+        <div class="relative hidden lg:block animate-float">
+          <div class="rounded-3xl bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-xl p-6 shadow-2xl border border-white/20">
+            <div class="aspect-[16/10] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 shadow-inner">
+              <img src="12/featured-in-stream-thumbnail.webp" alt="Ranked preview" class="h-full w-full object-cover">
+            </div>
+            <div class="mt-6 grid grid-cols-3 gap-4">
+              <div class="group h-24 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                <img src="12/CH.webp" alt="" class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300">
+              </div>
+              <div class="group h-24 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                <img src="12/Netflix.webp" alt="" class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300">
+              </div>
+              <div class="group h-24 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                <img src="12/vpn.webp" alt="" class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced gradient background -->
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50"></div>
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse animation-delay-2000"></div>
+    </div>
+  </header>
+
+  <!-- Enhanced sticky category chips -->
+  <nav class="sticky top-0 z-50 glass-effect shadow-lg">
+    <div class="mx-auto max-w-7xl px-4 py-4">
+      <div id="chips" class="flex gap-3 overflow-x-auto no-scrollbar snap-x">
+        <button data-category="all" class="chip active snap-start shrink-0 rounded-full bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-3 text-sm font-bold shadow-lg transform hover:scale-105 transition-all duration-200">All</button>
+        <button data-category="sports" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Sports</button>
+        <button data-category="entertainment" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Entertainment</button>
+        <button data-category="lifestyle" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Lifestyle</button>
+        <button data-category="tech" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Technology</button>
+        <button data-category="security-tools" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Security Tools</button>
+        <button data-category="travel" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Destinations</button>
+        <button data-category="personal-growth" class="chip shrink-0 rounded-full border-2 border-gray-200 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-white hover:border-brand-300 hover:text-brand-700 transform hover:scale-105 transition-all duration-200">Personal Growth</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Enhanced trending scroller -->
+  <section class="mx-auto max-w-7xl px-4 py-8">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-2 h-2 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 animate-pulse"></div>
+      <h2 class="text-lg font-bold text-gray-800">Trending now</h2>
+      <div class="flex-1 h-px bg-gradient-to-r from-gray-200 to-transparent"></div>
+    </div>
+    <div class="flex gap-4 overflow-x-auto no-scrollbar snap-x pb-2">
+      <a href="football_ranked.html" class="snap-start shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">⭐ Football GOATs</a>
+      <a href="menperfum.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🎩 Men's Luxury Perfumes</a>
+      <a href="Expensive-cars.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🚗 Most Expensive Cars</a>
+      <a href="50k_laptop.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">💻 Laptops under 50K</a>
+      <a href="anime_ranked.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🎌 Best Anime</a>
+      <a href="vpn.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🔒 Free VPNs</a>
+    </div>
+  </section>
+
+  <!-- Enhanced Lists grid -->
+  <main id="lists" class="mx-auto max-w-7xl px-4 pb-16">
+    <div id="cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Football Rankings Card -->
+      <a href="football_ranked.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="sports">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/gettyimages-2161416653-612x612.webp" alt="Football legends" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">⭐ The 10 Greatest Football Players of All Time</h3>
+          <p class="text-gray-600 line-clamp-2">The definitive ranking of football's legends.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">Updated 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Men's Perfumes Card -->
+      <a href="menperfum.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="lifestyle">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/MPH.webp" alt="Men's perfumes" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🎩 Top 10 Men's Luxury Perfumes (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Sophisticated scents and timeless picks.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-700">Expert Reviews</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Expensive Cars Card -->
+      <a href="Expensive-cars.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="lifestyle">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/CH.webp" alt="Expensive cars" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🚗 Top 15 Most Expensive Cars in the World (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Bespoke icons of luxury and speed.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">2025 Edition</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Laptops 50K Card -->
+      <a href="50k_laptop.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="tech">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/featured-in-stream-thumbnail.webp" alt="Top laptops" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">💻 Top Laptops Under 50K (H‑Series, 2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Performance, design, and value compared.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-xs font-bold text-green-700">Budget Picks</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Strikers Card -->
+      <a href="striker.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="sports">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/filters_quality(75).webp" alt="Top strikers" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">⚽ Top Strikers of This Generation</h3>
+          <p class="text-gray-600 line-clamp-2">Lethal forwards redefining the game.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">Updated 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Finance Books Card -->
+      <a href="finance_book.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="personal-growth">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/old-book-showing-dollar-sign-representing-financial-knowledge-photo.webp" alt="Finance books" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">📚💰 Top 15 Finance Books of All Time</h3>
+          <p class="text-gray-600 line-clamp-2">Timeless wisdom on money and investing.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-yellow-50 px-3 py-1 text-xs font-bold text-yellow-700">Updated 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Beautiful Places Card -->
+      <a href="places.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="travel">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/Ph.webp" alt="Beautiful places" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🌍 World's Most Beautiful Places (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Breathtaking destinations and hidden gems.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">Bucket List</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Women's Perfumes Card -->
+      <a href="women-perfume.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="lifestyle">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/wph.webp" alt="Women's perfumes" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">👑 Top 10 Women's Luxury Perfumes (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Elegant icons and enchanting scents.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-pink-50 px-3 py-1 text-xs font-bold text-pink-700">Expert Picks</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Netflix Shows Card -->
+      <a href="netflix.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="entertainment">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/Netflix.webp" alt="Top Netflix shows" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🎬 Top 30 Netflix Shows</h3>
+          <p class="text-gray-600 line-clamp-2">Most relevant shows streaming now.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-red-50 px-3 py-1 text-xs font-bold text-red-700">Curated 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Best Anime Card -->
+      <a href="anime_ranked.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="entertainment">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/71.webp" alt="Best anime" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🎌 Top 30 Best Anime of All Time</h3>
+          <p class="text-gray-600 line-clamp-2">Definitive guide to iconic anime.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 text-xs font-bold text-orange-700">Fans • 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Free VPNs Card -->
+      <a href="vpn.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="security-tools">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/vpn.webp" alt="Free VPNs" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🔒 Top 10 Free VPNs for PC</h3>
+          <p class="text-gray-600 line-clamp-2">Security, speed, and data limits ranked.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-bold text-indigo-700">Tech Experts • 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Adventure Places India Card -->
+      <a href="adplaces.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="travel">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/AP15.webp" alt="Adventure India" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">🏔️ Top 20 Adventure Places in India (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Thrilling destinations across India.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-700">Travel Guide</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Self-Help Books Card -->
+      <a href="selfhelp.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="personal-growth">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/shb.webp" alt="Self help books" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">📖✨ Top 15 Self-Help Books of All Time</h3>
+          <p class="text-gray-600 line-clamp-2">Life-changing wisdom and strategies.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-purple-50 px-3 py-1 text-xs font-bold text-purple-700">Updated 2025</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Best-Selling Self-Help Card -->
+      <a href="bselfhelp.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="personal-growth">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/shp1.webp" alt="Best-selling self help" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">📖🏆 Top 15 Best-Selling Self-Help Books</h3>
+          <p class="text-gray-600 line-clamp-2">Influential titles that changed lives.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-700">Best-Sellers</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Top Laptops Under 50K Card -->
+      <a href="50kbestall.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="tech">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/50kl.webp" alt="Top laptops 50k" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">💻 Top 15 Laptops Under ₹50,000 (2025)</h3>
+          <p class="text-gray-600 line-clamp-2">Perfect for students and pros.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-cyan-50 px-3 py-1 text-xs font-bold text-cyan-700">Budget Friendly</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Adventure Places Europe Card -->
+      <a href="adv_eurpe_places.html" class="group card-hover rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200" data-category="travel">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="12/EAP11.webp" alt="Adventure Europe" class="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-700 line-clamp-2">⛰️ Top 20 Adventure Places in Europe 2025</h3>
+          <p class="text-gray-600 line-clamp-2">Alpine peaks to Arctic fjords.</p>
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">Ultimate Guide</span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Enhanced Empty state -->
+    <div id="empty" class="hidden text-center py-20">
+      <div class="mx-auto max-w-md">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+          <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">No results found</h3>
+        <p class="text-gray-600 mb-6">Try adjusting your search or filters to find what you're looking for.</p>
+        <button id="reset" class="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand-600 to-brand-700 px-6 py-3 text-white font-bold hover:from-brand-700 hover:to-brand-800 transform hover:scale-105 transition-all duration-300 shadow-lg">
+          Reset filters
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Enhanced Footer -->
+  <footer class="border-t border-gray-200 bg-gradient-to-br from-gray-50 to-white">
+    <div class="mx-auto max-w-7xl px-4 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 shadow-lg flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 17l6-6 4 4 8-8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="text-xl font-black">Ranked<span class="gradient-text">.</span></span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">About Ranked</h3>
+            <p class="text-gray-600 max-w-md leading-relaxed">Curated, credible rankings across categories. Built for quick discovery and deeper dives into what matters most.</p>
+          </div>
+        </div>
         
-        <!-- Enhanced Header Section -->
-        <header class="header-gradient text-white p-6 sm:p-8">
-            <div class="flex flex-col items-center text-center">
-                <!-- Logo -->
-                <div class="flex items-center justify-center mb-4">
-                    <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg mr-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg>
-                    </div>
-                    <h1 class="text-4xl font-bold logo-text">Ranked<span class="text-indigo-200">.</span></h1>
-                </div>
-                
-                <p class="text-indigo-100 max-w-md mx-auto mb-6 text-lg">Discover the best in every category with our expertly curated rankings</p>
-                
-                <!-- Search Bar -->
-                <div class="relative max-w-md w-full mb-8">
-                    <input type="text" id="searchInput" placeholder="Search rankings..." class="w-full py-4 pl-14 pr-5 text-gray-700 bg-white rounded-full shadow-lg focus:outline-none search-box text-lg">
-                    <i class="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
-                </div>
-                
-                <!-- Category Icons -->
-                <div class="flex flex-col items-center p-4 sm:p-6 text-center">
-    <div class="text-sm font-semibold text-white uppercase mb-3"></div>
-    <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
-        <button class="filter-tab active px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-white text-gray-800" data-category="all">All</button>
-        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="sports">Sports</button>
-        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="entertainment">Entertainment</button>
-        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="lifestyle">Lifestyle</button>
-        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="tech">Technology</button>
-        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="security-tools">Security Tools</button>
-        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="travel">Destinations</button>
-        <button class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 bg-transparent text-white border border-white hover:bg-white hover:text-gray-800" data-category="personal-growth">Personal Growth</button>
-    </div>
+        <div class="space-y-3">
+  <div class="flex items-baseline justify-between">
+    <h4 class="text-sm font-semibold text-gray-900 tracking-wide">Stay updated</h4>
+    <span class="text-xs text-gray-500">No spam. Unsubscribe anytime.</span>
+  </div>
+  <form class="flex flex-col sm:flex-row gap-3">
+    <label class="sr-only" for="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      placeholder="Enter your email"
+      class="flex-1 rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-brand-200 focus:border-brand-400 transition"
+    />
+    <button
+      type="button"
+      class="rounded-xl bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-3 font-semibold shadow-lg hover:from-gray-800 hover:to-gray-700 focus:outline-none focus:ring-4 focus:ring-brand-200 transition"
+    >
+      Subscribe
+    </button>
+  </form>
+  <p class="text-xs text-gray-500">
+    By subscribing, consent to receive updates and agree to our
+    <a
+      href="privacy.html"
+      class="underline decoration-gray-300 hover:decoration-gray-600"
+      >Privacy Policy</a
+    >.
+  </p>
 </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="p-6 sm:p-8">
-            <!-- Ranked List Container -->
-            <div id="rankedList" class="space-y-6">
-                <!-- Football Card -->
-                <a href="football_ranked.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-blue-100" data-category="sports">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-                        <img src="12/gettyimages-2161416653-612x612.webp" alt="Football Rank" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex items-center mb-2">
-                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                                  ⭐ The 10 Greatest Football Players of All Time
-                            </h2>
-                        </div>
-                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-                           The definitive ranking of football's true legends. Discover who made the ultimate list of GOATs.
-                        </p>
-                        <span class="text-sm text-indigo-600 font-medium">Updated 2025 Rankings</span>
-                    </div>
-                </a>
-                <!-- Men's Perfume Card -->
-                <a href="menperfum.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-gray-50 to-amber-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-gray-100" data-category="lifestyle">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-                        <img src="12/MPH.webp" loading="lazy" alt="Luxury Men's Perfumes" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex items-center mb-2">
-                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                                🎩 Top 10 Men's Luxury Perfumes (2025)
-                            </h2>
-                        </div>
-                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-                            Explore sophisticated scents, timeless classics, and exclusive fragrances for the modern gentleman.
-                        </p>
-                        <span class="text-sm text-amber-700 font-medium">Luxury Collection • Expert Reviews</span>
-                    </div>
-                </a>
-
-                
-
-                <!-- Cars Card -->
-                <a href="Expensive-cars.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-gray-50 to-yellow-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-gray-100" data-category="lifestyle">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-                        <img src="12/CH.webp" alt="Expensive Cars" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex items-center mb-2">
-                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                                🚗 Top 15 Most Expensive Cars in the World (2025)
-                            </h2>
-                        </div>
-                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-                            From bespoke Rolls-Royce masterpieces to record-breaking hypercars, discover the true icons of luxury and speed.
-                        </p>
-                        <span class="text-sm text-yellow-700 font-medium">Luxury Rankings • 2025 Edition</span>
-                    </div>
-                </a>
-
-                <!-- Laptop Card -->
-                <a href="50k_laptop.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-green-100" data-category="tech">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-                        <img src="12/featured-in-stream-thumbnail.webp" alt="Top Laptops" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex items-center mb-2">
-                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                                💻 Top Laptops Under 50K (H-Series, 2025)
-                            </h2>
-                        </div>
-                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-                            Compare performance, design, and value—find the best laptop under ₹50K in 2025.
-                        </p>
-                        <span class="text-sm text-teal-700 font-medium">Budget Picks • Expert Reviewed</span>
-                    </div>
-                </a>
-
-                <!-- Striker Card -->
-                <a href="striker.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-indigo-100" data-category="sports">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-                        <img src="12/filters_quality(75).webp" alt="Top Strikers" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex items-center mb-2">
-                            <h2 class="text-xl font-bold text-gray-900 tracking-wide">
-                                Top Strikers of This Generation
-                            </h2>
-                        </div>
-                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-                            Discover the most lethal forwards who are redefining football with goals, skill, and dominance on the pitch.
-                        </p>
-                        <div class="flex items-center text-sm text-indigo-700 font-medium">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z" />
-                            </svg>
-                            Updated for 2025 Rankings
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Finance Book Card -->
-                <a href="finance_book.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-cyan-50 to-emerald-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-cyan-100" data-category="personal-growth">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-                        <img src="12/old-book-showing-dollar-sign-representing-financial-knowledge-photo.webp" alt="Finance Books" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex items-center mb-2">
-                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                                📚💰 Top 15 Finance Books of All Time
-                            </h2>
-                        </div>
-                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-                            Unlock timeless wisdom on money, investing, and wealth-building with the most influential finance books ever written.
-                        </p>
-                        <span class="text-sm text-emerald-700 font-medium">Expert Picks • Updated 2025</span>
-                    </div>
-                </a>
-
-                <!-- Travel Card -->
-                <a href="places.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-blue-100" data-category="travel">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-                        <img src="12/Ph.webp" alt="World Travel Destinations" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex items-center mb-2">
-                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                                🌍 World's Most Beautiful Places (2025)
-                            </h2>
-                        </div>
-                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-                            Discover breathtaking destinations, hidden gems, and cultural wonders—plan your next adventure.
-                        </p>
-                        <span class="text-sm text-purple-700 font-medium">Bucket List • Expert Travel Guide</span>
-                    </div>
-                </a>
-
-                
-
-                <!-- Women's Perfume Card -->
-                <a href="women-perfume.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-pink-100" data-category="lifestyle">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-                        <img src="12/wph.webp" alt="Luxury Women's Perfumes" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex items-center mb-2">
-                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                                👑 Top 10 Women's Luxury Perfumes (2025)
-                            </h2>
-                        </div>
-                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-                            Discover elegant fragrances, timeless icons, and enchanting scents that define luxury for women worldwide.
-                        </p>
-                        <span class="text-sm text-rose-700 font-medium">Luxury Collection • Expert Picks</span>
-                    </div>
-                </a>
-                <!-- Netflix Card -->
-<a href="netflix.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-red-50 to-gray-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-red-100" data-category="entertainment">
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="12/Netflix.webp" alt="Top Netflix Shows" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                🎬 Top 30 Netflix Shows
-            </h2>
+      
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div class="flex flex-wrap gap-6 text-sm">
+            <a href="index.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Home</a>
+            <a href="aboutus.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">About</a>
+            <a href="contactus.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Contact</a>
+            <a href="privacy.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Privacy</a>
+            <a href="terms.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Terms</a>
+          </div>
+          <p class="text-sm text-gray-500">&copy; 2025 Ranked. All rights reserved.</p>
         </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            A curated list of the most relevant and worthwhile shows streaming right now, as of August 2025.
-        </p>
-        <span class="text-sm text-red-600 font-medium">Curated by Fans • 2025</span>
+      </div>
     </div>
-</a>
-                <!-- Anime Card -->
-                <a href="anime_ranked.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-pink-100" data-category="entertainment">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-                        <img src="12/71.webp" alt="Best Anime" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200" >
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex items-center mb-2">
-                            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                                🎌 Top 30 Best Anime of All Time
-                            </h2>
-                        </div>
-                        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-                            Explore a definitive guide to the most iconic anime ever created and find your next masterpiece.
-                        </p>
-                        <span class="text-sm text-purple-600 font-medium">Curated by Fans • 2025</span>
-                    </div>
-                </a>
-    <a href="vpn.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-blue-50 to-gray-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-blue-100" data-category="security-tools">
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="12/vpn.webp" loading="lazy" alt="Top 10 Free VPNs" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                🔒 Top 10 Free VPNs for PC
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            A comprehensive ranking of the best free VPNs for Windows,Macbook , based on security, speed, and data limits.
-        </p>
-        <span class="text-sm text-blue-600 font-medium">Suggested by Tech Experts • 2025</span>
-    </div>
-</a>
-   <!-- Adventure Travel Card -->
-<a href="adplaces.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-orange-100" data-category="travel">
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="12/AP15.webp" alt="Adventure Places in India 2025" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                🏔️ Top 20 Adventure Places in India (2025)
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Discover India's most thrilling destinations for the ultimate adventure experience. From Himalayan peaks to tropical islands, embark on journeys that will redefine your limits.
-        </p>
-        <span class="text-sm text-red-700 font-medium">Thrill Seekers • Updated Travel Guide</span>
-    </div>
-</a>
+  </footer>
 
-                <!-- Self-Help Book Card -->
-<a href="selfhelp.html" 
-   class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center 
-          bg-gradient-to-r from-rose-50 to-indigo-50 rounded-2xl p-6 shadow-md hover:shadow-xl 
-          transition-all duration-300 ease-in-out cursor-pointer border border-rose-100" 
-   data-category="education">
-   
-    <!-- Image -->
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="12/shb.webp" 
-             alt="Self Help Books" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
+  <!-- Enhanced Interactions -->
+  <script>
+    const searchInput = document.getElementById('search');
+    const cards = Array.from(document.querySelectorAll('#cards > a'));
+    const emptyState = document.getElementById('empty');
+    const resetBtn = document.getElementById('reset');
+    const chips = Array.from(document.querySelectorAll('.chip'));
 
-    <!-- Text Content -->
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                📖✨ Top 15 Self-Help Books of All Time
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Discover life-changing wisdom, personal growth strategies, and timeless lessons from the world’s most inspiring self-help books.
-        </p>
-        <span class="text-sm text-indigo-700 font-medium">🌟 Expert Recommendations • Updated 2025</span>
-    </div>
-</a>
-                <!-- Best Selling Self-Help Book Card -->
-<a href="bselfhelp.html" 
-   class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center 
-          bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-md hover:shadow-xl 
-          transition-all duration-300 ease-in-out cursor-pointer border border-blue-100" 
-   data-category="personal-growth">
-    
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="12/shp1.webp" 
-             alt="Best-Selling Self-Help Books" 
-             class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
+    // Add loading states and animations
+    function showLoadingState() {
+      cards.forEach((card, index) => {
+        card.style.opacity = '0.6';
+        card.style.transform = 'scale(0.98)';
+      });
+    }
 
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                📖🏆 Top 15 Best-Selling Self-Help Books
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Explore the most influential and popular self-help books that have sold millions and changed lives.
-        </p>
-        <span class="text-sm text-indigo-700 font-medium">📚 Best-Sellers List • Timeless Advice</span>
-    </div>
-</a>
-                <a href="50kbestall.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-gray-100" data-category="tech">
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="12/50kl.webp" loading="lazy" alt="Top Laptops Under ₹50,000" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                💻 Top 15 Laptops Under ₹50,000 (2025)
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Find the perfect laptop for students, professionals, and gamers without exceeding your budget.
-        </p>
-        <span class="text-sm text-blue-700 font-medium">Tech Reviews • Budget Friendly</span>
-    </div>
-</a>
-                <a href="adv_eurpe_places.html" class="ranked-item block card-hover flex flex-col sm:flex-row items-start sm:items-center bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer border border-green-100" data-category="travel">
-    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 mr-6 mb-4 sm:mb-0">
-        <img src="12/EAP11.webp" alt="Adventure Europe Rank" class="w-full h-full object-cover rounded-xl shadow-inner border border-gray-200">
-    </div>
-    <div class="flex-grow">
-        <div class="flex items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-900 tracking-wide flex items-center">
-                ⛰️ Top 20 Adventure Places in Europe 2025
-            </h2>
-        </div>
-        <p class="text-gray-700 mb-3 text-base leading-relaxed">
-            Discover Europe's most thrilling destinations for the ultimate adventure experience. From Alpine peaks to Arctic fjords.
-        </p>
-        <span class="text-sm text-blue-600 font-medium">2025 Ultimate Travel Guide</span>
-    </div>
-</a>
+    function hideLoadingState() {
+      cards.forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1)';
+      });
+    }
 
-            </div>
+    function applyFilters() {
+      showLoadingState();
+      
+      setTimeout(() => {
+        const term = (searchInput.value || '').toLowerCase().trim();
+        const activeChip = chips.find(c => c.classList.contains('active'));
+        const category = activeChip ? activeChip.dataset.category : 'all';
 
-            <!-- No Results Message (Hidden by default) -->
-            <div id="no-results-message" class="hidden text-center py-10">
-                <div class="text-5xl text-gray-300 mb-4">
-                    <i class="fas fa-search"></i>
-                </div>
-                <h2 class="text-xl font-semibold text-gray-700 mb-2">No Results Found</h2>
-                <p class="text-gray-500 mb-4">Sorry, we couldn't find any matching rankings.</p>
-                <button id="reset-search" class="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 transition">
-                    Reset Search
-                </button>
-            </div>
-        </main>
-
-         <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="aboutus.html" class="current">About Us</a>
-                <a href="contactus.html">Contact</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-            </div>
-            
-           
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ranked Site. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    </div>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const searchInput = document.getElementById('searchInput');
-        const rankedList = document.getElementById('rankedList');
-        const rankedItems = rankedList.getElementsByClassName('ranked-item');
-        const noResultsMessage = document.getElementById('no-results-message');
-        const resetSearchBtn = document.getElementById('reset-search');
-        const filterTabs = document.querySelectorAll('.filter-tab'); // Corrected selector
-
-        // Search functionality
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase().trim();
-            let visibleItems = 0;
-
-            for (let item of rankedItems) {
-                const itemText = item.textContent.toLowerCase();
-
-                if (itemText.includes(searchTerm)) {
-                    item.style.display = 'flex';
-                    visibleItems++;
-                } else {
-                    item.style.display = 'none';
-                }
+        let visible = 0;
+        cards.forEach((card, index) => {
+          const text = card.textContent.toLowerCase();
+          const itemCat = card.getAttribute('data-category');
+          const matchSearch = term === '' || text.includes(term);
+          const matchCategory = category === 'all' || itemCat === category;
+          const show = matchSearch && matchCategory;
+          
+          // Staggered animation
+          setTimeout(() => {
+            card.classList.toggle('hidden', !show);
+            if (show) {
+              card.style.animation = 'fadeIn 0.5s ease-out forwards';
+              visible++;
             }
-
-            // Show no results message if no items are visible
-            if (visibleItems === 0 && searchTerm !== '') {
-                noResultsMessage.classList.remove('hidden');
-            } else {
-                noResultsMessage.classList.add('hidden');
-            }
+          }, index * 50);
         });
 
-        // Reset search functionality
-        resetSearchBtn.addEventListener('click', () => {
-            searchInput.value = '';
-            for (let item of rankedItems) {
-                item.style.display = 'flex';
-            }
-            noResultsMessage.classList.add('hidden');
-            
-            // Reset category filters to "All"
-            filterTabs.forEach(tab => {
-                tab.classList.remove('active');
-                tab.classList.remove('bg-white', 'text-gray-800');
-                tab.classList.add('bg-transparent', 'text-white', 'border', 'border-white');
-            });
-            const allTab = document.querySelector('.filter-tab[data-category="all"]');
-            allTab.classList.add('active', 'bg-white', 'text-gray-800');
-            allTab.classList.remove('bg-transparent', 'text-white', 'border', 'border-white');
+        setTimeout(() => {
+          emptyState.classList.toggle('hidden', visible !== 0);
+          hideLoadingState();
+        }, cards.length * 50 + 200);
+      }, 150);
+    }
 
-            // Show all items
-            filterCards('all');
-        });
-
-        // Category filter functionality
-        filterTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const category = tab.getAttribute('data-category');
-                
-                // Remove active class from all tabs
-                filterTabs.forEach(i => {
-                    i.classList.remove('active', 'bg-white', 'text-gray-800');
-                    i.classList.add('bg-transparent', 'text-white', 'border', 'border-white');
-                });
-                
-                // Add active class to clicked tab
-                tab.classList.add('active', 'bg-white', 'text-gray-800');
-                tab.classList.remove('bg-transparent', 'text-white', 'border', 'border-white');
-                
-                // Filter cards based on category
-                filterCards(category);
-                
-                // Clear search input on category change
-                searchInput.value = '';
-            });
-        });
-
-        function filterCards(category) {
-            let visibleItems = 0;
-            
-            for (let item of rankedItems) {
-                const itemCategory = item.getAttribute('data-category');
-                
-                if (category === 'all' || itemCategory === category) {
-                    item.style.display = 'flex';
-                    visibleItems++;
-                } else {
-                    item.style.display = 'none';
-                }
-            }
-            
-            // Show no results message if no items are visible
-            if (visibleItems === 0) {
-                noResultsMessage.classList.remove('hidden');
-            } else {
-                noResultsMessage.classList.add('hidden');
-            }
-        }
+    // Debounce search input
+    let searchTimeout;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(applyFilters, 300);
     });
-</script>
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('active', 'bg-gradient-to-r', 'from-gray-900', 'to-gray-800', 'text-white');
+          c.classList.add('border-2', 'border-gray-200', 'bg-white/80', 'text-gray-700');
+        });
+        
+        chip.classList.add('active', 'bg-gradient-to-r', 'from-gray-900', 'to-gray-800', 'text-white');
+        chip.classList.remove('border-2', 'border-gray-200', 'bg-white/80', 'text-gray-700');
+        
+        applyFilters();
+        if (searchInput.value) {
+          searchInput.value = '';
+        }
+      });
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        chips[0].click();
+      });
+    }
+
+    // Add smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add intersection observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'slideUp 0.6s ease-out forwards';
+        }
+      });
+    }, observerOptions);
+
+    cards.forEach(card => observer.observe(card));
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
