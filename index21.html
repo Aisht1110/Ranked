@@ -11,9 +11,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
   <!-- Tailwind CDN for quick testing -->
-<link href="dist/output.css" rel="stylesheet">
-
-
+  <link href="dist/output.css" rel="stylesheet">
 
   <style>
     .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -33,6 +31,7 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
+    /* Keep original desktop animations */
     .card-hover {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -47,6 +46,7 @@
       background-size: 200% 100%;
     }
     
+    /* Keep original floating shapes for desktop */
     .floating-shapes::before {
       content: '';
       position: absolute;
@@ -78,6 +78,95 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+    }
+
+    /* Define keyframes for animations */
+    
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* MOBILE-ONLY OPTIMIZATIONS - Only applies to screens ≤ 768px */
+    @media (max-width: 768px) {
+      /* Reduce card hover effects on mobile */
+      .card-hover:hover {
+        transform: translateY(-4px) scale(1.01) !important;
+        box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.12) !important;
+      }
+      
+      /* Hide decorative floating shapes on mobile for performance */
+      .floating-shapes::before,
+      .floating-shapes::after {
+        display: none !important;
+      }
+      
+      /* Faster transitions for chips on mobile */
+      .chip {
+        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        padding: 10px 16px !important;
+        font-size: 14px !important;
+      }
+      
+      /* Disable scale hover on chips for mobile */
+      .chip:hover {
+        transform: none !important;
+      }
+      
+      /* Mobile-friendly search input */
+      #search {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        padding: 12px 16px 12px 48px !important;
+      }
+      
+      /* Reduce card gaps on mobile */
+      #cards {
+        gap: 1.5rem !important;
+      }
+      
+      /* Lighter image hover effects on mobile */
+      .group:hover img {
+        transform: scale(1.03) !important;
+      }
+      
+      /* Faster image transitions on mobile */
+      .group img {
+        transition: transform 0.2s ease-out !important;
+      }
+      
+      /* Reduce trending link effects on mobile */
+      .trending-link:hover {
+        transform: scale(1.02) !important;
+        transition: all 0.15s ease-out !important;
+      }
+      
+      /* Faster button transitions on mobile */
+      .transform:hover {
+        transition: transform 0.15s ease-out !important;
+      }
+      
+      /* Lighter background blur effects on mobile */
+      .animate-pulse {
+        opacity: 0.15 !important;
+      }
+    }
+
+    /* Reduced motion support for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .floating-shapes::before,
+      .floating-shapes::after,
+      .animate-pulse,
+      .card-hover,
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
@@ -208,12 +297,12 @@
       <div class="flex-1 h-px bg-gradient-to-r from-gray-200 to-transparent"></div>
     </div>
     <div class="flex gap-4 overflow-x-auto no-scrollbar snap-x pb-2">
-      <a href="football_ranked.html" class="snap-start shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">⭐ Football GOATs</a>
-      <a href="menperfum.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🎩 Men's Luxury Perfumes</a>
-      <a href="Expensive-cars.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🚗 Most Expensive Cars</a>
-      <a href="50k_laptop.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">💻 Laptops under 50K</a>
-      <a href="anime_ranked.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🎌 Best Anime</a>
-      <a href="vpn.html" class="shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🔒 Free VPNs</a>
+      <a href="football_ranked.html" class="trending-link snap-start shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">⭐ Football GOATs</a>
+      <a href="menperfum.html" class="trending-link shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🎩 Men's Luxury Perfumes</a>
+      <a href="Expensive-cars.html" class="trending-link shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🚗 Most Expensive Cars</a>
+      <a href="50k_laptop.html" class="trending-link shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">💻 Laptops under 50K</a>
+      <a href="anime_ranked.html" class="trending-link shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🎌 Best Anime</a>
+      <a href="vpn.html" class="trending-link shrink-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 px-6 py-3 text-sm font-medium shadow-md hover:shadow-xl hover:border-brand-300 transform hover:scale-105 transition-all duration-300">🔒 Free VPNs</a>
     </div>
   </section>
 
@@ -548,57 +637,61 @@
         </div>
         
         <div class="space-y-3">
-  <div class="flex items-baseline justify-between">
-    <h4 class="text-sm font-semibold text-gray-900 tracking-wide">Stay updated</h4>
-    <span class="text-xs text-gray-500">No spam. Unsubscribe anytime.</span>
-  </div>
-  <form class="flex flex-col sm:flex-row gap-3">
-    <label class="sr-only" for="email">Email</label>
-    <input
-      id="email"
-      type="email"
-      placeholder="Enter your email"
-      class="flex-1 rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-brand-200 focus:border-brand-400 transition"
-    />
-    <button
-      type="button"
-      class="rounded-xl bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-3 font-semibold shadow-lg hover:from-gray-800 hover:to-gray-700 focus:outline-none focus:ring-4 focus:ring-brand-200 transition"
-    >
-      Subscribe
-    </button>
-  </form>
-  <p class="text-xs text-gray-500">
-    By subscribing, consent to receive updates and agree to our
-    <a
-      href="privacy.html"
-      class="underline decoration-gray-300 hover:decoration-gray-600"
-      >Privacy Policy</a
-    >.
-  </p>
-</div>
-      
-      <div class="mt-12 pt-8 border-t border-gray-200">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-          <div class="flex flex-wrap gap-6 text-sm">
-            <a href="index.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Home</a>
-            <a href="aboutus.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">About</a>
-            <a href="contactus.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Contact</a>
-            <a href="privacy.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Privacy</a>
-            <a href="terms.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Terms</a>
+          <div class="flex items-baseline justify-between">
+            <h4 class="text-sm font-semibold text-gray-900 tracking-wide">Stay updated</h4>
+            <span class="text-xs text-gray-500">No spam. Unsubscribe anytime.</span>
           </div>
-          <p class="text-sm text-gray-500">&copy; 2025 Ranked. All rights reserved.</p>
+          <form class="flex flex-col sm:flex-row gap-3">
+            <label class="sr-only" for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              class="flex-1 rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-brand-200 focus:border-brand-400 transition"
+            />
+            <button
+              type="button"
+              class="rounded-xl bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-3 font-semibold shadow-lg hover:from-gray-800 hover:to-gray-700 focus:outline-none focus:ring-4 focus:ring-brand-200 transition"
+            >
+              Subscribe
+            </button>
+          </form>
+          <p class="text-xs text-gray-500">
+            By subscribing, consent to receive updates and agree to our
+            <a
+              href="privacy.html"
+              class="underline decoration-gray-300 hover:decoration-gray-600"
+              >Privacy Policy</a
+            >.
+          </p>
+        </div>
+      
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div class="flex flex-wrap gap-6 text-sm">
+              <a href="index.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Home</a>
+              <a href="aboutus.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">About</a>
+              <a href="contactus.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Contact</a>
+              <a href="privacy.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Privacy</a>
+              <a href="terms.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Terms</a>
+            </div>
+            <p class="text-sm text-gray-500">&copy; 2025 Ranked. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Enhanced Interactions -->
+  <!-- Enhanced Interactions with Mobile-Only Optimizations -->
   <script>
     const searchInput = document.getElementById('search');
     const cards = Array.from(document.querySelectorAll('#cards > a'));
     const emptyState = document.getElementById('empty');
     const resetBtn = document.getElementById('reset');
     const chips = Array.from(document.querySelectorAll('.chip'));
+
+    // Detect if mobile device
+    const isMobile = window.innerWidth <= 768;
 
     // Add loading states and animations
     function showLoadingState() {
@@ -618,6 +711,9 @@
     function applyFilters() {
       showLoadingState();
       
+      // Use faster timing for mobile, keep original for desktop
+      const filterDelay = isMobile ? 75 : 150;
+      
       setTimeout(() => {
         const term = (searchInput.value || '').toLowerCase().trim();
         const activeChip = chips.find(c => c.classList.contains('active'));
@@ -631,28 +727,34 @@
           const matchCategory = category === 'all' || itemCat === category;
           const show = matchSearch && matchCategory;
           
-          // Staggered animation
+          // Faster staggered animation for mobile
+          const staggerDelay = isMobile ? 25 : 50;
           setTimeout(() => {
             card.classList.toggle('hidden', !show);
             if (show) {
-              card.style.animation = 'fadeIn 0.5s ease-out forwards';
+              // Faster fade-in animation for mobile
+              const animationDuration = isMobile ? '0.3s' : '0.5s';
+              card.style.animation = `fadeIn ${animationDuration} ease-out forwards`;
               visible++;
             }
-          }, index * 50);
+          }, index * staggerDelay);
         });
 
+        // Faster final timeout for mobile
+        const finalDelay = isMobile ? (cards.length * 25 + 100) : (cards.length * 50 + 200);
         setTimeout(() => {
           emptyState.classList.toggle('hidden', visible !== 0);
           hideLoadingState();
-        }, cards.length * 50 + 200);
-      }, 150);
+        }, finalDelay);
+      }, filterDelay);
     }
 
-    // Debounce search input
+    // Faster debounce for mobile, keep original for desktop
     let searchTimeout;
     searchInput.addEventListener('input', () => {
       clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(applyFilters, 300);
+      const debounceDelay = isMobile ? 200 : 300;
+      searchTimeout = setTimeout(applyFilters, debounceDelay);
     });
 
     chips.forEach(chip => {
@@ -693,16 +795,18 @@
       });
     });
 
-    // Add intersection observer for animations
+    // Add intersection observer for animations - optimized for mobile
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: isMobile ? 0.05 : 0.1,
+      rootMargin: isMobile ? '0px 0px -30px 0px' : '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.animation = 'slideUp 0.6s ease-out forwards';
+          // Faster slide-up animation for mobile
+          const animationDuration = isMobile ? '0.4s' : '0.6s';
+          entry.target.style.animation = `slideUp ${animationDuration} ease-out forwards`;
         }
       });
     }, observerOptions);
