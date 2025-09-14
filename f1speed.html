@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full antialiased scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Experience the ultimate Formula 1 speed rankings! Discover the top 15 fastest F1 cars with interactive 3D cards, live data, and immersive racing animations."
+    />
+    <title>🏎️ Ultimate F1 Speed Rankings | Fastest Cars Ever Built</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+   <link href="dist/output.css" rel="stylesheet">
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏎️</text></svg>"
+    />
+   
+
+    <style>
+      :root {
+        --carbon-950: #F4F6F8;
+        --carbon-900: #F7FAFC;
+        --carbon-800: #E2E8F0;
+        --accent-speed-1: #00e5ff;
+        --accent-speed-2: #4f46e5;
+        --accent-speed-3: #14f195;
+        --accent-warn: #fbbf24;
+        --accent-danger: #ff5b6b;
+        --glass-bg: rgba(0, 0, 0, 0.04);
+        --glass-stroke: rgba(0, 0, 0, 0.1);
+        --glass-stroke-strong: rgba(0, 0, 0, 0.16);
+        --speed-gradient: linear-gradient(
+          90deg,
+          var(--accent-speed-1),
+          #00a4ff,
+          var(--accent-speed-2)
+        );
+        --fire-gradient: linear-gradient(
+          45deg,
+          #ff6b6b,
+          #ee5a52,
+          #ff8e53
+        );
+        --gold-gradient: conic-gradient(
+          from 160deg,
+          #ffe066,
+          #ffd43b,
+          #ffc300,
+          #ffdf6b
+        );
+      }
+
+      .hero-bg {
+        background: radial-gradient(
+            900px 600px at 15% -10%,
+            rgba(0, 229, 255, 0.05),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 600px at 85% -10%,
+            rgba(79, 70, 229, 0.08),
+            transparent 60%
+          ),
+          radial-gradient(
+            700px 400px at 50% 110%,
+            rgba(251, 191, 36, 0.06),
+            transparent 60%
+          ),
+          linear-gradient(180deg, var(--carbon-900), var(--carbon-900));
+      }
+
+      .glass {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.25)
+        );
+        border: 1px solid var(--glass-stroke);
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04) inset,
+          0 8px 30px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(14px) saturate(120%);
+        -webkit-backdrop-filter: blur(14px) saturate(120%);
+      }
+
+      .glass-strong {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0.4)
+        );
+        border: 1px solid var(--glass-stroke-strong);
+        backdrop-filter: blur(16px) saturate(140%);
+        -webkit-backdrop-filter: blur(16px) saturate(140%);
+      }
+
+      .glass-soft {
+        background: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      .ring-focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.55),
+          0 0 0 6px rgba(0, 229, 255, 0.15);
+      }
+
+      .text-gradient-gold {
+        background-image: var(--gold-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .btn-primary {
+        background: linear-gradient(90deg, #1f2937, #111827);
+        color: #fff;
+        font-weight: 800;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12),
+          0 2px 0 rgba(0, 0, 0, 0.25) inset;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
+      }
+      .btn-ghost {
+        background: rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        color: #111827;
+      }
+      .btn-ghost:hover {
+        background: rgba(0, 0, 0, 0.12);
+      }
+
+      .chip {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 229, 255, 0.08),
+          rgba(79, 70, 229, 0.08)
+        );
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        color: #111827;
+      }
+
+      /* 3D tilt card */
+      .tilt {
+        transform-style: preserve-3d;
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          border-color 0.25s ease;
+        will-change: transform;
+        perspective: 1000px;
+      }
+      .tilt:hover {
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+      }
+      .tilt .tilt-content {
+        transform: translateZ(18px);
+      }
+
+      /* Speed bar */
+      .speedbar {
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.12),
+          rgba(0, 0, 0, 0.06)
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .speedbar > .fill {
+        background: var(--speed-gradient);
+        height: 100%;
+        border-radius: 9999px;
+        box-shadow: 0 0 24px rgba(0, 229, 255, 0.2);
+      }
+
+      /* Animated accent sweep for headers */
+      .accent-sweep {
+        background: linear-gradient(
+          90deg,
+          rgba(0, 229, 255, 0),
+          rgba(0, 229, 255, 0.28),
+          rgba(79, 70, 229, 0)
+        );
+        background-size: 200% 100%;
+        animation: sweep 5s ease-in-out infinite;
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          white,
+          transparent
+        );
+        mask-image: linear-gradient(90deg, transparent, white, transparent);
+      }
+      @keyframes sweep {
+        0% {
+          background-position: -200% 0;
+        }
+        50% {
+          background-position: 0% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      /* Reveal animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Subtle carbon grid texture overlay */
+      .carbon-grid:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.02) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.02) 1px,
+            transparent 1px
+          );
+        background-size: 22px 22px;
+        mix-blend-mode: overlay;
+        opacity: 0.4;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .tilt,
+        .tilt:hover {
+          transform: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-carbon-900 text-black selection:bg-brand.gold selection:text-black">
+    <div class="fixed inset-0 -z-10 hero-bg"></div>
+    <div id="particles" class="fixed inset-0 -z-10 pointer-events-none"></div>
+    <header class="sticky top-0 z-50">
+      <nav
+        class="glass mx-auto max-w-7xl rounded-b-2xl px-4 py-3 shadow-soft sm:px-6 lg:px-8"
+      >
+        <div class="flex items-center justify-between gap-6">
+          <a
+            href="#"
+            class="flex items-center gap-3 rounded-lg focus-visible:ring-2 ring-blue-500 ring-offset-2 ring-offset-white"
+          >
+            <span class="text-2xl">🏎️</span>
+            <span
+              class="font-display text-lg font-black tracking-wide sm:text-xl"
+              >F1 SPEED KINGS</span
+            >
+          </a>
+          <div class="hidden items-center gap-6 text-sm text-gray-600 md:flex">
+            <a href="#rankings" class="hover:text-black">Rankings</a>
+            <a href="#records" class="hover:text-black">Records</a>
+            <a href="#standings" class="hover:text-black">Standings</a>
+            <a href="#about" class="hover:text-black">About</a>
+          </div>
+          <a
+            href="#rankings"
+            class="inline-flex items-center gap-2 rounded-full bg-black/10 px-4 py-2 text-sm font-semibold ring-black ring-offset-2 ring-offset-white hover:bg-black/20 focus-visible:ring-2"
+          >
+            Explore Rankings
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="relative overflow-hidden">
+      <div
+        class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+      >
+        <div class="space-y-8 text-center">
+          <h1
+            class="font-display text-4xl font-black leading-tight sm:text-6xl md:text-7xl"
+          >
+            <span class="inline-block align-middle">🏎️</span>
+            <span class="block text-gradient-gold"
+              >Ultimate F1 Speed Rankings</span
+            >
+            <span class="mt-3 block text-2xl text-black/80 sm:text-3xl"
+              >Fastest Cars. Live Data. Immersive Experience.</span
+            >
+          </h1>
+
+          <p class="mx-auto max-w-3xl text-lg text-gray-700 sm:text-xl">
+            Discover the fastest machines in Formula 1 history with interactive
+            3D cards, pristine stats, and live-season dashboards — crafted for
+            clarity, speed, and pure racing energy.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <div
+              class="glass chip inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+            >
+              <i class="fa-solid fa-gauge"></i>
+              <span>Max Lap Avg: 164.484 mph</span>
+            </div>
+            <div
+              class="glass chip inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+            >
+              <i class="fa-solid fa-trophy"></i>
+              <span>Live Rankings 2025</span>
+            </div>
+            <div
+              class="glass chip inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+            >
+              <i class="fa-solid fa-fire"></i>
+              <span>15 Speed Demons</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#rankings"
+              class="btn-primary hover-raise inline-flex items-center gap-3 rounded-xl px-6 py-3"
+            >
+              View Top Cars
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a
+              href="#records"
+              class="btn-ghost hover-raise inline-flex items-center gap-3 rounded-xl px-6 py-3"
+            >
+              Live Records
+              <i class="fa-solid fa-bolt"></i>
+            </a>
+          </div>
+
+          <div
+            class="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-4 md:grid-cols-4"
+          >
+            <div class="glass reveal tilt rounded-2xl p-5 text-center">
+              <div
+                class="tilt-content font-display text-3xl font-black text-brand.gold"
+                data-count="164"
+              >
+                0
+              </div>
+              <div class="mt-1 text-xs tracking-wide text-gray-700">
+                MAX SPEED (mph)
+              </div>
+            </div>
+            <div class="glass reveal tilt rounded-2xl p-5 text-center">
+              <div
+                class="tilt-content font-display text-3xl font-black text-cyan-500"
+                data-count="15"
+              >
+                0
+              </div>
+              <div class="mt-1 text-xs tracking-wide text-gray-700">
+                LEGENDARY CARS
+              </div>
+            </div>
+            <div class="glass reveal tilt rounded-2xl p-5 text-center">
+              <div
+                class="tilt-content font-display text-3xl font-black text-emerald-500"
+                data-count="75"
+              >
+                0
+              </div>
+              <div class="mt-1 text-xs tracking-wide text-gray-700">
+                YEARS OF RACING
+              </div>
+            </div>
+            <div class="glass reveal tilt rounded-2xl p-5 text-center">
+              <div
+                class="tilt-content font-display text-3xl font-black text-rose-500"
+                data-count="2025"
+              >
+                0
+              </div>
+              <div class="mt-1 text-xs tracking-wide text-gray-700">
+                CURRENT SEASON
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="rankings" class="py-12 sm:py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 flex items-end justify-between gap-6">
+          <div class="relative inline-block">
+            <h2 class="font-display text-3xl font-black sm:text-4xl">
+              Speed Kings
+            </h2>
+            <span
+              class="absolute left-0 -bottom-2 h-[3px] w-full rounded accent-sweep"
+            ></span>
+          </div>
+          <a
+            href="#records"
+            class="inline-flex items-center gap-2 rounded-full bg-black/10 px-4 py-2 text-sm font-semibold hover:bg-black/20"
+            >See Live Records <i class="fa-solid fa-bolt"></i
+          ></a>
+        </div>
+        <div id="all-cars" class="space-y-8">
+          </div>
+      </div>
+    </section>
+
+    <section id="standings" class="py-12 sm:py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div
+          class="glass reveal relative overflow-hidden rounded-3xl p-8 md:p-10 carbon-grid"
+        >
+          <h2
+            class="font-display text-3xl font-black text-center sm:text-4xl"
+          >
+            2025 F1 Live Championship
+          </h2>
+
+          <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <div>
+              <h3 class="flex items-center gap-3 text-xl font-bold">
+                <i class="fa-solid fa-users text-cyan-500"></i> Drivers'
+                Championship
+              </h3>
+
+              <div class="mt-4 space-y-4">
+                <div class="glass rounded-xl border-l-4 border-yellow-500 p-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                      <span class="text-2xl font-black text-yellow-500">1</span>
+                      <div>
+                        <div class="font-bold">Oscar Piastri</div>
+                        <div class="text-xs text-gray-700">McLaren MCL39</div>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-2xl font-black text-yellow-500">324</div>
+                      <div class="text-xs text-gray-700">points</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="glass rounded-xl border-l-4 border-black/20 p-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                      <span class="text-2xl font-black text-gray-500">2</span>
+                      <div>
+                        <div class="font-bold">Lando Norris</div>
+                        <div class="text-xs text-gray-700">McLaren MCL39</div>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-2xl font-black text-gray-500">293</div>
+                      <div class="text-xs text-gray-700">points</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="records">
+              <h3 class="flex items-center gap-3 text-xl font-bold">
+                <i class="fa-solid fa-stopwatch text-rose-500"></i> Speed
+                Records 2025
+              </h3>
+
+              <div class="mt-4 space-y-4">
+                <div class="glass rounded-xl p-4">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="font-bold">Fastest Lap Ever</div>
+                      <div class="text-xs text-gray-700">
+                        Max Verstappen — Italian GP
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-2xl font-black text-rose-500">
+                        164.484
+                      </div>
+                      <div class="text-xs text-gray-700">mph</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="glass rounded-xl p-4">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="font-bold">Recent Fastest</div>
+                      <div class="text-xs text-gray-700">
+                        Oscar Piastri — Spain GP
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-2xl font-black text-yellow-500">FL</div>
+                      <div class="text-xs text-gray-700">Latest</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-4 text-center">
+                  <span
+                    class="glass inline-flex items-center gap-3 rounded-full px-5 py-2 text-xs font-bold"
+                  >
+                    <span
+                      class="h-2 w-2 animate-pulse rounded-full bg-emerald-500"
+                    ></span>
+                    LIVE DATA — Updated September 10, 2025
+                    <span
+                      class="h-2 w-2 animate-pulse rounded-full bg-rose-500"
+                    ></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center text-xs text-gray-500">
+            Data sourced from official timing, FIA records, and team statistics.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-16">
+      <div class="glass">
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+            <div>
+              <h3
+                class="font-display flex items-center gap-2 text-xl font-bold"
+              >
+                <i class="fa-solid fa-flag-checkered text-brand.gold"></i> F1
+                SPEED KINGS
+              </h3>
+              <p class="mt-2 text-gray-600">
+                The destination for Formula 1 speed records, interactive
+                rankings, and championship data, crafted with a premium UI
+                system.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-brand.gold">Quick Access</h4>
+              <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                <li>
+                  <a
+                    href="#standings"
+                    class="inline-flex items-center gap-2 hover:text-black"
+                    ><i class="fa-solid fa-trophy"></i> Current Season</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#records"
+                    class="inline-flex items-center gap-2 hover:text-black"
+                    ><i class="fa-solid fa-gauge"></i> Speed Records</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#rankings"
+                    class="inline-flex items-center gap-2 hover:text-black"
+                    ><i class="fa-solid fa-users"></i> Team Standings</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            
+
+            <div>
+              <h4 class="font-bold text-rose-500">Live Updates</h4>
+              <div class="mt-3 space-y-2">
+                <div class="glass rounded-lg p-3">
+                  <div class="text-xs font-bold text-emerald-500">
+                    LAST UPDATED
+                  </div>
+                  <div class="text-xs text-gray-700">September 10, 2025</div>
+                </div>
+                <div class="text-xs text-gray-500">
+                  Data current through Italian GP.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div class="flex flex-wrap gap-6 text-sm">
+            <a href="index.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Home</a>
+            <a href="aboutus.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">About</a>
+            <a href="contactus.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Contact</a>
+            <a href="privacy.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Privacy</a>
+            <a href="terms.html" class="text-gray-600 hover:text-brand-700 font-medium transition-colors">Terms</a>
+          </div>
+          <p class="text-sm text-gray-500">&copy; 2025 Ranked. All rights reserved.</p>
+        </div>
+      </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Data (unchanged) -------------------------------------------------------
+      const carsData = [
+        {
+          rank: 1,
+          model: 'McLaren MCL39',
+          engine: 'Mercedes M16 1.6L V6 Turbo Hybrid',
+          description:
+            "The undisputed speed king of 2025, McLaren's MCL39 combines exceptional aerodynamic efficiency with a powerful Mercedes engine, setting a new benchmark for top speed and overall pace.",
+          speedMph: 222.5,
+          wins: '7 wins (2025 est.)',
+          driver: 'Lando Norris',
+          imageUrl:
+            'https://autogear.pt/wp-content/uploads/2025/03/Mclaren.jpeg',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: true,
+        },
+        {
+          rank: 2,
+          model: 'Red Bull RB21',
+          engine: 'Red Bull Powertrains 1.6L V6 Turbo Hybrid',
+          description:
+            "While no longer the outright leader in top speed, Red Bull's RB21 remains a formidable all-around performer, known for Max Verstappen's record-breaking qualifying lap at Monza.",
+          speedMph: 221.0,
+          wins: '6 wins (2025 est.)',
+          driver: 'Max Verstappen',
+          imageUrl:
+            'https://fastestpitstop.net/wp-content/uploads/2025/03/9-pre-season-test-2025-day1-Aangepast-scaled-e1741171259713-1920x1005.webp',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 3,
+          model: 'Mercedes W16',
+          engine: 'Mercedes-AMG M16 E Performance 1.6L V6 Turbo Hybrid',
+          description:
+            'A potent package from a resurgent team. The W16 consistently delivers top-tier performance and is a strong contender on both high and low-speed tracks.',
+          speedMph: 218.0,
+          wins: '4 wins (2025 est.)',
+          driver: 'George Russell',
+          imageUrl:
+            '1/f12.webp',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 4,
+          model: 'Ferrari SF-25',
+          engine: 'Ferrari 066/15 1.6L V6 Turbo Hybrid',
+          description:
+            'With a powerful engine and efficient low-drag design, the SF-25 is a consistent front-runner and a formidable force on high-speed circuits.',
+          speedMph: 217.5,
+          wins: '5 wins (2025 est.)',
+          driver: 'Charles Leclerc',
+          imageUrl:
+            'https://cdn.ferrari.com/cms/network/media/img/resize/67c83837d12cab001f5ef82d-ferrari-sf-25-social-card-esp?width=1080',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 5,
+          model: 'Williams FW47',
+          engine: 'Mercedes-AMG PU106D Hybrid 1.6L V6 Turbo Hybrid',
+          description:
+            "A straight-line monster, the FW47 showcases its formidable top speed, as evidenced by Fernando Alonso's ~355 km/h run in Miami.",
+          speedMph: 220.58,
+          wins: '1 win (2025 est.)',
+          driver: 'Carlos Sainz Jr.',
+          imageUrl:
+            '1/f15.webp',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 6,
+          model: 'Racing Bulls VCARB 02',
+          engine: 'Red Bull Powertrains 1.6L V6 Turbo Hybrid',
+          description:
+            'Leveraging the Red Bull power unit, this car often shows flashes of top-tier pace, particularly in low-drag configurations.',
+          speedMph: 215.0,
+          wins: '0 wins (2025 est.)',
+          driver: 'Yuki Tsunoda',
+          imageUrl:
+            '1/f16.webp',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 7,
+          model: 'Alpine A525',
+          engine: 'Renault E-Tech 1.6L V6 Turbo Hybrid',
+          description:
+            'The A525 focuses on balancing downforce and straight-line speed with its powerful Renault engine, making it a competitive midfield contender.',
+          speedMph: 214.0,
+          wins: '0 wins (2025 est.)',
+          driver: 'Pierre Gasly',
+          imageUrl:
+            'https://media.ouest-france.fr/v1/pictures/MjAyNTAyNzFlZDBlYWNjMGIxODA1ZWI0MWFlNDEyM2VhNDY5ODE?width=1260&height=708&focuspoint=49%2C71&cropresize=1&client_id=bpeditorial&sign=73b8e3a50e64eb23dfcee1df145dfa9b5ed77af1a5681dc276b29327abecf597',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 8,
+          model: 'Aston Martin AMR25',
+          engine: 'Mercedes-AMG M16 E Performance 1.6L V6 Turbo Hybrid',
+          description:
+            'Powered by a Mercedes engine, the AMR25 aims for a balance of power and aero efficiency, making it a solid midfield performer.',
+          speedMph: 213.0,
+          wins: '0 wins (2025 est.)',
+          driver: 'Lance Stroll',
+          imageUrl:
+            '1/f18.webp',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 9,
+          model: 'Sauber C45',
+          engine: 'Ferrari 066/15 1.6L V6 Turbo Hybrid',
+          description:
+            'Using a customer Ferrari engine, the C45 shows promising pace and is a dark horse on certain tracks, reaching high speeds in pre-season testing.',
+          speedMph: 212.0,
+          wins: '0 wins (2025 est.)',
+          driver: 'Nico Hülkenberg',
+          imageUrl:
+            'https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Tech%20Weekly/sauber-c44-c45-comp-3.webp',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 10,
+          model: 'Haas VF-25',
+          engine: 'Ferrari 066/15 1.6L V6 Turbo Hybrid',
+          description:
+            'Known for its raw Ferrari engine power, the VF-25 can be a top-speed threat on high-speed circuits, although consistency can be a challenge.',
+          speedMph: 211.5,
+          wins: '0 wins (2025 est.)',
+          driver: 'Esteban Ocon',
+          imageUrl:
+            'https://www.racecar-engineering.com/wp-content/uploads/2025/02/Silverstone-Shakedown-2-872.jpeg',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 11,
+          model: 'Kick Sauber C45',
+          engine: 'Ferrari 066/15 1.6L V6 Turbo Hybrid',
+          description:
+            'Likely more competitive than the backmarkers, but less consistent than the teams above. This car can be a dark horse on certain tracks.',
+          speedMph: 209.0,
+          wins: '0 wins (2025 est.)',
+          driver: 'Valtteri Bottas',
+          imageUrl:
+            'https://admin.sauber-group.nobound.com/fileadmin/_processed_/8/4/csm_C45_Front-left-dynamic_KICK_HUL_16-9_1459db4a29.webp',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 12,
+          model: 'AlphaTauri AT05',
+          engine: 'Red Bull Powertrains 1.6L V6 Turbo Hybrid',
+          description:
+            'Often a junior team with less aerodynamic refinement, they struggle with top speed on power-sensitive circuits.',
+          speedMph: 205.0,
+          wins: '0 wins (2025 est.)',
+          driver: 'Liam Lawson',
+          imageUrl:
+            'https://cdn.racingnews365.com/2023/Ricciardo/_1800x945_crop_center-center_75_none/XPB_1252202_HiRes.jpg?v=1705839003',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 13,
+          model: 'Smaller Midfield Team Car',
+          engine: 'Hybrid V6 Turbo',
+          description:
+            'The top speed deficit of these teams tends to show up on long straights; their race pace is often compromised by a lack of upgrades.',
+          speedMph: 200.0,
+          wins: '0 wins (2025 est.)',
+          driver: 'TBC',
+          imageUrl:
+            '1/f113.webp',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 14,
+          model: 'Backmarker Team Car',
+          engine: 'Weaker Power Unit',
+          description:
+            'More likely to drop heavily in speed and acceleration, suffering from high drag and less efficient aerodynamics.',
+          speedMph: 190.0,
+          wins: '0 wins (2025 est.)',
+          driver: 'TBC',
+          imageUrl:
+            'https://www.goodwood.com/globalassets/.road--racing/race/historic/2023/1-january/list-f1-backmarkers/our-favourite-f1-backmarkers-08.jpg?rxy=0.5,0.5',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+        {
+          rank: 15,
+          model: 'The Slowest in the Field',
+          engine: 'Least Developed',
+          description:
+            'On high-speed circuits, these teams will be particularly disadvantaged due to the least resources and reliability issues.',
+          speedMph: 180.0,
+          wins: '0 wins (2025 est.)',
+          driver: 'TBC',
+          imageUrl:
+            'https://storage.googleapis.com/the-race-com.appspot.com/1/2023/04/XPB_1197436_HiRes.jpg',
+          speedTag: 'EST. TOP SPEED: ',
+          isChampion: false,
+        },
+      ];
+
+      function generateAdCardHTML() {
+        return `
+      <article class="glass hover-raise reveal tilt flex items-center justify-between gap-6 rounded-3xl border border-black/10 p-8 shadow-luxe md:p-10">
+        <div class="tilt-content flex-1">
+          <div class="inline-flex items-center gap-2 rounded-full bg-blue-500/10 px-4 py-1.5 text-xs font-black tracking-wider text-blue-500">
+            <i class="fa-solid fa-ad"></i> ADVERTISEMENT
+          </div>
+          <h3 class="font-display text-2xl font-black sm:text-3xl mt-4">Test Your Skills: F1 Race Simulator</h3>
+          <p class="mt-4 text-lg text-gray-700">Experience the thrill of the race from the driver's seat. Our simulator offers a real-world physics engine and stunning graphics.</p>
+          <a href="#" class="mt-6 inline-flex items-center gap-2 rounded-xl btn-primary px-6 py-3">
+            Play Now <i class="fa-solid fa-play"></i>
+          </a>
+        </div>
+        <div class="hidden lg:block relative w-1/2 tilt-content">
+          <img class="rounded-2xl object-cover shadow-glow w-full"
+                src="https://placehold.co/600x400/E2E8F0/A0AEC0?text=Race+Simulator"
+                alt="F1 Race Simulator Ad" />
+        </div>
+      </article>
+    `;
+      }
+
+      function generateCarCardHTML(car) {
+        const normalizedSpeed = ((car.speedMph / 246.908) * 100).toFixed(2);
+        return `
+      <article class="glass tilt hover-raise reveal grid gap-10 rounded-3xl border border-black/10 p-8 shadow-luxe md:grid-cols-2 md:p-10">
+        <div class="tilt-content">
+          ${
+            car.isChampion
+              ? `<div class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-500 to-amber-400 px-4 py-1.5 text-xs font-black tracking-wider text-black"><i class="fa-solid fa-crown"></i> SPEED CHAMPION</div>`
+              : ''
+          }
+          <div class="mt-4 flex items-center gap-4">
+            <span class="bg-clip-text font-display text-7xl font-black text-transparent md:text-8xl" style="background-image: var(--gold-gradient)">${
+              car.rank
+            }</span>
+            <h3 class="font-display text-3xl font-black sm:text-4xl">${car.model.toUpperCase()}</h3>
+          </div>
+
+          <div class="mt-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold" style="background-image: var(--fire-gradient)">
+            <i class="fa-solid fa-bolt"></i>
+            <span>${car.speedTag}${car.speedMph} mph</span>
+          </div>
+
+          <p class="mt-4 text-lg text-gray-700">${car.description}</p>
+
+          <ul class="mt-5 grid grid-cols-2 gap-3 text-base">
+            <li class="glass-soft flex items-center gap-2 rounded-xl px-4 py-3">
+              <i class="fa-solid fa-tachometer-alt text-rose-500"></i>
+              <span>${car.speedMph} mph</span>
+            </li>
+            <li class="glass-soft flex items-center gap-2 rounded-xl px-4 py-3">
+              <i class="fa-solid fa-trophy text-yellow-500"></i>
+              <span>${car.wins}</span>
+            </li>
+            <li class="glass-soft flex items-center gap-2 rounded-xl px-4 py-3">
+              <i class="fa-solid fa-rocket text-cyan-500"></i>
+              <span>${car.engine}</span>
+            </li>
+            <li class="glass-soft flex items-center gap-2 rounded-xl px-4 py-3">
+              <i class="fa-solid fa-user text-emerald-500"></i>
+              <span>${car.driver}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative tilt-content">
+          <img class="h-80 w-full rounded-2xl object-cover shadow-glow sm:h-96"
+                src="${car.imageUrl}"
+                alt="${car.model} F1 Car"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x384/E2E8F0/A0AEC0?text=Image+Unavailable';" />
+          <div class="mt-5">
+            <div class="flex justify-between text-base">
+              <span class="font-semibold text-gray-700">Speed Rating</span>
+              <span class="font-black text-rose-500">${car.speedMph} mph</span>
+            </div>
+            <div class="h-2 w-full rounded-full speedbar mt-2">
+              <div class="fill rounded-full" style="width: ${normalizedSpeed}%"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+      }
+
+      function renderCarCards() {
+        const allCarsContainer = document.getElementById('all-cars');
+        allCarsContainer.innerHTML = '';
+        carsData.forEach((car) => {
+          allCarsContainer.innerHTML += generateCarCardHTML(car);
+          if (car.rank === 3) {
+            allCarsContainer.innerHTML += generateAdCardHTML();
+          }
+        });
+      }
+
+      // Reduced-motion check
+      const prefersReduced = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
+      // Counters
+      function animateCounter(el, target, duration = 1600) {
+        if (prefersReduced) {
+          el.textContent = target;
+          return;
+        }
+        let start = 0;
+        const step = Math.max(1, Math.floor(target / (duration / 16)));
+        const timer = setInterval(() => {
+          start += step;
+          if (start >= target) {
+            el.textContent = target;
+            clearInterval(timer);
+          } else {
+            el.textContent = start;
+          }
+        }, 16);
+      }
+
+      // Reveal on view
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const target = parseInt(entry.target.dataset.count, 10);
+              animateCounter(entry.target, target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      document.addEventListener('DOMContentLoaded', () => {
+        renderCarCards();
+        document
+          .querySelectorAll('.reveal')
+          .forEach((el) => revealObserver.observe(el));
+        document
+          .querySelectorAll('[data-count]')
+          .forEach((el) => counterObserver.observe(el));
+        createParticles();
+        enableTiltOnPointer();
+      });
+
+      // Lightweight particles
+      function createParticles() {
+        if (prefersReduced) return;
+        const container = document.getElementById('particles');
+        const total = Math.min(40, Math.floor(window.innerWidth / 40));
+        for (let i = 0; i < total; i++) {
+          const p = document.createElement('div');
+          const size = Math.random() * 2 + 1;
+          p.style.cssText = `
+        position:absolute; width:${size}px; height:${size}px;
+        background:rgba(0,0,0,0.25); border-radius:9999px;
+        left:${Math.random() * 100}%; top:${Math.random() * 100}%;
+        opacity:${Math.random() * 0.5 + 0.2}; transform:translate3d(0,0,0);
+      `;
+          container.appendChild(p);
+          const amplitude = Math.random() * 20 + 10;
+          let t = Math.random() * Math.PI * 2;
+          function tick() {
+            if (prefersReduced) return;
+            t += 0.008;
+            const y = Math.sin(t) * amplitude;
+            p.style.transform = `translate3d(0, ${y}px, 0)`;
+            requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        }
+      }
+
+      // Accessible 3D tilt (only for hover-capable pointers)
+      function enableTiltOnPointer() {
+        const canHover = matchMedia('(hover:hover) and (pointer:fine)').matches;
+        if (!canHover || prefersReduced) return;
+        const cards = document.querySelectorAll('.tilt');
+        cards.forEach((card) => {
+          const maxTilt = 6; // degrees
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const px = (e.clientX - rect.left) / rect.width;
+            const py = (e.clientY - rect.top) / rect.height;
+            const rx = ((0.5 - py) * (maxTilt * 2)).toFixed(2);
+            const ry = ((px - 0.5) * (maxTilt * 2)).toFixed(2);
+            card.style.transform = `perspective(${rect.width}px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
