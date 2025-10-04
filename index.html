@@ -12,7 +12,18 @@
 
   <!-- Tailwind CDN for quick testing -->
 <link href="dist/output.css" rel="stylesheet">
-
+<script async type="application/javascript"
+        src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
+<script>
+  (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+    basicSubscriptions.init({
+      type: "NewsArticle",
+      isPartOfType: ["Product"],
+      isPartOfProductId: "CAowoNbBDA:openaccess",
+      clientOptions: { theme: "light", lang: "en-GB" },
+    });
+  });
+</script>
 
 
   <style>
@@ -723,6 +734,7 @@
   </script>
 </body>
 </html>
+
 
 
 
