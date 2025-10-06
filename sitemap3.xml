@@ -1,139 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated from your index.html on 2025-09-07 -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
-  <url>
-    <loc>https://ranked.icu/</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.00</priority>
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-  <!-- Main ranked pages (extracted from your index.html) -->
-  <url>
-    <loc>https://ranked.icu/football_ranked.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
 
-  <url>
-    <loc>https://ranked.icu/menperfum.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+<url>
+  <loc>https://ranked.icu/</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/request</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/football_ranked</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/menperfum</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/expensive-cars</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/50k_laptop</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/anime_ranked</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/vpn</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/striker</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/finance_book</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/places</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/women-perfume</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/netflix</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/adplaces</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/selfhelp</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/bselfhelp</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/50kbestall</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/adv_eurpe_places</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/f1speed</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/aboutus</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/contactus</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ranked.icu/terms</loc>
+  <lastmod>2025-10-06T15:22:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 
-  <url>
-    <loc>https://ranked.icu/Expensive-cars.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
 
-  <url>
-    <loc>https://ranked.icu/50k_laptop.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.82</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/striker.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/finance_book.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/places.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.78</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/women-perfume.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/netflix.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/anime_ranked.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/vpn.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.78</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/selfhelp.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/bselfhelp.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/50kbestall.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- Footer / legal pages -->
-  <url>
-    <loc>https://ranked.icu/aboutus.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.40</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/contactus.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.40</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/privacy.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.20</priority>
-  </url>
-
-  <url>
-    <loc>https://ranked.icu/terms.html</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.20</priority>
-  </url>
 </urlset>
