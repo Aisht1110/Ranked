@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apps &amp; Products — ASN Studios</title>
+  <meta name="description" content="Apps and products built by ASN Studios — CSAB Nexus Android app, JEECounsellor.me, CSABCounselling.in, BTechBook.in, and ranked.icu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #080b12; --bg2: #0e1220;
+      --border: rgba(255,255,255,0.07);
+      --accent: #00e5b0; --accent2: #0077ff;
+      --text: #e8eaf0; --muted: #7a8099;
+      --card: rgba(255,255,255,0.03);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 64px;
+      background: rgba(8,11,18,0.85); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .page-hero { padding: 140px 5% 80px; border-bottom: 1px solid var(--border); }
+    .section-tag { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; }
+    h1 em { font-style: normal; color: var(--accent); }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 520px; line-height: 1.7; }
+    section { padding: 80px 5%; }
+    h2 { font-family: 'Outfit', sans-serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; margin-bottom: 10px; }
+    /* APP CARD — BIG */
+    .app-featured {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 44px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: center;
+      margin-bottom: 24px;
+      transition: border-color 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .app-featured::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+    .app-featured:hover { border-color: rgba(0,229,176,0.2); }
+    .app-icon-big {
+      width: 72px; height: 72px; border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; margin-bottom: 20px;
+    }
+    .app-name { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+    .app-tag {
+      display: inline-block;
+      background: rgba(0,229,176,0.08); border: 1px solid rgba(0,229,176,0.15);
+      border-radius: 100px; padding: 3px 10px;
+      font-size: 0.72rem; font-weight: 600; color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .app-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+    .app-stats { display: flex; gap: 24px; margin-bottom: 24px; }
+    .app-stat-num { font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 700; }
+    .app-stat-num span { color: var(--accent); }
+    .app-stat-label { font-size: 0.75rem; color: var(--muted); }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tech-tag {
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 5px; padding: 4px 10px;
+      font-size: 0.75rem; color: var(--muted);
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; border-radius: 8px;
+      font-weight: 500; font-size: 0.88rem;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: #080b12; }
+    .btn-primary:hover { background: #00c99b; }
+    .btn-ghost { border: 1px solid var(--border); color: var(--text); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    /* SMALL CARDS GRID */
+    .apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .app-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .app-card:hover { border-color: rgba(0,229,176,0.2); transform: translateY(-2px); }
+    .app-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 16px; }
+    .card-name { font-family: 'Outfit', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+    .card-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-bottom: 18px; }
+    .card-link { font-size: 0.82rem; font-weight: 500; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+    .card-link:hover { gap: 8px; }
+    /* FOOTER */
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 48px 5% 32px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .footer-brand { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; }
+    .footer-brand span { color: var(--accent); }
+    .footer-tagline { font-size: 0.82rem; color: var(--muted); margin-top: 6px; max-width: 260px; }
+    .footer-nav h4 { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-nav a { color: var(--muted); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--text); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.78rem; color: var(--muted); }
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .app-featured { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">ASN <span>Studios</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="apps.html" class="active">Apps</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="section-tag">Apps &amp; Products</div>
+  <h1>Everything we've <em>shipped.</em></h1>
+  <p class="hero-sub">Production apps and platforms built, deployed, and actively maintained by ASN Studios — all with real users and live payment integrations.</p>
+</div>
+
+<!-- FEATURED: CSAB NEXUS -->
+<section>
+  <div class="section-tag">Android App · Google Play Store</div>
+  <div class="app-featured">
+    <div>
+      <div class="app-icon-big" style="background: rgba(0,119,255,0.12);">📱</div>
+      <div class="app-name">CSAB Nexus</div>
+      <span class="app-tag">Android · Google Play Store</span>
+      <p class="app-desc">
+        Native Android app for CSAB counselling predictions. Helps JEE students predict their allotment chances in CSAB special rounds based on rank, category, and branch preferences. Features a subscription paywall, college comparison, and real-time cutoff data.
+      </p>
+      <div class="btn-row">
+        <a href="https://play.google.com/store/apps/details?id=com.asnstudios.csabnexus" class="btn btn-primary" target="_blank">View on Play Store →</a>
+        <a href="contact.html" class="btn btn-ghost">Support</a>
+      </div>
+    </div>
+    <div>
+      <div class="app-stats">
+        <div>
+          <div class="app-stat-num">Free<span>+</span></div>
+          <div class="app-stat-label">Download model</div>
+        </div>
+        <div>
+          <div class="app-stat-num">₹<span>199</span></div>
+          <div class="app-stat-label">Season pass</div>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 18px; line-height: 1.65;">Built for JEE aspirants navigating CSAB special counselling rounds — a process that affects thousands of students every year who didn't get their preferred allotment in JoSAA.</p>
+      <div class="tech-tags">
+        <span class="tech-tag">Kotlin</span>
+        <span class="tech-tag">Jetpack Compose</span>
+        <span class="tech-tag">Hilt</span>
+        <span class="tech-tag">Firestore</span>
+        <span class="tech-tag">Razorpay</span>
+        <span class="tech-tag">Google Play</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEB PLATFORMS -->
+<section style="background: var(--bg2); border-top: 1px solid var(--border);">
+  <div class="section-tag">Web Platforms</div>
+  <h2>Live web tools</h2>
+  <p style="color: var(--muted); font-size: 0.92rem; margin-bottom: 40px; max-width: 500px;">Full-stack web platforms with payment integration, real-time data, and thousands of active users.</p>
+  <div class="apps-grid">
+    <div class="app-card">
+      <div class="app-icon" style="background: rgba(0,229,176,0.1);">🎓</div>
+      <span class="app-tag">250k+ Students</span>
+      <div class="card-name">JEECounsellor.me</div>
+      <p class="card-desc">JEE rank predictor, cutoff trends, and college comparison platform covering 264 colleges across India. The flagship product of ASN Studios. Integrated with Razorpay for premium plans (₹299–₹399).</p>
+      <div class="tech-tags" style="margin-bottom: 16px;">
+        <span class="tech-tag">Full-stack</span>
+        <span class="tech-tag">Razorpay</span>
+        <span class="tech-tag">264 Colleges</span>
+      </div>
+      <a href="https://jeecounsellor.me" class="card-link" target="_blank">Visit jeecounsellor.me →</a>
+    </div>
+    <div class="app-card">
+      <div class="app-icon" style="background: rgba(0,119,255,0.1);">📊</div>
+      <span class="app-tag">CSAB Predictor</span>
+      <div class="card-name">CSABCounselling.in</div>
+      <p class="card-desc">CSAB special round predictor with season pass access. Helps students navigate JoSAA and CSAB rounds with data-driven allotment predictions. ₹199 season pass via Razorpay.</p>
+      <div class="tech-tags" style="margin-bottom: 16px;">
+        <span class="tech-tag">Full-stack</span>
+        <span class="tech-tag">Razorpay</span>
+        <span class="tech-tag">JEE Data</span>
+      </div>
+      <a href="https://csabcounselling.in" class="card-link" target="_blank">Visit csabcounselling.in →</a>
+    </div>
+    <div class="app-card">
+      <div class="app-icon" style="background: rgba(180,0,255,0.1);">📚</div>
+      <span class="app-tag">Study Platform</span>
+      <div class="card-name">BTechBook.in</div>
+      <p class="card-desc">Engineering study materials platform for B.Tech students across India. Notes, resources, PYQs, and study guides organized by branch and semester.</p>
+      <div class="tech-tags" style="margin-bottom: 16px;">
+        <span class="tech-tag">Web</span>
+        <span class="tech-tag">EdTech</span>
+        <span class="tech-tag">Engineering</span>
+      </div>
+      <a href="https://btechbook.in" class="card-link" target="_blank">Visit btechbook.in →</a>
+    </div>
+    <div class="app-card">
+      <div class="app-icon" style="background: rgba(0,229,176,0.1);">⚡</div>
+      <span class="app-tag">Automation Tool</span>
+      <div class="card-name">ranked.icu</div>
+      <p class="card-desc">AI-powered client acquisition and automation system. Built on n8n + Gemini API — handles cold outreach, proposal generation, and deal pipeline management for freelancers and small businesses.</p>
+      <div class="tech-tags" style="margin-bottom: 16px;">
+        <span class="tech-tag">n8n</span>
+        <span class="tech-tag">Gemini AI</span>
+        <span class="tech-tag">Automation</span>
+      </div>
+      <a href="index.html" class="card-link">ranked.icu (this site) →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">ASN <span>Studios</span></div>
+      <p class="footer-tagline">MSME-registered IT company. Building apps, tools, and automation systems from India.</p>
+    </div>
+    <div class="footer-nav">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="apps.html">Apps &amp; Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-nav">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ASN Studios. All rights reserved.</span>
+    <span>007 Bandwa, Sarila, Hamirpur, UP 210431 · asnstudios.app@gmail.com</span>
+  </div>
+</footer>
+
+</body>
+</html>

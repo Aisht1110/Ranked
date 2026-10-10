@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Live Scorer – Privacy Policy & Data Deletion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-dark: #1a3c2a;
+            --green-mid: #2e7d32;
+            --green-light: #4caf50;
+            --green-pale: #e8f5e9;
+            --accent: #ff6f00;
+            --text: #1c1c1c;
+            --text-muted: #5a5a5a;
+            --white: #ffffff;
+            --border: #d4e8d6;
+            --bg: #f4f8f5;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+        }
+
+        /* ── HERO HEADER ── */
+        header {
+            background: linear-gradient(135deg, var(--green-dark) 0%, #0d2b1a 60%, #122b0d 100%);
+            color: var(--white);
+            padding: 60px 24px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 20% 80%, rgba(76,175,80,0.18) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(255,111,0,0.08) 0%, transparent 50%);
+        }
+        .header-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+            padding: 6px 18px 6px 8px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            margin-bottom: 24px;
+            backdrop-filter: blur(8px);
+        }
+        .app-badge .dot {
+            width: 8px; height: 8px;
+            background: var(--green-light);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%,100%{ box-shadow: 0 0 0 0 rgba(76,175,80,0.6); }
+            50%{ box-shadow: 0 0 0 6px rgba(76,175,80,0); }
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        header h1 span { color: var(--green-light); }
+
+        header p.subtitle {
+            font-size: 15px;
+            font-weight: 300;
+            opacity: 0.7;
+            margin-bottom: 28px;
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 13px;
+            opacity: 0.6;
+            flex-wrap: wrap;
+        }
+        .header-meta span { display: flex; align-items: center; gap: 5px; }
+
+        /* ── LAYOUT ── */
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* ── TOC ── */
+        .toc {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 40px;
+        }
+        .toc h3 {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--green-mid);
+            margin-bottom: 14px;
+        }
+        .toc ol {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 20px;
+            counter-reset: toc;
+        }
+        @media(max-width:520px){ .toc ol { grid-template-columns: 1fr; } }
+        .toc li {
+            counter-increment: toc;
+            font-size: 14px;
+        }
+        .toc li::before {
+            content: counter(toc, decimal-leading-zero) ". ";
+            color: var(--green-light);
+            font-weight: 600;
+        }
+        .toc a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--border);
+            transition: color 0.2s;
+        }
+        .toc a:hover { color: var(--green-mid); }
+
+        /* ── SECTION ── */
+        .section {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 32px 36px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.2s;
+        }
+        .section:hover { box-shadow: 0 4px 20px rgba(46,125,50,0.08); }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .section-num {
+            width: 36px; height: 36px;
+            background: var(--green-pale);
+            border: 2px solid var(--green-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--green-mid);
+            flex-shrink: 0;
+        }
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+
+        .section p { font-size: 14.5px; color: var(--text-muted); margin-bottom: 12px; }
+        .section p:last-child { margin-bottom: 0; }
+
+        ul.data-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 14px 0;
+        }
+        ul.data-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14.5px;
+            color: var(--text-muted);
+        }
+        ul.data-list li::before {
+            content: '✓';
+            width: 22px; height: 22px;
+            background: var(--green-pale);
+            color: var(--green-mid);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ── DELETION METHODS ── */
+        .methods-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        @media(max-width:560px){ .methods-grid { grid-template-columns: 1fr; } }
+
+        .method-card {
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .method-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+        }
+        .method-card.primary::after { background: var(--green-light); }
+        .method-card.secondary::after { background: var(--accent); }
+
+        .method-badge {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .method-card.primary .method-badge { background: var(--green-pale); color: var(--green-mid); }
+        .method-card.secondary .method-badge { background: #fff3e0; color: var(--accent); }
+
+        .method-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+        .method-card p { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
+
+        .method-card .steps {
+            list-style: none;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .method-card .steps li {
+            font-size: 13px;
+            color: var(--text-muted);
+            padding-left: 18px;
+            position: relative;
+        }
+        .method-card .steps li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--green-light);
+            font-weight: 700;
+        }
+
+        /* ── CONTACT BOX ── */
+        .contact-box {
+            background: linear-gradient(135deg, var(--green-dark), #0d2b1a);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 32px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .contact-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+        .contact-box p { font-size: 14px; opacity: 0.7; }
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--green-light);
+            color: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            white-space: nowrap;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .contact-btn:hover { background: #43a047; transform: translateY(-1px); }
+
+        /* ── INFO GRID ── */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 20px 0;
+        }
+        @media(max-width:520px){ .info-grid { grid-template-columns: 1fr; } }
+        .info-tile {
+            background: var(--green-pale);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+        .info-tile .icon { font-size: 22px; margin-bottom: 6px; }
+        .info-tile .label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 4px; }
+        .info-tile .value { font-size: 14px; font-weight: 600; color: var(--text); }
+
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+        footer strong { color: var(--green-mid); }
+
+        /* ── NOTICE ── */
+        .notice {
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-left: 4px solid #ffb300;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-size: 13.5px;
+            color: #5d4037;
+            margin-top: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="app-badge">
+            <span class="dot"></span>
+            ASN Studios · Official Policy Document
+        </div>
+        <h1>Cricket Live <span>Scorer</span></h1>
+        <p class="subtitle">Privacy Policy &amp; Account Data Deletion Guide</p>
+        <div class="header-meta">
+            <span>📅 Last Updated: May 13, 2026</span>
+            <span>📱 Android Application</span>
+            <span>🔒 GDPR Compliant</span>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- TOC -->
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#s1">Information We Collect</a></li>
+            <li><a href="#s2">How We Use Your Data</a></li>
+            <li><a href="#s3">Data Storage &amp; Security</a></li>
+            <li><a href="#s4">Account &amp; Data Deletion</a></li>
+            <li><a href="#s5">Children's Privacy</a></li>
+            <li><a href="#s6">Changes to This Policy</a></li>
+            <li><a href="#s7">Your Rights</a></li>
+            <li><a href="#s8">Contact Us</a></li>
+        </ol>
+    </div>
+
+    <!-- Quick info tiles -->
+    <div class="info-grid">
+        <div class="info-tile">
+            <div class="icon">🏏</div>
+            <div class="label">App Name</div>
+            <div class="value">Cricket Live Scorer</div>
+        </div>
+        <div class="info-tile">
+            <div class="icon">🏢</div>
+            <div class="label">Developer</div>
+            <div class="value">ASN Studios</div>
+        </div>
+        <div class="info-tile">
+            <div class="icon">📧</div>
+            <div class="label">Support Email</div>
+            <div class="value">asnstudios.app@gmail.com</div>
+        </div>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section" id="s1">
+        <div class="section-header">
+            <div class="section-num">01</div>
+            <h2>Information We Collect</h2>
+        </div>
+        <p>Cricket Live Scorer uses <strong>Firebase Authentication</strong> to manage secure user access. To provide core functionality — saving, scoring, and sharing cricket matches — we collect and store only the minimum data required:</p>
+        <ul class="data-list">
+            <li>Your email address (used for account identification and login)</li>
+            <li>A securely generated Firebase User ID (UID) unique to your account</li>
+            <li>Match data you create within the app (scores, teams, overs, results)</li>
+        </ul>
+        <p>We do <strong>not</strong> collect background tracking data, precise location data, contact lists, device identifiers, or any data beyond what is required for the app to function.</p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section" id="s2">
+        <div class="section-header">
+            <div class="section-num">02</div>
+            <h2>How We Use Your Information</h2>
+        </div>
+        <p>Your data is used solely to operate and improve the app experience:</p>
+        <ul class="data-list">
+            <li>Authenticate your identity and manage secure login sessions</li>
+            <li>Link your created and saved cricket matches to your account</li>
+            <li>Enable match sharing and retrieval across sessions</li>
+            <li>Improve app reliability and fix bugs (anonymous, aggregated analytics only)</li>
+        </ul>
+        <p>We do <strong>not</strong> sell, rent, share, or monetise your personal data with any third party. We do not use your data for advertising purposes.</p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section" id="s3">
+        <div class="section-header">
+            <div class="section-num">03</div>
+            <h2>Data Storage &amp; Security</h2>
+        </div>
+        <p>All user authentication and match data is stored securely using <strong>Google Firebase</strong> (Firestore &amp; Firebase Auth), which is compliant with industry-standard security protocols. Data is stored on Google's servers and protected by encryption at rest and in transit.</p>
+        <p>While we take all commercially reasonable steps to protect your data, no method of electronic storage is 100% secure. If you suspect any unauthorised access to your account, please contact us immediately at <strong>asnstudios.app@gmail.com</strong>.</p>
+        <div class="notice">
+            🔐 Firebase Auth uses secure token-based sessions. We never store raw passwords — authentication is handled entirely by Google Firebase.
+        </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section" id="s4">
+        <div class="section-header">
+            <div class="section-num">04</div>
+            <h2>Account &amp; Data Deletion</h2>
+        </div>
+        <p>You have the right to permanently delete your account and all associated data at any time. Choose the method that suits you:</p>
+
+        <div class="methods-grid">
+            <div class="method-card primary">
+                <span class="method-badge">⭐ Recommended</span>
+                <h3>Method 1: Delete Inside the App</h3>
+                <p>The fastest and instant way to delete your account and all data.</p>
+                <ul class="steps">
+                    <li>Open Cricket Live Scorer</li>
+                    <li>Tap the menu icon (top-right)</li>
+                    <li>Select <strong>"Delete Account"</strong></li>
+                    <li>Confirm deletion — all data is erased instantly</li>
+                </ul>
+            </div>
+            <div class="method-card secondary">
+                <span class="method-badge">📧 Via Email</span>
+                <h3>Method 2: Email Deletion Request</h3>
+                <p>If you've uninstalled the app or can't access it, email us:</p>
+                <ul class="steps">
+                    <li>Email: <strong>asnstudios.app@gmail.com</strong></li>
+                    <li>Subject: <strong>"Account Deletion Request"</strong></li>
+                    <li>Send from your registered email address</li>
+                    <li>Data erased within <strong>7 business days</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="notice" style="margin-top:16px;">
+            ⚠️ Deletion is <strong>permanent and irreversible</strong>. Once your account is deleted, all match data, scores, and account information are permanently erased and cannot be recovered.
+        </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section" id="s5">
+        <div class="section-header">
+            <div class="section-num">05</div>
+            <h2>Children's Privacy</h2>
+        </div>
+        <p>Cricket Live Scorer is not directed at children under the age of 13. We do not knowingly collect personal data from children under 13. If you are a parent or guardian and believe your child has provided us with personal data, please contact us immediately at <strong>asnstudios.app@gmail.com</strong> and we will take steps to promptly delete such information.</p>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section" id="s6">
+        <div class="section-header">
+            <div class="section-num">06</div>
+            <h2>Changes to This Policy</h2>
+        </div>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. When we do, we will update the <strong>"Last Updated"</strong> date at the top of this page.</p>
+        <p>We encourage you to review this page periodically. Continued use of the app after any changes constitutes your acceptance of the updated policy. For significant changes, we will attempt to notify users via the app or email.</p>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section" id="s7">
+        <div class="section-header">
+            <div class="section-num">07</div>
+            <h2>Your Rights</h2>
+        </div>
+        <p>Depending on your region, you may have the following rights with respect to your personal data:</p>
+        <ul class="data-list">
+            <li><strong>Right to Access</strong> — Request a copy of the data we hold about you</li>
+            <li><strong>Right to Rectification</strong> — Request correction of inaccurate data</li>
+            <li><strong>Right to Erasure</strong> — Request deletion of your account and data</li>
+            <li><strong>Right to Restrict Processing</strong> — Request that we limit use of your data</li>
+            <li><strong>Right to Data Portability</strong> — Request a portable copy of your data</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <strong>asnstudios.app@gmail.com</strong>. We will respond within 7–14 business days.</p>
+    </div>
+
+    <!-- Contact Box -->
+    <div class="contact-box" id="s8">
+        <div>
+            <h2>08. Contact Us</h2>
+            <p>Questions about this policy or your data? We're here to help.</p>
+            <p style="margin-top:8px; opacity:1; font-size:15px; font-weight:500;">📧 asnstudios.app@gmail.com</p>
+        </div>
+        <a class="contact-btn" href="mailto:asnstudios.app@gmail.com?subject=Cricket Live Scorer – Privacy Inquiry">
+            Send Email →
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    &copy; 2026 <strong>ASN Studios</strong>. All rights reserved. &nbsp;|&nbsp; Cricket Live Scorer &nbsp;|&nbsp; Ranchi, Jharkhand, India
+</footer>
+
+</body>
+</html>

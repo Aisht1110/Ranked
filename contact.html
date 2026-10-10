@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — ASN Studios</title>
+  <meta name="description" content="Contact ASN Studios — asnstudios.app@gmail.com | +91 8960421088 | 007 Bandwa, Sarila, Hamirpur, UP 210431" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #080b12; --bg2: #0e1220;
+      --border: rgba(255,255,255,0.07);
+      --accent: #00e5b0; --accent2: #0077ff;
+      --text: #e8eaf0; --muted: #7a8099;
+      --card: rgba(255,255,255,0.03);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 64px;
+      background: rgba(8,11,18,0.85); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .page-hero { padding: 140px 5% 80px; border-bottom: 1px solid var(--border); }
+    .section-tag { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; }
+    h1 em { font-style: normal; color: var(--accent); }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 520px; line-height: 1.7; }
+    main { padding: 80px 5%; }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    h2 { font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; }
+    /* CONTACT CARDS */
+    .contact-cards { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .contact-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px 24px;
+      display: flex; align-items: flex-start; gap: 16px;
+      transition: border-color 0.2s;
+    }
+    .contact-card:hover { border-color: rgba(0,229,176,0.2); }
+    .contact-card-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contact-card-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 3px; }
+    .contact-card-val { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+    .contact-card-val a { color: var(--accent); text-decoration: none; }
+    .contact-card-val a:hover { text-decoration: underline; }
+    /* FORM */
+    .contact-form { margin-top: 32px; }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--muted); margin-bottom: 7px; letter-spacing: 0.03em; }
+    input, textarea, select {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+    textarea { min-height: 130px; resize: vertical; }
+    .btn-submit {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #080b12;
+      border: none; border-radius: 8px;
+      padding: 12px 28px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600; font-size: 0.9rem;
+      cursor: pointer; transition: background 0.2s;
+      width: 100%;
+      justify-content: center;
+    }
+    .btn-submit:hover { background: #00c99b; }
+    /* RESPONSE TIME NOTE */
+    .response-note {
+      background: rgba(0,229,176,0.05);
+      border: 1px solid rgba(0,229,176,0.12);
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: 0.84rem; color: var(--muted);
+      margin-top: 28px;
+      line-height: 1.6;
+    }
+    .response-note strong { color: var(--text); }
+    /* MAP / ADDRESS BOX */
+    .address-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px;
+      margin-top: 28px;
+    }
+    .address-box h3 { font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 12px; }
+    .address-lines { font-size: 0.9rem; color: var(--muted); line-height: 1.9; }
+    /* FOOTER */
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 48px 5% 32px; margin-top: 80px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .footer-brand { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; }
+    .footer-brand span { color: var(--accent); }
+    .footer-tagline { font-size: 0.82rem; color: var(--muted); margin-top: 6px; max-width: 260px; }
+    .footer-nav h4 { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-nav a { color: var(--muted); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--text); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.78rem; color: var(--muted); }
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">ASN <span>Studios</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="apps.html">Apps</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="section-tag">Get in Touch</div>
+  <h1>Let's <em>talk.</em></h1>
+  <p class="hero-sub">For app support, business inquiries, freelance work, or partnership — reach out via email or the form below.</p>
+</div>
+
+<main>
+  <div class="contact-layout">
+    <!-- LEFT: CONTACT INFO -->
+    <div>
+      <div class="section-tag">Contact Information</div>
+      <h2>How to reach us</h2>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background: rgba(0,229,176,0.1);">✉️</div>
+          <div>
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-val"><a href="mailto:asnstudios.app@gmail.com">asnstudios.app@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background: rgba(0,119,255,0.1);">📞</div>
+          <div>
+            <div class="contact-card-label">Phone</div>
+            <div class="contact-card-val"><a href="tel:+918960421088">+91 8960421088</a></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background: rgba(255,165,0,0.1);">📍</div>
+          <div>
+            <div class="contact-card-label">Registered Address</div>
+            <div class="contact-card-val">007 Bandwa, Sarila, Hamirpur<br/>Uttar Pradesh 210431, India</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background: rgba(180,0,255,0.1);">🏢</div>
+          <div>
+            <div class="contact-card-label">Business Type</div>
+            <div class="contact-card-val">ASN Studios · MSME Micro · Sole Proprietorship</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="address-box">
+        <h3>📮 Postal Address</h3>
+        <div class="address-lines">
+          ASN Studios<br/>
+          007 Bandwa, Sarila<br/>
+          Hamirpur, Uttar Pradesh 210431<br/>
+          India
+        </div>
+      </div>
+
+      <div class="response-note">
+        <strong>Response time:</strong> We typically respond to emails within 24–48 hours on business days. For app-related support, please include your app name and order/transaction ID if applicable.
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div>
+      <div class="section-tag">Send a Message</div>
+      <h2>Write to us</h2>
+      <form class="contact-form" action="mailto:asnstudios.app@gmail.com" method="get" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Aishwary Tripathi" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="App Support">App Support</option>
+            <option value="Business Inquiry">Business Inquiry</option>
+            <option value="Freelance Work">Freelance / Project Work</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="body" placeholder="Describe your query or project briefly..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">ASN <span>Studios</span></div>
+      <p class="footer-tagline">MSME-registered IT company. Building apps, tools, and automation systems from India.</p>
+    </div>
+    <div class="footer-nav">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="apps.html">Apps &amp; Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-nav">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ASN Studios. All rights reserved.</span>
+    <span>007 Bandwa, Sarila, Hamirpur, UP 210431 · asnstudios.app@gmail.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
