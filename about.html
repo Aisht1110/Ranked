@@ -14,10 +14,25 @@
       --accent: #00e5b0; --accent2: #0077ff;
       --text: #e8eaf0; --muted: #7a8099;
       --card: rgba(255,255,255,0.03);
+      --shadow: 0 18px 36px rgba(0,0,0,0.25);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    body.is-loading { overflow: hidden; }
+    .loader {
+      position: fixed; inset: 0; z-index: 999;
+      display: grid; place-items: center;
+      background: linear-gradient(180deg, #080b12, #0e1220);
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+    .loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-dot {
+      width: 42px; height: 42px; border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.15);
+      border-top-color: var(--accent);
+      animation: spin 0.9s linear infinite;
+    }
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -66,7 +81,9 @@
       background: var(--card); border: 1px solid var(--border);
       border-radius: 16px; padding: 36px; max-width: 640px;
       margin-top: 32px;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
+    .founder-card:hover { transform: translateY(-2px); border-color: rgba(0,229,176,0.25); box-shadow: var(--shadow); }
     .founder-name { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
     .founder-role { font-size: 0.85rem; color: var(--accent); margin-bottom: 14px; }
     .founder-bio { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
@@ -97,10 +114,23 @@
     .footer-nav a { color: var(--muted); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
     .footer-nav a:hover { color: var(--text); }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.78rem; color: var(--muted); }
+    [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+    @keyframes spin { to { transform: rotate(360deg); } }
     @media (max-width: 700px) { .nav-links { display: none; } .info-grid { grid-template-columns: 1fr; gap: 32px; } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
   </style>
+  <noscript><style>body{overflow:auto !important}.loader{display:none !important}</style></noscript>
 </head>
-<body>
+<body class="is-loading">
+
+<div class="loader" id="pageLoader" aria-hidden="true">
+  <div class="loader-dot"></div>
+</div>
 
 <nav>
   <a href="index.html" class="nav-brand">ASN <span>Studios</span></a>
@@ -112,14 +142,14 @@
   </ul>
 </nav>
 
-<div class="page-hero">
+<div class="page-hero" data-reveal>
   <div class="section-tag">About the Company</div>
   <h1>Building <em>software</em><br/>that actually ships.</h1>
   <p class="hero-sub">ASN Studios is an MSME-registered IT company operating out of Hamirpur, UP — building production-grade apps, platforms, and automation systems.</p>
 </div>
 
 <!-- BUSINESS DETAILS -->
-<section>
+<section data-reveal>
   <div class="info-grid">
     <div>
       <div class="section-tag">Business Information</div>
@@ -133,7 +163,7 @@
         <div class="info-row"><span class="info-label">Registration</span><span class="info-val">Udyam Registered · MSME Act, India</span></div>
         <div class="info-row"><span class="info-label">Registered Address</span><span class="info-val">007 Bandwa, Sarila, Hamirpur, Uttar Pradesh 210431, India</span></div>
         <div class="info-row"><span class="info-label">Email</span><span class="info-val">asnstudios.app@gmail.com</span></div>
-        <div class="info-row"><span class="info-label">Phone</span><span class="info-val">+91 8960421088</span></div>
+        <div class="info-row"><span class="info-label">Support</span><span class="info-val">Email only · asnstudios.app@gmail.com</span></div>
       </div>
     </div>
     <div>
@@ -154,7 +184,7 @@
 </section>
 
 <!-- STORY -->
-<section style="background: var(--bg2); border-top: 1px solid var(--border);">
+<section style="background: var(--bg2); border-top: 1px solid var(--border);" data-reveal>
   <div class="section-tag">Our Story</div>
   <h2>Who we are</h2>
   <div class="story-text">
@@ -170,7 +200,7 @@
   </div>
 
   <div class="founder-card">
-    <div class="founder-name">Aishwary Tripathi</div>
+    <div class="founder-name">ASN Studios Team</div>
     <div class="founder-role">Founder &amp; Developer · ASN Studios</div>
     <p class="founder-bio">
       Dual degree student (CS + Mechanical Engineering) building production software products since 2023. Experienced in Android (Kotlin/Jetpack Compose), full-stack web development, and n8n-based workflow automation. All products under ASN Studios are built, maintained, and operated independently.
@@ -179,7 +209,7 @@
 </section>
 
 <!-- TIMELINE -->
-<section>
+<section data-reveal>
   <div class="section-tag">Journey</div>
   <h2>Key milestones</h2>
   <div style="margin-top: 36px;" class="timeline">
@@ -237,6 +267,37 @@
     <span>007 Bandwa, Sarila, Hamirpur, UP 210431 · asnstudios.app@gmail.com</span>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const body = document.body;
+    const loader = document.getElementById('pageLoader');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finishLoading = () => {
+      body.classList.remove('is-loading');
+      if (loader) loader.classList.add('hidden');
+    };
+    if (document.readyState === 'complete') {
+      finishLoading();
+    } else {
+      window.addEventListener('load', finishLoading, { once: true });
+      setTimeout(finishLoading, 1600);
+    }
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+    } else {
+      document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
+    }
+  })();
+</script>
 
 </body>
 </html>

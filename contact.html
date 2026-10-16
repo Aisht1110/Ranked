@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — ASN Studios</title>
-  <meta name="description" content="Contact ASN Studios — asnstudios.app@gmail.com | +91 8960421088 | 007 Bandwa, Sarila, Hamirpur, UP 210431" />
+  <meta name="description" content="Contact ASN Studios — asnstudios.app@gmail.com | 007 Bandwa, Sarila, Hamirpur, UP 210431" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
@@ -14,22 +14,38 @@
       --accent: #00e5b0; --accent2: #0077ff;
       --text: #e8eaf0; --muted: #7a8099;
       --card: rgba(255,255,255,0.03);
+      --shadow: 0 18px 36px rgba(0,0,0,0.25);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.65; overflow-x: hidden; transition: opacity 0.3s ease; }
+    body.is-loading { overflow: hidden; }
+    .loader {
+      position: fixed; inset: 0; z-index: 999;
+      display: grid; place-items: center;
+      background: linear-gradient(180deg, #080b12, #0e1220);
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+    .loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-dot {
+      width: 42px; height: 42px; border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.15);
+      border-top-color: var(--accent);
+      animation: spin 0.9s linear infinite;
+    }
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 5%; height: 64px;
       background: rgba(8,11,18,0.85); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
     }
     .nav-brand { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; }
     .nav-brand span { color: var(--accent); }
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
-    .page-hero { padding: 140px 5% 80px; border-bottom: 1px solid var(--border); }
+    .page-hero { padding: 148px 5% 92px; border-bottom: 1px solid var(--border); }
     .section-tag { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 14px; }
     h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; }
     h1 em { font-style: normal; color: var(--accent); }
@@ -43,9 +59,9 @@
       background: var(--card); border: 1px solid var(--border);
       border-radius: 12px; padding: 22px 24px;
       display: flex; align-items: flex-start; gap: 16px;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
-    .contact-card:hover { border-color: rgba(0,229,176,0.2); }
+    .contact-card:hover { border-color: rgba(0,229,176,0.2); transform: translateY(-2px); box-shadow: var(--shadow); }
     .contact-card-icon {
       width: 40px; height: 40px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
@@ -68,10 +84,10 @@
       color: var(--text);
       font-family: 'DM Sans', sans-serif;
       font-size: 0.9rem;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
       outline: none;
     }
-    input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+    input:focus, textarea:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,229,176,0.16); background-color: rgba(255,255,255,0.05); }
     textarea { min-height: 130px; resize: vertical; }
     .btn-submit {
       display: inline-flex; align-items: center; gap: 8px;
@@ -80,11 +96,11 @@
       padding: 12px 28px;
       font-family: 'DM Sans', sans-serif;
       font-weight: 600; font-size: 0.9rem;
-      cursor: pointer; transition: background 0.2s;
+      cursor: pointer; transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
       width: 100%;
       justify-content: center;
     }
-    .btn-submit:hover { background: #00c99b; }
+    .btn-submit:hover { background: #00c99b; transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,229,176,0.24); }
     /* RESPONSE TIME NOTE */
     .response-note {
       background: rgba(0,229,176,0.05);
@@ -115,13 +131,27 @@
     .footer-nav a { color: var(--muted); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
     .footer-nav a:hover { color: var(--text); }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.78rem; color: var(--muted); }
+    [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+    @keyframes spin { to { transform: rotate(360deg); } }
     @media (max-width: 700px) {
       .nav-links { display: none; }
       .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .page-hero { padding-top: 118px; padding-bottom: 68px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      [data-reveal] { opacity: 1; transform: none; }
     }
   </style>
+  <noscript><style>body{overflow:auto !important}.loader{display:none !important}</style></noscript>
 </head>
-<body>
+<body class="is-loading">
+
+<div class="loader" id="pageLoader" aria-hidden="true">
+  <div class="loader-dot"></div>
+</div>
 
 <nav>
   <a href="index.html" class="nav-brand">ASN <span>Studios</span></a>
@@ -133,7 +163,7 @@
   </ul>
 </nav>
 
-<div class="page-hero">
+<div class="page-hero" data-reveal>
   <div class="section-tag">Get in Touch</div>
   <h1>Let's <em>talk.</em></h1>
   <p class="hero-sub">For app support, business inquiries, freelance work, or partnership — reach out via email or the form below.</p>
@@ -142,7 +172,7 @@
 <main>
   <div class="contact-layout">
     <!-- LEFT: CONTACT INFO -->
-    <div>
+    <div data-reveal>
       <div class="section-tag">Contact Information</div>
       <h2>How to reach us</h2>
       <div class="contact-cards">
@@ -154,10 +184,10 @@
           </div>
         </div>
         <div class="contact-card">
-          <div class="contact-card-icon" style="background: rgba(0,119,255,0.1);">📞</div>
+          <div class="contact-card-icon" style="background: rgba(0,119,255,0.1);">⏱️</div>
           <div>
-            <div class="contact-card-label">Phone</div>
-            <div class="contact-card-val"><a href="tel:+918960421088">+91 8960421088</a></div>
+            <div class="contact-card-label">Support Window</div>
+            <div class="contact-card-val">Monday–Saturday · 10:00 AM – 6:00 PM IST</div>
           </div>
         </div>
         <div class="contact-card">
@@ -176,7 +206,7 @@
         </div>
       </div>
 
-      <div class="address-box">
+      <div class="address-box" data-reveal>
         <h3>📮 Postal Address</h3>
         <div class="address-lines">
           ASN Studios<br/>
@@ -186,19 +216,19 @@
         </div>
       </div>
 
-      <div class="response-note">
+      <div class="response-note" data-reveal>
         <strong>Response time:</strong> We typically respond to emails within 24–48 hours on business days. For app-related support, please include your app name and order/transaction ID if applicable.
       </div>
     </div>
 
     <!-- RIGHT: FORM -->
-    <div>
+    <div data-reveal>
       <div class="section-tag">Send a Message</div>
       <h2>Write to us</h2>
       <form class="contact-form" action="mailto:asnstudios.app@gmail.com" method="get" enctype="text/plain">
         <div class="form-group">
           <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Aishwary Tripathi" required />
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
         </div>
         <div class="form-group">
           <label for="email">Email Address</label>
@@ -251,6 +281,37 @@
     <span>007 Bandwa, Sarila, Hamirpur, UP 210431 · asnstudios.app@gmail.com</span>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const body = document.body;
+    const loader = document.getElementById('pageLoader');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finishLoading = () => {
+      body.classList.remove('is-loading');
+      if (loader) loader.classList.add('hidden');
+    };
+    if (document.readyState === 'complete') {
+      finishLoading();
+    } else {
+      window.addEventListener('load', finishLoading, { once: true });
+      setTimeout(finishLoading, 1600);
+    }
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+    } else {
+      document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
+    }
+  })();
+</script>
 
 </body>
 </html>
