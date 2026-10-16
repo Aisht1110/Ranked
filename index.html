@@ -18,6 +18,7 @@
       --text: #e8eaf0;
       --muted: #7a8099;
       --card: rgba(255,255,255,0.03);
+      --shadow: 0 20px 36px rgba(0,0,0,0.25);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -28,6 +29,20 @@
       font-size: 16px;
       line-height: 1.65;
       overflow-x: hidden;
+    }
+    body.is-loading { overflow: hidden; }
+    .loader {
+      position: fixed; inset: 0; z-index: 999;
+      display: grid; place-items: center;
+      background: linear-gradient(180deg, #080b12, #0e1220);
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+    .loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-dot {
+      width: 42px; height: 42px; border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.15);
+      border-top-color: var(--accent);
+      animation: spin 0.9s linear infinite;
     }
     /* NAV */
     nav {
@@ -217,7 +232,9 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
+    .service-item:hover { transform: translateY(-2px); border-color: rgba(0,229,176,0.22); box-shadow: var(--shadow); }
     .service-num {
       font-family: 'Outfit', sans-serif;
       font-size: 0.7rem; font-weight: 700;
@@ -280,15 +297,28 @@
       flex-wrap: wrap; gap: 10px;
       font-size: 0.78rem; color: var(--muted);
     }
+    [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+    @keyframes spin { to { transform: rotate(360deg); } }
     @media (max-width: 700px) {
       .nav-links { display: none; }
       .stats { flex-direction: column; }
       .stat { border-right: none; border-bottom: 1px solid var(--border); }
       .about-strip { grid-template-columns: 1fr; gap: 32px; }
     }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
   </style>
+  <noscript><style>body{overflow:auto !important}.loader{display:none !important}</style></noscript>
 </head>
-<body>
+<body class="is-loading">
+
+<div class="loader" id="pageLoader" aria-hidden="true">
+  <div class="loader-dot"></div>
+</div>
 
 <nav>
   <a href="index.html" class="nav-brand">ASN <span>Studios</span></a>
@@ -300,7 +330,7 @@
   </ul>
 </nav>
 
-<section class="hero">
+<section class="hero" data-reveal>
   <div class="hero-tag">MSME Micro · Udyam Registered · NIC 62011</div>
   <h1>We build <em>apps</em> &amp;<br/>automation systems.</h1>
   <p class="hero-sub">
@@ -312,7 +342,7 @@
   </div>
 </section>
 
-<div class="stats">
+<div class="stats" data-reveal>
   <div class="stat">
     <div class="stat-num">250<span>k+</span></div>
     <div class="stat-label">Students Served</div>
@@ -332,7 +362,7 @@
 </div>
 
 <!-- PRODUCTS -->
-<section>
+<section data-reveal>
   <div class="section-tag">Our Products</div>
   <h2>Tools built for<br/>real impact</h2>
   <p class="section-sub">From JEE counselling platforms used by lakhs of students to automation systems for businesses — everything ships to production.</p>
@@ -371,7 +401,7 @@
 </section>
 
 <!-- SERVICES -->
-<section style="background: var(--bg2); border-top: 1px solid var(--border);">
+<section style="background: var(--bg2); border-top: 1px solid var(--border);" data-reveal>
   <div class="section-tag">What We Do</div>
   <h2>Services</h2>
   <p class="section-sub">Custom software development and automation for startups, agencies, and businesses.</p>
@@ -400,7 +430,7 @@
 </section>
 
 <!-- ABOUT STRIP -->
-<div class="about-strip">
+<div class="about-strip" data-reveal>
   <div>
     <div class="section-tag">About ASN Studios</div>
     <h2>Registered Indian IT business</h2>
@@ -419,7 +449,7 @@
     <p><strong>Type:</strong> Sole Proprietorship · IT Services</p>
     <p><strong>Address:</strong> 007 Bandwa, Sarila, Hamirpur, Uttar Pradesh 210431</p>
     <p><strong>Email:</strong> asnstudios.app@gmail.com</p>
-    <p><strong>Phone:</strong> +91 8960421088</p>
+    <p><strong>Support:</strong> Email only · asnstudios.app@gmail.com</p>
     <p style="margin-top: 16px;"><a href="about.html" class="product-link">Read more about us →</a></p>
   </div>
 </div>
@@ -460,6 +490,37 @@
     <span>007 Bandwa, Sarila, Hamirpur, UP 210431 · asnstudios.app@gmail.com</span>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const body = document.body;
+    const loader = document.getElementById('pageLoader');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finishLoading = () => {
+      body.classList.remove('is-loading');
+      if (loader) loader.classList.add('hidden');
+    };
+    if (document.readyState === 'complete') {
+      finishLoading();
+    } else {
+      window.addEventListener('load', finishLoading, { once: true });
+      setTimeout(finishLoading, 1600);
+    }
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+    } else {
+      document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
+    }
+  })();
+</script>
 
 </body>
 </html>
